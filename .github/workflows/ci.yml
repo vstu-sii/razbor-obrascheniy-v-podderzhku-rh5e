@@ -14,6 +14,6 @@ jobs:
       - run: ruff check app tests
       - run: ruff format --check app tests
       - run: python -m compileall app
-      - run: pytest -q
+      - run: python -m pytest -q
       - run: python -m pip check
       - run: docker build -t ai-support-triage:ci .
