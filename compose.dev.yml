@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      APP_ENV: "${APP_ENV:-development}"
+      LLM_PROVIDER: "${LLM_PROVIDER:-stub}"
+      LLM_MODEL: "${LLM_MODEL:-stub}"
+      LLM_API_KEY: "${LLM_API_KEY:-}"
+      KNOWLEDGE_BASE_PATH: "${KNOWLEDGE_BASE_PATH:-data/sample/knowledge_base.json}"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
