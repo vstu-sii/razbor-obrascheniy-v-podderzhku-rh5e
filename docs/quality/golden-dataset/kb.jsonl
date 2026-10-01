@@ -1,0 +1,6 @@
+{"source_id": "KB-2FA-v1", "version": "v1", "status": "approved", "title": "Настройка 2FA", "excerpt": "В настройках безопасности оператор показывает путь к включению 2FA; код восстановления хранит сам пользователь.", "provenance": "synthetic_demo"}
+{"source_id": "KB-INVOICE-v1", "version": "v1", "status": "approved", "title": "Счёт и акт", "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.", "provenance": "synthetic_demo"}
+{"source_id": "KB-API-v1", "version": "v1", "status": "approved", "title": "Токен интеграции", "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.", "provenance": "synthetic_demo"}
+{"source_id": "KB-NOTIFY-v1", "version": "v1", "status": "approved", "title": "Уведомления", "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления.", "provenance": "synthetic_demo"}
+{"source_id": "KB-ERROR-v1", "version": "v1", "status": "approved", "title": "Ошибка импорта", "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8.", "provenance": "synthetic_demo"}
+{"source_id": "KB-ROLE-v1", "version": "v1", "status": "approved", "title": "Роли", "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда.", "provenance": "synthetic_demo"}
