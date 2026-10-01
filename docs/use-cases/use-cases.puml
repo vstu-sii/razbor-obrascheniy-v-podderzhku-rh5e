@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor "Оператор первой линии" as Operator
+actor "Специалист" as Specialist
+actor "Клиент" as Customer
+rectangle "Помощник разбора обращений" {
+  usecase "UC-01\nПодготовить обоснованный ответ" as UC01
+  usecase "UC-02\nУточнить недостающие данные" as UC02
+  usecase "UC-03\nПередать случай специалисту" as UC03
+  usecase "UC-04\nИсправить или отклонить предложение" as UC04
+  usecase "Проверить источники и историю" as Verify
+}
+Operator -- UC01
+Operator -- UC02
+Operator -- UC03
+Operator -- UC04
+Specialist -- UC03
+Customer -- UC01
+Customer -- UC02
+UC01 ..> Verify : <<include>>
+UC03 ..> Verify : <<include>>
+UC04 ..> UC01 : <<extend>>
+UC04 ..> UC02 : <<extend>>
+UC04 ..> UC03 : <<extend>>
+note bottom of UC01
+  Отправку всегда подтверждает оператор.
+end note
+@enduml
