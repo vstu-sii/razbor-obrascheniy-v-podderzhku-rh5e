@@ -3,4 +3,5 @@
 {"source_id": "KB-API-v1", "version": "v1", "status": "approved", "title": "Токен интеграции", "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.", "provenance": "synthetic_demo"}
 {"source_id": "KB-NOTIFY-v1", "version": "v1", "status": "approved", "title": "Уведомления", "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления.", "provenance": "synthetic_demo"}
 {"source_id": "KB-ERROR-v1", "version": "v1", "status": "approved", "title": "Ошибка импорта", "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8.", "provenance": "synthetic_demo"}
+{"source_id": "KB-ERROR-v2", "version": "v2", "status": "approved", "title": "Ошибка импорта", "excerpt": "При E42 проверьте CSV UTF-8 и заголовки столбцов; если ошибка остаётся, передайте обращение оператору.", "provenance": "synthetic_demo"}
 {"source_id": "KB-ROLE-v1", "version": "v1", "status": "approved", "title": "Роли", "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда.", "provenance": "synthetic_demo"}

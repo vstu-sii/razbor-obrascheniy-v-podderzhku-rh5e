@@ -18,7 +18,7 @@
 | Delivery: UI | Исходник и настоящий скриншот одного состояния в репозитории; UC-01–04 можно показать | прототип есть; полноценный интерактивный прогон `pending` |
 | Delivery: ERD/SQL | ключи и отношения ERD совпадают с SQL; миграция применима на пустой БД | текст есть; запуск PostgreSQL `pending` |
 | Delivery: Compose v2 | одной командой поднимаются заглушки, health checks здоровы | файл есть; Docker-run `pending` |
-| Quality: evals | 30–50 уникальных пар, все UC и edge cases; JSONL читается runner, provenance и версии заполнены | 40 синтетических черновиков; validation выполнен локально, human review `pending` |
+| Quality: evals | 30–50 основных уникальных пар, все UC и edge cases; отдельный набор для редкой ошибки; JSONL читается runner, provenance и версии заполнены | 40 основных и 150 целевых синтетических черновиков; проверка формата выполнена, независимая разметка и model eval `pending` |
 | Quality: test plan | unit/integration/evals и список CI с LAB03 | текст есть; team review `pending` |
 | Quality: threat model | все недоверенные входы, права модели, OWASP 2025 и атаки LAB04 | текст есть; review `pending` |
 
