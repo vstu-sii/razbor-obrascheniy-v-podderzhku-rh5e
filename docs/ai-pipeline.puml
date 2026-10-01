@@ -1,0 +1,45 @@
+@startuml
+title AI-пайплайн: предложение карточки под контролем оператора
+
+actor "Оператор" as Operator
+participant "UI / Backend" as Backend
+participant "AI API" as AI
+participant "Утверждённая БЗ" as KB
+participant "LLM" as LLM
+participant "Schema validator\n+ policy gate" as Gate
+participant "Helpdesk" as Helpdesk
+
+Operator -> Backend: открыть тикет и запустить разбор
+Backend -> Backend: права, размер, обезличивание
+Backend -> AI: POST /v1/analyze
+AI -> KB: поиск approved-фрагментов\nпо kb_version, max 3
+KB --> AI: source_id, version, title, excerpt
+AI -> LLM: инструкция + JSON Schema\n+ тикет + история + evidence
+LLM --> AI: структурированное предложение
+AI -> Gate: схема, enum, evidence, safety
+
+alt результат валиден и разрешён
+  Gate --> AI: proposed
+else невалидный результат, первый раз
+  Gate --> AI: retry once
+  AI -> LLM: тот же безопасный контекст
+  LLM --> AI: исправленное предложение
+  AI -> Gate: повторная проверка
+else повторная ошибка / timeout / нет БЗ
+  Gate --> AI: not_analyzed + escalate
+end
+
+AI --> Backend: предложение + evidence + warnings
+Backend --> Operator: исходник и карточка
+Operator -> Backend: принять / исправить / отклонить
+
+opt только явное подтверждение оператора
+  Backend -> Helpdesk: отправить ответ или передать тикет
+end
+
+note over AI,LLM
+  Нет инструментов отправки,
+  назначения и записи в helpdesk
+end note
+
+@enduml
