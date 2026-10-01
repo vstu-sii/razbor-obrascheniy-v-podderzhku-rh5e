@@ -1,0 +1,298 @@
+openapi: 3.1.1
+info:
+  title: Support Triage AI Proposal API
+  version: 0.2.0
+  license:
+    name: UNLICENSED course project
+    identifier: LicenseRef-Course-Project
+  description: >-
+    Контракт AI-сервиса Lab 2. Сервис только предлагает карточку для
+    проверки человеком и не содержит операций отправки ответа, назначения
+    исполнителя или изменения тикета. Формат соответствует OpenAPI 3.1.1:
+    https://spec.openapis.org/oas/v3.1.1.html
+servers:
+  - url: http://ai:8000
+    description: Внутренняя сеть Compose
+tags:
+  - name: system
+    description: Техническое состояние сервиса
+  - name: analysis
+    description: Подготовка AI-предложения для проверки оператором
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      tags: [system]
+      operationId: getHealth
+      summary: Проверить готовность AI API
+      responses:
+        '200':
+          description: Сервис принимает запросы
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v1/analyze:
+    post:
+      tags: [analysis]
+      operationId: analyzeTicket
+      summary: Подготовить предложение карточки для оператора
+      description: >-
+        Возвращает answer, clarify или escalate. Даже успешный ответ является
+        предложением и всегда требует human review.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalyzeRequest'
+            examples:
+              clarification:
+                value:
+                  request_id: req-20261001-001
+                  ticket_ref: ticket-003
+                  ticket_text: С меня списали оплату два раза за один месяц
+                  history: []
+                  kb_version: v1
+      responses:
+        '200':
+          description: Предложение карточки или безопасный ручной fallback
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '422':
+          $ref: '#/components/responses/UnprocessableContent'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+components:
+  responses:
+    Unauthorized:
+      description: Отсутствует или недействителен сервисный токен
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Некорректный JSON или отсутствует обязательное поле
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    PayloadTooLarge:
+      description: Запрос превышает разрешённый размер
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    UnprocessableContent:
+      description: JSON корректен, но значения не проходят ограничения контракта
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ServiceUnavailable:
+      description: Модель или утверждённая БЗ недоступна; вызывающая сторона использует ручной маршрут
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    HealthResponse:
+      type: object
+      additionalProperties: false
+      required: [status, service]
+      properties:
+        status:
+          type: string
+          const: ok
+        service:
+          type: string
+          const: ai
+    HistoryMessage:
+      type: object
+      additionalProperties: false
+      required: [speaker, text]
+      properties:
+        speaker:
+          type: string
+          enum: [customer, operator]
+        text:
+          type: string
+          minLength: 1
+          maxLength: 10000
+    AnalyzeRequest:
+      type: object
+      additionalProperties: false
+      required: [request_id, ticket_ref, ticket_text, history, kb_version]
+      properties:
+        request_id:
+          type: string
+          minLength: 1
+          maxLength: 100
+        ticket_ref:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: Непрозрачный локальный идентификатор; не содержит PII
+        ticket_text:
+          type: string
+          minLength: 1
+          maxLength: 10000
+        history:
+          type: array
+          maxItems: 50
+          items:
+            $ref: '#/components/schemas/HistoryMessage'
+        kb_version:
+          type: string
+          minLength: 1
+          maxLength: 100
+    Evidence:
+      type: object
+      additionalProperties: false
+      required: [source_id, version, title, excerpt]
+      properties:
+        source_id:
+          type: string
+          minLength: 1
+          maxLength: 200
+        version:
+          type: string
+          minLength: 1
+          maxLength: 100
+        title:
+          type: string
+          minLength: 1
+          maxLength: 500
+        excerpt:
+          type: string
+          minLength: 1
+          maxLength: 3000
+    AnalyzeResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - request_id
+        - status
+        - mode
+        - category
+        - urgency
+        - urgency_reason
+        - summary
+        - known_facts
+        - missing_data
+        - next_step
+        - evidence
+        - draft_reply
+        - needs_human_review
+        - warnings
+      properties:
+        request_id:
+          type: string
+        status:
+          type: string
+          enum: [proposed, not_analyzed]
+        mode:
+          type: string
+          enum: [answer, clarify, escalate]
+        category:
+          type: string
+          enum: [access, payment, settings, integrations, product_error, other]
+        urgency:
+          type: string
+          enum: [unassessed, low, medium, high, critical]
+        urgency_reason:
+          type: string
+          minLength: 1
+          maxLength: 1000
+        summary:
+          type: string
+          minLength: 1
+          maxLength: 2000
+        known_facts:
+          type: array
+          maxItems: 30
+          items:
+            type: string
+        missing_data:
+          type: array
+          maxItems: 30
+          items:
+            type: string
+        next_step:
+          type: string
+          minLength: 1
+          maxLength: 2000
+        evidence:
+          type: array
+          maxItems: 3
+          items:
+            $ref: '#/components/schemas/Evidence'
+        draft_reply:
+          type: [string, 'null']
+          maxLength: 4000
+        needs_human_review:
+          type: boolean
+          const: true
+        warnings:
+          type: array
+          maxItems: 20
+          items:
+            type: string
+      if:
+        properties:
+          mode:
+            const: answer
+        required: [mode]
+      then:
+        properties:
+          evidence:
+            minItems: 1
+          draft_reply:
+            type: string
+            minLength: 1
+      else:
+        if:
+          properties:
+            status:
+              const: not_analyzed
+          required: [status]
+        then:
+          properties:
+            mode:
+              const: escalate
+            draft_reply:
+              type: 'null'
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required: [error, message, retryable]
+      properties:
+        error:
+          type: string
+          enum:
+            - invalid_json
+            - invalid_input
+            - input_too_large
+            - unauthorized
+            - model_unavailable
+            - knowledge_base_unavailable
+        message:
+          type: string
+        retryable:
+          type: boolean
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: service-token
