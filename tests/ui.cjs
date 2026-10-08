@@ -1,0 +1,80 @@
+require('node:fs').mkdirSync(require('node:path').join(__dirname,'..','test-results'),{recursive:true});
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const http = require('node:http');
+const { chromium } = require('playwright');
+const root = path.resolve(__dirname, '..');
+const prototype = path.join(root, 'frontend', 'prototype');
+const files = { '/':'index.html', '/style.css':'style.css', '/app.js':'app.js' };
+const server = http.createServer((req,res)=>{
+  const file=files[req.url];
+  if(!file){res.writeHead(404);res.end();return;}
+  const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8'};
+  res.writeHead(200,{'Content-Type':types[path.extname(file)]});
+  res.end(fs.readFileSync(path.join(prototype,file)));
+});
+(async()=>{
+ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ let browser;
+ const errors=[], external=[];
+ try {
+  browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHANNEL?{channel:process.env.PLAYWRIGHT_CHANNEL}:{})});
+  const page=await browser.newPage({viewport:{width:1440,height:1050}});
+  page.on('pageerror',error=>errors.push(error.message));
+  page.on('request',req=>{if(!req.url().startsWith('http://127.0.0.1:'))external.push(req.url());});
+  await page.goto('http://127.0.0.1:'+server.address().port);
+  await page.locator('#title').waitFor();
+  for(let number=1;number<=4;number++){
+   await page.locator('[data-case="'+number+'"]').click();
+   await page.screenshot({path:path.join(prototype,number===1?'screen.png':'screen-uc0'+number+'.png'),fullPage:true});
+  }
+  await page.locator('[data-case="1"]').click();
+  await page.locator('.source').click();
+  assert.equal(await page.locator('#source-dialog').evaluate(el=>el.open),true);
+  await page.locator('#source-dialog button').click();
+  await page.locator('#prepare').click();
+  assert.equal(await page.locator('#confirm-dialog').evaluate(el=>el.open),true);
+  assert.equal(await page.locator('#audit li').count(),1,'Preparation must not perform an action');
+  await page.locator('button[value=cancel]').click();
+  assert.equal(await page.locator('#audit li').count(),1,'Cancellation must not perform an action');
+  await page.locator('#edit').click();
+  await page.locator('#reply').fill('Исправленный учебный ответ с основанием KB-DEMO-01 v2.');
+  await page.locator('#prepare').click();
+  assert.match(await page.locator('#feedback').innerText(),/причину/);
+  await page.locator('#reason').fill('Уточнена формулировка');
+  await page.locator('#prepare').click();
+  await page.locator('#confirm').click();
+  assert.equal(await page.locator('#review-status').innerText(),'Отправка смоделирована');
+  assert.equal(await page.locator('#audit li').count(),3);
+  assert.match(await page.locator('#audit li').first().innerText(),/Профиль/,'Original proposal survives editing');
+  assert.match(await page.locator('#audit li').last().innerText(),/Исправленный/);
+  await page.locator('[data-case="2"]').click();
+  await page.locator('#prepare').click();
+  await page.locator('#confirm').click();
+  assert.equal(await page.locator('#review-status').innerText(),'Отправка смоделирована');
+  await page.locator('[data-case="3"]').click();
+  await page.locator('#prepare').click();
+  assert.match(await page.locator('#feedback').innerText(),/очередь/);
+  await page.locator('#queue').selectOption('billing');
+  await page.locator('#prepare').click();
+  assert.equal(await page.locator('#audit li').count(),1);
+  await page.locator('#confirm').click();
+  assert.equal(await page.locator('#review-status').innerText(),'Передача смоделирована');
+  await page.locator('[data-case="4"]').click();
+  assert.equal(await page.locator('#prepare').isDisabled(),true);
+  await page.locator('#reject').click();
+  assert.match(await page.locator('#feedback').innerText(),/причину/);
+  await page.locator('#reason').fill('Версия источника не совпадает с историей');
+  await page.locator('#reject').click();
+  assert.equal(await page.locator('#review-status').innerText(),'Отклонено');
+  assert.equal(await page.locator('#audit li').count(),2,'Rejection adds no final sent text');
+  await page.setViewportSize({width:390,height:844});
+  await page.locator('[data-case="1"]').click();
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'No horizontal overflow on mobile');
+  await page.screenshot({path:path.join(prototype,'screen-mobile.png'),fullPage:true});
+  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+  fs.writeFileSync(path.join(root,'test-results','ui-check.json'),JSON.stringify({date:'2026-10-08',browser:await browser.version(),viewport:[1440,1050],mobile:[390,844],cases:4,checks:['explicit confirmation','cancel has no action','edit reason required','original and final versions separated','queue required','reject reason required','unapproved source blocked','mobile overflow absent','no external requests','no browser errors'],result:'PASS'},null,2)+'\n');
+  console.log('UI CHECK PASSED: UC-01–04, confirmation, editing, rejection, mobile; five screenshots saved.');
+ } finally {if(browser)await browser.close();server.close();}
+})().catch(error=>{console.error(error.message);process.exitCode=1;});

@@ -1,0 +1,14 @@
+{
+  "name": "support-triage-delivery-lab02",
+  "private": true,
+  "scripts": {
+    "architecture:check": "aact check",
+    "ui:test": "node tests/ui.cjs",
+    "architecture:test": "node tests/architecture.cjs"
+  },
+  "devDependencies": {
+    "aact": "3.0.0-beta.29",
+    "playwright": "1.62.1"
+  },
+  "engines": {"node": ">=22"}
+}
