@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-09",
+  "data_scope": "draft_synthetic",
+  "models": {
+    "sol": "openai/gpt-5.6-sol",
+    "mistral_free": "ministral-14b-2512"
+  },
+  "endpoints": {
+    "sol": "https://apimira.com/v1",
+    "mistral_free": "https://api.mistral.ai/v1"
+  },
+  "case_ids": [
+    "UC01-03",
+    "UC02-07",
+    "UC03-09",
+    "UC01-01",
+    "UC03-05",
+    "UC02-04",
+    "UC03-03",
+    "UC01-10",
+    "UC02-01",
+    "UC01-07"
+  ],
+  "max_output_tokens": 1000,
+  "sol_reasoning_effort": "low",
+  "client_timeout_seconds": [
+    10,
+    55
+  ],
+  "retry_count": 0,
+  "format": "forced propose_card; no function execution; full schema and provenance gate",
+  "prices_usd_per_1m_tokens": {
+    "sol": {
+      "input": 0.68,
+      "cached": 0.0756,
+      "output": 3.98
+    },
+    "mistral_free": {
+      "input": 0.2,
+      "cached": 0.02,
+      "output": 0.2
+    }
+  },
+  "price_sources": {
+    "sol": "https://apimira.com/v1/account/pricing",
+    "mistral_free": "https://docs.mistral.ai/inference/pricing"
+  },
+  "call_time_configuration": "https://github.com/Maxim-vstu/siiski_volchkova_shared_repository/tree/999b6669d2c2be72bff3c60d6cb03f9ded29235d/docs/ai-engineer/lab02-ai-005-sol-mistral-comparison/evidence",
+  "frozen_input_sha256": {
+    "api/openapi.yaml": {
+      "call_time_sha256": "b5da3c41ee6384b88e9c7afe51fecb236a4a01aaae54ca2588e2eac2c86fe103",
+      "git_lf_sha256": "88577d4b05c0ed514f705a9e834ab68357044e95772462b0740944d0ceb0c967"
+    },
+    "fixtures/cases.jsonl": {
+      "call_time_sha256": "67bf520a39a1d7ea452c0cebefac41edfa81d38a7ef241ce0d4c4d9f355c57f9",
+      "git_lf_sha256": "4575c8518a3fa37743b84f358d23cc18b623fc2ed40b6e649ee8528277a8a830"
+    },
+    "fixtures/kb.jsonl": {
+      "call_time_sha256": "030a000de2072a0e65665a43b5b33f61e759973ee09773d3da8111deca315449",
+      "git_lf_sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1"
+    },
+    "experiments/system-prompt.txt": {
+      "call_time_sha256": "ea6d4b27d9a6937037bf20c883c6b2bde84ca38c39c5d39a4077c5f8a0026e81",
+      "git_lf_sha256": "ea6d4b27d9a6937037bf20c883c6b2bde84ca38c39c5d39a4077c5f8a0026e81"
+    }
+  }
+}
