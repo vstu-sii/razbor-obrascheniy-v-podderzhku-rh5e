@@ -1,45 +1,47 @@
 @startuml
-title AI-пайплайн: предложение карточки под контролем оператора
-
-actor "Оператор" as Operator
-participant "UI / Backend" as Backend
-participant "AI API" as AI
-participant "Утверждённая БЗ" as KB
-participant "LLM" as LLM
-participant "Schema validator\n+ policy gate" as Gate
-participant "Helpdesk" as Helpdesk
-
-Operator -> Backend: открыть тикет и запустить разбор
-Backend -> Backend: права, размер, обезличивание
-Backend -> AI: POST /v1/analyze
-AI -> KB: поиск approved-фрагментов\nпо kb_version, max 3
-KB --> AI: source_id, version, title, excerpt
-AI -> LLM: инструкция + JSON Schema\n+ тикет + история + evidence
-LLM --> AI: структурированное предложение
-AI -> Gate: схема, enum, evidence, safety
-
-alt результат валиден и разрешён
-  Gate --> AI: proposed
-else невалидный результат, первый раз
-  Gate --> AI: retry once
-  AI -> LLM: тот же безопасный контекст
-  LLM --> AI: исправленное предложение
-  AI -> Gate: повторная проверка
-else повторная ошибка / timeout / нет БЗ
-  Gate --> AI: not_analyzed + escalate
-end
-
-AI --> Backend: предложение + evidence + warnings
-Backend --> Operator: исходник и карточка
-Operator -> Backend: принять / исправить / отклонить
-
-opt только явное подтверждение оператора
-  Backend -> Helpdesk: отправить ответ или передать тикет
-end
-
-note over AI,LLM
-  Нет инструментов отправки,
-  назначения и записи в helpdesk
-end note
-
+!theme plain
+skinparam shadowing false
+title LAB02: Sol / Mistral, independent validation and human review
+start
+partition Backend {
+ :Authorize operator and ticket;
+ :Redact secrets; validate schema / 64 KiB;
+}
+partition "AI API / model adapter" {
+ :Approved exact KB version;
+ :BM25 full corpus; top-3 snapshots;
+ :Check context, shared money and deadline;
+ if (Budget and provider available?) then (yes)
+  :Sol via ApiMira OR Mistral direct;
+  :Forced propose_card arguments;
+  note right
+   Data format only; no action tools.
+   Same prompt, context and schema.
+   Secrets never enter model context.
+  end note
+  :Parse one tool call;
+  :Full schema + request ID + source provenance;
+  if (Valid and within deadline?) then (yes)
+   :Return proposed card;
+  else (no)
+   :Return not_analyzed / escalate;
+  endif
+ else (no)
+  :HTTP 503 or budget manual fallback;
+ endif
+ note right
+  Authentic citation does not prove meaning.
+  Metadata-only production logs.
+ end note
+}
+partition "Backend / operator UI" {
+ :Save proposal and immutable source snapshots;
+ :Human verifies facts, policy and draft;
+ if (Explicit approval and permissions?) then (yes)
+  :Helpdesk adapter performs approved action;
+ else (no)
+  :Edit / reject; preserve separate review;
+ endif
+}
+stop
 @enduml

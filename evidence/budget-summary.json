@@ -1,0 +1,10 @@
+{
+  "currency": "USD",
+  "rub_per_usd_assumption": 100,
+  "authorized_total_rub": 20,
+  "prior_cost_and_setup_reserve_usd": 0.116007,
+  "current_selected_attempts_upper_usd": 0.044485,
+  "current_availability_checks_upper_usd": 0.016759,
+  "total_upper_usd": 0.177251,
+  "scope": "All selected baseline rows retained; availability checks budget-only; no generation during packaging"
+}

@@ -1,31 +1,30 @@
 openapi: 3.1.1
 info:
   title: Support Triage AI Proposal API
-  version: 0.2.0
+  version: 0.2.1-design
   license:
     name: UNLICENSED course project
     identifier: LicenseRef-Course-Project
-  description: >-
-    Контракт AI-сервиса Lab 2. Сервис только предлагает карточку для
-    проверки человеком и не содержит операций отправки ответа, назначения
-    исполнителя или изменения тикета. Формат соответствует OpenAPI 3.1.1:
-    https://spec.openapis.org/oas/v3.1.1.html
+  description: 'Контракт AI-сервиса Lab 2. Сервис только предлагает карточку для проверки
+    человеком и не содержит операций отправки ответа, назначения исполнителя или изменения
+    тикета. Формат соответствует OpenAPI 3.1.1: https://spec.openapis.org/oas/v3.1.1.html'
 servers:
-  - url: http://ai:8000
-    description: Внутренняя сеть Compose
+- url: http://ai:8000
+  description: Внутренняя сеть Compose
 tags:
-  - name: system
-    description: Техническое состояние сервиса
-  - name: analysis
-    description: Подготовка AI-предложения для проверки оператором
+- name: system
+  description: Техническое состояние сервиса
+- name: analysis
+  description: Подготовка AI-предложения для проверки оператором
 security:
-  - bearerAuth: []
+- bearerAuth: []
 paths:
   /health:
     get:
-      tags: [system]
+      tags:
+      - system
       operationId: getHealth
-      summary: Проверить готовность AI API
+      summary: Process liveness; not model or KB readiness
       responses:
         '200':
           description: Сервис принимает запросы
@@ -33,16 +32,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HealthResponse'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+      security: []
   /v1/analyze:
     post:
-      tags: [analysis]
+      tags:
+      - analysis
       operationId: analyzeTicket
       summary: Подготовить предложение карточки для оператора
-      description: >-
-        Возвращает answer, clarify или escalate. Даже успешный ответ является
-        предложением и всегда требует human review.
+      description: 'Returns a proposal for human review. Maximum request body: 65536
+        UTF-8 bytes. request_id is correlation, not idempotency. At most two model
+        calls in a shared 55-second deadline. Retries may incur additional cost.'
       requestBody:
         required: true
         content:
@@ -64,6 +63,81 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnalyzeResponse'
+              examples:
+                answer:
+                  value:
+                    request_id: req-example
+                    status: proposed
+                    mode: answer
+                    category: access
+                    urgency: low
+                    urgency_reason: Нет признаков массового сбоя
+                    summary: Клиент спрашивает о настройке 2FA
+                    known_facts:
+                    - Запрошен путь к включению 2FA
+                    missing_data: []
+                    next_step: Оператор проверяет источник и текст
+                    evidence:
+                    - source_id: KB-2FA-v1
+                      version: v1
+                      title: Настройка 2FA
+                      excerpt: В настройках безопасности оператор показывает путь
+                        к включению 2FA; код восстановления хранит сам пользователь.
+                    draft_reply: Откройте настройки безопасности для включения 2FA.
+                    needs_human_review: true
+                    warnings: []
+                clarify:
+                  value:
+                    request_id: req-example
+                    status: proposed
+                    mode: clarify
+                    category: access
+                    urgency: low
+                    urgency_reason: Нет признаков массового сбоя
+                    summary: Клиент спрашивает о настройке 2FA
+                    known_facts:
+                    - Запрошен путь к включению 2FA
+                    missing_data:
+                    - Error code
+                    next_step: Оператор проверяет источник и текст
+                    evidence: []
+                    draft_reply: Which error code is displayed?
+                    needs_human_review: true
+                    warnings: []
+                escalate:
+                  value:
+                    request_id: req-example
+                    status: proposed
+                    mode: escalate
+                    category: access
+                    urgency: low
+                    urgency_reason: Нет признаков массового сбоя
+                    summary: Клиент спрашивает о настройке 2FA
+                    known_facts:
+                    - Запрошен путь к включению 2FA
+                    missing_data: []
+                    next_step: Operator verifies permissions and selects specialist
+                    evidence: []
+                    draft_reply: null
+                    needs_human_review: true
+                    warnings: []
+                manualFallback:
+                  value:
+                    request_id: req-example
+                    status: not_analyzed
+                    mode: escalate
+                    category: other
+                    urgency: unassessed
+                    urgency_reason: Analysis unavailable
+                    summary: Manual review required
+                    known_facts: []
+                    missing_data: []
+                    next_step: Operator verifies permissions and selects specialist
+                    evidence: []
+                    draft_reply: null
+                    needs_human_review: true
+                    warnings:
+                    - model_unavailable
         '400':
           $ref: '#/components/responses/BadRequest'
         '401':
@@ -83,7 +157,7 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     BadRequest:
-      description: Некорректный JSON или отсутствует обязательное поле
+      description: Malformed JSON syntax
       content:
         application/json:
           schema:
@@ -101,7 +175,8 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     ServiceUnavailable:
-      description: Модель или утверждённая БЗ недоступна; вызывающая сторона использует ручной маршрут
+      description: Модель или утверждённая БЗ недоступна; вызывающая сторона использует
+        ручной маршрут
       content:
         application/json:
           schema:
@@ -110,7 +185,9 @@ components:
     HealthResponse:
       type: object
       additionalProperties: false
-      required: [status, service]
+      required:
+      - status
+      - service
       properties:
         status:
           type: string
@@ -121,11 +198,15 @@ components:
     HistoryMessage:
       type: object
       additionalProperties: false
-      required: [speaker, text]
+      required:
+      - speaker
+      - text
       properties:
         speaker:
           type: string
-          enum: [customer, operator]
+          enum:
+          - customer
+          - operator
         text:
           type: string
           minLength: 1
@@ -133,7 +214,12 @@ components:
     AnalyzeRequest:
       type: object
       additionalProperties: false
-      required: [request_id, ticket_ref, ticket_text, history, kb_version]
+      required:
+      - request_id
+      - ticket_ref
+      - ticket_text
+      - history
+      - kb_version
       properties:
         request_id:
           type: string
@@ -160,7 +246,11 @@ components:
     Evidence:
       type: object
       additionalProperties: false
-      required: [source_id, version, title, excerpt]
+      required:
+      - source_id
+      - version
+      - title
+      - excerpt
       properties:
         source_id:
           type: string
@@ -182,35 +272,53 @@ components:
       type: object
       additionalProperties: false
       required:
-        - request_id
-        - status
-        - mode
-        - category
-        - urgency
-        - urgency_reason
-        - summary
-        - known_facts
-        - missing_data
-        - next_step
-        - evidence
-        - draft_reply
-        - needs_human_review
-        - warnings
+      - request_id
+      - status
+      - mode
+      - category
+      - urgency
+      - urgency_reason
+      - summary
+      - known_facts
+      - missing_data
+      - next_step
+      - evidence
+      - draft_reply
+      - needs_human_review
+      - warnings
       properties:
         request_id:
           type: string
+          minLength: 1
+          maxLength: 100
         status:
           type: string
-          enum: [proposed, not_analyzed]
+          enum:
+          - proposed
+          - not_analyzed
         mode:
           type: string
-          enum: [answer, clarify, escalate]
+          enum:
+          - answer
+          - clarify
+          - escalate
         category:
           type: string
-          enum: [access, payment, settings, integrations, product_error, other]
+          enum:
+          - access
+          - payment
+          - settings
+          - integrations
+          - product_error
+          - other
         urgency:
           type: string
-          enum: [unassessed, low, medium, high, critical]
+          enum:
+          - unassessed
+          - low
+          - medium
+          - high
+          - critical
         urgency_reason:
           type: string
           minLength: 1
@@ -239,7 +347,9 @@ components:
           items:
             $ref: '#/components/schemas/Evidence'
         draft_reply:
-          type: [string, 'null']
+          type:
+          - string
+          - 'null'
           maxLength: 4000
         needs_human_review:
           type: boolean
@@ -249,44 +359,86 @@ components:
           maxItems: 20
           items:
             type: string
-      if:
-        properties:
-          mode:
-            const: answer
-        required: [mode]
-      then:
-        properties:
-          evidence:
-            minItems: 1
-          draft_reply:
-            type: string
-            minLength: 1
-      else:
-        if:
+      allOf:
+      - if:
+          properties:
+            mode:
+              const: answer
+          required:
+          - mode
+        then:
+          properties:
+            status:
+              const: proposed
+            evidence:
+              minItems: 1
+            draft_reply:
+              type: string
+              minLength: 1
+      - if:
+          properties:
+            mode:
+              const: clarify
+          required:
+          - mode
+        then:
+          properties:
+            status:
+              const: proposed
+            missing_data:
+              minItems: 1
+            draft_reply:
+              type: string
+              minLength: 1
+      - if:
+          properties:
+            mode:
+              const: escalate
+          required:
+          - mode
+        then:
+          properties:
+            draft_reply:
+              type: 'null'
+      - if:
           properties:
             status:
               const: not_analyzed
-          required: [status]
+          required:
+          - status
         then:
           properties:
             mode:
               const: escalate
+            category:
+              const: other
+            urgency:
+              const: unassessed
+            known_facts:
+              maxItems: 0
+            evidence:
+              maxItems: 0
+            warnings:
+              minItems: 1
             draft_reply:
               type: 'null'
     ErrorResponse:
       type: object
       additionalProperties: false
-      required: [error, message, retryable]
+      required:
+      - error
+      - message
+      - retryable
       properties:
         error:
           type: string
           enum:
-            - invalid_json
-            - invalid_input
-            - input_too_large
-            - unauthorized
-            - model_unavailable
-            - knowledge_base_unavailable
+          - invalid_json
+          - invalid_input
+          - input_too_large
+          - unauthorized
+          - model_unavailable
+          - knowledge_base_unavailable
         message:
           type: string
         retryable:
