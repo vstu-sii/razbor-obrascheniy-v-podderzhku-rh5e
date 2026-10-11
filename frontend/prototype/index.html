@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Triage · рабочее место оператора</title>
+<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="#">ST<span>Support Triage</span></a><span class="operator">Первая линия <b>Оператор Анна</b></span></header>
+<div class="demo">Учебный прототип · все обращения и источники синтетические · действия моделируются только на этой странице</div>
+<div class="workspace">
+<aside><p class="eyebrow">Сценарии проверки</p><nav aria-label="Сценарии">
+<button data-case="1" aria-current="true"><small>UC-01</small>Обоснованный ответ<span>Настройка доступа</span></button>
+<button data-case="2"><small>UC-02</small>Уточнение данных<span>Проблема с интеграцией</span></button>
+<button data-case="3"><small>UC-03</small>Передача специалисту<span>Сложный платёжный случай</span></button>
+<button data-case="4"><small>UC-04</small>Отклонение предложения<span>Непроверенный источник</span></button>
+</nav><div class="side-note"><span class="dot"></span> Решение принимает человек<p>Проверьте обращение и источники перед подтверждением.</p></div></aside>
+<main>
+<div class="titlebar"><div><p class="eyebrow" id="ticket-id"></p><h1 id="title"></h1></div><span class="badge" id="review-status">Ожидает проверки</span></div>
+<div class="columns">
+<section class="panel"><div class="panel-head"><h2>Обращение и контекст</h2><span class="tag">Исходник</span></div>
+<p class="eyebrow">Сообщение клиента</p><blockquote id="ticket-text"></blockquote>
+<h3>История обращения</h3><p id="history" class="secondary"></p>
+<h3>Собранные данные</h3><ul id="facts"></ul>
+<h3>Недостающие данные</h3><ul id="missing"></ul>
+<h3>Основания и источники</h3><div id="sources"></div>
+</section>
+<section class="panel proposal"><div class="panel-head"><h2>Предложение для проверки</h2><span class="tag blue">AI-карточка</span></div>
+<div class="metrics"><div><span>Категория</span><b id="category"></b></div><div><span>Срочность</span><b id="urgency"></b></div></div>
+<p id="urgency-reason" class="secondary"></p><div class="route"><span>Предлагаемый маршрут</span><strong id="mode"></strong></div>
+<h3>Краткая суть</h3><p id="summary"></p><h3>Следующий шаг</h3><p id="next-step"></p>
+<label for="reply" id="reply-label">Текст для проверки</label><textarea id="reply" rows="4" readonly></textarea>
+<div id="queue-field" hidden><label for="queue">Очередь специалиста</label><select id="queue"><option value="">Выберите очередь</option><option value="billing">Платежи / специалист</option><option value="technical">Техническая поддержка</option></select></div>
+<label for="reason">Причина правки или отклонения</label><input id="reason" placeholder="Укажите, что нужно исправить" maxlength="500">
+<p id="warning" class="warning" hidden></p>
+<div class="actions"><button id="prepare" class="primary">Проверить и подтвердить</button><button id="edit">Исправить текст</button><button id="reject" class="danger">Отклонить</button></div>
+<p id="feedback" role="status" aria-live="polite" class="feedback"></p>
+</section>
+</div>
+<section class="audit panel"><div class="panel-head"><h2>Журнал решений</h2><button id="reset" class="quiet">Начать сценарий заново</button></div><p class="secondary">Исходное предложение и решение оператора показаны отдельно. Журнал хранится до переключения сценария или перезагрузки.</p><ol id="audit"></ol></section>
+</main></div>
+<dialog id="confirm-dialog"><form method="dialog"><p class="eyebrow">Явное решение оператора</p><h2 id="confirm-title"></h2><p id="confirm-detail"></p><pre id="confirm-text"></pre><p class="secondary">Учебная симуляция: внешняя система не получает сообщения или назначение.</p><div class="actions"><button value="cancel">Вернуться к проверке</button><button id="confirm" type="button" class="primary">Подтвердить действие</button></div></form></dialog>
+<dialog id="source-dialog"><form method="dialog"><p class="eyebrow">Синтетическая база знаний</p><h2 id="source-title"></h2><p id="source-meta"></p><p id="source-text"></p><button>Закрыть источник</button></form></dialog>
+</body></html>

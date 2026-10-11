@@ -1,0 +1,32 @@
+require('node:fs').mkdirSync(require('node:path').join(__dirname,'..','test-results'),{recursive:true});
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const crypto=require('node:crypto');
+(async()=>{
+ const aact=await import('aact');
+ const root=path.resolve(__dirname,'..');
+ const source=path.join(root,'docs/architecture/container.puml');
+ const format=await aact.loadFormat('plantuml');
+ const {model,issues}=await format.load(source);
+ assert.deepEqual(issues,[]);
+ const elements=Object.values(model.elements);
+ assert.equal(elements.length,12);
+ assert.equal(elements.filter(el=>el.kind==='Container'||el.kind==='ContainerDb').length,9);
+ assert.equal(elements.reduce((n,el)=>n+el.relations.length,0),11);
+ const rules=[aact.aclRule,aact.acyclicRule,aact.crudRule,aact.dbPerServiceRule];
+ for(const rule of rules)assert.equal(rule.check(model).length,0);
+ // Negative controls prove checks fail on real forbidden dependencies.
+ const relation=to=>({to,description:'Negative control',tags:[]});
+ let bad=structuredClone(model);bad.elements.api.relations.push(relation('llm'));
+ assert.ok(aact.aclRule.check(bad).length>0);
+ bad=structuredClone(model);bad.elements.ai.relations.push(relation('api'));
+ assert.ok(aact.acyclicRule.check(bad).length>0);
+ bad=structuredClone(model);bad.elements.api.relations.push(relation('db'));
+ assert.ok(aact.crudRule.check(bad).length>0);
+ bad=structuredClone(model);bad.elements.kb.relations.push(relation('db'));
+ assert.ok(aact.dbPerServiceRule.check(bad).length>0);
+ const sha=crypto.createHash('sha256').update(fs.readFileSync(source,'utf8').replace(/\r\n/g,'\n')).digest('hex');
+ fs.writeFileSync(path.join(root,'test-results','architecture-check.json'),JSON.stringify({date:'2026-10-08',source:'docs/architecture/container.puml',normalizedSha256:sha,elements:12,containers:9,relations:11,configuredRules:4,violations:0,negativeControls:['direct external call','dependency cycle','direct database access','two database owners'],result:'PASS'},null,2)+'\n');
+ console.log('ARCHITECTURE CHECK PASSED: 9 containers, 11 relations, 0 violations; four negative controls detected.');
+})().catch(err=>{console.error(err.message);process.exitCode=1;});
