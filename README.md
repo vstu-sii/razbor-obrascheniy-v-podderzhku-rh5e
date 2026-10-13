@@ -1,101 +1,40 @@
-# AI Support Triage
+# AI Support Triage — LAB01 / Delivery
 
-AI-помощник для операторов первой линии русскоязычного B2B SaaS-сервиса.
+Помощник оператору первой линии русскоязычного B2B SaaS. В этой версии работает
+каркас FastAPI с безопасной заглушкой: модель и поиск по БЗ не подключены,
+ответ клиенту автоматически не отправляется. Заглушка возвращает
+`status=not_analyzed`, `mode=escalate`, `urgency=unassessed`,
+`needs_human_review=true`, пустые источники и `draft_reply=null`.
 
-Система анализирует текстовое обращение и готовит карточку с категорией, срочностью, summary, найденными источниками, заполненными полями, недостающими данными и следующим шагом. Финальный ответ подтверждает оператор.
+## Запуск из корня репозитория
 
-## Быстрый запуск
+Требуется Docker Compose. Создание `.env` необязательно: в Compose есть
+безопасные значения по умолчанию.
 
-Для стандартного запуска не требуется заранее создавать .env:
-
-~~~bash
+```powershell
 docker compose -f compose.dev.yml up --build
-~~~
+```
 
-Переменные из .env.example уже имеют безопасные значения по умолчанию в compose.dev.yml. Если нужен другой порт или провайдер, скопируйте .env.example в .env и измените значения.
+После запуска ожидаются `GET http://localhost:8000/`,
+`GET http://localhost:8000/health` и `POST http://localhost:8000/triage`.
 
-После запуска:
+```powershell
+Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 'application/json' -Body '{"message":"Не могу войти"}'
+```
 
-- hello-world: GET http://localhost:8000/;
-- health-check: GET http://localhost:8000/health;
-- triage-заглушка: POST http://localhost:8000/triage.
+## Файлы этой ветки
 
-Ожидаемый ответ hello-world:
+- `app/main.py` — HTTP API и явная передача обращения оператору.
+- `tests/test_api.py` — проверки hello-world, health и безопасного ответа заглушки.
+- `Dockerfile`, `requirements.txt`, `compose.dev.yml`, `.env.example` — сборка и окружение.
+- `.github/workflows/ci.yml` — lint, формат, pytest, проверка зависимостей и Docker build на PR; результат CI нужно смотреть на текущем коммите.
+- [docs/deploy.md](docs/deploy.md) — условия проверки публичной версии.
+- [data/sample/golden.jsonl](data/sample/golden.jsonl) — 10 синтетических черновиков Quality & Safety. Это примеры формата, а не утверждённый набор для измерения качества.
 
-~~~json
-{"message":"AI Support Triage is running"}
-~~~
+## Публичный адрес и ограничения
 
-## Структура репозитория
-
-~~~text
-.
-├── .github/
-│   ├── pull_request_template.md   # шаблон PR
-│   └── workflows/
-│       └── ci.yml                 # lint, format, tests и Docker build
-├── app/
-│   ├── __init__.py
-│   └── main.py                    # FastAPI и контракт triage
-├── data/
-│   └── sample/
-│       └── golden.jsonl           # первые 10 golden-примеров
-├── docs/
-│   ├── brief.md                   # итоговая картина продукта
-│   ├── deploy.md                  # запуск и публичный deploy
-│   ├── experiments/
-│   │   └── lab1.md                # план и результаты проб
-│   ├── glossary.md                # единый язык команды
-│   ├── hypotheses.md              # фальсифицируемые гипотезы
-│   ├── insights.md                # результаты интервью
-│   ├── model-candidates.md        # модели и токен-бюджет
-│   ├── presentation.md            # «Я понял проект как…»
-│   ├── prd.md                     # сегмент, боли, MVP и North Star
-│   ├── quality/
-│   │   ├── dod-draft.md
-│   │   ├── golden-dataset-plan.md
-│   │   ├── success-criteria.md
-│   │   ├── team-actions.md
-│   │   └── threat-model.md
-│   └── research.md                # research и ADR-001
-├── notebooks/
-│   └── lab1_prompt_experiments.ipynb
-├── tests/
-│   └── test_api.py
-├── .env.example                   # список переменных без секретов
-├── .gitignore
-├── compose.dev.yml                # dev-среда одной командой
-├── Dockerfile
-└── requirements.txt
-~~~
-
-Дерево выше соответствует фактической структуре проекта. При добавлении нового верхнеуровневого каталога README обновляется в том же PR.
-
-## CI
-
-Workflow .github/workflows/ci.yml запускается на каждом pull request и push в main. Он проверяет lint, формат, компиляцию, тесты, зависимости и сборку Docker-образа.
-
-Рабочие ветки Lab 1:
-
-- lab1-product-initiation;
-- lab1-ai-initiation;
-- lab1-delivery-initiation;
-- lab1-quality-initiation.
-
-Заголовок PR: Lab1: [Role] — Initiation Deliverables.
-
-## Публичный deploy
-
-Публичная точка входа: [https://lab1-sii-zxc.masikpupuna.chatgpt.site](https://lab1-sii-zxc.masikpupuna.chatgpt.site).
-
-После deploy адрес должен открываться вне локальной сети, а GET <PUBLIC_URL>/health должен возвращать HTTP 200 и {"status":"ok"}.
-
-Инструкция размещена в [docs/deploy.md](../../Downloads/SIIIIIIISKI/SIIIIIIISKI/SIIIIIIISKI/docs/deploy.md).
-
-## НУЖНО ДОБАВИТЬ КОМАНДЕ
-
-- Delivery: открыть PR и вставить сюда ссылку на успешный CI run и commit SHA.
-- Delivery: deploy выполнен; публичный HTTPS-адрес добавлен выше.
-- Delivery: заменить следующий badge адресом настоящего GitHub-репозитория.
-
-![CI](https://github.com/ORG/REPO/actions/workflows/ci.yml/badge.svg)
+Исторический адрес: https://lab1-sii-zxc.masikpupuna.chatgpt.site.
+Его доступность и соответствие текущему коду не подтверждены.
+Публичный deploy и полный запуск Compose должны быть проверены отдельно.
+Каркас не определяет категорию, не оценивает срочность, не создаёт ответ
+по БЗ и не выполняет действий в аккаунте клиента.

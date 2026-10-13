@@ -1,41 +1,13 @@
-# Deploy
+# Запуск и публикация — Lab 1 / Delivery
 
-## Локальная проверка
+## Локально
 
-Dev-среда поднимается одной командой:
+Из корня этой ветки выполните `docker compose -f compose.dev.yml up --build`. Файл `.env` не обязателен: в Compose заданы безопасные значения для заглушки. После запуска ожидаются `GET http://localhost:8000/` → `{"message":"AI Support Triage is running"}` и `GET http://localhost:8000/health` → HTTP 200 с `{"status":"ok"}`. `POST /triage` возвращает `not_analyzed` и передаёт решение оператору; он не вызывает модель и не отправляет клиенту ответ.
 
-~~~powershell
-docker compose -f compose.dev.yml up --build
-~~~
+## Публичная версия
 
-Файл .env не обязателен: compose.dev.yml содержит безопасные значения для stub-режима. Для переопределения настроек можно скопировать .env.example в .env.
+В прежней Delivery-ветке указан URL `https://lab1-sii-zxc.masikpupuna.chatgpt.site`. В этой переработке доступность URL и соответствие текущему коду **не подтверждены**. Адрес нельзя считать доказательством сдачи без отдельного запроса к `/health` и фиксации даты, HTTP-кода и commit SHA. Ссылка на успешный deploy/CI в старой ветке также не приложена.
 
-После запуска проверяются:
+Для завершения артефакта Delivery нужно опубликовать именно проверенную версию заглушки, вписать действующий URL в README, открыть его вне локальной сети и записать: дату, адрес, commit SHA, ответ `GET /health` (HTTP 200), ссылку на зелёный CI run. Секреты указывать только в настройках хостинга, не в `.env.example` или репозитории.
 
-- GET http://localhost:8000/ — hello-world;
-- GET http://localhost:8000/health — статус приложения;
-- POST http://localhost:8000/triage — контракт заглушки.
-
-Ожидаемый health-ответ: HTTP 200 и {"status":"ok"}.
-
-## Публичный deploy
-
-Приложение собирается из Dockerfile. На хостинге нужно создать web service, подключить репозиторий, выбрать Docker deployment и задать переменные окружения.
-
-Секреты задаются только в настройках хостинга. Реальный .env не коммитится.
-
-Публичный URL: https://lab1-sii-zxc.masikpupuna.chatgpt.site
-
-Проверки публичной версии:
-
-- `GET https://lab1-sii-zxc.masikpupuna.chatgpt.site/` — Hello World;
-- `GET https://lab1-sii-zxc.masikpupuna.chatgpt.site/health` — health-страница.
-
-## НУЖНО ДОБАВИТЬ КОМАНДЕ
-
-1. Выбрать хостинг и подключить репозиторий.
-2. Выполнить deploy с текущим Dockerfile.
-3. Открыть публичный URL вне локальной сети.
-4. Проверить GET <PUBLIC_URL>/health и сохранить HTTP 200.
-5. URL уже добавлен здесь и в README.
-6. Добавить ссылку на успешный deploy или скрин проверки в PR.
+Публикация этой версии не подтверждена.

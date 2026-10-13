@@ -1,32 +1,37 @@
-from typing import Any
+"""Lab 1 service skeleton. No model, retrieval, or outbound messaging is wired in."""
+
+from typing import Any, Literal
 
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 
 class TriageRequest(BaseModel):
-    message: str = Field(min_length=1)
+    message: str = Field(min_length=1, max_length=10000)
+    history: list[str] = Field(default_factory=list)
     customer_name: str | None = None
     account_id: str | None = None
     order_id: str | None = None
-    history: list[str] = Field(default_factory=list)
 
 
 class TriageResponse(BaseModel):
-    status: str
-    category: str
-    urgency: str
+    status: Literal["not_analyzed"]
+    mode: Literal["escalate"]
+    category: Literal["other"]
+    category_reason: str
+    urgency: Literal["unassessed"]
+    urgency_reason: str
     summary: str
     collected_data: dict[str, Any]
     missing_data: list[str]
     knowledge_base_sources: list[dict[str, str]]
     next_step: str
-    draft_reply: str
-    route: str
-    needs_human_review: bool
+    draft_reply: str | None
+    route: Literal["first_line_operator"]
+    needs_human_review: Literal[True]
 
 
-app = FastAPI(title="AI Support Triage", version="0.1.0")
+app = FastAPI(title="AI Support Triage — Lab 1 stub", version="0.2.0")
 
 
 @app.get("/")
@@ -40,23 +45,21 @@ def health() -> dict[str, str]:
 
 
 @app.post("/triage", response_model=TriageResponse)
-def triage(request: TriageRequest) -> TriageResponse:
-    """Lab 1 contract stub; real retrieval and LLM adapter arrive later."""
+def triage(_request: TriageRequest) -> TriageResponse:
+    """Return an explicit handoff; the stub must not pretend to analyze tickets."""
     return TriageResponse(
-        status="escalated_to_operator",
-        category="unclassified",
-        urgency="normal",
-        summary=request.message[:240],
-        collected_data={
-            "customer_name": request.customer_name,
-            "account_id": request.account_id,
-            "order_id": request.order_id,
-            "history_messages": len(request.history),
-        },
-        missing_data=["category confirmation", "relevant knowledge-base article"],
+        status="not_analyzed",
+        mode="escalate",
+        category="other",
+        category_reason="Категория не определялась: AI-пайплайн ещё не подключён.",
+        urgency="unassessed",
+        urgency_reason="Срочность не определялась: требуется оператор.",
+        summary="",
+        collected_data={},
+        missing_data=[],
         knowledge_base_sources=[],
-        next_step="Проверить обращение и выбрать маршрут вручную.",
-        draft_reply="Здравствуйте! Мы проверим обращение и вернёмся с ответом.",
+        next_step="Оператор вручную читает исходное обращение и выбирает безопасный маршрут.",
+        draft_reply=None,
         route="first_line_operator",
         needs_human_review=True,
     )
