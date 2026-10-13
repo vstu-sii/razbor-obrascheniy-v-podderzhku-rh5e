@@ -1,4 +1,4 @@
-# AI Support Triage — LAB01 / Delivery
+# AI Support Triage — LAB01
 
 Помощник оператору первой линии русскоязычного B2B SaaS. В этой версии работает
 каркас FastAPI с безопасной заглушкой: модель и поиск по БЗ не подключены,
@@ -22,7 +22,7 @@ docker compose -f compose.dev.yml up --build
 Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 'application/json' -Body '{"message":"Не могу войти"}'
 ```
 
-## Файлы этой ветки
+## Реализация — Delivery
 
 - `app/main.py` — HTTP API и явная передача обращения оператору.
 - `tests/test_api.py` — проверки hello-world, health и безопасного ответа заглушки.
@@ -38,3 +38,13 @@ Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 
 Публичный deploy и полный запуск Compose должны быть проверены отдельно.
 Каркас не определяет категорию, не оценивает срочность, не создаёт ответ
 по БЗ и не выполняет действий в аккаунте клиента.
+
+## Качество и безопасность — Quality & Safety
+
+- [Критерии успеха](docs/quality/success-criteria.md): метрики, предложенные пороги и правила измерения.
+- [План golden dataset](docs/quality/golden-dataset-plan.md): источники, покрытие, независимая разметка и разделение набора.
+- [Черновик DoD](docs/quality/dod-draft.md): условия готовности артефактов команды.
+- [Первые 10 примеров](data/sample/golden.jsonl): существующий файл с синтетическими черновиками; набором владеет Quality & Safety.
+
+Примеры ожидают независимой проверки; качество модели на них не измерялось.
+Условия DoD и пороги остаются предложениями до review команды.
