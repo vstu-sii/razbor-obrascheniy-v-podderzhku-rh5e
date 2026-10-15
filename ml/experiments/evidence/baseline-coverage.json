@@ -1,0 +1,353 @@
+{
+  "records": [
+    {
+      "case_id": "UC01-02",
+      "group_id": "UC01-02",
+      "request_id": "Q006-UC01-02",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-03",
+      "group_id": "UC01-03",
+      "request_id": "Q006-completion-UC01-03",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-04",
+      "group_id": "UC01-04",
+      "request_id": "Q006-UC01-04",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-05",
+      "group_id": "UC01-05",
+      "request_id": "Q006-completion-UC01-05",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-06",
+      "group_id": "UC01-06",
+      "request_id": "Q006-UC01-06",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-07",
+      "group_id": "UC01-07",
+      "request_id": "Q006-UC01-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-08",
+      "group_id": "UC01-08",
+      "request_id": "Q006-UC01-08",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC01-10",
+      "group_id": "UC01-10",
+      "request_id": "Q006-UC01-10",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-01",
+      "group_id": "UC02-01",
+      "request_id": "Q006-UC02-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-02",
+      "group_id": "UC02-02",
+      "request_id": "Q006-UC02-02",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-03",
+      "group_id": "UC02-03",
+      "request_id": "Q006-UC02-03",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-05",
+      "group_id": "UC02-05",
+      "request_id": "Q006-UC02-05",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-07",
+      "group_id": "UC02-07",
+      "request_id": "Q006-UC02-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-08",
+      "group_id": "UC02-08",
+      "request_id": "Q006-UC02-08",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-09",
+      "group_id": "UC02-09",
+      "request_id": "Q006-UC02-09",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC02-10",
+      "group_id": "UC02-10",
+      "request_id": "Q006-UC02-10",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-01",
+      "group_id": "UC03-01",
+      "request_id": "Q006-UC03-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-02",
+      "group_id": "UC03-02",
+      "request_id": "Q006-UC03-02",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-03",
+      "group_id": "UC03-03",
+      "request_id": "Q006-UC03-03",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-04",
+      "group_id": "UC03-04",
+      "request_id": "Q006-UC03-04",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-05",
+      "group_id": "UC03-05",
+      "request_id": "Q006-UC03-05",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-06",
+      "group_id": "UC03-06",
+      "request_id": "Q006-UC03-06",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-07",
+      "group_id": "UC03-07",
+      "request_id": "Q006-UC03-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-08",
+      "group_id": "UC03-08",
+      "request_id": "Q006-UC03-08",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-09",
+      "group_id": "UC03-09",
+      "request_id": "Q006-UC03-09",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC03-10",
+      "group_id": "UC03-10",
+      "request_id": "Q006-UC03-10",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-01",
+      "group_id": "UC04-01",
+      "request_id": "Q006-UC04-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-02",
+      "group_id": "UC04-02",
+      "request_id": "Q006-UC04-02",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-03",
+      "group_id": "UC04-03",
+      "request_id": "Q006-UC04-03",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-04",
+      "group_id": "UC04-04",
+      "request_id": "Q006-UC04-04",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-05",
+      "group_id": "UC04-05",
+      "request_id": "Q006-completion-UC04-05",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-06",
+      "group_id": "UC04-06",
+      "request_id": "Q006-UC04-06",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-07",
+      "group_id": "UC04-07",
+      "request_id": "Q006-UC04-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-08",
+      "group_id": "UC04-08",
+      "request_id": "Q006-UC04-08",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-09",
+      "group_id": "UC04-09",
+      "request_id": "Q006-UC04-09",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "UC04-10",
+      "group_id": "UC04-10",
+      "request_id": "Q006-UC04-10",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "REG-02",
+      "group_id": "UC01-03",
+      "request_id": "Q006-completion-UC01-03",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": true
+    },
+    {
+      "case_id": "REG-05",
+      "group_id": "UC01-10",
+      "request_id": "Q006-UC01-10",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": true
+    },
+    {
+      "case_id": "REG-06",
+      "group_id": "UC02-01",
+      "request_id": "Q006-UC02-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": true
+    },
+    {
+      "case_id": "REG-07",
+      "group_id": "UC01-07",
+      "request_id": "Q006-UC01-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": true
+    },
+    {
+      "case_id": "REG-08",
+      "group_id": "UC01-07",
+      "request_id": "Q006-UC01-07",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": true
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "group_id": "EDGE-LONG-01",
+      "request_id": "Q006-completion-EDGE-LONG-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "group_id": "EDGE-STALE-01",
+      "request_id": "Q006-EDGE-STALE-01",
+      "http_status": 200,
+      "input_and_gold_equality_checked": true,
+      "shared_input_reuse": false
+    }
+  ],
+  "covered": 43,
+  "total": 43,
+  "distinct_inputs": 38,
+  "duplicate_records": 5,
+  "missing": []
+}

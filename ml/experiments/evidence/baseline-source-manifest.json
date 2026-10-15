@@ -1,0 +1,14 @@
+{
+  "source_scope": "New LAB03 Mistral baseline, current reviewed golden dataset, not LAB02 replay",
+  "model": "ministral-14b-2512",
+  "prompt_sha256": "536ceece56cda97aaf96ef2767d720e205fe32089d6c95336a84e8652384ce7d",
+  "dataset_sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+  "kb_sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+  "original_run_sha256": "534f7e120528ba8a636099a1b1771f9a592f0a1bba89c9da8af52ebccbfd3387",
+  "completion_attempts_sha256": "62fe54b80fa79b6833b3e3f1ac551a1e06dc5a9d3e0fef0bf170f47ae4dc6591",
+  "baseline_responses_sha256": "e225283139878a579f482203c842753d459c44a6d0c9c4375458be8c32e5a9fe",
+  "independent_responses_sha256": "337b7ee01b1d4e671d175922594da10eb17c74d1531fdbd83bdcc024abd432a8",
+  "free_account_basis": "participant-confirmed Mistral Free; no ApiMira or paid fallback",
+  "baseline_is_standalone": true,
+  "deployed_team_application_verified": false
+}
