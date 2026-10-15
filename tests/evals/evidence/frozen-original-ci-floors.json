@@ -1,0 +1,4 @@
+{
+  "sol": {"n": 10, "schema_valid": 0.7, "mode_correct": 0.5, "category_correct": 0.5},
+  "mistral_free": {"n": 10, "schema_valid": 0.4, "mode_correct": 0.8, "category_correct": 0.8}
+}

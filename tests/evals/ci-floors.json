@@ -1,0 +1,18 @@
+{
+  "mistral_free": {
+    "n": 8,
+    "http_ok": 1.0,
+    "schema_valid": 0.5,
+    "gate_passed": 0.5,
+    "mode_correct": 0.875,
+    "category_correct": 1.0
+  },
+  "sol": {
+    "n": 8,
+    "http_ok": 0.625,
+    "schema_valid": 0.625,
+    "gate_passed": 0.625,
+    "mode_correct": 0.5,
+    "category_correct": 0.625
+  }
+}

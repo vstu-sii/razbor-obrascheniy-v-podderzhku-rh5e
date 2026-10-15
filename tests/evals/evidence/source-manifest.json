@@ -1,0 +1,16 @@
+{
+  "source_commit": "03b160ea5b1fcbef10eed4e61f4297f4389f76d5",
+  "source_task": "docs/roles-work/ai-engineer/lab02-ai-006-submission-review",
+  "source_scope": "LAB02 live API outputs from 2026-10-09, replayed for LAB03; NOT a new baseline run",
+  "hashing_policy": "SHA-256 of UTF-8 text with LF line endings",
+  "source_sha256": {
+    "fixtures/cases.jsonl": "4575c8518a3fa37743b84f358d23cc18b623fc2ed40b6e649ee8528277a8a830",
+    "fixtures/kb.jsonl": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+    "evidence/results.jsonl": "78f5ed08776f5b19855834605a9e167818c8fe43fd90fda8210506bcce3f3d27",
+    "api/openapi.yaml": "88577d4b05c0ed514f705a9e834ab68357044e95772462b0740944d0ceb0c967"
+  },
+  "core_count": 40,
+  "live_failure_candidates": 8,
+  "edge_candidates": 2,
+  "total_count": 50
+}

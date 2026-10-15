@@ -1,0 +1,11 @@
+{
+  "first_pass_attempts": 42,
+  "connection_failures_in_first_pass": 21,
+  "recovery_distinct_cases": 21,
+  "recovery_attempts_total": 26,
+  "final_http_200": 42,
+  "all_inputs_received_model_response": true,
+  "tls_verification_disabled": false,
+  "model_http_retries": 0,
+  "connection_retry_policy": "first recovery used 2, subsequent recovery uses 5 pre-HTTP connection retries"
+}

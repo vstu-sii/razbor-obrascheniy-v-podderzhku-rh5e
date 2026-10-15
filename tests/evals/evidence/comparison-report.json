@@ -1,0 +1,369 @@
+{
+  "original_full_sample_metrics": {
+    "free_api": {
+      "n": 42,
+      "by_uc": {
+        "UC-01": 10,
+        "UC-02": 11,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 42,
+        "denominator": 42,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 12,
+        "denominator": 42,
+        "value": 0.2857142857142857
+      },
+      "gate_passed": {
+        "numerator": 12,
+        "denominator": 42,
+        "value": 0.2857142857142857
+      },
+      "mode_correct": {
+        "numerator": 29,
+        "denominator": 42,
+        "value": 0.6904761904761905
+      },
+      "category_correct": {
+        "numerator": 29,
+        "denominator": 42,
+        "value": 0.6904761904761905
+      },
+      "http_ok": {
+        "numerator": 42,
+        "denominator": 42,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.6781394774815827
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 29,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "retrieval_recall_at_3": {
+        "n_positive": 13,
+        "value": 1.0
+      },
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 42,
+        "p50_ms": 4412.159,
+        "empirical_p95_ms": 5655.681,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 42,
+        "sum_observed_total": 49312
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC01-01",
+        "UC01-02",
+        "UC01-03",
+        "UC01-04",
+        "UC01-06",
+        "UC01-09",
+        "UC02-01",
+        "UC02-02",
+        "UC02-03",
+        "UC02-04",
+        "UC02-05",
+        "UC02-06",
+        "UC02-07",
+        "UC02-08",
+        "UC02-09",
+        "UC02-10",
+        "UC03-01",
+        "UC03-02",
+        "UC03-04",
+        "UC03-05",
+        "UC03-06",
+        "UC03-08",
+        "UC03-10",
+        "UC04-01",
+        "UC04-02",
+        "UC04-03",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "UC04-07",
+        "UC04-08",
+        "UC04-09",
+        "UC04-10",
+        "EDGE-LONG-01",
+        "EDGE-STALE-01"
+      ]
+    }
+  },
+  "retained_inputs_original_labels": {
+    "free_api": {
+      "n": 38,
+      "by_uc": {
+        "UC-01": 8,
+        "UC-02": 9,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "gate_passed": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "mode_correct": {
+        "numerator": 25,
+        "denominator": 38,
+        "value": 0.6578947368421053
+      },
+      "category_correct": {
+        "numerator": 29,
+        "denominator": 38,
+        "value": 0.7631578947368421
+      },
+      "http_ok": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.7417217285638338
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 27,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "retrieval_recall_at_3": {
+        "n_positive": 11,
+        "value": 1.0
+      },
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 38,
+        "p50_ms": 4347.9475,
+        "empirical_p95_ms": 5655.681,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 38,
+        "sum_observed_total": 44556
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC01-02",
+        "UC01-03",
+        "UC01-04",
+        "UC01-06",
+        "UC02-01",
+        "UC02-02",
+        "UC02-03",
+        "UC02-05",
+        "UC02-07",
+        "UC02-08",
+        "UC02-09",
+        "UC02-10",
+        "UC03-01",
+        "UC03-02",
+        "UC03-04",
+        "UC03-05",
+        "UC03-06",
+        "UC03-08",
+        "UC03-10",
+        "UC04-01",
+        "UC04-02",
+        "UC04-03",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "UC04-07",
+        "UC04-08",
+        "UC04-09",
+        "UC04-10",
+        "EDGE-LONG-01",
+        "EDGE-STALE-01"
+      ]
+    }
+  },
+  "retained_inputs_reviewed_labels": {
+    "free_api": {
+      "n": 38,
+      "by_uc": {
+        "UC-01": 8,
+        "UC-02": 9,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "gate_passed": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "mode_correct": {
+        "numerator": 26,
+        "denominator": 38,
+        "value": 0.6842105263157895
+      },
+      "category_correct": {
+        "numerator": 29,
+        "denominator": 38,
+        "value": 0.7631578947368421
+      },
+      "http_ok": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.7417217285638338
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 38,
+        "p50_ms": 4347.9475,
+        "empirical_p95_ms": 5655.681,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 38,
+        "sum_observed_total": 44556
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC01-02",
+        "UC01-03",
+        "UC01-04",
+        "UC01-06",
+        "UC02-01",
+        "UC02-02",
+        "UC02-03",
+        "UC02-05",
+        "UC02-07",
+        "UC02-08",
+        "UC02-09",
+        "UC02-10",
+        "UC03-01",
+        "UC03-02",
+        "UC03-04",
+        "UC03-05",
+        "UC03-06",
+        "UC03-08",
+        "UC03-10",
+        "UC04-01",
+        "UC04-02",
+        "UC04-03",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "UC04-07",
+        "UC04-08",
+        "UC04-09",
+        "UC04-10",
+        "EDGE-LONG-01",
+        "EDGE-STALE-01"
+      ],
+      "provided_context_recall_at_3": {
+        "n_positive": 11,
+        "value": 1.0
+      }
+    }
+  },
+  "note": "42 vs 38 inputs are different samples. Compare label changes only on the same 38 retained inputs; no model improvement or fresh API run is claimed.",
+  "excluded_by": "participant_instruction_after_gold_review",
+  "new_api_calls": 0
+}

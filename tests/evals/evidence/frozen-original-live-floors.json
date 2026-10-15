@@ -1,0 +1,10 @@
+{
+  "free_api": {
+    "n": 12,
+    "http_ok": 1.0,
+    "schema_valid": 0.5833333333333334,
+    "gate_passed": 0.5833333333333334,
+    "mode_correct": 0.9166666666666666,
+    "category_correct": 0.6666666666666666
+  }
+}
