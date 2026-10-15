@@ -1,50 +1,72 @@
-# AI Support Triage — LAB01
+# LAB03 / Delivery — промежуточный прототип
 
-Помощник оператору первой линии русскоязычного B2B SaaS. В этой версии работает
-каркас FastAPI с безопасной заглушкой: модель и поиск по БЗ не подключены,
-ответ клиенту автоматически не отправляется. Заглушка возвращает
-`status=not_analyzed`, `mode=escalate`, `urgency=unassessed`,
-`needs_human_review=true`, пустые источники и `draft_reply=null`.
+Снимок текущей работы от 15.10.2026. **Лабораторная ещё не завершена.**
+Основание: [задание LAB03](https://sii.sergeivolchkov.ru/labs/lab3).
+Доработки намеренно отложены по просьбе участника.
 
-## Запуск из корня репозитория
+## Что находится в ветке
 
-Требуется Docker Compose. Создание `.env` необязательно: в Compose есть
-безопасные значения по умолчанию.
+- `frontend/`, `backend/`: UI вызывает API, результаты и решения сохраняются.
+- `backend/models/`, `migrations/`: SQLite, миграции 001/002, сохранённый контекст,
+  отдельный review, подтверждение и очередь эскалации.
+- `compose.yml`, `Dockerfile`, `.env.example`: запускаемый общий прототип.
+- [Отчёт агентной разработки](docs/agent-workflow.md).
+- `ml/`, `backend/contracts/`, `data/kb.jsonl`: необходимые зависимости
+  текущего baseline. Это синтетический корпус, не утверждённая производственная БЗ.
+- `tests/test_delivery.py`, `tests/ui.cjs`: проверки; реальные скриншоты в `frontend/screenshots/`.
+
+## Запуск из корня этой ветки
+
+Docker Desktop / Linux Engine. В PowerShell:
 
 ```powershell
-docker compose -f compose.dev.yml up --build
+Copy-Item .env.example .env
 ```
 
-После запуска ожидаются `GET http://localhost:8000/`,
-`GET http://localhost:8000/health` и `POST http://localhost:8000/triage`.
+Задайте в `.env` собственный `DEMO_OPERATOR_TOKEN` — код доступа для интерфейса.
+Не добавляйте `.env` в Git. Затем:
 
 ```powershell
-Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 'application/json' -Body '{"message":"Не могу войти"}'
+docker compose --env-file .env -f compose.yml up --build -d --wait
 ```
 
-## Реализация — Delivery
+Откройте http://localhost:8000, введите код оператора и обращение.
+При занятом порте задайте PORT в `.env`, например 18084.
+Проверьте источник, укажите причину, выберите решение и подтвердите его.
+Для эскалации сначала выберите очередь. Решения видны после перезапуска.
+Внешних отправок клиентам нет. Используйте только синтетические данные.
 
-- `app/main.py` — HTTP API и явная передача обращения оператору.
-- `tests/test_api.py` — проверки hello-world, health и безопасного ответа заглушки.
-- `Dockerfile`, `requirements.txt`, `compose.dev.yml`, `.env.example` — сборка и окружение.
-- `.github/workflows/ci.yml` — lint, формат, pytest, проверка зависимостей и Docker build на PR; результат CI нужно смотреть на текущем коммите.
-- [docs/deploy.md](docs/deploy.md) — условия проверки публичной версии.
-- [data/sample/golden.jsonl](data/sample/golden.jsonl) — 10 синтетических черновиков Quality & Safety. Это примеры формата, а не утверждённый набор для измерения качества.
+```powershell
+docker compose --env-file .env -f compose.yml down
+```
 
-## Публичный адрес и ограничения
+Тома сохраняются. SQL применяется один раз по версиям; версия 002 обновляет
+старую БД без удаления строк. Самостоятельно удалять volume для обновления не нужно.
 
-Исторический адрес: https://lab1-sii-zxc.masikpupuna.chatgpt.site.
-Его доступность и соответствие текущему коду не подтверждены.
-Публичный deploy и полный запуск Compose должны быть проверены отдельно.
-Каркас не определяет категорию, не оценивает срочность, не создаёт ответ
-по БЗ и не выполняет действий в аккаунте клиента.
+## Проверки
 
-## Качество и безопасность — Quality & Safety
+```powershell
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -p test_delivery.py -v
+npm ci --ignore-scripts
+$env:DEMO_OPERATOR_TOKEN='ваш-код-из-env'
+$env:AUDIT_URL='http://127.0.0.1:8000'
+npm run test:ui
+```
 
-- [Критерии успеха](docs/quality/success-criteria.md): метрики, предложенные пороги и правила измерения.
-- [План golden dataset](docs/quality/golden-dataset-plan.md): источники, покрытие, независимая разметка и разделение набора.
-- [Черновик DoD](docs/quality/dod-draft.md): условия готовности артефактов команды.
-- [Первые 10 примеров](data/sample/golden.jsonl): существующий файл с синтетическими черновиками; набором владеет Quality & Safety.
+UI-тест использует установленный Edge через Playwright. Он создаёт синтетические
+карточки и reviews. Данные нужны для теста и не отправляются клиентам.
 
-Примеры ожидают независимой проверки; качество модели на них не измерялось.
-Условия DoD и пороги остаются предложениями до review команды.
+## Что ещё не выполнено
+
+1. Публичный деплой: подтверждённого прод-URL нет.
+2. Живая LLM и проверка prompts/responses в Langfuse dashboard не подтверждены.
+   По умолчанию `BASELINE_MODE=extractive` — BM25 и извлечение статьи, не генеративная LLM.
+   Параметры будущего подключения перечислены в `.env.example` и `ml/tracing/README.md`.
+3. SQLite/JSON и файловая БЗ упрощают схему PostgreSQL из LAB02.
+   Полный перенос нормализованной схемы и командное согласование остаются впереди.
+4. Независимый walkthrough и итоговая приёмка не выполнены.
+
+GitHub-ветка предназначена для просмотра текущей работы и не доказывает сдачу
+всех требований. PR не создан. Прежние файлы LAB01 в ветке сохранены;
+точка запуска LAB03 — `compose.yml`, а не прежний `compose.dev.yml`.

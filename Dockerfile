@@ -1,6 +1,14 @@
 FROM python:3.12-slim
 WORKDIR /app
-COPY requirements.txt .
+COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-COPY app ./app
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY backend ./backend
+COPY frontend ./frontend
+COPY ml ./ml
+COPY migrations ./migrations
+COPY data ./data
+RUN useradd --uid 10001 --create-home appuser && mkdir /data && chown appuser /data
+USER appuser
+ENV DATABASE_PATH=/data/triage.db TRACE_PATH=/data/traces.jsonl BASELINE_MODE=extractive
+EXPOSE 8000
+CMD ["uvicorn", "backend.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,14 @@
+**
+!requirements.txt
+!backend/
+!backend/**
+!frontend/
+!frontend/**
+!ml/
+!ml/**
+!migrations/
+!migrations/**
+!data/
+!data/**
+**/__pycache__/**
+**/.env

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Разбор обращений в поддержку</title>
+<style>body{font:16px system-ui;background:#f4f6fa;color:#182234;margin:0}main{max-width:1080px;margin:36px auto;padding:20px}section{background:white;padding:24px;border-radius:16px;margin:20px 0;box-shadow:0 4px 24px #1423440a}label{display:block;margin:12px 0}textarea,input,select{box-sizing:border-box;width:100%;padding:12px;border:1px solid #b8c4d8;border-radius:8px;font:inherit}button{padding:12px 18px;border:0;border-radius:8px;background:#224dca;color:white;cursor:pointer;margin:8px 8px 8px 0}button:disabled{opacity:.5;cursor:wait}.muted{color:#526078}#error{color:#a0172e}pre{white-space:pre-wrap;word-wrap:break-word;background:#f4f6fa;padding:16px;border-radius:8px}h1{font-size:30px}article{border-left:3px solid #224dca;padding-left:14px;margin:16px 0}</style>
+<main><h1>Разбор обращений в поддержку</h1><p class="muted">Предложение системы проверяет оператор. Решение сохраняется отдельно; сообщения клиенту из этого прототипа не отправляются.</p>
+<section><h2>Обращение</h2><form id="analyzeForm">
+<label>Код доступа оператора<input id="token" type="password" autocomplete="off" required></label>
+<label>Номер обращения<input id="ticket" value="demo-001" maxlength="100" required></label>
+<label>Текст обращения<textarea id="text" rows="4" maxlength="10000" required>Где администратору скачать счёт?</textarea></label>
+<label>Предыдущая переписка <span class="muted">(необязательно)</span><textarea id="history" rows="3" placeholder="Клиент: ...&#10;Оператор: ..."></textarea></label>
+<label>Версия базы знаний<select id="version"><option>v1</option><option>v2</option></select></label>
+<button id="analyze">Разобрать обращение</button><button id="load" type="button">Показать сохранённые</button>
+</form><p id="progress" role="status"></p><p id="error" role="alert"></p></section>
+<section id="result" hidden><h2>Предложение для проверки</h2><p id="mode"></p><p id="summary"></p><div id="sources"></div><p id="next"></p>
+<h3>Исходное обращение</h3><pre id="original"></pre><h3>Собранные данные</h3><pre id="facts"></pre><h3>Недостающие сведения</h3><pre id="missing"></pre><p id="warnings" role="status"></p>
+<label>Текст для решения оператора<textarea id="reply" rows="5" maxlength="4000"></textarea></label>
+<label id="queueLabel" hidden>Очередь специалиста<select id="queue"><option value="">Выбери очередь</option><option value="billing">Платежи</option><option value="technical">Техническая поддержка</option><option value="access">Доступ</option><option value="general">Общая поддержка</option></select></label>
+<label>Причина решения<input id="reason" maxlength="1000" placeholder="Что проверено или почему исправлено"></label>
+<button data-decision="accepted">Принять предложение</button><button data-decision="edited">Сохранить исправление</button><button data-decision="rejected">Отклонить</button><p id="reviewStatus" role="status"></p>
+<h3>История решений</h3><pre id="reviews"></pre></section>
+<section id="saved" hidden><h2>Сохранённые обращения</h2><div id="savedList"></div></section></main>
+<dialog id="confirmation"><h2>Подтверждение решения</h2><pre id="confirmationText"></pre><p>Решение сохранится в БД. Клиенту ничего не отправляется.</p><button id="confirm" type="button">Подтвердить сохранение</button><button id="cancel" type="button">Отмена</button></dialog>
+<script>
+document.head.append(Object.assign(document.createElement('style'),{textContent:'[hidden]{display:none!important}'}));
+let proposalId=null, card=null, pending=null, busy=false, lastInput='', requestId=null;
+const $=id=>document.getElementById(id);
+const decisions={accepted:'Принято',edited:'Исправлено',rejected:'Отклонено'};
+const queues={billing:'Платежи',technical:'Техническая поддержка',access:'Доступ',general:'Общая поддержка'};
+async function api(path,method='GET',data){
+ const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),65000);
+ try{
+  const response=await fetch(path,{method,signal:controller.signal,headers:{Authorization:'Bearer '+$('token').value,'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});
+  let value;try{value=await response.json();}catch{throw Error('Сервер вернул некорректный ответ. Попробуй повторить запрос.');}
+  if(!response.ok)throw Error(response.status===401?'Проверь код доступа оператора.':response.status===422?'Проверь поля: текст, причину, очередь и подтверждение.':response.status===409?'Запрос уже существует с другими данными.':response.status>=500?'Сервис временно недоступен. Попробуй позже.':'Не удалось выполнить запрос.');
+  return value;
+ }catch(e){if(e.name==='AbortError')throw Error('Время ожидания истекло. Проверь сохранённые обращения перед повтором.');if(e instanceof TypeError)throw Error('Нет связи с сервером. Проверь подключение и повтори запрос.');throw e;}finally{clearTimeout(timer);}
+}
+function error(message){$('error').textContent=message;}
+function setBusy(value,message=''){
+ busy=value;document.querySelectorAll('button').forEach(button=>button.disabled=value);
+ $('progress').textContent=message;
+}
+function render(value){
+ proposalId=value.proposal_id;card=value.card;$('result').hidden=false;
+ $('mode').textContent='Режим: '+card.mode+' · Категория: '+card.category+' · Срочность: '+card.urgency;
+ $('summary').textContent=card.summary;$('next').textContent=card.next_step;$('reply').value=card.draft_reply||'';
+ const input=value.input;
+ $('original').textContent=input?.ticket_text?'Обращение: '+input.ticket_ref+'\nВерсия базы знаний: '+input.kb_version+'\n\n'+input.ticket_text+'\n\nИстория:\n'+(input.history.map(item=>(item.speaker==='operator'?'Оператор: ':'Клиент: ')+item.text).join('\n')||'Нет предыдущей переписки.'):'Контекст не сохранён в старой версии прототипа.';
+ $('facts').textContent=card.known_facts.join('\n')||'Нет подтверждённых сведений.';
+ $('missing').textContent=card.missing_data.join('\n')||'Не указаны.';
+ $('warnings').textContent=card.warnings.join(', ');
+ $('queueLabel').hidden=card.mode!=='escalate';$('queue').value='';$('reason').value='';
+ $('sources').replaceChildren();for(const source of card.evidence){const node=document.createElement('article');node.textContent=source.title+' ('+source.version+'): '+source.excerpt;$('sources').append(node);}
+ $('reviews').textContent=(value.reviews||[]).map(review=>decisions[review.decision]+' · '+review.reviewed_at+'\nОператор: '+review.actor_ref+'\nПричина: '+review.reason+(review.destination?'\nОчередь: '+queues[review.destination]:'')+(review.final_text?'\nИтоговый текст: '+review.final_text:'')).join('\n\n')||'Решений пока нет.';
+ $('reviewStatus').textContent='Нужна проверка оператором.';
+}
+$('analyzeForm').onsubmit=async event=>{
+ event.preventDefault();if(busy)return;error('');proposalId=null;$('result').hidden=true;setBusy(true,'Обращение разбирается…');
+ try{
+  const history=$('history').value.split('\n').filter(line=>line.trim()).map(line=>({speaker:line.startsWith('Оператор:')?'operator':'customer',text:line.replace(/^(Клиент|Оператор):\s*/,'')}));
+  const input={ticket_ref:$('ticket').value,ticket_text:$('text').value,history,kb_version:$('version').value};
+  const signature=JSON.stringify(input);if(signature!==lastInput){requestId=crypto.randomUUID();lastInput=signature;}
+  const result=await api('/api/analyses','POST',{request_id:requestId,...input});render(await api('/api/proposals/'+result.proposal_id));
+ }catch(e){error(e.message);}finally{setBusy(false);}
+};
+document.querySelectorAll('[data-decision]').forEach(button=>button.onclick=()=>{
+ if(busy||!proposalId)return;error('');const decision=button.dataset.decision;
+ if(!$('reason').value.trim()){error('Укажи причину решения.');return;}
+ if(decision==='accepted'&&$('reply').value!==(card.draft_reply||'')){error('Текст изменён: выбери «Сохранить исправление».');return;}
+ if(decision==='edited'&&!$('reply').value.trim()){error('Исправленный текст не должен быть пустым.');return;}
+ const destination=decision!=='rejected'&&card.mode==='escalate'?$('queue').value:null;
+ if(decision!=='rejected'&&card.mode==='escalate'&&!destination){error('Выбери очередь специалиста.');return;}
+ pending={id:proposalId,body:{decision,final_text:decision==='edited'?$('reply').value:null,reason:$('reason').value,confirmed:true,destination}};
+ $('confirmationText').textContent='Решение: '+decisions[decision]+'\nПричина: '+pending.body.reason+(destination?'\nОчередь: '+queues[destination]:'')+(decision!=='rejected'&&$('reply').value?'\nТекст: '+$('reply').value:'');$('confirmation').showModal();
+});
+$('cancel').onclick=()=>{pending=null;$('confirmation').close();};
+$('confirmation').addEventListener('cancel',()=>{pending=null;});
+$('confirm').onclick=async()=>{
+ if(busy||!pending)return;const snapshot=pending;pending=null;$('confirmation').close();$('reviewStatus').textContent='Решение сохраняется…';setBusy(true,'Решение сохраняется…');
+ try{await api('/api/proposals/'+snapshot.id+'/reviews','POST',snapshot.body);render(await api('/api/proposals/'+snapshot.id));$('reviewStatus').textContent='Решение сохранено. Клиенту ничего не отправлено.';}catch(e){error(e.message);}finally{setBusy(false);}
+};
+$('load').onclick=async()=>{
+ if(busy)return;error('');setBusy(true,'Загружаются сохранённые обращения…');
+ try{const rows=await api('/api/proposals');$('saved').hidden=false;$('savedList').replaceChildren();if(!rows.length)$('savedList').textContent='Сохранённых обращений пока нет.';
+  for(const row of rows){const button=document.createElement('button');button.textContent=row.ticket_ref+' · '+row.card.mode;button.onclick=async()=>{if(busy)return;error('');setBusy(true,'Загружается карточка…');try{render(await api('/api/proposals/'+row.proposal_id));}catch(e){error(e.message);}finally{setBusy(false);}};$('savedList').append(button);}
+ }catch(e){error(e.message);}finally{setBusy(false);}
+};
+</script></html>
