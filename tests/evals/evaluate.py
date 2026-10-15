@@ -131,7 +131,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--context-mode', choices=['retrieved', 'fixture'], default='retrieved')
     parser.add_argument('--responses', type=Path, default=EVIDENCE / 'historical-responses.jsonl')
-    parser.add_argument('--output', type=Path, default=EVIDENCE / 'replay-report.json')
+    parser.add_argument('--output', type=Path, default=EVIDENCE / 'historical-replay-report.json')
     parser.add_argument('--check-floors', action='store_true')
     parser.add_argument('--floors', type=Path, default=TASK / 'tests/evals/ci-floors.json')
     args = parser.parse_args()

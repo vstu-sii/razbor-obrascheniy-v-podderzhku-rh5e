@@ -5,6 +5,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 COMMANDS = [
+    ['tests/evals/run.py', '--mode', 'baseline'],
     ['docs/quality/golden-dataset/validate.py'],
     ['-m', 'unittest', 'discover', '-s', 'tests/evals', '-p', 'test_*.py', '-v'],
     ['tests/evals/run.py', '--mode', 'replay'],

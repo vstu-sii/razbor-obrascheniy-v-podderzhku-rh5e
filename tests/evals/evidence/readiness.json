@@ -66,5 +66,16 @@
       "not_received": 4
     },
     "team_review_protocol": "iteration-v2/team-output-review.json"
+  },
+  "current_baseline": {
+    "report": "baseline-report.json",
+    "coverage": "baseline-coverage.json",
+    "covered_records": 43,
+    "total_records": 43,
+    "distinct_inputs": 38,
+    "new_LAB03_baseline": true,
+    "historical_replay_is_baseline": false,
+    "extra_calls_for_previous_timeouts": 4,
+    "subjective_rubric_for_completed_four": "not_yet_scored"
   }
 }

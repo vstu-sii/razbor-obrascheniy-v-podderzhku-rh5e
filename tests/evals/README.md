@@ -1,3 +1,9 @@
+# Основной baseline LAB03
+
+Текущий полный прогон: [REPORT.md](REPORT.md). Новый baseline покрывает **43/43** записи golden dataset, 38 разных входов. Основная команда: `python tests/evals/run.py --mode baseline`. Главные доказательства: evidence/baseline-report.json, baseline-coverage.json и baseline-source-manifest.json.
+
+LAB02 replay хранится отдельно как historical-replay-report.json и historical-source-manifest.json; он не является текущим baseline. Ниже сохранена инструкция предыдущего этапа; при выборе результата ориентируйтесь на REPORT.md.
+
 # Quality LAB03: текущий пакет после проверки эталонов
 
 Версия набора v2.1-reviewed: 49 записей, 38 разных групп. Дата 15.10.2026,

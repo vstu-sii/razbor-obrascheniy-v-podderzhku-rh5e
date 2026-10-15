@@ -23,7 +23,7 @@ def sources_for(case, kb):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--mode', choices=['replay', 'free-api'], default='replay')
+    parser.add_argument('--mode', choices=['baseline', 'replay', 'free-api'], default='baseline')
     parser.add_argument('--model')
     parser.add_argument('--provider', choices=['openrouter', 'mistral'], default='openrouter')
     parser.add_argument('--mistral-free-account-confirmed', action='store_true')
@@ -32,6 +32,8 @@ def main():
     parser.add_argument('--max-calls', type=int, default=42)
     parser.add_argument('--interval', type=float, default=6)
     args = parser.parse_args()
+    if args.mode == 'baseline':
+        raise SystemExit(subprocess.call([sys.executable, str(HERE / 'check_baseline.py')]))
     if args.mode == 'replay':
         raise SystemExit(subprocess.call([sys.executable, str(HERE / 'evaluate.py'), '--check-floors']))
     if not args.model or not 1 <= args.max_calls <= 42 or args.interval < 3.1:
