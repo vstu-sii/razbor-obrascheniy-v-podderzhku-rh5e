@@ -1,0 +1,937 @@
+[
+  {
+    "proposal_id": "f1c1c1d1-485d-49a1-9c43-8eb7cf014dbe",
+    "ticket_ref": "P007-preflight-01",
+    "created_at_utc": "2026-10-15 20:34:42",
+    "card": {
+      "request_id": "P007-preflight-01",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос о доступности документов без указания срочности или проблем.",
+      "summary": "Клиент, являющийся администратором аккаунта, спрашивает, где скачать счёт и акт. Согласно статье KB-INVOICE-v1, эти документы доступны в разделе «Биллинг → Документы» для администраторов.",
+      "known_facts": [
+        "Клиент является администратором аккаунта.",
+        "Счёт и акт доступны администратору в разделе «Биллинг → Документы» (KB-INVOICE-v1).",
+        "История обращений пустая, дополнительных ограничений или ошибок нет."
+      ],
+      "missing_data": [],
+      "next_step": "Предложить оператору подтвердить клиенту путь доступа к документам.",
+      "evidence": [
+        {
+          "source_id": "KB-INVOICE-v1",
+          "version": "v1",
+          "title": "Счёт и акт",
+          "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+        }
+      ],
+      "draft_reply": "Добрый день! Счёт и акт можно скачать в разделе «Биллинг → Документы». Убедитесь, что вы авторизованы под администраторской ролью. Если раздел недоступен, проверьте права доступа или свяжитесь с нами для уточнения.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "P007-preflight-01",
+      "ticket_ref": "P007-preflight-01",
+      "ticket_text": "Я администратор аккаунта. Где скачать счёт и акт?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 5167.602,
+      "usage": {
+        "prompt_tokens": 2375,
+        "total_tokens": 2756,
+        "completion_tokens": 381,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "agent_preflight"
+  },
+  {
+    "proposal_id": "96aa687e-832a-437b-9bc6-9ebb6418006f",
+    "ticket_ref": "demo-001",
+    "created_at_utc": "2026-10-15 20:36:24",
+    "card": {
+      "request_id": "7125376d-5e96-4506-853b-b5742868ed00",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос о местоположении счёта в интерфейсе.",
+      "summary": "Клиент спрашивает, где администратор может скачать счёт. В базе знаний указано, что счёт доступен в разделе «Биллинг → Документы» для администраторов аккаунта.",
+      "known_facts": [
+        "Клиент спрашивает, где администратору скачать счёт.",
+        "Счёт доступен администратору в разделе «Биллинг → Документы»."
+      ],
+      "missing_data": [],
+      "next_step": "Предложить оператору подтвердить клиенту путь доступа к счёту.",
+      "evidence": [
+        {
+          "source_id": "KB-INVOICE-v1",
+          "version": "v1",
+          "title": "Счёт и акт",
+          "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+        }
+      ],
+      "draft_reply": "Счёт можно скачать в разделе «Биллинг → Документы». Убедитесь, что вы вошли в аккаунт с правами администратора, чтобы получить доступ к этому разделу.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "7125376d-5e96-4506-853b-b5742868ed00",
+      "ticket_ref": "demo-001",
+      "ticket_text": "Где администратору скачать счёт?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 4061.237,
+      "usage": {
+        "prompt_tokens": 2243,
+        "total_tokens": 2590,
+        "completion_tokens": 347,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "a7c41525-51ad-4321-abe1-d4380382869e",
+    "ticket_ref": "demo-001",
+    "created_at_utc": "2026-10-15 20:36:52",
+    "card": {
+      "request_id": "016a9b8f-fde0-4bf6-a50b-69bb369d75f8",
+      "status": "proposed",
+      "mode": "clarify",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос без указания срочности или ущерба.",
+      "summary": "Клиент спрашивает, где администратор может скачать счёт, но не указаны конкретные обстоятельства или платформа, через которую это должно происходить.",
+      "known_facts": [
+        "Клиент просит информацию о том, где администратор может скачать счёт."
+      ],
+      "missing_data": [
+        "Уточните, через какой интерфейс или раздел системы администратор должен скачивать счёт (например, личный кабинет, раздел «Оплаты» или другой)."
+      ],
+      "next_step": "Показать оператору для уточнения деталей и передачи клиенту.",
+      "evidence": [],
+      "draft_reply": "Подскажите, пожалуйста, через какой раздел или интерфейс администратор обычно скачивает счёт? Например, это может быть личный кабинет, раздел «Финансы» или «Оплаты». Уточните, пожалуйста, чтобы я мог точнее помочь.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "016a9b8f-fde0-4bf6-a50b-69bb369d75f8",
+      "ticket_ref": "demo-001",
+      "ticket_text": "Где администратору скачать счёт?",
+      "history": [],
+      "kb_version": "v2"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3223.244,
+      "usage": {
+        "prompt_tokens": 2167,
+        "total_tokens": 2488,
+        "completion_tokens": 321,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "14d1f4ac-08c8-47b4-9424-a28d9a874e1c",
+        "proposal_id": "a7c41525-51ad-4321-abe1-d4380382869e",
+        "actor_ref": "demo-operator",
+        "decision": "accepted",
+        "final_text": "Подскажите, пожалуйста, через какой раздел или интерфейс администратор обычно скачивает счёт? Например, это может быть личный кабинет, раздел «Финансы» или «Оплаты». Уточните, пожалуйста, чтобы я мог точнее помочь.",
+        "reason": "Сверил ответ со статьёй о счёте и акт",
+        "reviewed_at": "2026-10-15 20:38:12",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "fc242d04-0e19-4198-9d37-10e86071aca5",
+        "proposal_id": "a7c41525-51ad-4321-abe1-d4380382869e",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "Подскажите, пожалуйста, через какой раздел или интерфейс администратор обычно скачивает счёт? Например, это может быть личный кабинет, раздел «Финансы» или «Оплаты». Уточните, пожалуйста, чтобы я мог точнее помочь.",
+        "reason": "Сверил ответ со статьёй о счёте и акт",
+        "reviewed_at": "2026-10-15 20:38:14",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "20c2e2e6-7cfa-4af4-aab2-99d4c5f37529",
+    "ticket_ref": "P007-UC01",
+    "created_at_utc": "2026-10-15 20:39:25",
+    "card": {
+      "request_id": "f3fcf68a-d231-4fce-8938-abdb86fa50da",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос о местоположении счёта, не требует срочного вмешательства.",
+      "summary": "Клиент спрашивает, где администратор может скачать счёт. Согласно статье из базы знаний, счёт доступен в разделе «Биллинг → Документы» для администраторов аккаунта.",
+      "known_facts": [
+        "Клиент спрашивает, где администратору скачать счёт.",
+        "Счёт доступен администратору в разделе «Биллинг → Документы»."
+      ],
+      "missing_data": [],
+      "next_step": "Оператор может подтвердить информацию клиенту и предложить перейти в указанный раздел.",
+      "evidence": [
+        {
+          "source_id": "KB-INVOICE-v1",
+          "version": "v1",
+          "title": "Счёт и акт",
+          "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+        }
+      ],
+      "draft_reply": "Счёт можно скачать в разделе «Биллинг → Документы». Пожалуйста, перейдите в этот раздел, чтобы получить доступ к необходимому документу. Если у вас возникнут трудности, уточните, пожалуйста, версию вашего интерфейса или опишите, что именно не получается.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "f3fcf68a-d231-4fce-8938-abdb86fa50da",
+      "ticket_ref": "P007-UC01",
+      "ticket_text": "Где администратору скачать счёт?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3534.439,
+      "usage": {
+        "prompt_tokens": 2237,
+        "total_tokens": 2620,
+        "completion_tokens": 383,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "59a0a5f0-3432-4a17-b545-42c6e47d6e2a",
+    "ticket_ref": "P007-UC01",
+    "created_at_utc": "2026-10-15 20:39:45",
+    "card": {
+      "request_id": "290b064d-bfb9-447f-9133-423916fc4850",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос администратора по поиску стандартных документов, не связанный с ущербом или срочностью.",
+      "summary": "Клиент, являющийся администратором аккаунта, спрашивает, где скачать счёт и акт. Требуется указать путь доступа к документам в личном кабинете.",
+      "known_facts": [
+        "Клиент является администратором аккаунта.",
+        "Клиент просит указать, где скачать счёт и акт.",
+        "Счёт и акт доступны администратору в разделе «Биллинг → Документы»."
+      ],
+      "missing_data": [],
+      "next_step": "Оператор может подтвердить информацию клиенту и предложить перейти в соответствующий раздел.",
+      "evidence": [
+        {
+          "source_id": "KB-INVOICE-v1",
+          "version": "v1",
+          "title": "Счёт и акт",
+          "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+        }
+      ],
+      "draft_reply": "Уважаемый администратор, счёт и акт можно скачать в разделе «Биллинг → Документы» вашего личного кабинета. Пожалуйста, перейдите в этот раздел и найдите необходимые документы. Если у вас возникнут трудности, уточните, пожалуйста, версию интерфейса или ошибку, с которой столкнулись.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "290b064d-bfb9-447f-9133-423916fc4850",
+      "ticket_ref": "P007-UC01",
+      "ticket_text": "Я администратор аккаунта. Где скачать счёт и акт?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 4538.323,
+      "usage": {
+        "prompt_tokens": 2399,
+        "total_tokens": 2814,
+        "completion_tokens": 415,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "3602b42d-2ba8-421a-9e19-7e3d26564c45",
+        "proposal_id": "59a0a5f0-3432-4a17-b545-42c6e47d6e2a",
+        "actor_ref": "demo-operator",
+        "decision": "accepted",
+        "final_text": "Уважаемый администратор, счёт и акт можно скачать в разделе «Биллинг → Документы» вашего личного кабинета. Пожалуйста, перейдите в этот раздел и найдите необходимые документы. Если у вас возникнут трудности, уточните, пожалуйста, версию интерфейса или ошибку, с которой столкнулись.",
+        "reason": "Сверил ответ со статьёй о счёте и акте",
+        "reviewed_at": "2026-10-15 20:39:49",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "214d948a-e881-4e8b-b590-ad2e48e38c6f",
+        "proposal_id": "59a0a5f0-3432-4a17-b545-42c6e47d6e2a",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "Уважаемый администратор, счёт и акт можно скачать в разделе «Биллинг → Документы» вашего личного кабинета. Пожалуйста, перейдите в этот раздел и найдите необходимые документы. Если у вас возникнут трудности, уточните, пожалуйста, версию интерфейса или ошибку, с которой столкнулись.",
+        "reason": "Сверил ответ со статьёй о счёте и акте",
+        "reviewed_at": "2026-10-15 20:39:52",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "c527ebe6-829e-41ca-bed5-b57034bd640b",
+    "ticket_ref": "P007-UC02",
+    "created_at_utc": "2026-10-15 20:40:23",
+    "card": {
+      "request_id": "4dcd5331-d8f1-4798-a059-b4ce3cc25e06",
+      "status": "proposed",
+      "mode": "clarify",
+      "category": "access",
+      "urgency": "unassessed",
+      "urgency_reason": "Недостаточно информации для оценки срочности. Клиент сообщает о проблеме входа, но не указаны код ошибки или её текст.",
+      "summary": "Клиент сообщает о невозможности войти в систему из-за ошибки, но не предоставляет детали ошибки (текст или код).",
+      "known_facts": [
+        "Клиент не может войти в систему и видит ошибку.",
+        "История обращений пуста, детали ошибки отсутствуют."
+      ],
+      "missing_data": [
+        "Текст или код ошибки, который появляется при попытке входа."
+      ],
+      "next_step": "Предложить оператору уточнить у клиента текст или код ошибки для дальнейшей диагностики.",
+      "evidence": [],
+      "draft_reply": "Извините за неудобства. Чтобы помочь вам быстрее, уточните, пожалуйста, текст или код ошибки, который появляется при попытке входа?",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "4dcd5331-d8f1-4798-a059-b4ce3cc25e06",
+      "ticket_ref": "P007-UC02",
+      "ticket_text": "Не могу войти, появляется ошибка",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3039.029,
+      "usage": {
+        "prompt_tokens": 2331,
+        "total_tokens": 2639,
+        "completion_tokens": 308,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "128b0c61-0b60-4ace-b128-4d6a3271dadc",
+        "proposal_id": "c527ebe6-829e-41ca-bed5-b57034bd640b",
+        "actor_ref": "demo-operator",
+        "decision": "accepted",
+        "final_text": "Извините за неудобства. Чтобы помочь вам быстрее, уточните, пожалуйста, текст или код ошибки, который появляется при попытке входа?",
+        "reason": "Проверил уточняющий вопрос",
+        "reviewed_at": "2026-10-15 20:40:36",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "dd36be7a-bfda-46c6-95f9-79262285dba3",
+        "proposal_id": "c527ebe6-829e-41ca-bed5-b57034bd640b",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "Извините за неудобства. Чтобы помочь вам быстрее, уточните, пожалуйста, текст или код ошибки, который появляется при попытке входа?",
+        "reason": "Проверил уточняющий вопрос",
+        "reviewed_at": "2026-10-15 20:40:37",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "fbfee5dc-8c89-45d8-84ed-d173b5ebb310",
+    "ticket_ref": "P007-UC02",
+    "created_at_utc": "2026-10-15 20:41:01",
+    "card": {
+      "request_id": "7627e9ba-4920-4b94-aac4-228a1d26ca26",
+      "status": "proposed",
+      "mode": "escalate",
+      "category": "access",
+      "urgency": "high",
+      "urgency_reason": "Запрос на предоставление доступа к чужому аккаунту без подтверждения прав владельца нарушает политику безопасности и может свидетельствовать о попытке несанкционированного доступа.",
+      "summary": "Клиент просит предоставить доступ к чужому аккаунту без проверки владельца. Это требует обязательной передачи специалисту для проверки правомерности запроса и соблюдения политики безопасности.",
+      "known_facts": [
+        "Клиент запросил доступ к чужому аккаунту без проверки владельца.",
+        "Запрос не содержит подтверждения прав или согласия со стороны владельца аккаунта.",
+        "История обращений пуста, отсутствуют предшествующие уточнения."
+      ],
+      "missing_data": [],
+      "next_step": "Передать запрос уполномоченному специалисту по безопасности для проверки законности доступа и соблюдения политики конфиденциальности. Убедиться, что запрос не является попыткой несанкционированного вмешательства.",
+      "evidence": [],
+      "draft_reply": null,
+      "needs_human_review": true,
+      "warnings": [
+        "Попытка доступа к чужому аккаунту без подтверждения прав может нарушать законодательство о защите персональных данных.",
+        "Необходимо исключить риск мошенничества или несанкционированного использования данных."
+      ]
+    },
+    "input": {
+      "request_id": "7627e9ba-4920-4b94-aac4-228a1d26ca26",
+      "ticket_ref": "P007-UC02",
+      "ticket_text": "Дайте доступ к чужому аккаунту без проверки владельца",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3917.591,
+      "usage": {
+        "prompt_tokens": 2339,
+        "total_tokens": 2733,
+        "completion_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "5f0766ed-727f-4fe5-9387-8188a1363a4f",
+    "ticket_ref": "P007-UC03",
+    "created_at_utc": "2026-10-15 20:41:28",
+    "card": {
+      "request_id": "74d7e88d-dad6-445c-9f1a-683d9827fdb7",
+      "status": "proposed",
+      "mode": "escalate",
+      "category": "access",
+      "urgency": "high",
+      "urgency_reason": "Запрос на предоставление доступа к чужому аккаунту без подтверждения прав владельца нарушает политики безопасности и может привести к утечке данных или несанкционированному доступу.",
+      "summary": "Клиент просит предоставить доступ к чужому аккаунту без проверки владельца. Это требует обязательной передачи специалисту для проверки правомерности запроса и соблюдения политик безопасности.",
+      "known_facts": [
+        "Клиент запросил доступ к чужому аккаунту без проверки владельца.",
+        "Такой запрос требует подтверждения прав пользователя и соблюдения процедур безопасности."
+      ],
+      "missing_data": [],
+      "next_step": "Передать запрос уполномоченному специалисту по безопасности для проверки правомерности доступа и соблюдения внутренних процедур. Уточнить у клиента основания для такого запроса, но не выполнять действия без разрешения.",
+      "evidence": [],
+      "draft_reply": null,
+      "needs_human_review": true,
+      "warnings": [
+        "Не выполнять действия по предоставлению доступа без подтверждения прав клиента.",
+        "Передать запрос на рассмотрение специалиста для соблюдения политик безопасности."
+      ]
+    },
+    "input": {
+      "request_id": "74d7e88d-dad6-445c-9f1a-683d9827fdb7",
+      "ticket_ref": "P007-UC03",
+      "ticket_text": "Дайте доступ к чужому аккаунту без проверки владельца",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3642.108,
+      "usage": {
+        "prompt_tokens": 2340,
+        "total_tokens": 2700,
+        "completion_tokens": 360,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "b04d76fb-26f9-4be2-9537-d72547cc6f4e",
+        "proposal_id": "5f0766ed-727f-4fe5-9387-8188a1363a4f",
+        "actor_ref": "demo-operator",
+        "decision": "accepted",
+        "final_text": null,
+        "reason": "Проверил безопасную передачу случая",
+        "reviewed_at": "2026-10-15 20:41:47",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "799380db-85e2-4aa6-a433-13d56a210ac8",
+    "ticket_ref": "P007-UC03-V2",
+    "created_at_utc": "2026-10-15 20:42:12",
+    "card": {
+      "request_id": "66d07da3-6b73-45d7-8d7a-a385d26d5458",
+      "status": "proposed",
+      "mode": "clarify",
+      "category": "payment",
+      "urgency": "low",
+      "urgency_reason": "Обращение содержит общий вопрос о способе получения счёта без указания конкретных деталей или ошибок.",
+      "summary": "Клиент спрашивает, где можно скачать счёт, но не уточняет период, тип счёта или ошибки, связанные с его получением.",
+      "known_facts": [
+        "Клиент просит информацию о том, как скачать счёт."
+      ],
+      "missing_data": [
+        "Какой именно счёт требуется (например, за какой период, за какой товар/услугу)?",
+        "Стоит ли счёт на оплату или это счёт-фактура для бухгалтерии?"
+      ],
+      "next_step": "Показать оператору для уточнения деталей и формирования точного ответа.",
+      "evidence": [],
+      "draft_reply": "Подскажите, пожалуйста, за какой период или для какого платежа вам нужен счёт? Это поможет дать точный ответ.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "66d07da3-6b73-45d7-8d7a-a385d26d5458",
+      "ticket_ref": "P007-UC03-V2",
+      "ticket_text": "Где скачать счёт?",
+      "history": [],
+      "kb_version": "v2"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3680.38,
+      "usage": {
+        "prompt_tokens": 2168,
+        "total_tokens": 2478,
+        "completion_tokens": 310,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "6aa9fe4e-4fbf-4ebd-bb84-5fdfd2c90330",
+    "ticket_ref": "P007-UC04",
+    "created_at_utc": "2026-10-15 20:43:11",
+    "card": {
+      "request_id": "c6bab042-7735-4086-acd3-72e0473a5d4d",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "integrations",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос о возможности просмотра устаревшего токена интеграции, не требующий срочного вмешательства.",
+      "summary": "Клиент спрашивает, можно ли повторно получить доступ к старому токену интеграции. Согласно документации, токен не отображается повторно после его создания.",
+      "known_facts": [
+        "Клиент просит возможность просмотра старого токена интеграции.",
+        "Согласно документации, существующий токен интеграции повторно не отображается после его создания."
+      ],
+      "missing_data": [],
+      "next_step": "Предложить клиенту использовать новый токен интеграции, созданный в разделе Интеграции.",
+      "evidence": [
+        {
+          "source_id": "KB-API-v1",
+          "version": "v1",
+          "title": "Токен интеграции",
+          "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+        }
+      ],
+      "draft_reply": "К сожалению, повторно получить доступ к старому токену интеграции невозможно. После создания токен не отображается повторно. Рекомендуем создать новый токен в разделе \"Интеграции\" и использовать его для дальнейшей работы. Если у вас возникнут дополнительные вопросы по настройке интеграции, дайте знать!",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "c6bab042-7735-4086-acd3-72e0473a5d4d",
+      "ticket_ref": "P007-UC04",
+      "ticket_text": "Можно ли ещё раз посмотреть старый токен интеграции?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3759.29,
+      "usage": {
+        "prompt_tokens": 2258,
+        "total_tokens": 2672,
+        "completion_tokens": 414,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "0d7b4a41-5c4b-4aa1-a2f8-b18bf330379d",
+    "ticket_ref": "P007-UC04",
+    "created_at_utc": "2026-10-15 20:43:27",
+    "card": {
+      "request_id": "ebaaaa1d-09b3-4bbf-a375-d6b84916de95",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "integrations",
+      "urgency": "low",
+      "urgency_reason": "Вопрос касается стандартной процедуры работы с токенами интеграций, не требует срочного вмешательства.",
+      "summary": "Клиент сообщает, что существующее значение токена интеграции не отображается повторно. Администратор может создать новый токен в разделе Интеграции.",
+      "known_facts": [
+        "Клиент сообщает, что существующее значение токена интеграции не отображается повторно.",
+        "Администратор может создать новый токен в разделе Интеграции.",
+        "Существующее значение токена не восстанавливается."
+      ],
+      "missing_data": [],
+      "next_step": "Предложить оператору подтвердить клиенту, что создание нового токена — единственный доступный способ получить рабочий токен.",
+      "evidence": [
+        {
+          "source_id": "KB-API-v1",
+          "version": "v1",
+          "title": "Токен интеграции",
+          "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+        }
+      ],
+      "draft_reply": "Спасибо за обращение. Согласно документации, существующее значение токена интеграции действительно не отображается повторно. Администратор может создать новый токен в разделе «Интеграции». Пожалуйста, уточните, нужна ли вам помощь с созданием нового токена или есть другие вопросы по этому поводу.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "ebaaaa1d-09b3-4bbf-a375-d6b84916de95",
+      "ticket_ref": "P007-UC04",
+      "ticket_text": "Существующее значение токена повторно не показывается. Администратор может создать новый токен в разделе Интеграции",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 3980.666,
+      "usage": {
+        "prompt_tokens": 2409,
+        "total_tokens": 2828,
+        "completion_tokens": 419,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "f1341b7a-12e2-4c7c-89c0-6271ce7f9e2f",
+    "ticket_ref": "P007-UC04",
+    "created_at_utc": "2026-10-15 20:43:53",
+    "card": {
+      "request_id": "3587da42-dea4-48d0-be3b-28ebc2c565a8",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "integrations",
+      "urgency": "low",
+      "urgency_reason": "Справочный вопрос о возможности просмотра устаревшего токена интеграции.",
+      "summary": "Клиент спрашивает, можно ли повторно получить доступ к старому токену интеграции. Согласно документации, токен не отображается повторно после его создания.",
+      "known_facts": [
+        "Клиент просит возможность просмотра старого токена интеграции.",
+        "Согласно документации, существующий токен интеграции не отображается повторно после его создания."
+      ],
+      "missing_data": [],
+      "next_step": "Оператор может подтвердить ответ клиенту на основе предоставленной информации.",
+      "evidence": [
+        {
+          "source_id": "KB-API-v1",
+          "version": "v1",
+          "title": "Токен интеграции",
+          "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+        }
+      ],
+      "draft_reply": "К сожалению, повторно получить или просмотреть старый токен интеграции невозможно. После создания токена его значение не отображается повторно. Рекомендуем создать новый токен в разделе Интеграции.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "3587da42-dea4-48d0-be3b-28ebc2c565a8",
+      "ticket_ref": "P007-UC04",
+      "ticket_text": "Можно ли ещё раз посмотреть старый токен интеграции?",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 4964.115,
+      "usage": {
+        "prompt_tokens": 2256,
+        "total_tokens": 2622,
+        "completion_tokens": 366,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "a5499904-56b7-4dea-8c3c-0075266c67f0",
+        "proposal_id": "f1341b7a-12e2-4c7c-89c0-6271ce7f9e2f",
+        "actor_ref": "demo-operator",
+        "decision": "rejected",
+        "final_text": null,
+        "reason": "Убрал неподтверждённые сведения",
+        "reviewed_at": "2026-10-15 20:43:59",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "7f6546b6-307e-4946-aca4-e8c4c05e70ba",
+        "proposal_id": "f1341b7a-12e2-4c7c-89c0-6271ce7f9e2f",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "текст о невозможности повторного показа и создании нового токена",
+        "reason": "Исправил исходное предложение",
+        "reviewed_at": "2026-10-15 20:58:55",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "20b00880-9c0b-44df-8255-a00bc9a73b3a",
+        "proposal_id": "f1341b7a-12e2-4c7c-89c0-6271ce7f9e2f",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "Существующее значение токена повторно не показывается. Администратор может создать новый токен в разделе Интеграции.",
+        "reason": "Агент заменил буквальное описание ответа полным текстом по статье. По поручению участника, после человеческой проверки операции edited.",
+        "reviewed_at": "2026-10-15 20:59:55",
+        "executor_type": "agent_corrective_action"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "0aef1321-20b8-4fce-ace3-d355e0351ca8",
+    "ticket_ref": "P007-UC04",
+    "created_at_utc": "2026-10-15 20:47:45",
+    "card": {
+      "request_id": "144a96c7-849b-4b59-8bcb-ae9ee2ac8140",
+      "status": "proposed",
+      "mode": "answer",
+      "category": "integrations",
+      "urgency": "low",
+      "urgency_reason": "Вопрос касается стандартного поведения токена интеграции, не связанного с критическими ошибками или массовыми проблемами.",
+      "summary": "Клиент сообщает, что существующее значение токена интеграции не отображается повторно. Администратор может создать новый токен в разделе Интеграции.",
+      "known_facts": [
+        "Клиент сообщает, что существующее значение токена интеграции не отображается повторно.",
+        "Администратор может создать новый токен в разделе Интеграции.",
+        "Существующее значение токена действительно не отображается после создания (подтверждено статьёй KB-API-v1)."
+      ],
+      "missing_data": [],
+      "next_step": "Предложить оператору подтвердить клиенту информацию о невозможности повторного отображения токена и предложить создать новый токен в разделе Интеграции.",
+      "evidence": [
+        {
+          "source_id": "KB-API-v1",
+          "version": "v1",
+          "title": "Токен интеграции",
+          "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+        }
+      ],
+      "draft_reply": "Спасибо за обращение. Действительно, после создания токен интеграции не отображается повторно по соображениям безопасности. Для получения нового токена администратору необходимо создать его заново в разделе «Интеграции». Пожалуйста, следуйте инструкциям в этом разделе для генерации нового токена.",
+      "needs_human_review": true,
+      "warnings": []
+    },
+    "input": {
+      "request_id": "144a96c7-849b-4b59-8bcb-ae9ee2ac8140",
+      "ticket_ref": "P007-UC04",
+      "ticket_text": "Существующее значение токена повторно не показывается. Администратор может создать новый токен в разделе Интеграции",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 4964.052,
+      "usage": {
+        "prompt_tokens": 2412,
+        "total_tokens": 2859,
+        "completion_tokens": 447,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "gate_passed": true,
+      "attempts": 1
+    },
+    "reviews": [
+      {
+        "review_id": "e4c45f1a-7459-4e36-a89d-3ec87fc23068",
+        "proposal_id": "0aef1321-20b8-4fce-ace3-d355e0351ca8",
+        "actor_ref": "demo-operator",
+        "decision": "edited",
+        "final_text": "Существующее значение токена повторно не показывается. Администратор может создать новый токен в разделе Интеграции",
+        "reason": "Убрал неподтверждённые сведения",
+        "reviewed_at": "2026-10-15 20:48:36",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "78695609-f24c-4870-80a0-239c8f2b69cb",
+        "proposal_id": "0aef1321-20b8-4fce-ace3-d355e0351ca8",
+        "actor_ref": "demo-operator",
+        "decision": "rejected",
+        "final_text": null,
+        "reason": "Проверка отклонения",
+        "reviewed_at": "2026-10-15 20:49:35",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  },
+  {
+    "proposal_id": "395487b8-bc23-4252-ba27-64cdf441540d",
+    "ticket_ref": "P007-UC03-V2-fixed",
+    "created_at_utc": "2026-10-15 20:50:27",
+    "card": {
+      "request_id": "28ec7b60-0777-44e6-86f0-29235ff94c3c",
+      "status": "not_analyzed",
+      "mode": "escalate",
+      "category": "other",
+      "urgency": "unassessed",
+      "urgency_reason": "Нужна оценка оператора",
+      "summary": "Автоматический разбор недоступен или не прошёл проверку",
+      "known_facts": [],
+      "missing_data": [],
+      "next_step": "Оператор проверяет исходное обращение",
+      "evidence": [],
+      "draft_reply": null,
+      "needs_human_review": true,
+      "warnings": [
+        "no_current_knowledge_version"
+      ]
+    },
+    "input": {
+      "request_id": "28ec7b60-0777-44e6-86f0-29235ff94c3c",
+      "ticket_ref": "P007-UC03-V2-fixed",
+      "ticket_text": "Где скачать счёт?",
+      "history": [],
+      "kb_version": "v2"
+    },
+    "diagnostics": {
+      "provider": "llm",
+      "latency_ms": 0.05,
+      "usage": null,
+      "gate_passed": false,
+      "attempts": 0
+    },
+    "reviews": [
+      {
+        "review_id": "044c60e2-8a76-46fd-9615-88ea9c4794e9",
+        "proposal_id": "395487b8-bc23-4252-ba27-64cdf441540d",
+        "actor_ref": "demo-operator",
+        "decision": "accepted",
+        "final_text": null,
+        "reason": "Режим",
+        "reviewed_at": "2026-10-15 20:51:03",
+        "executor_type": "human_assisted_ui"
+      },
+      {
+        "review_id": "d0deb6b7-7d4f-4910-a393-15eeb28674a9",
+        "proposal_id": "395487b8-bc23-4252-ba27-64cdf441540d",
+        "actor_ref": "demo-operator",
+        "decision": "rejected",
+        "final_text": null,
+        "reason": "Режим",
+        "reviewed_at": "2026-10-15 20:51:08",
+        "executor_type": "human_assisted_ui"
+      }
+    ],
+    "original_matches_trace": true,
+    "actor_type": "human_assisted_ui"
+  }
+]
