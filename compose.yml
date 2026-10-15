@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${PORT:-8000}:8000"
+    environment:
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:?Set DEMO_OPERATOR_TOKEN in .env}
+      BASELINE_MODE: ${BASELINE_MODE:-extractive}
+      DATABASE_PATH: /data/triage.db
+      TRACE_PATH: /data/traces.jsonl
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-https://cloud.langfuse.com}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+    volumes:
+      - triage-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+volumes:
+  triage-data:
