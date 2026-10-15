@@ -1,0 +1,325 @@
+{
+  "same_case_ids": true,
+  "cases": 38,
+  "old": {
+    "free_api": {
+      "n": 38,
+      "by_uc": {
+        "UC-01": 8,
+        "UC-02": 9,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "gate_passed": {
+        "numerator": 10,
+        "denominator": 38,
+        "value": 0.2631578947368421
+      },
+      "mode_correct": {
+        "numerator": 26,
+        "denominator": 38,
+        "value": 0.6842105263157895
+      },
+      "category_correct": {
+        "numerator": 29,
+        "denominator": 38,
+        "value": 0.7631578947368421
+      },
+      "http_ok": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.7417217285638338
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "retrieval_recall_at_3": {
+        "n_positive": 11,
+        "value": 1.0
+      },
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 38,
+        "p50_ms": 4347.9475,
+        "empirical_p95_ms": 5655.681,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 38,
+        "sum_observed_total": 44556
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC01-02",
+        "UC01-03",
+        "UC01-04",
+        "UC01-06",
+        "UC02-01",
+        "UC02-02",
+        "UC02-03",
+        "UC02-05",
+        "UC02-07",
+        "UC02-08",
+        "UC02-09",
+        "UC02-10",
+        "UC03-01",
+        "UC03-02",
+        "UC03-04",
+        "UC03-05",
+        "UC03-06",
+        "UC03-08",
+        "UC03-10",
+        "UC04-01",
+        "UC04-02",
+        "UC04-03",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "UC04-07",
+        "UC04-08",
+        "UC04-09",
+        "UC04-10",
+        "EDGE-LONG-01",
+        "EDGE-STALE-01"
+      ]
+    }
+  },
+  "new": {
+    "free_api": {
+      "n": 38,
+      "by_uc": {
+        "UC-01": 8,
+        "UC-02": 9,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 34,
+        "denominator": 38,
+        "value": 0.8947368421052632
+      },
+      "schema_valid": {
+        "numerator": 34,
+        "denominator": 38,
+        "value": 0.8947368421052632
+      },
+      "gate_passed": {
+        "numerator": 34,
+        "denominator": 38,
+        "value": 0.8947368421052632
+      },
+      "mode_correct": {
+        "numerator": 30,
+        "denominator": 38,
+        "value": 0.7894736842105263
+      },
+      "category_correct": {
+        "numerator": 32,
+        "denominator": 38,
+        "value": 0.8421052631578947
+      },
+      "http_ok": {
+        "numerator": 34,
+        "denominator": 38,
+        "value": 0.8947368421052632
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.8758741258741258
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "retrieval_recall_at_3": {
+        "n_positive": 11,
+        "value": 1.0
+      },
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 38,
+        "p50_ms": 5229.4884999999995,
+        "empirical_p95_ms": 55020.352,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 34,
+        "sum_observed_total": 85813
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC01-03",
+        "UC01-05",
+        "UC02-10",
+        "UC03-10",
+        "UC04-01",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "EDGE-LONG-01",
+        "EDGE-STALE-01"
+      ]
+    }
+  },
+  "dataset_changed": false,
+  "model_changed": false,
+  "prompt_changed": true,
+  "candidate_proposal_added": true,
+  "independent_test": false,
+  "semantic_agent_ratings_of_new_outputs": "completed_34_received_answers_see_iteration-v2/output-review-summary.json",
+  "received_responses_only": {
+    "free_api": {
+      "n": 34,
+      "by_uc": {
+        "UC-01": 6,
+        "UC-02": 8,
+        "UC-03": 11,
+        "UC-04": 9
+      },
+      "completion_available": {
+        "numerator": 34,
+        "denominator": 34,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 34,
+        "denominator": 34,
+        "value": 1.0
+      },
+      "gate_passed": {
+        "numerator": 34,
+        "denominator": 34,
+        "value": 1.0
+      },
+      "mode_correct": {
+        "numerator": 30,
+        "denominator": 34,
+        "value": 0.8823529411764706
+      },
+      "category_correct": {
+        "numerator": 32,
+        "denominator": 34,
+        "value": 0.9411764705882353
+      },
+      "http_ok": {
+        "numerator": 34,
+        "denominator": 34,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.9181818181818181
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 26,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "retrieval_recall_at_3": {
+        "n_positive": 9,
+        "value": 1.0
+      },
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 34,
+        "p50_ms": 4986.403,
+        "empirical_p95_ms": 15505.612,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 34,
+        "sum_observed_total": 85813
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC02-10",
+        "UC03-10",
+        "UC04-01",
+        "UC04-04",
+        "UC04-06",
+        "EDGE-STALE-01"
+      ]
+    }
+  },
+  "network_failures_remain_in_main_denominator": true
+}

@@ -1,0 +1,81 @@
+{
+  "dataset_version": "v2.1-reviewed",
+  "dataset_total_records": 49,
+  "benchmark_records": 43,
+  "new_live_regression_records": 6,
+  "distinct_input_groups": 38,
+  "human_gold_review": "approved_based_on_participant_confirmation",
+  "reviewers": [
+    {
+      "id": "denis-quality",
+      "name": "Р”РµРЅРёСЃ",
+      "role": "Quality & Safety"
+    },
+    {
+      "id": "maxim-product",
+      "name": "РњР°РєСЃРёРј",
+      "role": "Product"
+    },
+    {
+      "id": "egor-support",
+      "name": "Р•РіРѕСЂ",
+      "role": "СЃРѕС‚СЂСѓРґРЅРёРє РїРѕРґРґРµСЂР¶РєРё"
+    }
+  ],
+  "independent_blind_annotation_documented": false,
+  "original_live_responses": 42,
+  "offline_rescored_responses": 38,
+  "new_api_calls": 0,
+  "subjective_model_output_rubric": {
+    "agent": "completed",
+    "human": "pending"
+  },
+  "production_quality_accepted": false,
+  "agent_model_output_rubric": "completed_42_saved_answers_by_Codex",
+  "human_model_output_rubric": "pending",
+  "agent_assessment_current_38": {
+    "usable_draft": 3,
+    "needs_revision": 22,
+    "reject_draft": 13
+  },
+  "latest_experiment": {
+    "path": "iteration-v2",
+    "live_responses": 38,
+    "schema": {
+      "numerator": 34,
+      "denominator": 38,
+      "value": 0.8947368421052632
+    },
+    "mode": {
+      "numerator": 30,
+      "denominator": 38,
+      "value": 0.7894736842105263
+    },
+    "category": {
+      "numerator": 32,
+      "denominator": 38,
+      "value": 0.8421052631578947
+    },
+    "human_output_review": "team_review_confirmed_by_participant",
+    "semantic_agent_rubric": "completed_34_received_answers_by_Codex",
+    "independent_test": false,
+    "delegated_review_decisions": {
+      "usable_draft": 16,
+      "needs_revision": 14,
+      "reject_draft": 4,
+      "not_received": 4
+    },
+    "team_review_protocol": "iteration-v2/team-output-review.json"
+  },
+  "current_baseline": {
+    "report": "baseline-report.json",
+    "coverage": "baseline-coverage.json",
+    "covered_records": 43,
+    "total_records": 43,
+    "distinct_inputs": 38,
+    "new_LAB03_baseline": true,
+    "historical_replay_is_baseline": false,
+    "extra_calls_for_previous_timeouts": 4,
+    "subjective_rubric_for_completed_four": "not_yet_scored"
+  }
+}

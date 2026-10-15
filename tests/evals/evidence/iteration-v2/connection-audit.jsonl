@@ -1,0 +1,2 @@
+{"case_id": "UC01-06", "request_id": "Q006-UC01-06", "attempt": 1, "error": "ConnectError", "phase": "connection_before_http"}
+{"case_id": "UC03-04", "request_id": "Q006-UC03-04", "attempt": 1, "error": "ConnectError", "phase": "connection_before_http"}
