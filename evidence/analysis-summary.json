@@ -12,7 +12,9 @@
       "paired_http_200_n": 7,
       "paired_schema_valid": 7,
       "generation_p50_ms": 19564,
-      "generation_empirical_p95_ms": 45776
+      "generation_empirical_p95_ms": 45776,
+      "cost_upper_rub": 3.659769,
+      "confirmed_billed_rub": 1.454972
     },
     "mistral_free": {
       "model": "ministral-14b-2512",
@@ -26,7 +28,9 @@
       "paired_http_200_n": 7,
       "paired_schema_valid": 2,
       "generation_p50_ms": 3944,
-      "generation_empirical_p95_ms": 8008
+      "generation_empirical_p95_ms": 8008,
+      "cost_upper_rub": 0.299396,
+      "confirmed_billed_rub": null
     }
   },
   "shared_successful_cases": [
@@ -41,5 +45,7 @@
   "valid_final_cards": 20,
   "current_run_cost_upper_usd": 0.061244,
   "prior_cost_and_setup_reserve_usd": 0.116007,
-  "total_cost_upper_usd": 0.177251
+  "total_cost_upper_usd": 0.177251,
+  "rub_per_usd_assumption": 89.0,
+  "total_cost_upper_rub": 15.775339
 }

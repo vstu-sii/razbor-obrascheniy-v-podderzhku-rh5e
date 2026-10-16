@@ -28,11 +28,14 @@ sources=[
   "    if r['case_id'] in ('UC03-05','UC03-09') and r['context_mode']=='bm25':\n"
   "        print(r['provider'],r['case_id'],json.dumps(r['raw_card'],ensure_ascii=False,indent=2))\n"
   "print('Comparison scope: selected 20 attempts; availability checks are budget-only')"),
- ('## Стоимость\nUSD cap рассчитывается при условных 100 ₽/$. Неизвестные списания сохраняют резерв. '
+ ('## Стоимость\nРублёвые суммы пересчитаны по заданному курсу 89 ₽/$. Исторический cap $0.20 не изменён. Неизвестные списания сохраняют резерв. '
   'Цифры предыдущих прогонов не участвуют в метриках текущей модели.',None),
  (None,"print('Current upper USD:',report['current_run_cost_upper_usd'])\n"
   "print('Prior cost/setup reserve USD:',report['prior_cost_and_setup_reserve_usd'])\n"
   "print('Shared total upper USD:',report['total_cost_upper_usd'])\n"
+  "print('RUB/USD:',report['rub_per_usd_assumption'])\n"
+  "print('Shared total upper RUB:',report['total_cost_upper_rub'])\n"
+  "print((root/'evidence/request-costs-rub.csv').read_text(encoding='utf-8'))\n"
   "assert report['total_cost_upper_usd']<=.20\n"
   "print('Independent product acceptance: pending')"),
  ('## Решение\nОбоснование и текущие ограничения описаны в docs/model-candidates.md. '
