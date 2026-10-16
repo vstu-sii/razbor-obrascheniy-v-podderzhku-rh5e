@@ -1,5 +1,5 @@
 """Recompute the completed design spikes offline; no provider/runtime imports."""
-import hashlib,json,math
+import csv,hashlib,json,math
 from decimal import Decimal
 from pathlib import Path
 from jsonschema import Draft202012Validator
@@ -12,6 +12,7 @@ def analysis():
  cases={c['id']:c for c in read_jsonl('cases.jsonl')};kb=read_jsonl('kb.jsonl')
  config=json.loads((ROOT/'evidence/experiment-config.json').read_text(encoding='utf-8'))
  budget=json.loads((ROOT/'evidence/budget-summary.json').read_text(encoding='utf-8'))
+ rate=Decimal(str(budget['rub_per_usd_assumption']))
  validator=Draft202012Validator(expanded_schema('AnalyzeResponse'))
  assert len(rows)==20 and {r['provider'] for r in rows}==set(MODELS)
  for r in rows:
@@ -47,7 +48,26 @@ def analysis():
   pair=[r for r in rows if r['case_id']==cid]
   assert len(pair)==2 and pair[0]['input_context_sha256']==pair[1]['input_context_sha256']
  assert sum(Decimal(str(r['cost_upper_usd'])) for r in rows)==Decimal(str(budget['current_selected_attempts_upper_usd']))
- assert Decimal(str(report['current_run_cost_upper_usd']))+Decimal(str(report['prior_cost_and_setup_reserve_usd']))==Decimal(str(report['total_cost_upper_usd']))<=Decimal('.20')
+ assert Decimal(str(report['current_run_cost_upper_usd']))+Decimal(str(report['prior_cost_and_setup_reserve_usd']))==Decimal(str(report['total_cost_upper_usd']))<=Decimal(str(budget['original_run_cap_usd']))
+ assert Decimal(str(report['total_cost_upper_usd']))*rate<=Decimal(str(budget['authorized_total_rub']))
+ report['rub_per_usd_assumption']=float(rate)
+ report['total_cost_upper_rub']=float(Decimal(str(report['total_cost_upper_usd']))*rate)
+ for name in MODELS:
+  group=[r for r in rows if r['provider']==name]
+  report['models'][name]['cost_upper_rub']=float(sum(Decimal(str(r['cost_upper_usd'])) for r in group)*rate)
+  confirmed=[Decimal(str(r['billed_usd'])) for r in group if r.get('billed_usd') is not None]
+  report['models'][name]['confirmed_billed_rub']=float(sum(confirmed)*rate) if confirmed else None
+ with (ROOT/'evidence/request-costs-rub.csv').open('w',encoding='utf-8',newline='') as out:
+  writer=csv.DictWriter(out,fieldnames=['case_id','provider','billing_source','rub_per_usd','cost_upper_usd','cost_upper_rub','billed_usd','billed_rub'])
+  writer.writeheader()
+  for cid in config['case_ids']:
+   for r in (r for r in rows if r['case_id']==cid):
+    billed=r.get('billed_usd')
+    writer.writerow({'case_id':cid,'provider':r['provider'],'billing_source':r['billing_source'],
+     'rub_per_usd':str(rate),'cost_upper_usd':r['cost_upper_usd'],
+     'cost_upper_rub':format(Decimal(str(r['cost_upper_usd']))*rate,'.6f'),
+     'billed_usd':'' if billed is None else billed,
+     'billed_rub':'' if billed is None else format(Decimal(str(billed))*rate,'.6f')})
  for p,record in config['frozen_input_sha256'].items():
   raw=(ROOT/p).read_bytes().replace(b'\r\n',b'\n')
   assert hashlib.sha256(raw).hexdigest()==record['git_lf_sha256']
