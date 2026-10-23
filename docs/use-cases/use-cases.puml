@@ -3,7 +3,9 @@ left to right direction
 actor "Оператор первой линии" as Operator
 actor "Специалист" as Specialist
 actor "Клиент" as Customer
+actor "Система поддержки" as Helpdesk
 rectangle "Помощник разбора обращений" {
+  usecase "Подготовить карточку\nпо событию нового обращения" as AutoAnalyze
   usecase "UC-01\nПодготовить обоснованный ответ" as UC01
   usecase "UC-02\nУточнить недостающие данные" as UC02
   usecase "UC-03\nПередать случай специалисту" as UC03
@@ -17,12 +19,14 @@ Operator -- UC04
 Specialist -- UC03
 Customer -- UC01
 Customer -- UC02
+Helpdesk -- AutoAnalyze
 UC01 ..> Verify : <<include>>
 UC03 ..> Verify : <<include>>
 UC04 ..> UC01 : <<extend>>
 UC04 ..> UC02 : <<extend>>
 UC04 ..> UC03 : <<extend>>
 note bottom of UC01
+  Разбор запускается событием до проверки оператором.
   Отправку всегда подтверждает оператор.
 end note
 @enduml
