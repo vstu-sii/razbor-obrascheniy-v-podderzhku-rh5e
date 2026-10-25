@@ -1,44 +1,19 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support Triage · рабочее место оператора</title>
-<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
-</head>
-<body>
-<header><a class="brand" href="#">ST<span>Support Triage</span></a><span class="operator">Первая линия <b>Оператор Анна</b></span></header>
-<div class="demo">Учебный прототип · все обращения и источники синтетические · действия моделируются только на этой странице</div>
-<div class="workspace">
-<aside><p class="eyebrow">Сценарии проверки</p><nav aria-label="Сценарии">
-<button data-case="1" aria-current="true"><small>UC-01</small>Обоснованный ответ<span>Настройка доступа</span></button>
-<button data-case="2"><small>UC-02</small>Уточнение данных<span>Проблема с интеграцией</span></button>
-<button data-case="3"><small>UC-03</small>Передача специалисту<span>Сложный платёжный случай</span></button>
-<button data-case="4"><small>UC-04</small>Отклонение предложения<span>Непроверенный источник</span></button>
-</nav><div class="side-note"><span class="dot"></span> Решение принимает человек<p>Проверьте обращение и источники перед подтверждением.</p></div></aside>
-<main>
-<div class="titlebar"><div><p class="eyebrow" id="ticket-id"></p><h1 id="title"></h1></div><span class="badge" id="review-status">Ожидает проверки</span></div>
-<div class="columns">
-<section class="panel"><div class="panel-head"><h2>Обращение и контекст</h2><span class="tag">Исходник</span></div>
-<p class="eyebrow">Сообщение клиента</p><blockquote id="ticket-text"></blockquote>
-<h3>История обращения</h3><p id="history" class="secondary"></p>
-<h3>Собранные данные</h3><ul id="facts"></ul>
-<h3>Недостающие данные</h3><ul id="missing"></ul>
-<h3>Основания и источники</h3><div id="sources"></div>
-</section>
-<section class="panel proposal"><div class="panel-head"><h2>Предложение для проверки</h2><span class="tag blue">AI-карточка</span></div>
-<div class="metrics"><div><span>Категория</span><b id="category"></b></div><div><span>Срочность</span><b id="urgency"></b></div></div>
-<p id="urgency-reason" class="secondary"></p><div class="route"><span>Предлагаемый маршрут</span><strong id="mode"></strong></div>
-<h3>Краткая суть</h3><p id="summary"></p><h3>Следующий шаг</h3><p id="next-step"></p>
-<label for="reply" id="reply-label">Текст для проверки</label><textarea id="reply" rows="4" readonly></textarea>
-<div id="queue-field" hidden><label for="queue">Очередь специалиста</label><select id="queue"><option value="">Выберите очередь</option><option value="billing">Платежи / специалист</option><option value="technical">Техническая поддержка</option></select></div>
-<label for="reason">Причина правки или отклонения</label><input id="reason" placeholder="Укажите, что нужно исправить" maxlength="500">
-<p id="warning" class="warning" hidden></p>
-<div class="actions"><button id="prepare" class="primary">Проверить и подтвердить</button><button id="edit">Исправить текст</button><button id="reject" class="danger">Отклонить</button></div>
-<p id="feedback" role="status" aria-live="polite" class="feedback"></p>
-</section>
-</div>
-<section class="audit panel"><div class="panel-head"><h2>Журнал решений</h2><button id="reset" class="quiet">Начать сценарий заново</button></div><p class="secondary">Исходное предложение и решение оператора показаны отдельно. Журнал хранится до переключения сценария или перезагрузки.</p><ol id="audit"></ol></section>
-</main></div>
-<dialog id="confirm-dialog"><form method="dialog"><p class="eyebrow">Явное решение оператора</p><h2 id="confirm-title"></h2><p id="confirm-detail"></p><pre id="confirm-text"></pre><p class="secondary">Учебная симуляция: внешняя система не получает сообщения или назначение.</p><div class="actions"><button value="cancel">Вернуться к проверке</button><button id="confirm" type="button" class="primary">Подтвердить действие</button></div></form></dialog>
-<dialog id="source-dialog"><form method="dialog"><p class="eyebrow">Синтетическая база знаний</p><h2 id="source-title"></h2><p id="source-meta"></p><p id="source-text"></p><button>Закрыть источник</button></form></dialog>
-</body></html>
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LAB02 — событийный разбор</title><style>body{font:16px system-ui;background:#f2f5f8;color:#172333;margin:0}main{max-width:960px;margin:auto;padding:24px}section{background:white;border-radius:12px;padding:20px;margin:16px 0}button,select,textarea,input{font:inherit;padding:10px;margin:5px;max-width:100%;box-sizing:border-box}textarea{display:block;width:95%}button:disabled{opacity:.5}pre{white-space:pre-wrap;overflow-wrap:anywhere}[hidden]{display:none!important}</style>
+<main><h1>Очередь оператора</h1><p>LAB02: локальная симуляция. События приходят из поддержки; просмотр не запускает AI. Все данные синтетические, отправки нет.</p>
+<section><h2>События тестового стенда</h2><button id="create">Событие: создан тикет</button><button id="message">Событие: сообщение клиента</button><button id="duplicate">Повторить доставку</button><button id="note">Внутренняя заметка</button><button id="finish">Симулятор: завершить задачу</button><select id="case"><option value="answer">UC-01: ответ</option><option value="clarify">UC-02: уточнение</option><option value="escalate">UC-03: специалист</option></select></section>
+<section><h2>Тикет DEMO-014</h2><p>Клиент: где скачать счёт?</p><p id="state" role="status"></p><p id="queue"></p><button id="open">Открыть карточку</button><div id="card" hidden><p id="version"></p><p id="details"></p><p id="source"></p><textarea id="reply" rows="3"></textarea><select id="destination"><option value="">Выберите очередь</option><option value="billing">Платежи</option><option value="technical">Техническая поддержка</option></select><input id="reason" placeholder="Причина решения"><button id="accept">Проверить и подтвердить</button><button id="reject">Отклонить</button></div><p id="error" role="alert"></p></section>
+<section><h2>История предложений и решений</h2><pre id="history"></pre></section>
+<dialog id="confirm"><p id="preview"></p><button id="save">Подтвердить</button><button id="cancel">Отмена</button></dialog></main>
+<script>
+const $=id=>document.getElementById(id);let version=0,running=null,waiting=null,proposal=null,shown=null,attempts=0,history=[],pending=null;
+function paint(){ $('state').textContent=version?'Версия входа '+version+' · '+(running?'разбирается':waiting?'в очереди':proposal?.version===version?'готово':'нужна ручная проверка'):'Событий пока нет';$('queue').textContent='В работе: '+(running||'нет')+'; ожидает: '+(waiting||'нет')+'; выполнено разборов: '+attempts;$('history').textContent=history.join('\n');const stale=!shown||shown.version!==version;$('accept').disabled=stale;$('version').textContent=shown?'Карточка версии '+shown.version+(stale?' — устарела, подтверждение заблокировано':' — актуальна'):'';}
+function event(){version++;if(running)waiting=version;else waiting=version;history.push('Получено событие версии '+version);paint();}
+$('create').onclick=()=>{if(!version)event();else history.push('Повтор создания не добавляет задачу');paint();};
+$('message').onclick=()=>{if(!version){$('error').textContent='Сначала создайте тикет';return;}event();};
+$('duplicate').onclick=()=>{history.push('Повтор доставки дедуплицирован');paint();};$('note').onclick=()=>{history.push('Внутренняя заметка: разбор не запущен');paint();};
+$('finish').onclick=()=>{if(!running&&waiting){running=waiting;waiting=null;paint();return;}if(!running)return;const mode=$('case').value;attempts++;proposal={version:running,mode,text:mode==='answer'?'В учебной версии счёт доступен в Биллинг → Документы.':mode==='clarify'?'Какую версию интерфейса вы используете?':''};history.push('Результат версии '+running+(running!==version?' сохранён как устаревший':' готов'));running=null;paint();};
+$('open').onclick=()=>{if(!proposal){$('error').textContent='Карточка ещё не готова. Просмотр не запускает разбор.';return;}shown={...proposal};$('card').hidden=false;$('reply').value=shown.text;$('details').textContent=shown.mode==='clarify'?'Не хватает версии интерфейса; следующий шаг — уточнить':shown.mode==='escalate'?'Недостаточно оснований; следующий шаг — специалист':'Категория: платежи. Срочность оценивает оператор. Следующий шаг — проверить применимость.';$('source').textContent=shown.mode==='answer'?'Источник: синтетическая статья «Счёт», версия v1':'Утверждённого основания ответа нет';$('destination').hidden=shown.mode!=='escalate';$('reason').value='';paint();};
+function prepare(reject){$('error').textContent='';if(!shown)return;if(shown.version!==version){$('error').textContent='Карточка устарела';return;}if(!$('reason').value.trim()){ $('error').textContent='Укажите причину';return;}if(!reject&&shown.mode==='escalate'&&!$('destination').value){$('error').textContent='Выберите очередь';return;}pending={version:shown.version,reject,text:$('reply').value,reason:$('reason').value};$('preview').textContent=reject?'Отклонить предложение?':'Сохранить решение оператора?';$('confirm').showModal();}
+$('accept').onclick=()=>prepare(false);$('reject').onclick=()=>prepare(true);$('cancel').onclick=()=>{pending=null;$('confirm').close();};$('save').onclick=()=>{if(pending?.version!==version){$('error').textContent='Новая версия: решение заблокировано';}else history.push((pending.reject?'Отклонено':'Подтверждено')+' для версии '+pending.version+': '+pending.reason);pending=null;$('confirm').close();paint();};paint();
+</script></html>

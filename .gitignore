@@ -1,5 +1,6 @@
-/node_modules/
-/test-results/
+node_modules/
 .env
-__pycache__/
-*.pyc
+.env.*
+!.env.example
+**/__pycache__/
+validation-output/

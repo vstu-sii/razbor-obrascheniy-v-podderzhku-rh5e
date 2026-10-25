@@ -1,0 +1,51 @@
+@startuml
+entity ticket_ref {
+ *ticket_id : UUID
+ current_input_version : BIGINT
+}
+entity analysis_event {
+ *event_id : TEXT
+ ticket_id : UUID
+ input_version : BIGINT
+ event_type : TEXT
+ kb_version : TEXT
+ occurred_at : TIMESTAMPTZ
+ received_at : TIMESTAMPTZ
+}
+entity analysis_job {
+ *job_id : UUID
+ ticket_id : UUID
+ input_version : BIGINT
+ event_id : TEXT
+ state : TEXT
+ attempts : INTEGER
+ reserved_tokens : BIGINT
+ lease_until : TIMESTAMPTZ
+ deadline_at : TIMESTAMPTZ
+ created_at : TIMESTAMPTZ
+}
+entity analysis_proposal {
+ *proposal_id : UUID
+ ticket_id : UUID
+ input_version : BIGINT
+}
+ticket_ref ||--o{ analysis_event
+ticket_ref ||--o{ analysis_job
+analysis_event ||--o| analysis_job : composite FK event/ticket/version
+ticket_ref ||--o{ analysis_proposal
+entity model_attempt {
+ *job_id : UUID
+ *attempt_no : INTEGER
+ request_id : UUID
+ reserved_tokens : BIGINT
+ state : TEXT
+ reserved_at : TIMESTAMPTZ
+}
+entity operator_review {
+ *review_id : UUID
+ proposal_id : UUID
+ input_version : BIGINT
+}
+analysis_job ||--o{ model_attempt
+analysis_proposal ||--o{ operator_review
+@enduml

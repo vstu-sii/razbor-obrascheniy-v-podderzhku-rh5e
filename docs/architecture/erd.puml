@@ -1,73 +1,49 @@
 @startuml
 hide circle
 skinparam linetype ortho
-title LAB02 — контракты хранения; пунктир = provenance, не межбазовый FK
-package "Triage DB / владелец triage-store" {
-entity "schema_migration" as tm {
-  *version : INTEGER <<PK>>
-  applied_at : TIMESTAMPTZ
-}
 entity "ticket_ref" as ticket {
   *ticket_id : UUID <<PK>>
-  external_ref : TEXT <<UNIQUE>>
+  --
+  external_ref : TEXT
   created_at : TIMESTAMPTZ
+}
+entity "knowledge_article" as article {
+  *article_id : UUID <<PK>>
+  --
+  source_key : TEXT
+  version : TEXT
+  status : TEXT
+  title : TEXT
 }
 entity "analysis_proposal" as proposal {
   *proposal_id : UUID <<PK>>
+  --
   ticket_id : UUID <<FK>>
-  request_id : TEXT <<UNIQUE>>
-  kb_version : TEXT
-  status : proposed | not_analyzed
-  mode : answer | clarify | escalate
+  mode : TEXT
   category : TEXT
-  urgency : TEXT
-  urgency_reason : TEXT
   summary : TEXT
-  known_facts : JSONB array
-  missing_data : JSONB array
-  next_step : TEXT
   draft_reply : TEXT?
-  model_version : TEXT?
-  needs_human_review : BOOLEAN = true
+  model_version : TEXT
   created_at : TIMESTAMPTZ
 }
 entity "proposal_evidence" as evidence {
-  *proposal_id : UUID <<PK, FK>>
-  *source_key : TEXT <<PK>>
-  *source_version : TEXT <<PK>>
-  title : TEXT
+  *proposal_id : UUID <<FK>>
+  *article_id : UUID <<FK>>
+  --
   excerpt : TEXT
 }
 entity "operator_review" as review {
   *review_id : UUID <<PK>>
+  --
   proposal_id : UUID <<FK>>
   actor_ref : TEXT
-  decision : accepted | edited | rejected
-  action : none | send_answer | send_clarification | escalate
+  decision : TEXT
   final_text : TEXT?
-  destination : TEXT?
   reason : TEXT?
-  confirmed_at : TIMESTAMPTZ?
   reviewed_at : TIMESTAMPTZ
-}
-}
-package "Knowledge DB / владелец knowledge" {
-entity "schema_migration" as km {
-  *version : INTEGER <<PK>>
-  applied_at : TIMESTAMPTZ
-}
-entity "knowledge_article" as article {
-  *article_id : UUID <<PK>>
-  source_key : TEXT <<UNIQUE(source_key, version)>>
-  version : TEXT
-  status : draft | approved | retired
-  title : TEXT
-  content : TEXT
-  approved_at : TIMESTAMPTZ?
-}
 }
 ticket ||--o{ proposal
 proposal ||--o{ evidence
+article ||--o{ evidence
 proposal ||--o{ review
-evidence .. article : snapshot source_key + version\nбез общего FK
 @enduml

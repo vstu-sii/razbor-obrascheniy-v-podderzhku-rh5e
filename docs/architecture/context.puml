@@ -13,4 +13,5 @@ Rel(triage, operator, "Показывает основания и вариант
 Rel(triage, specialist, "Передаёт проверенный контекст через поддержку", "через helpdesk")
 Rel(triage, helpdesk, "Читает тикет; пишет только после подтверждения оператора", "API/HTTPS")
 Rel(triage, llm, "Посылает разрешённый контекст", "API/HTTPS")
+Rel(helpdesk, triage, "Событие создания или сообщения клиента", "Webhook/HTTPS")
 @enduml

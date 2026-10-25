@@ -1,23 +1,6 @@
 """LAB02 AI stub. It never suggests an answer without approved evidence."""
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
-
-
-def valid_request(data):
-    required = {"request_id", "ticket_ref", "ticket_text", "history", "kb_version"}
-    if not isinstance(data, dict) or set(data) != required:
-        return False
-    limits = {"request_id": 100, "ticket_ref": 100, "ticket_text": 10000, "kb_version": 100}
-    if any(not isinstance(data[key], str) or not 1 <= len(data[key]) <= limit
-           for key, limit in limits.items()):
-        return False
-    history = data["history"]
-    return isinstance(history, list) and len(history) <= 50 and all(
-        isinstance(item, dict) and set(item) == {"speaker", "text"}
-        and item["speaker"] in ("customer", "operator")
-        and isinstance(item["text"], str) and len(item["text"]) <= 10000
-        for item in history
-    )
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -33,17 +16,18 @@ class Handler(BaseHTTPRequestHandler):
             return
         try:
             size = int(self.headers.get("Content-Length", "0"))
-            if size > 65536:
+            if size < 1 or size > 65536:
                 self.respond(413, {"error": "input_size"})
                 return
-            if size < 1:
-                self.respond(400, {"error": "invalid_input"})
-                return
             data = json.loads(self.rfile.read(size))
-            if not valid_request(data):
+            required = ("request_id", "ticket_ref", "ticket_text", "history", "kb_version")
+            if (not isinstance(data, dict)
+                    or any(key not in data for key in required)
+                    or not all(isinstance(data[key], str) and data[key] for key in required if key != "history")
+                    or not isinstance(data["history"], list)):
                 self.respond(400, {"error": "invalid_input"})
                 return
-        except (ValueError, UnicodeDecodeError):
+        except (ValueError, json.JSONDecodeError):
             self.respond(400, {"error": "invalid_json"})
             return
         self.respond(200, {
@@ -64,4 +48,4 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    ThreadingHTTPServer(("0.0.0.0", 8000), Handler).serve_forever()
+    HTTPServer(("0.0.0.0", 8000), Handler).serve_forever()
