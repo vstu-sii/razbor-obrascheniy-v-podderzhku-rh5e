@@ -9,6 +9,6 @@ COPY migrations ./migrations
 COPY data ./data
 RUN useradd --uid 10001 --create-home appuser && mkdir /data && chown appuser /data
 USER appuser
-ENV DATABASE_PATH=/data/triage.db TRACE_PATH=/data/traces.jsonl BASELINE_MODE=extractive
+ENV DATABASE_PATH=/data/triage.db TRACE_PATH=/data/traces.jsonl BASELINE_MODE=extractive APP_FACTORY=backend.main:create_app
 EXPOSE 8000
-CMD ["uvicorn", "backend.main:create_app", "--factory", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "backend/bootstrap.py"]

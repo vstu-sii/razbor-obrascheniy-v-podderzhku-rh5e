@@ -1,0 +1,30 @@
+{
+  "checkedAtUTC": "2026-10-25T19:36:11.161506+00:00",
+  "observations": [
+    {
+      "url": "https://siiski-volchkova-shared-repository.onrender.com/",
+      "httpStatus": 200,
+      "htmlSha256": "1570183fe4527449adabdfe052e226cb37ab2ad911d9050d85d6bef399dda8a3"
+    },
+    {
+      "url": "https://siiski-volchkova-shared-repository.onrender.com/health",
+      "httpStatus": 200,
+      "body": {
+        "status": "ok",
+        "baseline_mode": "extractive"
+      }
+    },
+    {
+      "url": "https://siiski-volchkova-shared-repository.onrender.com/api/proposals",
+      "httpStatus": 401
+    }
+  ],
+  "authenticatedPublicWriteIndependentlyVerified": false,
+  "participantEvidence": "User supplied screenshots show saved proposal list and reopened proposal on public UI.",
+  "expectedDeploymentSource": "DEVELOPMENT fb19515; Render deployment SHA was not read independently",
+  "notes": [
+    "No access tokens or DATABASE_URL were requested or used.",
+    "Public API is protected; 401 without Bearer is expected.",
+    "Extractive baseline, not a generative model."
+  ]
+}

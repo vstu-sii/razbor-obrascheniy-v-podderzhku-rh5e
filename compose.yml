@@ -6,7 +6,9 @@ services:
     ports:
       - "127.0.0.1:${PORT:-8000}:8000"
     environment:
-      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:?Set DEMO_OPERATOR_TOKEN in .env}
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      DATABASE_URL: ${DATABASE_URL:-}
+      APP_FACTORY: backend.main:create_app
       BASELINE_MODE: ${BASELINE_MODE:-extractive}
       DATABASE_PATH: /data/triage.db
       TRACE_PATH: /data/traces.jsonl

@@ -127,7 +127,11 @@ class Baseline:
         sources = retrieve(request['ticket_text'], request['history'], request['kb_version'], self.kb)
         raw, usage, reason = None, None, None
         attempts = 0
-        for attempt in range(2 if self.mode == 'llm' else 1):
+        current_version = any(item['status'] == 'approved' and item['version'] == request['kb_version'] for item in self.kb)
+        model_blocked = self.mode == 'llm' and not current_version
+        if model_blocked:
+            reason = 'no_current_knowledge_version'
+        for attempt in range(0 if model_blocked else (2 if self.mode == 'llm' else 1)):
             attempts = attempt + 1
             try:
                 if self.mode == 'disabled':
@@ -151,7 +155,7 @@ class Baseline:
                   'attempts': attempts, 'schema_valid': isinstance(raw, dict) and Draft202012Validator(self.schema).is_valid(raw),
                   'gate_passed': passed, 'provider': self.mode, 'request_id': request['request_id'],
                   'http_status': 200 if raw is not None and self.mode == 'llm' else None,
-                  'transport_kind': 'external_http' if self.mode == 'llm' else 'local_function', 'billed_usd': None}
+                  'transport_kind': 'external_http' if self.mode == 'llm' and attempts else 'local_function', 'billed_usd': None}
         if self.trace_path:
             path = Path(self.trace_path)
             path.parent.mkdir(parents=True, exist_ok=True)

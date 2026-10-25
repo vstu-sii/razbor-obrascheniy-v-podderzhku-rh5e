@@ -86,7 +86,11 @@ class BodyLimitMiddleware:
         return await self.app(scope, bounded_receive, send)
 
 def create_app(db_path=None, engine=None, token=None):
-    db_path = Path(db_path or os.environ.get('DATABASE_PATH', HERE / 'validation-output/triage.db'))
+    target = db_path or os.environ.get('DATABASE_URL') or os.environ.get('DATABASE_PATH', HERE / 'validation-output/triage.db')
+    postgres = str(target).startswith(('postgresql://', 'postgres://'))
+    if not db_path and os.environ.get('DATABASE_URL') and not postgres:
+        raise RuntimeError('DATABASE_URL must be a PostgreSQL connection string')
+    db_path = str(target) if postgres else Path(target)
     token = token or os.environ.get('DEMO_OPERATOR_TOKEN', '')
     if not token:
         raise RuntimeError('Set DEMO_OPERATOR_TOKEN before serving the demo')
@@ -98,9 +102,10 @@ def create_app(db_path=None, engine=None, token=None):
 
     @asynccontextmanager
     async def lifespan(app):
-        db_path.parent.mkdir(parents=True, exist_ok=True)
+        if not postgres:
+            db_path.parent.mkdir(parents=True, exist_ok=True)
         with connect() as connection:
-            store_module.migrate(connection, HERE / 'migrations')
+            store_module.initialize(connection, HERE / 'migrations')
         yield
 
     app = FastAPI(title='Support Triage LAB03 prototype', lifespan=lifespan)
@@ -181,7 +186,7 @@ def create_app(db_path=None, engine=None, token=None):
                 raise HTTPException(422, 'Use edited when changing the text')
             final = card['draft_reply'] if body.decision == 'accepted' else body.final_text
             review_id = str(uuid4())
-            connection.execute('INSERT INTO operator_review(review_id,proposal_id,actor_ref,decision,final_text,reason,destination,confirmed_at) VALUES (?,?,?,?,?,?,?,CASE WHEN ? THEN CURRENT_TIMESTAMP ELSE NULL END)',
+            connection.execute('INSERT INTO operator_review(review_id,proposal_id,actor_ref,decision,final_text,reason,destination,confirmed_at) VALUES (?,?,?,?,?,?,?,CASE WHEN ? = TRUE THEN CURRENT_TIMESTAMP ELSE NULL END)',
                 (review_id, proposal_id, actor, body.decision, final, body.reason, body.destination, body.confirmed))
         return {'review_id': review_id, 'decision': body.decision, 'external_action_performed': False}
 
