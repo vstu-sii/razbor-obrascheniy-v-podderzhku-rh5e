@@ -1,0 +1,17 @@
+@startuml
+!include <C4/C4_Context>
+title Контекст: помощник первой линии поддержки
+Person(operator, "Оператор", "Проверяет карточку и сам подтверждает действие")
+Person(specialist, "Специалист", "Получает переданный контекст")
+System_Boundary(triage_boundary, "Support Triage") {
+  System(triage, "Support Triage", "Предлагает разбор текстового обращения")
+}
+System_Ext(helpdesk, "Система поддержки", "Тикеты, история, отправка и назначение")
+System_Ext(llm, "LLM-провайдер", "Структурированное предложение")
+Rel(operator, triage, "Открывает и проверяет карточку", "HTTPS")
+Rel(triage, operator, "Показывает основания и варианты", "HTTPS")
+Rel(triage, specialist, "Передаёт проверенный контекст через поддержку", "через helpdesk")
+Rel(triage, helpdesk, "Читает тикет; пишет только после подтверждения оператора", "API/HTTPS")
+Rel(triage, llm, "Посылает разрешённый контекст", "API/HTTPS")
+Rel(helpdesk, triage, "Событие создания или сообщения клиента", "Webhook/HTTPS")
+@enduml
