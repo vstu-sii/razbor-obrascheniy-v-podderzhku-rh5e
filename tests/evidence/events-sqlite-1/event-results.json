@@ -1,0 +1,283 @@
+{
+  "results": [
+    {
+      "id": "EVT-01",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1,
+        "manual_start_required": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:16.784559+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-01-trace.json",
+        "trace_sha256": "1339b5488d1bfb0f8418f476275e2a0c2254f08571725670c5a971f7cd229ebd"
+      }
+    },
+    {
+      "id": "EVT-02",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1,
+        "event_records": 1
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:16.886461+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-02-trace.json",
+        "trace_sha256": "d14d71433c458d85a8ac00aa189af7335d594371a1b779dcce7d67c240367e6f"
+      }
+    },
+    {
+      "id": "EVT-03",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:16.978113+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-03-trace.json",
+        "trace_sha256": "78f663102d66d6a7e989cb54f91337442c23639913537c030b4aa4d4d89088a5"
+      }
+    },
+    {
+      "id": "EVT-04",
+      "status": "passed",
+      "observed": {
+        "pending_jobs": 1,
+        "pending_is_latest": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.063186+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-04-trace.json",
+        "trace_sha256": "dd0a8ca584967675fc90e4b81b3ab267685b5553eb58e829348cf493fcb06a3a"
+      }
+    },
+    {
+      "id": "EVT-05",
+      "status": "passed",
+      "observed": {
+        "active_jobs": 1,
+        "pending_jobs": 1,
+        "stale_result_published": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.165713+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-05-trace.json",
+        "trace_sha256": "34b21a40b6bc796512c69230e6bc792811852254407ec1aab921bb5aca50c983"
+      }
+    },
+    {
+      "id": "EVT-06",
+      "status": "passed",
+      "observed": {
+        "atomic_version_check": true,
+        "stale_action_committed": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.328170+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-06-trace.json",
+        "trace_sha256": "d3539f655cc9985adfe55acbc8435824af874ee72c5304f179cd47ca98f0e8ce"
+      }
+    },
+    {
+      "id": "EVT-07",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 0,
+        "model_calls": 0
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.423836+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-07-trace.json",
+        "trace_sha256": "ac091555ec6cc6d380118fe99789086a94bccb0b4d2fdd8674121dea212a0f02"
+      }
+    },
+    {
+      "id": "EVT-08",
+      "status": "passed",
+      "observed": {
+        "global_running_limit_respected": true,
+        "remaining_jobs_wait": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.584179+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-08-trace.json",
+        "trace_sha256": "98c9d83f81413330bf1eac4320d0ffdf7f1db0bebd96f40b18572e140db5ee8d"
+      }
+    },
+    {
+      "id": "EVT-09",
+      "status": "passed",
+      "observed": {
+        "new_event_http_status": 503,
+        "new_event_acknowledged": false,
+        "new_event_persisted": false,
+        "known_duplicate_acknowledged": true,
+        "redelivery_after_capacity_succeeds": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.700003+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-09-trace.json",
+        "trace_sha256": "9805b1d1f631f4bb0ffff79b39f2c22920300f701bad7bcde45f9c6e5c466cc2"
+      }
+    },
+    {
+      "id": "EVT-10",
+      "status": "passed",
+      "observed": {
+        "calls_without_budget": 0,
+        "reservation_preserved": true,
+        "global_limits_respected": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.801834+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-10-trace.json",
+        "trace_sha256": "55adcf5e6ffd28ba11e0770f4789f7df5f9963b34bd9566be015f655af603408"
+      }
+    },
+    {
+      "id": "EVT-11",
+      "status": "passed",
+      "observed": {
+        "attempts_preserved": true,
+        "unknown_charge_reserved": true,
+        "total_model_calls": 2,
+        "nested_retries_included": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.897719+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-11-trace.json",
+        "trace_sha256": "4126a237b81ec7d3434397894c0021096835a38649f457e52eeffc239da9719e"
+      }
+    },
+    {
+      "id": "EVT-12",
+      "status": "passed",
+      "observed": {
+        "unauthorized_writes": 0,
+        "model_calls": 0,
+        "secrets_logged": false,
+        "all_invalid_input_classes_tested": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:17.973616+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-12-trace.json",
+        "trace_sha256": "8daead834e1abda83757fa95641ac8bbf5c0eadf7915da652905ba0bcc13dfe1"
+      }
+    },
+    {
+      "id": "EVT-13",
+      "status": "passed",
+      "observed": {
+        "state": "manual_review",
+        "client_draft": null,
+        "deadline_limit_seconds": 55,
+        "deadline_includes_queue": true,
+        "total_model_calls": 2
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:18.084367+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-13-trace.json",
+        "trace_sha256": "154764b934cc4d40b25d8a922c8066bdb7eff38a9c0b156741f121226546d99d"
+      }
+    },
+    {
+      "id": "EVT-14",
+      "status": "passed",
+      "observed": {
+        "ucs_checked": 4,
+        "sources_and_modes_checked": true,
+        "review_stored_separately": true,
+        "external_helpdesk_writes": 0
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "SQLite + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:29:18.314657+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-14-trace.json",
+        "trace_sha256": "2c2d6fe789a3d0ca9066444b5f430ea12632ccbaaec185ef26c89b317f1f51b8"
+      }
+    }
+  ]
+}

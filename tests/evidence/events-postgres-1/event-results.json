@@ -1,0 +1,283 @@
+{
+  "results": [
+    {
+      "id": "EVT-01",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1,
+        "manual_start_required": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:05.691876+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-01-trace.json",
+        "trace_sha256": "d7108fb56e0d05549ba102df8e26aab48eec499b94b0c1c1476799616523f144"
+      }
+    },
+    {
+      "id": "EVT-02",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1,
+        "event_records": 1
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:06.179735+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-02-trace.json",
+        "trace_sha256": "f029ec2ce930570c055d46c2c13768b7a7157aefc56edbc70036db3571820858"
+      }
+    },
+    {
+      "id": "EVT-03",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 1
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:06.624491+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-03-trace.json",
+        "trace_sha256": "aca95bb334db319d46d85e3946379ad86555d94afcecc13e8fd5ecfbe4a591d0"
+      }
+    },
+    {
+      "id": "EVT-04",
+      "status": "passed",
+      "observed": {
+        "pending_jobs": 1,
+        "pending_is_latest": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:07.189239+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-04-trace.json",
+        "trace_sha256": "ea58c8c4d9fe794582f7d6a9f59f561a9118b145f02f663739543f013166008f"
+      }
+    },
+    {
+      "id": "EVT-05",
+      "status": "passed",
+      "observed": {
+        "active_jobs": 1,
+        "pending_jobs": 1,
+        "stale_result_published": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:07.774436+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-05-trace.json",
+        "trace_sha256": "89974c6d2d8d0eecd4de1880b1db9f240da527997f3c22630937ab97d9f1b929"
+      }
+    },
+    {
+      "id": "EVT-06",
+      "status": "passed",
+      "observed": {
+        "atomic_version_check": true,
+        "stale_action_committed": false
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:09.385017+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-06-trace.json",
+        "trace_sha256": "761e0f0ba86092ab0cface543d3848c75b6e806d565afe13f694f542f7f90008"
+      }
+    },
+    {
+      "id": "EVT-07",
+      "status": "passed",
+      "observed": {
+        "created_jobs": 0,
+        "model_calls": 0
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:10.140474+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-07-trace.json",
+        "trace_sha256": "0960c37213e8a10a7081e15bf35ffc22831a7fe7ae09fcd0cba4bddda99caeaa"
+      }
+    },
+    {
+      "id": "EVT-08",
+      "status": "passed",
+      "observed": {
+        "global_running_limit_respected": true,
+        "remaining_jobs_wait": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:10.849627+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-08-trace.json",
+        "trace_sha256": "00fc9a60126d5f42bf4ce31b1de5576a7be586977864466f2e7058e749f53a42"
+      }
+    },
+    {
+      "id": "EVT-09",
+      "status": "passed",
+      "observed": {
+        "new_event_http_status": 503,
+        "new_event_acknowledged": false,
+        "new_event_persisted": false,
+        "known_duplicate_acknowledged": true,
+        "redelivery_after_capacity_succeeds": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:11.485100+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-09-trace.json",
+        "trace_sha256": "f3ef776f506bd14d0fcbc0e5e4400cbaf70f6c422ef817e7000b7030267b5b38"
+      }
+    },
+    {
+      "id": "EVT-10",
+      "status": "passed",
+      "observed": {
+        "calls_without_budget": 0,
+        "reservation_preserved": true,
+        "global_limits_respected": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:12.125117+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-10-trace.json",
+        "trace_sha256": "70f19f623fddcf4c1c8298a63de55d89163f043da8a8329898d452a1ed5d79ae"
+      }
+    },
+    {
+      "id": "EVT-11",
+      "status": "passed",
+      "observed": {
+        "attempts_preserved": true,
+        "unknown_charge_reserved": true,
+        "total_model_calls": 2,
+        "nested_retries_included": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:12.746398+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-11-trace.json",
+        "trace_sha256": "432581e1e493f311c2d3178418440289dce790078a46c7850cd1a22bd60a04e8"
+      }
+    },
+    {
+      "id": "EVT-12",
+      "status": "passed",
+      "observed": {
+        "unauthorized_writes": 0,
+        "model_calls": 0,
+        "secrets_logged": false,
+        "all_invalid_input_classes_tested": true
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:13.104452+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-12-trace.json",
+        "trace_sha256": "e90fbfbb06461d7ccd44560bf83bcd0e122c8ce740e00dc871f87c3b6dddca25"
+      }
+    },
+    {
+      "id": "EVT-13",
+      "status": "passed",
+      "observed": {
+        "state": "manual_review",
+        "client_draft": null,
+        "deadline_limit_seconds": 55,
+        "deadline_includes_queue": true,
+        "total_model_calls": 2
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:13.981133+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-13-trace.json",
+        "trace_sha256": "d5cc02f98231ace6f9641d5a25c88ce1db3d187f9547c2d1e6404d7b4dab4bd2"
+      }
+    },
+    {
+      "id": "EVT-14",
+      "status": "passed",
+      "observed": {
+        "ucs_checked": 4,
+        "sources_and_modes_checked": true,
+        "review_stored_separately": true,
+        "external_helpdesk_writes": 0
+      },
+      "provenance": {
+        "application_revision": "19ef2d1ca5463b7a5a037d156d04c51861e6510c+working-tree",
+        "environment": "PostgreSQL + TestClient + controlled inference transport",
+        "executed_at": "2026-10-26T20:33:15.697256+00:00",
+        "configuration": {
+          "deadline_seconds": 55,
+          "maximum_attempts": 2
+        },
+        "trace_path": "EVT-14-trace.json",
+        "trace_sha256": "7292713e0b4091fa033697c4c25d7d063dbd460cf03c5be4df3c4b4f154ab926"
+      }
+    }
+  ]
+}

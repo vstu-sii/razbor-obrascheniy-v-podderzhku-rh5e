@@ -1,0 +1,30 @@
+{
+  "repository": "SIISKI/siiski_volchkova_shared_repository",
+  "revision": "84d544ed8a1194e91b27fdae5cc60578975e785a",
+  "hash_convention": "UTF-8 LF-normalized text",
+  "files": {
+    "backend/ai_service.py": "e5046c97f209005833ea2223ac5c145fadc2aef2313342f615d1a6183b411199",
+    "backend/bootstrap.py": "1f447ac5ec74ffbf7b9c893f0d3f1d3c4d1c71ac2c3ab4f50359d03c85f314ef",
+    "backend/contracts/evaluate.py": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+    "backend/contracts/response.schema.json": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+    "backend/events.py": "8c4f7b0f5a19a9493e556a5d51193a50a913182f897b548900c25dec423dae1b",
+    "backend/guards/auth.py": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85",
+    "backend/ingress.py": "2b9171f56f3de7f058506113a3104a98f4056e591f3bc06c8b4f29f6d3df1ba2",
+    "backend/limits/settings.py": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63",
+    "backend/main.py": "ee7b8d26fe336b200323e9cef3b4a4ce9597914590985ad4d71a740190d6b77e",
+    "backend/models/store.py": "be4554f405fb47358051a61a9b45c24c4369e164a6f96d57f7e80648a976d184",
+    "backend/routers/ai.py": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c",
+    "backend/worker.py": "299bc8b4227d72ef1117308b6102d986564f7121dbbb4c408b3555a6854bb38d",
+    "migrations/001_init.sql": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41",
+    "migrations/002_review_context.sql": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b",
+    "migrations/003_event_queue.sql": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50",
+    "migrations/postgresql/001_init.sql": "5e82da3db733ab1ea0b00b2e6a914081b6429ec22a87af408a7f3d33823385ad",
+    "migrations/postgresql/002_review_context.sql": "1dd7930da1a3854717bca1de26071a1ff10974735fd47f0166ca637111485131",
+    "migrations/postgresql/003_event_queue.sql": "2f8a299f33a0303c0c454332652b0e9488f082d24c946770b6c8de05faafd8fc",
+    "ml/models/baseline.py": "568592d469e945ec3c99afff0857a5ca16f9ec87d321c9c1dfa86cda654fbe8f",
+    "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+    "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+    "ml/tools/propose_card.py": "6073cbabb90667bc659ad291d189c0d264b08787561ba13c7e620ef37ea33a59",
+    "requirements.txt": "81e9dd4fc663b8a4e81a4f51439012ea2789400d35b692221f388a92d18e9d7a"
+  }
+}
