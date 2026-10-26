@@ -1,0 +1,10 @@
+{
+  "new_generation_attempts": 36,
+  "distinct_groups_observed": 38,
+  "halted": null,
+  "complete": true,
+  "reused_ab_responses": 0,
+  "policy_skips": 2,
+  "automatic_retries": 0,
+  "records_covered": 49
+}

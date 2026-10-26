@@ -1,0 +1,32 @@
+{
+  "observed": {
+    "created_jobs": 1
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "8e566809-6eba-4944-805b-a9a2b2cb9955",
+        "event_id": "f3316cfc-8af4-4c8a-b38e-b27eb6f3541a",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "f3316cfc-8af4-4c8a-b38e-b27eb6f3541a",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 0,
+  "database": "PostgreSQL",
+  "external_model_calls": 0
+}

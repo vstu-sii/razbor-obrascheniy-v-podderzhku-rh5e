@@ -1,0 +1,76 @@
+name: LAB04 Quality gates
+on:
+  workflow_call:
+  push:
+    branches: [main, 'lab4-quality-safety']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-evals-and-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUTF8: "1"
+      Q_TASK: tests/evals
+      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/tests/runtime
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r "$LAB04_RUNTIME_ROOT/requirements.txt"
+      - name: Full recorded live v2.1 coverage and unchanged release thresholds
+        run: python "$Q_TASK/evaluate_model.py" --require-targets --output "$RUNNER_TEMP/full-eval.json"
+      - name: Safety contracts and negative gate controls
+        run: python -m unittest discover -s tests -p 'quality_contracts.py' -v
+      - name: All 14 queue scenarios on SQLite
+        run: python "$Q_TASK/runtime_checks.py" --output-dir "$RUNNER_TEMP/events-sqlite"
+      - name: All infrastructure attack scenarios
+        run: python "$Q_TASK/security_checks.py" --output "$RUNNER_TEMP/security.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lab04-quality-evidence
+          path: |
+            ${{ runner.temp }}/full-eval.json
+            ${{ runner.temp }}/events-sqlite/
+            ${{ runner.temp }}/security.json
+  postgres-event-scenarios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: audit
+          POSTGRES_PASSWORD: synthetic_lab04_only
+          POSTGRES_DB: lab04_audit
+        ports: ['18093:5432']
+        options: >-
+          --health-cmd "pg_isready -U audit -d lab04_audit"
+          --health-interval 2s --health-timeout 3s --health-retries 30
+    env:
+      Q_TASK: tests/evals
+      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/tests/runtime
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r "$LAB04_RUNTIME_ROOT/requirements.txt"
+      - name: EVT-01 through EVT-14 on actual PostgreSQL
+        run: python "$Q_TASK/runtime_checks.py" --postgres --output-dir "$RUNNER_TEMP/events-postgres"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: lab04-postgres-evidence
+          path: ${{ runner.temp }}/events-postgres/
