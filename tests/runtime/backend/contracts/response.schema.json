@@ -1,0 +1,256 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "status",
+    "mode",
+    "category",
+    "urgency",
+    "urgency_reason",
+    "summary",
+    "known_facts",
+    "missing_data",
+    "next_step",
+    "evidence",
+    "draft_reply",
+    "needs_human_review",
+    "warnings"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "not_analyzed"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "answer",
+        "clarify",
+        "escalate"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "access",
+        "payment",
+        "settings",
+        "integrations",
+        "product_error",
+        "other"
+      ]
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "unassessed",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "urgency_reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "known_facts": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_data": {
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_step": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "version",
+          "title",
+          "excerpt"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          }
+        }
+      }
+    },
+    "draft_reply": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4000
+    },
+    "needs_human_review": {
+      "type": "boolean",
+      "const": true
+    },
+    "warnings": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "answer"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "proposed"
+          },
+          "evidence": {
+            "minItems": 1
+          },
+          "draft_reply": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "clarify"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "proposed"
+          },
+          "missing_data": {
+            "minItems": 1
+          },
+          "draft_reply": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "escalate"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "draft_reply": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "not_analyzed"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "mode": {
+            "const": "escalate"
+          },
+          "category": {
+            "const": "other"
+          },
+          "urgency": {
+            "const": "unassessed"
+          },
+          "known_facts": {
+            "maxItems": 0
+          },
+          "evidence": {
+            "maxItems": 0
+          },
+          "warnings": {
+            "minItems": 1
+          },
+          "draft_reply": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

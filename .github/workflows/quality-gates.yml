@@ -16,19 +16,10 @@ jobs:
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUTF8: "1"
       Q_TASK: tests/evals
-      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/.quality-runtime/project
+      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/tests/runtime
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          persist-credentials: false
-      - name: Fetch only the fixed application sources used by these tests
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          repository: SIISKI/siiski_volchkova_shared_repository
-          ref: 84d544ed8a1194e91b27fdae5cc60578975e785a
-          path: .quality-runtime
-          sparse-checkout: project
-          sparse-checkout-cone-mode: false
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
@@ -66,20 +57,11 @@ jobs:
           --health-interval 2s --health-timeout 3s --health-retries 30
     env:
       Q_TASK: tests/evals
-      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/.quality-runtime/project
+      LAB04_RUNTIME_ROOT: ${{ github.workspace }}/tests/runtime
       PYTHONDONTWRITEBYTECODE: "1"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          persist-credentials: false
-      - name: Fetch only the fixed application sources used by these tests
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          repository: SIISKI/siiski_volchkova_shared_repository
-          ref: 84d544ed8a1194e91b27fdae5cc60578975e785a
-          path: .quality-runtime
-          sparse-checkout: project
-          sparse-checkout-cone-mode: false
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:

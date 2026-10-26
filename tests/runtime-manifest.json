@@ -25,6 +25,10 @@
     "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
     "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
     "ml/tools/propose_card.py": "6073cbabb90667bc659ad291d189c0d264b08787561ba13c7e620ef37ea33a59",
-    "requirements.txt": "81e9dd4fc663b8a4e81a4f51439012ea2789400d35b692221f388a92d18e9d7a"
-  }
+    "requirements.txt": "81e9dd4fc663b8a4e81a4f51439012ea2789400d35b692221f388a92d18e9d7a",
+    "data/kb.jsonl": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+    "frontend/index.html": "012c68a86771829d7d48c4466c8410e59acc21a40a0c8f7f0f00052c0edf9e98"
+  },
+  "source_mode": "exact_checked_in_application_snapshot_for_quality_tests",
+  "participant_authorization_date": "2026-10-27"
 }

@@ -8,11 +8,9 @@ from pathlib import Path
 
 def checked_runtime():
     value = os.environ.get("LAB04_RUNTIME_ROOT")
-    if not value:
-        raise RuntimeError(
-            "Set LAB04_RUNTIME_ROOT to the pinned SIISKI project directory; see tests/README.md"
-        )
-    project = Path(value).resolve()
+    project = (
+        Path(value) if value else Path(__file__).resolve().parents[1] / "runtime"
+    ).resolve()
     manifest = json.loads(
         (Path(__file__).resolve().parents[1] / "runtime-manifest.json").read_text(
             encoding="utf-8"
