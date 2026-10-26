@@ -1,0 +1,19 @@
+{
+  "dataset_version": "v2.1-reviewed",
+  "original_records": 58,
+  "retained_records": 49,
+  "removed_records": 9,
+  "retained_distinct_input_groups": 38,
+  "expected_changes_applied": 19,
+  "unchanged_records": 30,
+  "historical_records": 16,
+  "mini_records": 10,
+  "dataset_sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+  "live_regressions_sha256": "4d967bc481fedc6d39cc26df098ead136b1210a52a0787df08799050aa29be31",
+  "frozen_original_dataset_sha256": "e9b65cddaaedb3335ba89e0aa6962cc4af673e2550988a21b6340652afb097fc",
+  "review_date": "2026-10-15",
+  "new_api_calls": 0,
+  "frozen_model_outputs_sha256": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d",
+  "first_pass_sha256": "4ced4b4933feffeb225e77525cc92fcd4a185c1b227930e9e1b9ec2dd7607a1e",
+  "recovery_sha256": "4eeea501814650f97603d22ead49de3a0d3d11b6c532a161115bcda61b888bd1"
+}

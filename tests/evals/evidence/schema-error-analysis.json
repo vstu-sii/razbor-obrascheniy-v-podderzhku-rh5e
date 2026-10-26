@@ -1,0 +1,72 @@
+{
+  "by_field_and_rule": {
+    "draft_reply:type": 30
+  },
+  "examples": [
+    {
+      "case_id": "UC01-02",
+      "model": "ministral-14b-2512",
+      "errors": [
+        {
+          "path": [
+            "draft_reply"
+          ],
+          "rule": "type",
+          "message": "None is not of type 'string'"
+        }
+      ]
+    },
+    {
+      "case_id": "UC01-04",
+      "model": "ministral-14b-2512",
+      "errors": [
+        {
+          "path": [
+            "draft_reply"
+          ],
+          "rule": "type",
+          "message": "None is not of type 'string'"
+        }
+      ]
+    },
+    {
+      "case_id": "UC01-06",
+      "model": "ministral-14b-2512",
+      "errors": [
+        {
+          "path": [
+            "draft_reply"
+          ],
+          "rule": "type",
+          "message": "None is not of type 'string'"
+        }
+      ]
+    },
+    {
+      "case_id": "UC02-01",
+      "model": "ministral-14b-2512",
+      "errors": [
+        {
+          "path": [
+            "draft_reply"
+          ],
+          "rule": "type",
+          "message": "None is not of type 'string'"
+        }
+      ]
+    },
+    {
+      "case_id": "UC02-02",
+      "model": "ministral-14b-2512",
+      "errors": [
+        {
+          "path": [
+            "draft_reply"
+          ],
+          "rule": "type",
+          "message": "None is not of type 'string'"
+        }
+      ]
+    }
+  ]
+}

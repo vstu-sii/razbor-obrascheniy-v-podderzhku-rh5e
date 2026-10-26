@@ -1,0 +1,131 @@
+{
+  "reviewer_type": "agent",
+  "reviewer": "Codex",
+  "review_date": "2026-10-15",
+  "records_reviewed": 42,
+  "rubric_scale": {
+    "factual_correctness": {
+      "2": "Существенные утверждения поддержаны входом, историей, переданной БЗ или границами AI; неопределённость не скрыта.",
+      "1": "Есть неточная атрибуция или неподтверждённая второстепенная гипотеза, требующая правки.",
+      "0": "Есть существенный выдуманный/противоречащий источнику факт либо необоснованное обвинение."
+    },
+    "required_facts_complete": {
+      "2": "По смыслу покрыты обязательные факты и существенные пробелы; маршрут оценивается отдельно.",
+      "1": "Часть существенных фактов или пробелов не отражена.",
+      "0": "Ключевые сведения отсутствуют или смысл обращения потерян."
+    },
+    "tone": {
+      "2": "Понятный, уважительный русский текст без обвинений; уместный объём.",
+      "1": "Текст нейтрален, но смешивает языки, полностью английский или перегружен вопросами.",
+      "0": "Есть необоснованное обвинение клиента или явно непригодная формулировка."
+    },
+    "operator_usability": {
+      "2": "Черновик можно предложить оператору без содержательной/контрактной правки; это не отправка клиенту.",
+      "1": "Есть полезная основа, но нужны исправление текста, категории, режима или схемы.",
+      "0": "Карточку нельзя использовать как готовое предложение: существенная выдумка, небезопасный маршрут или неподходящее действие."
+    }
+  },
+  "scope": "subjective_agent_rating_not_human_acceptance",
+  "groups": {
+    "active_38": {
+      "n": 38,
+      "decisions": {
+        "needs_revision": 22,
+        "usable_draft": 3,
+        "reject_draft": 13
+      },
+      "rubric": {
+        "factual_correctness": {
+          "distribution_0_1_2": {
+            "0": 4,
+            "1": 8,
+            "2": 26
+          },
+          "mean_score_out_of_2": 1.5789473684210527
+        },
+        "required_facts_complete": {
+          "distribution_0_1_2": {
+            "0": 0,
+            "1": 6,
+            "2": 32
+          },
+          "mean_score_out_of_2": 1.8421052631578947
+        },
+        "tone": {
+          "distribution_0_1_2": {
+            "0": 2,
+            "1": 22,
+            "2": 14
+          },
+          "mean_score_out_of_2": 1.3157894736842106
+        },
+        "operator_usability": {
+          "distribution_0_1_2": {
+            "0": 13,
+            "1": 22,
+            "2": 3
+          },
+          "mean_score_out_of_2": 0.7368421052631579
+        }
+      },
+      "schema_valid": 10
+    },
+    "excluded_4_diagnostic": {
+      "n": 4,
+      "decisions": {
+        "usable_draft": 2,
+        "needs_revision": 2
+      },
+      "rubric": {
+        "factual_correctness": {
+          "distribution_0_1_2": {
+            "0": 0,
+            "1": 0,
+            "2": 4
+          },
+          "mean_score_out_of_2": 2.0
+        },
+        "required_facts_complete": {
+          "distribution_0_1_2": {
+            "0": 0,
+            "1": 0,
+            "2": 4
+          },
+          "mean_score_out_of_2": 2.0
+        },
+        "tone": {
+          "distribution_0_1_2": {
+            "0": 0,
+            "1": 2,
+            "2": 2
+          },
+          "mean_score_out_of_2": 1.5
+        },
+        "operator_usability": {
+          "distribution_0_1_2": {
+            "0": 0,
+            "1": 2,
+            "2": 2
+          },
+          "mean_score_out_of_2": 1.5
+        }
+      },
+      "schema_valid": 2
+    }
+  },
+  "source_response_sha256": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d",
+  "source_gold_sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+  "source_kb_sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+  "source_schema_sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+  "assessment_sha256": "d5266e4aca01337aa3669390c00b4fe98e6241b3bd9f4d2b0b6f36a59f5acaae",
+  "new_api_calls": 0,
+  "human_model_output_review_completed": false,
+  "production_quality_accepted": false,
+  "limitations": [
+    "Same agent helped prepare labels; no independent blind judge.",
+    "UC-04 candidate_proposal was not included in the model payload; grade regenerated card only, not operator action or correction of the original proposal.",
+    "Urgency has no approved case labels and is not scored as an accuracy metric.",
+    "Tone and usability are subjective judgments, not observed operator performance.",
+    "No approved real service KB, no claim about production quality."
+  ]
+}

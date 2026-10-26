@@ -1,0 +1,19 @@
+{
+  "live_api_run": true,
+  "distinct_model_inputs": 42,
+  "first_pass_network_failures_preserved": 21,
+  "all_model_responses_received_after_connection_recovery": true,
+  "provider": "Mistral",
+  "model": "ministral-14b-2512",
+  "free_account_basis": "participant confirmation; account plan not verifiable from model catalog",
+  "api_mira_called": false,
+  "paid_routes_called": false,
+  "billed_cost_reported_by_api": false,
+  "frozen_benchmark_cases": 50,
+  "new_live_regressions": 8,
+  "dataset_total_records": 58,
+  "independent_gold_approved": false,
+  "human_review": "pending",
+  "subjective_metrics_measured": false,
+  "production_quality_accepted": false
+}

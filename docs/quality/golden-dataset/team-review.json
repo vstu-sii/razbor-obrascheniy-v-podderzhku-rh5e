@@ -1,0 +1,44 @@
+{
+  "review_date": "2026-10-15",
+  "confirmation_source": "participant_statement_in_chat",
+  "confirmed_by": "Денис",
+  "reviewers": [
+    {
+      "id": "denis-quality",
+      "name": "Денис",
+      "role": "Quality & Safety"
+    },
+    {
+      "id": "maxim-product",
+      "name": "Максим",
+      "role": "Product"
+    },
+    {
+      "id": "egor-support",
+      "name": "Егор",
+      "role": "сотрудник поддержки"
+    }
+  ],
+  "reported_records_reviewed": 58,
+  "decision": "keep_30_apply_19_exclude_9",
+  "applied_expected_changes": 19,
+  "retained_without_expected_changes": 30,
+  "excluded_case_ids": [
+    "UC01-01",
+    "UC01-09",
+    "UC02-04",
+    "UC02-06",
+    "REG-01",
+    "REG-03",
+    "REG-04",
+    "LIVE-REG-01",
+    "LIVE-REG-06"
+  ],
+  "exclusion_reason": "Участник попросил удалить записи, отмеченные агентом как требующие согласования категории или правила; не исключение по качеству ответа модели",
+  "approval_scope": "ожидаемые результаты оставшихся синтетических примеров и согласованные исправления",
+  "review_method": "three_person_agreement_reported_by_participant",
+  "independent_blind_annotation_documented": false,
+  "model_output_rubric_scored": false,
+  "production_quality_accepted": false,
+  "dataset_version": "v2.1-reviewed"
+}
