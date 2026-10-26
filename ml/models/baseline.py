@@ -122,7 +122,7 @@ class Baseline:
                                   usage_details={'input': usage.get('prompt_tokens', 0), 'output': usage.get('completion_tokens', 0)})
         return card, usage
 
-    def analyze(self, request):
+    def analyze(self, request, max_attempts=2, deadline_seconds=55):
         started = time.perf_counter()
         sources = retrieve(request['ticket_text'], request['history'], request['kb_version'], self.kb)
         raw, usage, reason = None, None, None
@@ -131,7 +131,7 @@ class Baseline:
         model_blocked = self.mode == 'llm' and not current_version
         if model_blocked:
             reason = 'no_current_knowledge_version'
-        for attempt in range(0 if model_blocked else (2 if self.mode == 'llm' else 1)):
+        for attempt in range(0 if model_blocked else (min(max_attempts, 2) if self.mode == 'llm' else 1)):
             attempts = attempt + 1
             try:
                 if self.mode == 'disabled':
@@ -139,7 +139,7 @@ class Baseline:
                 if self.mode == 'extractive':
                     raw = self.extractive(request, sources)
                 else:
-                    remaining = 55 - (time.perf_counter() - started)
+                    remaining = min(55, deadline_seconds) - (time.perf_counter() - started)
                     if remaining <= 0:
                         break
                     raw, usage = self.call_model(request, sources, min(25, remaining))

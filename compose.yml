@@ -1,17 +1,40 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "127.0.0.1:${PORT:-8000}:8000"
+  db:
+    image: postgres:16-alpine
     environment:
-      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
-      DATABASE_URL: ${DATABASE_URL:-}
+      POSTGRES_USER: triage
+      POSTGRES_DB: triage
+      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
+    entrypoint: [sh, -c, 'until test -s /run/secrets/db-password; do sleep 1; done; exec docker-entrypoint.sh postgres']
+    volumes:
+      - database:/var/lib/postgresql/data
+      - credentials:/run/secrets:ro
+    depends_on:
+      credentials: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U triage -d triage']
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  credentials:
+    image: python:3.12-slim
+    user: '0'
+    command: [python, -c, "import pathlib,secrets,os; p=pathlib.Path('/secrets'); p.mkdir(exist_ok=True); f=p/'db-password'; f.write_text(secrets.token_urlsafe(32)) if not f.exists() else None; os.chmod(f,0o644)"]
+    volumes: [credentials:/secrets]
+    restart: 'no'
+  app:
+    build: .
+    environment: &runtime
+      DB_HOST: db
+      DB_PASSWORD_FILE: /run/secrets/db-password
       APP_FACTORY: backend.main:create_app
+      START_WORKER: 'false'
       BASELINE_MODE: ${BASELINE_MODE:-extractive}
-      DATABASE_PATH: /data/triage.db
-      TRACE_PATH: /data/traces.jsonl
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      MAX_RUNNING: ${MAX_RUNNING:-2}
+      MAX_PENDING: ${MAX_PENDING:-100}
+      MODEL_REQUESTS_PER_MINUTE: ${MODEL_REQUESTS_PER_MINUTE:-20}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-1000000}
       MODEL_BASE_URL: ${MODEL_BASE_URL:-}
       MODEL_NAME: ${MODEL_NAME:-}
       MODEL_API_KEY: ${MODEL_API_KEY:-}
@@ -19,13 +42,63 @@ services:
       LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
       LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
       TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
-    volumes:
-      - triage-data:/data
+    volumes: &mounts [credentials:/run/secrets:ro, traces:/data]
+    depends_on:
+      db: {condition: service_healthy}
+    ports: ['127.0.0.1:${PORT:-8000}:8000']
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
-      interval: 10s
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)"]
+      interval: 3s
       timeout: 5s
-      retries: 3
+      retries: 30
+    restart: unless-stopped
+  ai:
+    build: .
+    environment:
+      <<: *runtime
+      APP_FACTORY: backend.ai_service:create_app
+    volumes: *mounts
+    depends_on:
+      db: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+  worker:
+    build: .
+    command: [python, -m, backend.worker]
+    environment:
+      <<: *runtime
+      AI_BASE_URL: http://ai:8000
+    volumes: *mounts
+    depends_on:
+      app: {condition: service_healthy}
+      ai: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import pathlib,time; p=pathlib.Path('/tmp/worker-heartbeat'); assert p.exists() and time.time()-p.stat().st_mtime<60"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+  ingress:
+    build: .
+    environment:
+      <<: *runtime
+      APP_FACTORY: backend.ingress:create_app
+      BACKEND_URL: http://app:8000
+    volumes: *mounts
+    depends_on:
+      app: {condition: service_healthy}
+    ports: ['127.0.0.1:${INGRESS_PORT:-8001}:8000']
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
     restart: unless-stopped
 volumes:
-  triage-data:
+  database:
+  credentials:
+  traces:

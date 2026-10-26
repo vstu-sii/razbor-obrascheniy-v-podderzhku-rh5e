@@ -1,5 +1,8 @@
 """Single-process LAB03 prototype. No external send or helpdesk write endpoint."""
 import asyncio
+import threading
+import time
+from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 import hashlib
 import importlib.util
@@ -12,16 +15,19 @@ import sys
 from typing import Literal
 from uuid import uuid4
 
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, AwareDatetime
 
 HERE = Path(__file__).resolve().parents[1]
 ROOT = HERE
 Q = ROOT
 AI = ROOT
 sys.path.insert(0, str(ROOT / 'backend/contracts'))
+sys.path.insert(0, str(ROOT / 'backend'))
+from events import Queue
+from worker import run
 from evaluate import SCHEMA, provenance_gate, read_jsonl
 
 spec = importlib.util.spec_from_file_location('lab03_baseline', AI / 'ml/models/baseline.py')
@@ -43,10 +49,10 @@ class HistoryItem(BaseModel):
 class AnalyzeRequest(BaseModel):
     model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
     request_id: str = Field(min_length=1, max_length=100)
-    ticket_ref: str = Field(min_length=1, max_length=100)
+    ticket_ref: str = Field(min_length=1, max_length=128)
     ticket_text: str = Field(min_length=1, max_length=10000)
     history: list[HistoryItem] = Field(default_factory=list, max_length=50)
-    kb_version: str = Field(min_length=1, max_length=50)
+    kb_version: str = Field(min_length=1, max_length=64)
 
 class ReviewRequest(BaseModel):
     model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
@@ -85,7 +91,8 @@ class BodyLimitMiddleware:
             return await receive()
         return await self.app(scope, bounded_receive, send)
 
-def create_app(db_path=None, engine=None, token=None):
+def create_app(db_path=None, engine=None, token=None, start_worker=None):
+    explicit_target = db_path is not None
     target = db_path or os.environ.get('DATABASE_URL') or os.environ.get('DATABASE_PATH', HERE / 'validation-output/triage.db')
     postgres = str(target).startswith(('postgresql://', 'postgres://'))
     if not db_path and os.environ.get('DATABASE_URL') and not postgres:
@@ -100,30 +107,47 @@ def create_app(db_path=None, engine=None, token=None):
     def connect():
         return store_module.open_store(db_path)
 
+    queue = Queue(connect, module.fallback)
+
     @asynccontextmanager
     async def lifespan(app):
         if not postgres:
             db_path.parent.mkdir(parents=True, exist_ok=True)
         with connect() as connection:
             store_module.initialize(connection, HERE / 'migrations')
-        yield
+        stop = threading.Event()
+        enabled = start_worker if start_worker is not None else (not explicit_target and os.environ.get('START_WORKER', 'true') == 'true')
+        threads = []
+        if enabled:
+            for _ in range(queue.running):
+                thread = threading.Thread(target=run, args=(queue, engine, stop), daemon=True)
+                thread.start()
+                threads.append(thread)
+        try:
+            yield
+        finally:
+            stop.set()
+            for thread in threads:
+                thread.join(timeout=26)
 
     app = FastAPI(title='Support Triage LAB03 prototype', lifespan=lifespan)
     app.add_middleware(BodyLimitMiddleware)
+    app.state.queue, app.state.engine = queue, engine
+    app.state.store, app.state.migrations = store_module, HERE / "migrations"
     bearer = HTTPBearer(auto_error=False)
 
     def operator(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)):
-        if not credentials or not secrets.compare_digest(credentials.credentials, token):
+        if not credentials or not secrets.compare_digest(credentials.credentials.encode(), token.encode()):
             raise HTTPException(401, 'Operator authentication required')
         return 'demo-operator'
 
-    app.include_router(router_module.create_router(AnalyzeRequest, operator, engine))
+    # Inference is exposed only by the service-authenticated AI process.
 
     @app.get('/health')
     def health():
         with connect() as connection:
             connection.execute('SELECT 1')
-        return {'status': 'ok', 'baseline_mode': engine.mode}
+        return {'status': 'ok', 'baseline_mode': engine.mode, 'architecture': 'event-queue-v1'}
 
     @app.get('/')
     def index():
@@ -131,6 +155,8 @@ def create_app(db_path=None, engine=None, token=None):
 
     @app.post('/api/analyses', dependencies=[Depends(operator)])
     async def create_analysis(body: AnalyzeRequest):
+        if os.environ.get('ENABLE_LEGACY_ANALYZE') != 'true':
+            raise HTTPException(410, 'Use ticket events; manual inference is disabled')
         request = body.model_dump()
         digest = hashlib.sha256(json.dumps(request, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
         with connect() as connection:
@@ -163,14 +189,19 @@ def create_app(db_path=None, engine=None, token=None):
             reviews = connection.execute('SELECT * FROM operator_review WHERE proposal_id=? ORDER BY reviewed_at', (proposal_id,)).fetchall()
         if not row:
             raise HTTPException(404, 'Proposal not found')
-        return {'proposal_id': proposal_id, 'card': json.loads(row['card_json']), 'input': json.loads(row['input_json']), 'reviews': [dict(item) for item in reviews]}
+        with connect() as connection:
+            current = connection.execute('SELECT input_version FROM ticket_snapshot WHERE ticket_ref=?', (row['ticket_ref'],)).fetchone()
+        return {'is_current': not current or current['input_version'] == row['input_version'], 'proposal_id': proposal_id, 'card': json.loads(row['card_json']), 'input': json.loads(row['input_json']), 'input_version': row['input_version'], 'reviews': [dict(item) for item in reviews]}
 
     @app.post('/api/proposals/{proposal_id}/reviews')
     def review(proposal_id: str, body: ReviewRequest, actor=Depends(operator)):
-        with connect() as connection:
-            row = connection.execute('SELECT card_json FROM analysis_proposal WHERE proposal_id=?', (proposal_id,)).fetchone()
+        with queue.transaction() as connection:
+            row = connection.execute('SELECT * FROM analysis_proposal WHERE proposal_id=?', (proposal_id,)).fetchone()
             if not row:
                 raise HTTPException(404, 'Proposal not found')
+            ticket = queue.ticket(connection, row['ticket_ref'])
+            if ticket and row['input_version'] != ticket['input_version']:
+                raise HTTPException(409, 'Proposal is stale; wait for the current version')
             card = json.loads(row['card_json'])
             if body.decision != 'rejected' and not body.confirmed:
                 raise HTTPException(422, 'Explicit confirmation required')
@@ -189,5 +220,93 @@ def create_app(db_path=None, engine=None, token=None):
             connection.execute('INSERT INTO operator_review(review_id,proposal_id,actor_ref,decision,final_text,reason,destination,confirmed_at) VALUES (?,?,?,?,?,?,?,CASE WHEN ? = TRUE THEN CURRENT_TIMESTAMP ELSE NULL END)',
                 (review_id, proposal_id, actor, body.decision, final, body.reason, body.destination, body.confirmed))
         return {'review_id': review_id, 'decision': body.decision, 'external_action_performed': False}
+
+    class Event(BaseModel):
+        model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
+        event_id: str = Field(min_length=1, max_length=128)
+        event_type: Literal['ticket.created', 'customer.message_received']
+        ticket_ref: str = Field(min_length=1, max_length=128)
+        input_version: int = Field(ge=1, strict=True)
+        occurred_at: AwareDatetime
+        kb_version: str = Field(min_length=1, max_length=64)
+
+    class Snapshot(BaseModel):
+        model_config = ConfigDict(extra='forbid')
+        input_version: int = Field(ge=1, strict=True)
+        input: AnalyzeRequest
+
+    def service(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)):
+        expected = os.environ.get('SERVICE_TOKEN', '')
+        if not expected or not credentials or not secrets.compare_digest(credentials.credentials.encode(), expected.encode()):
+            raise HTTPException(401, 'Service authentication required')
+
+    @app.post('/internal/snapshots', dependencies=[Depends(service)])
+    def stage_snapshot(body: Snapshot):
+        # Trusted helpdesk adapter supplies the snapshot separately from the webhook.
+        payload = body.input.model_dump()
+        with queue.transaction() as connection:
+            old = connection.execute('SELECT input_json FROM helpdesk_snapshot WHERE ticket_ref=? AND input_version=?', (body.input.ticket_ref, body.input_version)).fetchone()
+            encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False)
+            if old and old['input_json'] != encoded:
+                raise HTTPException(409, 'Snapshot version is immutable')
+            connection.execute('INSERT INTO helpdesk_snapshot VALUES (?,?,?) ON CONFLICT(ticket_ref,input_version) DO NOTHING', (body.input.ticket_ref, body.input_version, encoded))
+        return {'stored': True}
+
+    @app.post('/ingress/events', status_code=202)
+    async def ingress(request: Request):
+        import hmac
+        secret = os.environ.get('EVENT_SECRET', '')
+        raw = await request.body()
+        signature = request.headers.get('X-Event-Signature', '')
+        if not secret or not hmac.compare_digest(signature.encode(), hmac.new(secret.encode(), raw, hashlib.sha256).hexdigest().encode()):
+            raise HTTPException(401, 'Invalid event signature')
+        try:
+            event = Event.model_validate_json(raw).model_dump(mode='json')
+        except ValueError:
+            raise HTTPException(422, 'Invalid event metadata') from None
+        with queue.transaction() as connection:
+            source = connection.execute('SELECT input_json FROM helpdesk_snapshot WHERE ticket_ref=? AND input_version=?', (event['ticket_ref'], event['input_version'])).fetchone()
+            if not source:
+                raise HTTPException(404, 'Authorized snapshot unavailable')
+            payload = json.loads(source['input_json'])
+            if payload['kb_version'] != event['kb_version']:
+                raise HTTPException(409, 'Knowledge version differs from snapshot')
+            result = queue.accept(connection, event, payload)
+        return result
+
+    @app.post('/api/demo/tickets', status_code=202, dependencies=[Depends(operator)])
+    def demo_ticket(body: AnalyzeRequest):
+        # This is an explicit helpdesk simulator, not an operator "analyze" action.
+        payload = body.model_dump()
+        with queue.transaction() as connection:
+            existing = connection.execute('SELECT j.* FROM analysis_job j JOIN analysis_event e ON e.event_id=j.event_id WHERE e.event_id=?', (body.request_id,)).fetchone()
+            if existing:
+                if json.loads(existing['input_json']) != payload:
+                    raise HTTPException(409, 'Event belongs to different input')
+                return {'job_id': existing['job_id'], 'duplicate': True}
+            ticket = queue.ticket(connection, body.ticket_ref)
+            version = ticket['input_version']+1 if ticket else 1
+            event = {'event_id': body.request_id, 'event_type': 'customer.message_received' if ticket else 'ticket.created',
+                     'ticket_ref': body.ticket_ref, 'input_version': version,
+                     'occurred_at': datetime.now(timezone.utc).isoformat(), 'kb_version': body.kb_version}
+            result = queue.accept(connection, event, payload)
+        return result
+
+    @app.get('/api/jobs/{job_id}', dependencies=[Depends(operator)])
+    def job_status(job_id: str):
+        return queue.status(job_id)
+
+    @app.get('/api/tickets', dependencies=[Depends(operator)])
+    def tickets():
+        with queue.transaction() as connection:
+            queue.recover(connection, time.time())
+            rows = connection.execute('SELECT t.ticket_ref,t.input_version,j.job_id,j.state,j.reason,j.proposal_id FROM ticket_snapshot t JOIN analysis_job j ON j.job_id=t.job_id ORDER BY j.created_at DESC LIMIT 50').fetchall()
+        return [dict(row) for row in rows]
+
+    @app.get('/api/traces', dependencies=[Depends(operator)])
+    def traces():
+        with connect() as connection:
+            rows = connection.execute('SELECT metadata_json FROM event_trace ORDER BY trace_id LIMIT 100').fetchall()
+        return [json.loads(row['metadata_json']) for row in rows]
 
     return app

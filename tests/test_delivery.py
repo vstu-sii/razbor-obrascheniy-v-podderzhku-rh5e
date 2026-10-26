@@ -2,6 +2,8 @@
 import importlib.util
 from contextlib import closing
 import json
+import os
+from unittest.mock import patch
 from pathlib import Path
 import sqlite3
 import tempfile
@@ -17,6 +19,9 @@ spec.loader.exec_module(api)
 
 class DeliveryTests(unittest.TestCase):
     def setUp(self):
+        legacy = patch.dict(os.environ, {'ENABLE_LEGACY_ANALYZE':'true'})
+        legacy.start()
+        self.addCleanup(legacy.stop)
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.path = Path(self.temp.name) / 'triage.db'
@@ -28,7 +33,7 @@ class DeliveryTests(unittest.TestCase):
         self.addCleanup(self.client.__exit__, None, None, None)
         self.headers = {'Authorization': 'Bearer test-synthetic-only'}
         self.request = {'request_id':'audit-1', 'ticket_ref':'audit-ticket',
-                        'ticket_text':'Где администратору скачать счёт?', 'history':[], 'kb_version':'v1'}
+                        'ticket_text':'Р“РґРµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂСѓ СЃРєР°С‡Р°С‚СЊ СЃС‡С‘С‚?', 'history':[], 'kb_version':'v1'}
 
     def post(self, path, body):
         return self.client.post(path, json=body, headers=self.headers)
@@ -47,14 +52,14 @@ class DeliveryTests(unittest.TestCase):
 
     def test_new_review_requires_confirmation(self):
         path = self.proposal()
-        body = {'decision':'accepted', 'reason':'Проверено оператором'}
+        body = {'decision':'accepted', 'reason':'РџСЂРѕРІРµСЂРµРЅРѕ РѕРїРµСЂР°С‚РѕСЂРѕРј'}
         self.assertEqual(self.post(path+'/reviews', body).status_code, 422)
         self.assertEqual(self.post(path+'/reviews', body | {'confirmed':'yes'}).status_code, 422)
         self.assertEqual(self.post(path+'/reviews', body | {'confirmed':True}).status_code, 200)
 
     def test_escalation_requires_queue_and_persists_it(self):
         path = self.proposal(kb_version='v2')
-        body = {'decision':'accepted', 'reason':'Передать специалисту', 'confirmed':True}
+        body = {'decision':'accepted', 'reason':'РџРµСЂРµРґР°С‚СЊ СЃРїРµС†РёР°Р»РёСЃС‚Сѓ', 'confirmed':True}
         self.assertEqual(self.post(path+'/reviews', body).status_code, 422)
         self.assertEqual(self.post(path+'/reviews', body | {'destination':'unknown'}).status_code, 422)
         self.assertEqual(self.post(path+'/reviews', body | {'destination':'technical'}).status_code, 200)
@@ -71,8 +76,8 @@ class DeliveryTests(unittest.TestCase):
     def test_review_cannot_rewrite_model_result(self):
         path = self.proposal()
         before = self.client.get(path, headers=self.headers).json()['card']
-        self.assertEqual(self.post(path+'/reviews', {'decision':'edited','reason':'Уточнение',
-            'final_text':'Проверенный текст', 'confirmed':True}).status_code, 200)
+        self.assertEqual(self.post(path+'/reviews', {'decision':'edited','reason':'РЈС‚РѕС‡РЅРµРЅРёРµ',
+            'final_text':'РџСЂРѕРІРµСЂРµРЅРЅС‹Р№ С‚РµРєСЃС‚', 'confirmed':True}).status_code, 200)
         after = self.client.get(path, headers=self.headers).json()
         self.assertEqual(before, after['card'])
         with closing(sqlite3.connect(self.path)) as connection:
@@ -97,7 +102,7 @@ class DeliveryTests(unittest.TestCase):
             connection.commit()
             api.store_module.migrate(connection, RUNTIME/'migrations')
             api.store_module.migrate(connection, RUNTIME/'migrations')
-            self.assertEqual(connection.execute('SELECT version FROM schema_version ORDER BY version').fetchall(), [(1,),(2,)])
+            self.assertEqual(connection.execute('SELECT version FROM schema_version ORDER BY version').fetchall(), [(1,),(2,),(3,)])
             self.assertEqual(connection.execute('SELECT input_json FROM analysis_proposal').fetchone()[0], '{}')
             self.assertEqual(connection.execute('SELECT final_text FROM operator_review').fetchone()[0], 'old text')
 

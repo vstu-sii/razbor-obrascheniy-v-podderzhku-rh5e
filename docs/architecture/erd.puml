@@ -1,0 +1,49 @@
+@startuml
+hide circle
+skinparam linetype ortho
+entity "ticket_ref" as ticket {
+  *ticket_id : UUID <<PK>>
+  --
+  external_ref : TEXT
+  created_at : TIMESTAMPTZ
+}
+entity "knowledge_article" as article {
+  *article_id : UUID <<PK>>
+  --
+  source_key : TEXT
+  version : TEXT
+  status : TEXT
+  title : TEXT
+}
+entity "analysis_proposal" as proposal {
+  *proposal_id : UUID <<PK>>
+  --
+  ticket_id : UUID <<FK>>
+  mode : TEXT
+  category : TEXT
+  summary : TEXT
+  draft_reply : TEXT?
+  model_version : TEXT
+  created_at : TIMESTAMPTZ
+}
+entity "proposal_evidence" as evidence {
+  *proposal_id : UUID <<FK>>
+  *article_id : UUID <<FK>>
+  --
+  excerpt : TEXT
+}
+entity "operator_review" as review {
+  *review_id : UUID <<PK>>
+  --
+  proposal_id : UUID <<FK>>
+  actor_ref : TEXT
+  decision : TEXT
+  final_text : TEXT?
+  reason : TEXT?
+  reviewed_at : TIMESTAMPTZ
+}
+ticket ||--o{ proposal
+proposal ||--o{ evidence
+article ||--o{ evidence
+proposal ||--o{ review
+@enduml

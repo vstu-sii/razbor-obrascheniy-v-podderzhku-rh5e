@@ -48,19 +48,19 @@ assert.ok(token,'Set the synthetic audit operator token');
   await page.getByText('Решение сохранено. Клиенту ничего не отправлено.',{exact:true}).waitFor();
   await page.waitForFunction(()=>document.getElementById('reviews').textContent.includes('Отклонено'));
   await page.screenshot({path:path.join(output,'ui-escalation.png'),fullPage:true});
-  await page.route('**/api/analyses',async route=>{
+  await page.route('**/api/demo/tickets',async route=>{
    await new Promise(resolve=>setTimeout(resolve,400));await route.fulfill({status:502,contentType:'text/html',body:'<html>Bad gateway</html>'});
   });
   await page.locator('#analyze').click();assert.equal(await page.locator('#load').isDisabled(),true);
   await page.getByText('Сервер вернул некорректный ответ. Попробуй повторить запрос.',{exact:true}).waitFor();
   assert.equal(await page.locator('#analyze').isEnabled(),true);
   assert.equal(await page.locator('#result').isHidden(),true);
-  await page.unroute('**/api/analyses');
-  await page.route('**/api/analyses',route=>route.abort('failed'));
+  await page.unroute('**/api/demo/tickets');
+  await page.route('**/api/demo/tickets',route=>route.abort('failed'));
   await page.locator('#analyze').click();await page.getByText('Нет связи с сервером. Проверь подключение и повтори запрос.',{exact:true}).waitFor();
   assert.equal(await page.locator('#analyze').isEnabled(),true);
   assert.deepEqual(errors,[]);
-  fs.writeFileSync(path.join(output,'ui-check.json'),JSON.stringify({date:'2026-10-15',result:'PASS',browser:await browser.version(),checks:['auth error','real API analysis and persisted input','source display','cancel has no review','explicit confirmation','edit selection prevents lost edits','persistent review after reload','queue required and persisted','rejection','loading locks competing actions','HTML error recovery','network error recovery','no browser JS errors']},null,2)+'\n');
+  fs.writeFileSync(path.join(output,'ui-check.json'),JSON.stringify({date:new Date().toISOString(),result:'PASS',browser:await browser.version(),checks:['auth error','real API analysis and persisted input','source display','cancel has no review','explicit confirmation','edit selection prevents lost edits','persistent review after reload','queue required and persisted','rejection','loading locks competing actions','HTML error recovery','network error recovery','no browser JS errors']},null,2)+'\n');
   console.log('DELIVERY UI CHECK PASSED');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
