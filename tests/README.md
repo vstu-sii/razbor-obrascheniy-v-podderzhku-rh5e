@@ -16,7 +16,7 @@ Mistral сохранены: CI делает полный replay через те�
 
 ```sh
 python tests/evals/evaluate_model.py --require-targets
-python -m unittest discover -s tests -p 'test_*.py' -v
+python -m unittest discover -s tests -p 'quality_contracts.py' -v
 python tests/evals/runtime_checks.py --output-dir /tmp/lab4-events
 python tests/evals/security_checks.py --output /tmp/lab4-security.json
 ```
@@ -38,3 +38,6 @@ SIISKI — закрытый репозиторий. Обычный GITHUB_TOKEN 
 полный eval, 6 контрактов, 14/14 SQLite и PostgreSQL, 16/16 атак пройдены.
 Для работающего удалённого CI потребуется согласованный доступ либо отдельно
 опубликованная реализация; материалы других ролей в эту ветку не добавлялись.
+
+`quality_contracts.py` запускается отдельно в Quality gates. Обычный CI
+репозитория проверяет исходный app/ из main и не требует доступа к SIISKI.

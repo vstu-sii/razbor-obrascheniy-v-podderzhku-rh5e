@@ -37,7 +37,7 @@ jobs:
       - name: Full recorded live v2.1 coverage and unchanged release thresholds
         run: python "$Q_TASK/evaluate_model.py" --require-targets --output "$RUNNER_TEMP/full-eval.json"
       - name: Safety contracts and negative gate controls
-        run: python -m unittest discover -s tests -p 'test_*.py' -v
+        run: python -m unittest discover -s tests -p 'quality_contracts.py' -v
       - name: All 14 queue scenarios on SQLite
         run: python "$Q_TASK/runtime_checks.py" --output-dir "$RUNNER_TEMP/events-sqlite"
       - name: All infrastructure attack scenarios
