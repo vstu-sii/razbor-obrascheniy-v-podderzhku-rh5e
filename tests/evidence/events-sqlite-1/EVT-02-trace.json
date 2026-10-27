@@ -1,0 +1,33 @@
+{
+  "observed": {
+    "created_jobs": 1,
+    "event_records": 1
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "ca6642e5-bf60-4d8e-801f-444d578ae59f",
+        "event_id": "24f94e7a-013c-4a0c-b14c-c6181e5c595b",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "24f94e7a-013c-4a0c-b14c-c6181e5c595b",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 0,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

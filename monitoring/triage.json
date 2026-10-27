@@ -1,0 +1,184 @@
+{
+  "uid": "lab04-triage",
+  "title": "Support Triage: метрики, логи, трассы",
+  "schemaVersion": 39,
+  "version": 2,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Очередь",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "triage_queue_jobs",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "HTTP запросы / сек",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(triage_http_requests_total[5m]))",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Резерв токенов за минуту",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 7,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "triage_reserved_tokens_last_minute",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Суточный резерв LLM",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 7,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "triage_daily_reserved_tokens",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Отказы и деградации",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 14,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "triage_policy_events_total",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Алерты",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "triage-prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 14,
+        "w": 12,
+        "h": 7
+      },
+      "targets": [
+        {
+          "expr": "ALERTS{alertstate=\"firing\"}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Логи сервисов (без текстов обращений)",
+      "type": "logs",
+      "datasource": {
+        "type": "loki",
+        "uid": "triage-loki"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 21,
+        "w": 12,
+        "h": 10
+      },
+      "targets": [
+        {
+          "expr": "{job=\"support-triage\"}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Трассы запросов и model.attempt",
+      "type": "table",
+      "datasource": {
+        "type": "tempo",
+        "uid": "triage-tempo"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 21,
+        "w": 12,
+        "h": 10
+      },
+      "targets": [
+        {
+          "queryType": "traceqlSearch",
+          "query": "{}",
+          "limit": 20,
+          "tableType": "traces",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}

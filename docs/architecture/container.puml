@@ -1,0 +1,35 @@
+@startuml
+!include <C4/C4_Container>
+title Контейнеры: целевой MVP Support Triage
+Person(operator, "Оператор", "Проверяет и подтверждает")
+System_Ext(helpdesk, "Система поддержки", "Тикеты и отправка")
+System_Ext(llm, "LLM-провайдер", "Структурированный вывод")
+System_Boundary(s1, "Support Triage") {
+  Container(ui, "Operator UI", "Web", "Просмотр исходника, карточки и решение человека")
+  Container(ingress, "Event ingress", "HTTP", "Проверка webhook и транзакционная постановка через владельца БД", $tags="acl")
+  Container(api, "Backend API", "HTTP", "Права, оркестрация, audit, запрет auto-send")
+  Container(ai, "AI API", "HTTP", "Retrieval, модель, валидация, policy gate")
+  Container(kb, "Knowledge service", "HTTP", "Только утверждённые версии БЗ", $tags="repo")
+  ContainerDb(kbdb, "Knowledge store", "SQL", "Версии и фрагменты БЗ")
+  Container(audit, "Triage store service", "HTTP", "Карточки и решения оператора", $tags="repo")
+  ContainerDb(db, "Triage DB", "PostgreSQL", "Предложения и audit")
+  Container(hd, "Helpdesk adapter", "HTTP", "Изолирует API внешней поддержки", $tags="acl")
+  Container(provider, "LLM adapter", "HTTP", "Изолирует API провайдера", $tags="acl")
+}
+Rel(operator, ui, "Проверяет карточку", "HTTPS")
+Rel(ui, api, "Читает состояния и отправляет решение", "JSON/HTTPS")
+Rel(api, ai, "Исполнитель очереди запрашивает предложение", "JSON/HTTP")
+Rel(ai, kb, "Получает утверждённые фрагменты", "JSON/HTTP")
+Rel(kb, kbdb, "Читает версии", "SQL")
+Rel(ai, provider, "Получает структурированную карточку", "JSON/HTTP")
+Rel(provider, llm, "Вызов модели", "HTTPS")
+Rel(api, audit, "Получает задачи, сохраняет proposal/review", "JSON/HTTP")
+Rel(audit, db, "Читает/пишет", "SQL")
+Rel(api, hd, "Читает тикет; отправляет только подтверждённый текст", "JSON/HTTP")
+Rel(hd, helpdesk, "Интеграция", "HTTPS")
+Rel(helpdesk, ingress, "Событие создания или сообщения", "HTTPS")
+Rel(ingress, audit, "Записывает проверенное событие и задачу", "JSON/HTTP")
+note right of api : Исполнитель очереди входит в backend.
+note right of db : Журнал событий и очередь задач. ADR-003.
+note right of ingress : Входящий ACL отделён от исходящего helpdesk adapter.
+@enduml
