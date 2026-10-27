@@ -1,0 +1,3056 @@
+{
+  "scope": "full_reviewed_development_set_not_independent_test",
+  "records": 49,
+  "distinct_inputs": 38,
+  "raw_generation_metrics": {
+    "n": 38,
+    "by_uc": {
+      "UC-01": 8,
+      "UC-02": 9,
+      "UC-03": 11,
+      "UC-04": 10
+    },
+    "completion_available": {
+      "numerator": 36,
+      "denominator": 38,
+      "value": 0.9473684210526315
+    },
+    "schema_valid": {
+      "numerator": 34,
+      "denominator": 38,
+      "value": 0.8947368421052632
+    },
+    "gate_passed": {
+      "numerator": 34,
+      "denominator": 38,
+      "value": 0.8947368421052632
+    },
+    "mode_correct": {
+      "numerator": 33,
+      "denominator": 38,
+      "value": 0.868421052631579
+    },
+    "category_correct": {
+      "numerator": 33,
+      "denominator": 38,
+      "value": 0.868421052631579
+    },
+    "http_ok": {
+      "numerator": 36,
+      "denominator": 36,
+      "value": 1.0
+    },
+    "category_macro_f1": {
+      "classes_in_sample": [
+        "access",
+        "integrations",
+        "other",
+        "payment",
+        "product_error",
+        "settings"
+      ],
+      "value": 0.8574929971988796
+    },
+    "false_answer_on_nonanswer_cases": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "human_review_violations": 0,
+    "retrieval_recall_at_3": {
+      "n_positive": 11,
+      "value": 0.9090909090909091
+    },
+    "no_gold_evidence_with_hits": 18,
+    "latency": {
+      "n_observed": 38,
+      "p50_ms": 3511.3779999999997,
+      "empirical_p95_ms": 5179.215,
+      "minimum_30_observations": true,
+      "sufficient_for_product_p95": false
+    },
+    "billing": {
+      "n_observed": 0,
+      "sum_observed_usd": 0
+    },
+    "tokens": {
+      "n_observed": 36,
+      "sum_observed_total": 81887
+    },
+    "not_measured": [
+      "operator_card_usability",
+      "semantic_fact_recall",
+      "unsupported_atomic_claim_rate",
+      "urgency_f1_without_gold_labels",
+      "tone",
+      "end_to_end_product_latency",
+      "production_cost_rub"
+    ],
+    "by_case_failures": [
+      "UC01-07",
+      "UC01-08",
+      "UC02-05",
+      "UC02-10",
+      "UC03-09",
+      "UC04-02",
+      "UC04-06",
+      "UC04-10",
+      "EDGE-STALE-01"
+    ]
+  },
+  "system_output_metrics": {
+    "n": 38,
+    "by_uc": {
+      "UC-01": 8,
+      "UC-02": 9,
+      "UC-03": 11,
+      "UC-04": 10
+    },
+    "completion_available": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "schema_valid": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "gate_passed": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "mode_correct": {
+      "numerator": 35,
+      "denominator": 38,
+      "value": 0.9210526315789473
+    },
+    "category_correct": {
+      "numerator": 33,
+      "denominator": 38,
+      "value": 0.868421052631579
+    },
+    "http_ok": {
+      "numerator": 36,
+      "denominator": 36,
+      "value": 1.0
+    },
+    "category_macro_f1": {
+      "classes_in_sample": [
+        "access",
+        "integrations",
+        "other",
+        "payment",
+        "product_error",
+        "settings"
+      ],
+      "value": 0.8301120448179272
+    },
+    "false_answer_on_nonanswer_cases": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "human_review_violations": 0,
+    "retrieval_recall_at_3": {
+      "n_positive": 11,
+      "value": 0.9090909090909091
+    },
+    "no_gold_evidence_with_hits": 18,
+    "latency": {
+      "n_observed": 38,
+      "p50_ms": 3511.3779999999997,
+      "empirical_p95_ms": 5179.215,
+      "minimum_30_observations": true,
+      "sufficient_for_product_p95": false
+    },
+    "billing": {
+      "n_observed": 0,
+      "sum_observed_usd": 0
+    },
+    "tokens": {
+      "n_observed": 36,
+      "sum_observed_total": 81887
+    },
+    "not_measured": [
+      "operator_card_usability",
+      "semantic_fact_recall",
+      "unsupported_atomic_claim_rate",
+      "urgency_f1_without_gold_labels",
+      "tone",
+      "end_to_end_product_latency",
+      "production_cost_rub"
+    ],
+    "by_case_failures": [
+      "UC01-07",
+      "UC01-08",
+      "UC02-05",
+      "UC02-10",
+      "UC04-02",
+      "UC04-06",
+      "UC04-10"
+    ]
+  },
+  "raw_details": [
+    {
+      "case_id": "UC01-02",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3893.44,
+      "usage": {
+        "prompt_tokens": 2046,
+        "total_tokens": 2394,
+        "completion_tokens": 348,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-03",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3496.931,
+      "usage": {
+        "prompt_tokens": 1955,
+        "total_tokens": 2220,
+        "completion_tokens": 265,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-04",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4081.66,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2260,
+        "completion_tokens": 299,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-05",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5146.666,
+      "usage": {
+        "prompt_tokens": 1966,
+        "total_tokens": 2288,
+        "completion_tokens": 322,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-06",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3760.217,
+      "usage": {
+        "prompt_tokens": 1969,
+        "total_tokens": 2283,
+        "completion_tokens": 314,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-07",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": false,
+      "gate_passed": false,
+      "gate_reason": "schema",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 0.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5149.308,
+      "usage": {
+        "prompt_tokens": 1886,
+        "total_tokens": 2189,
+        "completion_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-08",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4154.555,
+      "usage": {
+        "prompt_tokens": 2047,
+        "total_tokens": 2362,
+        "completion_tokens": 315,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-10",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5179.215,
+      "usage": {
+        "prompt_tokens": 2110,
+        "total_tokens": 2394,
+        "completion_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-01",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 4115.857,
+      "usage": {
+        "prompt_tokens": 1963,
+        "total_tokens": 2349,
+        "completion_tokens": 386,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-02",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3483.777,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2248,
+        "completion_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-03",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 4281.5,
+      "usage": {
+        "prompt_tokens": 2034,
+        "total_tokens": 2422,
+        "completion_tokens": 388,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-05",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 3624.245,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2299,
+        "completion_tokens": 338,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-07",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 6316.241,
+      "usage": {
+        "prompt_tokens": 2099,
+        "total_tokens": 2483,
+        "completion_tokens": 384,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-08",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3116.736,
+      "usage": {
+        "prompt_tokens": 1880,
+        "total_tokens": 2143,
+        "completion_tokens": 263,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-09",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3403.137,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2226,
+        "completion_tokens": 262,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-10",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 4860.361,
+      "usage": {
+        "prompt_tokens": 1883,
+        "total_tokens": 2104,
+        "completion_tokens": 221,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-01",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 2872.771,
+      "usage": {
+        "prompt_tokens": 1972,
+        "total_tokens": 2220,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-02",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2826.564,
+      "usage": {
+        "prompt_tokens": 1884,
+        "total_tokens": 2095,
+        "completion_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-03",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3606.114,
+      "usage": {
+        "prompt_tokens": 1975,
+        "total_tokens": 2259,
+        "completion_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-04",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3687.812,
+      "usage": {
+        "prompt_tokens": 1883,
+        "total_tokens": 2131,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-05",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3940.111,
+      "usage": {
+        "prompt_tokens": 2111,
+        "total_tokens": 2389,
+        "completion_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-06",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3159.298,
+      "usage": {
+        "prompt_tokens": 1965,
+        "total_tokens": 2209,
+        "completion_tokens": 244,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-07",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2895.581,
+      "usage": {
+        "prompt_tokens": 1887,
+        "total_tokens": 2153,
+        "completion_tokens": 266,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-08",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3340.062,
+      "usage": {
+        "prompt_tokens": 1891,
+        "total_tokens": 2172,
+        "completion_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-09",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": false,
+      "transport_kind": "policy_or_transport_failure",
+      "completion_available": false,
+      "schema_valid": false,
+      "gate_passed": false,
+      "gate_reason": "schema",
+      "mode_correct": false,
+      "category_correct": false,
+      "expected_mode": "escalate",
+      "actual_mode": null,
+      "expected_category": "other",
+      "actual_category": null,
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 0,
+      "usage": null,
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-10",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3715.947,
+      "usage": {
+        "prompt_tokens": 2105,
+        "total_tokens": 2438,
+        "completion_tokens": 333,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-01",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3297.007,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2281,
+        "completion_tokens": 320,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-02",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3921.268,
+      "usage": {
+        "prompt_tokens": 1966,
+        "total_tokens": 2269,
+        "completion_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-03",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3220.222,
+      "usage": {
+        "prompt_tokens": 1953,
+        "total_tokens": 2213,
+        "completion_tokens": 260,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-04",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 4069.831,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2341,
+        "completion_tokens": 377,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-05",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3069.496,
+      "usage": {
+        "prompt_tokens": 1969,
+        "total_tokens": 2214,
+        "completion_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-06",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": false,
+      "gate_passed": false,
+      "gate_reason": "schema",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2907.567,
+      "usage": {
+        "prompt_tokens": 1884,
+        "total_tokens": 2151,
+        "completion_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-07",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3182.819,
+      "usage": {
+        "prompt_tokens": 1880,
+        "total_tokens": 2144,
+        "completion_tokens": 264,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-08",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3378.439,
+      "usage": {
+        "prompt_tokens": 1953,
+        "total_tokens": 2236,
+        "completion_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-09",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3522.531,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2265,
+        "completion_tokens": 301,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-10",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3500.225,
+      "usage": {
+        "prompt_tokens": 1968,
+        "total_tokens": 2289,
+        "completion_tokens": 321,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3335.308,
+      "usage": {
+        "prompt_tokens": 2457,
+        "total_tokens": 2754,
+        "completion_tokens": 297,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": false,
+      "transport_kind": "policy_or_transport_failure",
+      "completion_available": false,
+      "schema_valid": false,
+      "gate_passed": false,
+      "gate_reason": "schema",
+      "mode_correct": false,
+      "category_correct": false,
+      "expected_mode": "escalate",
+      "actual_mode": null,
+      "expected_category": "other",
+      "actual_category": null,
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 0,
+      "usage": null,
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    }
+  ],
+  "system_details": [
+    {
+      "case_id": "UC01-02",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3893.44,
+      "usage": {
+        "prompt_tokens": 2046,
+        "total_tokens": 2394,
+        "completion_tokens": 348,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-03",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3496.931,
+      "usage": {
+        "prompt_tokens": 1955,
+        "total_tokens": 2220,
+        "completion_tokens": 265,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-04",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4081.66,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2260,
+        "completion_tokens": 299,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-05",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5146.666,
+      "usage": {
+        "prompt_tokens": 1966,
+        "total_tokens": 2288,
+        "completion_tokens": 322,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-06",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3760.217,
+      "usage": {
+        "prompt_tokens": 1969,
+        "total_tokens": 2283,
+        "completion_tokens": 314,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-07",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "expected_mode": "answer",
+      "actual_mode": "escalate",
+      "expected_category": "settings",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 0.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5149.308,
+      "usage": {
+        "prompt_tokens": 1886,
+        "total_tokens": 2189,
+        "completion_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-08",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4154.555,
+      "usage": {
+        "prompt_tokens": 2047,
+        "total_tokens": 2362,
+        "completion_tokens": 315,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-10",
+      "uc": "UC-01",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5179.215,
+      "usage": {
+        "prompt_tokens": 2110,
+        "total_tokens": 2394,
+        "completion_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-01",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 4115.857,
+      "usage": {
+        "prompt_tokens": 1963,
+        "total_tokens": 2349,
+        "completion_tokens": 386,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-02",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3483.777,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2248,
+        "completion_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-03",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 4281.5,
+      "usage": {
+        "prompt_tokens": 2034,
+        "total_tokens": 2422,
+        "completion_tokens": 388,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-05",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 1,
+      "latency_ms": 3624.245,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2299,
+        "completion_tokens": 338,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-07",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 6316.241,
+      "usage": {
+        "prompt_tokens": 2099,
+        "total_tokens": 2483,
+        "completion_tokens": 384,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-08",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3116.736,
+      "usage": {
+        "prompt_tokens": 1880,
+        "total_tokens": 2143,
+        "completion_tokens": 263,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-09",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3403.137,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2226,
+        "completion_tokens": 262,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-10",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 4860.361,
+      "usage": {
+        "prompt_tokens": 1883,
+        "total_tokens": 2104,
+        "completion_tokens": 221,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-01",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 2872.771,
+      "usage": {
+        "prompt_tokens": 1972,
+        "total_tokens": 2220,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-02",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2826.564,
+      "usage": {
+        "prompt_tokens": 1884,
+        "total_tokens": 2095,
+        "completion_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-03",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3606.114,
+      "usage": {
+        "prompt_tokens": 1975,
+        "total_tokens": 2259,
+        "completion_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-04",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3687.812,
+      "usage": {
+        "prompt_tokens": 1883,
+        "total_tokens": 2131,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-05",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3940.111,
+      "usage": {
+        "prompt_tokens": 2111,
+        "total_tokens": 2389,
+        "completion_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-06",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3159.298,
+      "usage": {
+        "prompt_tokens": 1965,
+        "total_tokens": 2209,
+        "completion_tokens": 244,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-07",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2895.581,
+      "usage": {
+        "prompt_tokens": 1887,
+        "total_tokens": 2153,
+        "completion_tokens": 266,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-08",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3340.062,
+      "usage": {
+        "prompt_tokens": 1891,
+        "total_tokens": 2172,
+        "completion_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-09",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": false,
+      "transport_kind": "policy_or_transport_failure",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 0,
+      "usage": null,
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-10",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3715.947,
+      "usage": {
+        "prompt_tokens": 2105,
+        "total_tokens": 2438,
+        "completion_tokens": 333,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-01",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3297.007,
+      "usage": {
+        "prompt_tokens": 1961,
+        "total_tokens": 2281,
+        "completion_tokens": 320,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-02",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3921.268,
+      "usage": {
+        "prompt_tokens": 1966,
+        "total_tokens": 2269,
+        "completion_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-03",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3220.222,
+      "usage": {
+        "prompt_tokens": 1953,
+        "total_tokens": 2213,
+        "completion_tokens": 260,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-04",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 4069.831,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2341,
+        "completion_tokens": 377,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-05",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3069.496,
+      "usage": {
+        "prompt_tokens": 1969,
+        "total_tokens": 2214,
+        "completion_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-06",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 2907.567,
+      "usage": {
+        "prompt_tokens": 1884,
+        "total_tokens": 2151,
+        "completion_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-07",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3182.819,
+      "usage": {
+        "prompt_tokens": 1880,
+        "total_tokens": 2144,
+        "completion_tokens": 264,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-08",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3378.439,
+      "usage": {
+        "prompt_tokens": 1953,
+        "total_tokens": 2236,
+        "completion_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-09",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3522.531,
+      "usage": {
+        "prompt_tokens": 1964,
+        "total_tokens": 2265,
+        "completion_tokens": 301,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-10",
+      "uc": "UC-04",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 3500.225,
+      "usage": {
+        "prompt_tokens": 1968,
+        "total_tokens": 2289,
+        "completion_tokens": 321,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "uc": "UC-02",
+      "provider": "mistral_v2_system",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": true,
+      "evidence_citations": 0,
+      "latency_ms": 3335.308,
+      "usage": {
+        "prompt_tokens": 2457,
+        "total_tokens": 2754,
+        "completion_tokens": 297,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "uc": "UC-03",
+      "provider": "mistral_v2_system",
+      "http_ok": false,
+      "transport_kind": "policy_or_transport_failure",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 0,
+      "usage": null,
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    }
+  ],
+  "evidence_inventory": {
+    "new_generation_attempts": 36,
+    "distinct_groups_observed": 38,
+    "halted": null,
+    "complete": true,
+    "reused_ab_responses": 0,
+    "policy_skips": 2,
+    "automatic_retries": 0,
+    "records_covered": 49
+  },
+  "predeclared_target_violations": [
+    "category_correct"
+  ]
+}

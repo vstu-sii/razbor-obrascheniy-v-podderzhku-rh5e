@@ -1,0 +1,19 @@
+groups:
+  - name: triage-production
+    interval: 5s
+    rules:
+      - alert: TriageSpendAnomaly
+        expr: triage_reserved_tokens_last_minute >= triage_anomaly_threshold
+        for: 0s
+        labels: {severity: warning}
+        annotations: {summary: 'Unusually high reserved model spend in the last minute'}
+      - alert: TriagePolicyDenial
+        expr: increase(triage_policy_events_total{event="denial"}[5m]) > 0
+        for: 0s
+        labels: {severity: warning}
+        annotations: {summary: 'Application authorization or quota denied a request'}
+      - alert: TriageServiceUnavailable
+        expr: up{job="support-triage"} == 0
+        for: 30s
+        labels: {severity: critical}
+        annotations: {summary: 'Support triage metrics endpoint unavailable'}
