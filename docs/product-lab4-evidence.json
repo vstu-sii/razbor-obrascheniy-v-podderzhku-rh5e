@@ -37,5 +37,47 @@
     "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40484448961",
     "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485091870",
     "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485522609"
-  ]
+  ],
+  "product_schedule": {
+    "recorded_date": "2026-10-30",
+    "plan_origin_source": "participant_confirmation_in_chat_2026_10_30",
+    "reported_plan_date": "2026-10-14",
+    "planned_working_days": 20,
+    "planned_minutes_per_week": 120,
+    "comparison_basis": "Monday_Friday_plan_day_ordinal_for_listed_October_dates",
+    "observations": [
+      {
+        "date": "2026-10-15",
+        "phase": "local_observation",
+        "plan_day": 2,
+        "planned_remaining": 45,
+        "remaining": 8,
+        "source": "participant_report_2026_10_30"
+      },
+      {
+        "date": "2026-10-27",
+        "phase": "P010",
+        "plan_day": 10,
+        "planned_remaining": 26,
+        "remaining": 8,
+        "source": "P010_snapshot"
+      },
+      {
+        "date": "2026-10-29",
+        "phase": "before_acceptance",
+        "plan_day": 12,
+        "planned_remaining": 26,
+        "remaining": 3,
+        "source": "D016_public_release_accounted"
+      },
+      {
+        "date": "2026-10-29",
+        "phase": "after_acceptance",
+        "plan_day": 12,
+        "planned_remaining": 26,
+        "remaining": 0,
+        "source": "participant_LAB04_acceptance"
+      }
+    ]
+  }
 }
