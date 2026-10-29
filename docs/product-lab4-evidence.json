@@ -1,0 +1,41 @@
+{
+  "recorded_date": "2026-10-29",
+  "source_revision": "130c645621dace71e8072099e48e09f05ce6b6e6",
+  "scope": "Product LAB04 synthesis of preserved team evidence",
+  "public_url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+  "release": {
+    "revision": "600c194a2abacfec44cc0fc2ed65967973a21c5e",
+    "utc": "2026-10-27T10:00:07.4407140+00:00",
+    "ui_health_auth_review": true,
+    "external_action_performed": false
+  },
+  "rollback": {
+    "revision": "5a2050056e64204523fa7e7d578babb361f3c001",
+    "utc": "2026-10-27T10:03:28.8739210+00:00",
+    "retention_check": true
+  },
+  "return_to_main": {
+    "revision": "600c194a2abacfec44cc0fc2ed65967973a21c5e",
+    "utc": "2026-10-27T10:07:45.0260750+00:00",
+    "retention_check": true
+  },
+  "quality": {
+    "records": 49,
+    "groups": 38,
+    "llm_generations": 36,
+    "policy_stops": 2,
+    "raw_mode_correct": 33,
+    "raw_category_correct": 33,
+    "system_mode_correct": 35,
+    "system_category_correct": 36,
+    "false_answer": 0,
+    "non_answer_inputs": 28,
+    "event_scenarios": 14,
+    "attack_scenarios": 16
+  },
+  "sources": [
+    "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40484448961",
+    "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485091870",
+    "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485522609"
+  ]
+}
