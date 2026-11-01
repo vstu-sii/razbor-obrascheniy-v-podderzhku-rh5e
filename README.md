@@ -54,4 +54,3 @@ Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 
 - [Кандидаты моделей и решение](docs/model-candidates.md)
 - [Эксперимент LAB02](docs/experiments/lab2.md)
 - [Контракт AI-API](api/openapi.yaml)
-
