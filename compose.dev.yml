@@ -1,8 +1,78 @@
+name: lab02-events
+x-stub: &stub
+ build: ./services/backend
+ networks: [application]
+ healthcheck:
+  test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=2)"]
+  interval: 5s
+  timeout: 3s
+  retries: 12
 services:
-  api:
-    build: .
-    ports:
-      - "${PORT:-8000}:8000"
-    environment:
-      APP_ENV: "${APP_ENV:-development}"
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+ backend:
+  <<: *stub
+  ports: ["127.0.0.1:${BACKEND_PORT:-18085}:8000"]
+  networks: [frontend, application]
+  depends_on:
+   db: {condition: service_healthy}
+ event-ingress:
+  <<: *stub
+ knowledge:
+  <<: *stub
+  networks: [application, knowledge-data]
+ triage-store:
+  <<: *stub
+  networks: [application, triage-data]
+ helpdesk-adapter:
+  <<: *stub
+ llm-adapter:
+  <<: *stub
+ ai:
+  <<: *stub
+  build: ./services/ai
+ knowledge-db:
+  image: postgres:16-alpine
+  environment:
+   POSTGRES_USER: triage
+   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local_dev_only}
+   POSTGRES_DB: knowledge
+  networks: [knowledge-data]
+  volumes: ["knowledge_db:/var/lib/postgresql/data"]
+  healthcheck:
+   test: [CMD-SHELL, "pg_isready -U triage -d knowledge"]
+   interval: 5s
+   timeout: 3s
+   retries: 12
+ db:
+  image: postgres:16-alpine
+  environment:
+   POSTGRES_USER: triage
+   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local_dev_only}
+   POSTGRES_DB: triage
+  networks: [triage-data]
+  volumes:
+   - triage_db:/var/lib/postgresql/data
+   - ./database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+   - ./database/002_event_queue.sql:/docker-entrypoint-initdb.d/002-event.sql:ro
+  healthcheck:
+   test: [CMD-SHELL, "pg_isready -U triage -d triage"]
+   interval: 5s
+   timeout: 3s
+   retries: 12
+ ui:
+  image: nginx:1.27-alpine
+  volumes: ["./frontend/prototype:/usr/share/nginx/html:ro"]
+  ports: ["127.0.0.1:${UI_PORT:-18086}:80"]
+  networks: [frontend]
+  healthcheck:
+   test: [CMD, wget, -q, -O, /dev/null, http://127.0.0.1/]
+   interval: 5s
+   timeout: 3s
+   retries: 12
+networks:
+ frontend: {}
+ application: {internal: true}
+ triage-data: {internal: true}
+ knowledge-data: {internal: true}
+volumes:
+ triage_db: {}
+ knowledge_db: {}

@@ -1,6 +1,6 @@
 # ADR-002 — Отделить предложение AI от действия оператора
 
-Статус: принято Product/VO 01.10.2026. Техническое согласование AI Engineer и Delivery проводится отдельно. Схема контейнеров готовится Delivery по целевому пути `docs/architecture/container.puml`.
+Статус: принято Product/VO 01.10.2026. Техническое согласование AI Engineer и Delivery проводится отдельно. Схема контейнеров: [PlantUML](../architecture/container.puml).
 
 ## Контекст
 

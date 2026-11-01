@@ -1,0 +1,12 @@
+{
+  "name": "support-triage-lab02-events",
+  "private": true,
+  "scripts": {
+    "architecture:check": "aact check",
+    "ui:test": "node tests/ui.cjs"
+  },
+  "devDependencies": {
+    "aact": "3.0.0-beta.29",
+    "playwright": "1.62.1"
+  }
+}

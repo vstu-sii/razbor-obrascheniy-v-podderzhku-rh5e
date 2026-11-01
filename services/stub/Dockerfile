@@ -1,0 +1,6 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY main.py /app/main.py
+USER 65534:65534
+EXPOSE 8000
+CMD ["python", "main.py"]
