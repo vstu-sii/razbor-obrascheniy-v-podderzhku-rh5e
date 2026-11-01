@@ -1,0 +1,248 @@
+{
+  "scope": "offline_reference_bm25_not_deployed_retriever",
+  "cases": 28,
+  "positive_cases": 8,
+  "mean_recall_at_3": 0.875,
+  "no_gold_evidence_cases_with_hits": 13,
+  "source_sha256": "7f00018ee9e2ce7b299203cdebb08c41c051f3afdba97c624ef10a6ca226b921",
+  "api_calls": 0,
+  "rows": [
+    {
+      "case_id": "UC01-02",
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-ERROR-v1"
+      ],
+      "gold": [
+        "KB-2FA-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-03",
+      "retrieved": [
+        "KB-INVOICE-v1"
+      ],
+      "gold": [
+        "KB-INVOICE-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-04",
+      "retrieved": [
+        "KB-INVOICE-v1"
+      ],
+      "gold": [
+        "KB-INVOICE-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-05",
+      "retrieved": [
+        "KB-API-v1"
+      ],
+      "gold": [
+        "KB-API-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-06",
+      "retrieved": [
+        "KB-API-v1"
+      ],
+      "gold": [
+        "KB-API-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-07",
+      "retrieved": [],
+      "gold": [
+        "KB-NOTIFY-v1"
+      ],
+      "recall_at_3": 0.0
+    },
+    {
+      "case_id": "UC01-08",
+      "retrieved": [
+        "KB-ERROR-v1",
+        "KB-2FA-v1"
+      ],
+      "gold": [
+        "KB-ERROR-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC01-10",
+      "retrieved": [
+        "KB-INVOICE-v1",
+        "KB-ROLE-v1",
+        "KB-API-v1"
+      ],
+      "gold": [
+        "KB-INVOICE-v1"
+      ],
+      "recall_at_3": 1.0
+    },
+    {
+      "case_id": "UC02-01",
+      "retrieved": [
+        "KB-API-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-02",
+      "retrieved": [
+        "KB-API-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-03",
+      "retrieved": [
+        "KB-INVOICE-v1",
+        "KB-API-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-05",
+      "retrieved": [
+        "KB-ERROR-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-07",
+      "retrieved": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-08",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-09",
+      "retrieved": [
+        "KB-API-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC02-10",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-01",
+      "retrieved": [
+        "KB-2FA-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-02",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-03",
+      "retrieved": [
+        "KB-ERROR-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-04",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-05",
+      "retrieved": [
+        "KB-API-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-06",
+      "retrieved": [
+        "KB-2FA-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-07",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-08",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-09",
+      "retrieved": [
+        "KB-INVOICE-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "UC03-10",
+      "retrieved": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "retrieved": [
+        "KB-ERROR-v1",
+        "KB-INVOICE-v1",
+        "KB-API-v1"
+      ],
+      "gold": [],
+      "recall_at_3": null
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "retrieved": [],
+      "gold": [],
+      "recall_at_3": null
+    }
+  ]
+}
