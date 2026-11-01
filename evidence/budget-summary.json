@@ -1,6 +1,9 @@
 {
   "currency": "USD",
-  "rub_per_usd_assumption": 100,
+  "rub_per_usd_assumption": 89,
+  "original_run_rub_per_usd_assumption": 100,
+  "original_run_cap_usd": 0.20,
+  "conversion_note": "RUB presentation recalculated at the user-specified 89 RUB/USD; original USD evidence and historical execution cap unchanged.",
   "authorized_total_rub": 20,
   "prior_cost_and_setup_reserve_usd": 0.116007,
   "current_selected_attempts_upper_usd": 0.044485,
