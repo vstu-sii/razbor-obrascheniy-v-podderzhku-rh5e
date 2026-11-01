@@ -1,0 +1,49 @@
+{
+  "observed": {
+    "pending_jobs": 1,
+    "pending_is_latest": true
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "7858b88a-006e-4d67-af5c-851c8c7a5bf9",
+        "event_id": "96190c6a-062f-4357-a103-3d69a719ff64",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "superseded",
+        "attempts": 0,
+        "reason": "newer_input",
+        "proposal_id": null
+      },
+      {
+        "job_id": "733ee652-66d8-402d-9726-5925a14d2e4a",
+        "event_id": "c4fac43a-435f-4bf0-8ea4-bc34db400631",
+        "ticket_ref": "ticket",
+        "input_version": 2,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "96190c6a-062f-4357-a103-3d69a719ff64",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "c4fac43a-435f-4bf0-8ea4-bc34db400631",
+        "ticket_ref": "ticket",
+        "input_version": 2,
+        "event_type": "customer.message_received"
+      }
+    ]
+  },
+  "controlled_transport_calls": 0,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

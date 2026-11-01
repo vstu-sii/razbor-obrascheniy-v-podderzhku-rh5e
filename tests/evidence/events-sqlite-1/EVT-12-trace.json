@@ -1,0 +1,17 @@
+{
+  "observed": {
+    "unauthorized_writes": 0,
+    "model_calls": 0,
+    "secrets_logged": false,
+    "all_invalid_input_classes_tested": true
+  },
+  "actual_database_rows": {
+    "jobs": [],
+    "attempts": [],
+    "reviews": [],
+    "events": []
+  },
+  "controlled_transport_calls": 0,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

@@ -1,0 +1,48 @@
+{
+  "observed": {
+    "attempts_preserved": true,
+    "unknown_charge_reserved": true,
+    "total_model_calls": 2,
+    "nested_retries_included": true
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "0824253f-82a8-48c5-8c0a-0acec0d5480c",
+        "event_id": "21e6a870-c2ab-47bf-b0e2-320b09cc1565",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 2,
+        "reason": null,
+        "proposal_id": "98436d5a-39f5-4d45-8607-eaf3056e1a52"
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "0824253f-82a8-48c5-8c0a-0acec0d5480c",
+        "attempt_no": 1,
+        "state": "unknown",
+        "reserved_tokens": 65738
+      },
+      {
+        "job_id": "0824253f-82a8-48c5-8c0a-0acec0d5480c",
+        "attempt_no": 2,
+        "state": "completed",
+        "reserved_tokens": 65738
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "21e6a870-c2ab-47bf-b0e2-320b09cc1565",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 2,
+  "database": "PostgreSQL",
+  "external_model_calls": 0
+}

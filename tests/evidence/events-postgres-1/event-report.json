@@ -1,0 +1,26 @@
+{
+  "scope": "event_transport_separate_from_model_evals",
+  "planned": 14,
+  "executed": 14,
+  "passed": [
+    "EVT-01",
+    "EVT-02",
+    "EVT-03",
+    "EVT-04",
+    "EVT-05",
+    "EVT-06",
+    "EVT-07",
+    "EVT-08",
+    "EVT-09",
+    "EVT-10",
+    "EVT-11",
+    "EVT-12",
+    "EVT-13",
+    "EVT-14"
+  ],
+  "failed": [],
+  "pending": [],
+  "runtime_acceptance": true,
+  "api_calls_in_this_check": 0,
+  "limitation": "Evidence consistency only; independent review of traces is still required"
+}

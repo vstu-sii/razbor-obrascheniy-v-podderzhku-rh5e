@@ -1,0 +1,57 @@
+{
+  "observed": {
+    "active_jobs": 1,
+    "pending_jobs": 1,
+    "stale_result_published": false
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "54a0c08d-edc4-4d09-b07b-9f34ede1f91d",
+        "event_id": "f4c52835-1b8b-478e-8e1e-907898d7a469",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "superseded",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "eedf50d3-58db-48fa-8870-0209e1a40981"
+      },
+      {
+        "job_id": "8fbd3615-05dd-49e7-8edd-05cc67f85aee",
+        "event_id": "d2f478c9-b94f-4cd8-a8a5-f70910a11349",
+        "ticket_ref": "ticket",
+        "input_version": 2,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "54a0c08d-edc4-4d09-b07b-9f34ede1f91d",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65738
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "f4c52835-1b8b-478e-8e1e-907898d7a469",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "d2f478c9-b94f-4cd8-a8a5-f70910a11349",
+        "ticket_ref": "ticket",
+        "input_version": 2,
+        "event_type": "customer.message_received"
+      }
+    ]
+  },
+  "controlled_transport_calls": 1,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

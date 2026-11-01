@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-26T20:47:22.734910+00:00",
+  "model": "ministral-14b-2512",
+  "prompt_version": "v2.1",
+  "free_account_basis": "participant confirmed Mistral Free/Experiment",
+  "automatic_retries": 0,
+  "maximum_new_calls": 38,
+  "required_records": 49,
+  "distinct_groups": 38,
+  "candidate_context": "current_runtime_retrieval",
+  "adapter_sha256": "1f0f61ae69031ac94e0acece3940a91714f533679c7959144f6753c79e00b734",
+  "ab_source_sha256": "ae4d10eb8711a9253df31add299a04f75ca8ec668eb50128e077cd9064ede05b",
+  "dataset_sha256": {
+    "cases.jsonl": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+    "live-regressions.jsonl": "4d967bc481fedc6d39cc26df098ead136b1210a52a0787df08799050aa29be31"
+  },
+  "predeclared_targets": {
+    "mode_min": 0.9,
+    "category_min": 0.9,
+    "false_answer_max": 0.02
+  }
+}
