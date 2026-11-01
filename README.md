@@ -48,3 +48,9 @@ Invoke-RestMethod -Method Post -Uri 'http://localhost:8000/triage' -ContentType 
 
 Примеры ожидают независимой проверки; качество модели на них не измерялось.
 Условия DoD и пороги остаются предложениями до review команды.
+
+## Материалы LAB02 AI Engineer
+
+- [Кандидаты моделей и решение](docs/model-candidates.md)
+- [Эксперимент LAB02](docs/experiments/lab2.md)
+- [Контракт AI-API](api/openapi.yaml)

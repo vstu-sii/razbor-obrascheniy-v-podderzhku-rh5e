@@ -1,0 +1,47 @@
+@startuml
+!theme plain
+skinparam shadowing false
+title LAB02: Sol / Mistral, independent validation and human review
+start
+partition Backend {
+ :Authorize operator and ticket;
+ :Redact secrets; validate schema / 64 KiB;
+}
+partition "AI API / model adapter" {
+ :Approved exact KB version;
+ :BM25 full corpus; top-3 snapshots;
+ :Check context, shared money and deadline;
+ if (Budget and provider available?) then (yes)
+  :Sol via ApiMira OR Mistral direct;
+  :Forced propose_card arguments;
+  note right
+   Data format only; no action tools.
+   Same prompt, context and schema.
+   Secrets never enter model context.
+  end note
+  :Parse one tool call;
+  :Full schema + request ID + source provenance;
+  if (Valid and within deadline?) then (yes)
+   :Return proposed card;
+  else (no)
+   :Return not_analyzed / escalate;
+  endif
+ else (no)
+  :HTTP 503 or budget manual fallback;
+ endif
+ note right
+  Authentic citation does not prove meaning.
+  Metadata-only production logs.
+ end note
+}
+partition "Backend / operator UI" {
+ :Save proposal and immutable source snapshots;
+ :Human verifies facts, policy and draft;
+ if (Explicit approval and permissions?) then (yes)
+  :Helpdesk adapter performs approved action;
+ else (no)
+  :Edit / reject; preserve separate review;
+ endif
+}
+stop
+@enduml
