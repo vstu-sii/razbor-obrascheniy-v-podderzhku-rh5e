@@ -1,0 +1,311 @@
+{
+  "version": "2026-10-26",
+  "architecture": "PostgreSQL event queue, ingress ACL, version guard",
+  "deadline_seconds": 55,
+  "max_model_calls": 2,
+  "scenarios": [
+    {
+      "id": "EVT-01",
+      "stimulus": "ticket.created",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "created_jobs",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "field": "manual_start_required",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "EVT-02",
+      "stimulus": "Повтор того же event_id",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "event_records",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "field": "created_jobs",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "EVT-03",
+      "stimulus": "Разные event_id одного тикета и версии",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "created_jobs",
+          "op": "eq",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "EVT-04",
+      "stimulus": "Новая версия при queued",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "pending_jobs",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "field": "pending_is_latest",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-05",
+      "stimulus": "Новая версия при running",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "active_jobs",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "field": "pending_jobs",
+          "op": "eq",
+          "value": 1
+        },
+        {
+          "field": "stale_result_published",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "EVT-06",
+      "stimulus": "Подтверждение одновременно с сообщением клиента",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "atomic_version_check",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "stale_action_committed",
+          "op": "eq",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "EVT-07",
+      "stimulus": "Просмотр, заметка, статус и review",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "created_jobs",
+          "op": "eq",
+          "value": 0
+        },
+        {
+          "field": "model_calls",
+          "op": "eq",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "EVT-08",
+      "stimulus": "Несколько исполнителей достигают MAX_RUNNING",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "global_running_limit_respected",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "remaining_jobs_wait",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-09",
+      "stimulus": "MAX_PENDING заполнен: новое событие и известный дубль",
+      "owner": "Delivery",
+      "checks": [
+        {
+          "field": "new_event_http_status",
+          "op": "eq",
+          "value": 503
+        },
+        {
+          "field": "new_event_acknowledged",
+          "op": "eq",
+          "value": false
+        },
+        {
+          "field": "new_event_persisted",
+          "op": "eq",
+          "value": false
+        },
+        {
+          "field": "known_duplicate_acknowledged",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "redelivery_after_capacity_succeeds",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-10",
+      "stimulus": "Исчерпаны частота или токены, включая несколько исполнителей",
+      "owner": "AI Engineer + Delivery",
+      "checks": [
+        {
+          "field": "calls_without_budget",
+          "op": "eq",
+          "value": 0
+        },
+        {
+          "field": "reservation_preserved",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "global_limits_respected",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-11",
+      "stimulus": "Падение после модельного вызова и рестарт",
+      "owner": "AI Engineer + Delivery",
+      "checks": [
+        {
+          "field": "attempts_preserved",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "unknown_charge_reserved",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "total_model_calls",
+          "op": "lte",
+          "value": 2
+        },
+        {
+          "field": "nested_retries_included",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-12",
+      "stimulus": "Неверная подпись, тип, размер и чужой тикет",
+      "owner": "Delivery + AI Engineer",
+      "checks": [
+        {
+          "field": "unauthorized_writes",
+          "op": "eq",
+          "value": 0
+        },
+        {
+          "field": "model_calls",
+          "op": "eq",
+          "value": 0
+        },
+        {
+          "field": "secrets_logged",
+          "op": "eq",
+          "value": false
+        },
+        {
+          "field": "all_invalid_input_classes_tested",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "EVT-13",
+      "stimulus": "Истёк общий deadline, включая очередь, или попытки",
+      "owner": "AI Engineer + Delivery",
+      "checks": [
+        {
+          "field": "state",
+          "op": "eq",
+          "value": "manual_review"
+        },
+        {
+          "field": "client_draft",
+          "op": "eq",
+          "value": null
+        },
+        {
+          "field": "deadline_limit_seconds",
+          "op": "eq",
+          "value": 55
+        },
+        {
+          "field": "deadline_includes_queue",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "total_model_calls",
+          "op": "lte",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": "EVT-14",
+      "stimulus": "UC-01–04 на готовой карточке",
+      "owner": "Product + Quality",
+      "checks": [
+        {
+          "field": "ucs_checked",
+          "op": "eq",
+          "value": 4
+        },
+        {
+          "field": "sources_and_modes_checked",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "review_stored_separately",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "field": "external_helpdesk_writes",
+          "op": "eq",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

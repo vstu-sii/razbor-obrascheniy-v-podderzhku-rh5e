@@ -1,0 +1,4 @@
+ARG BASE_IMAGE
+FROM busybox:1.37.0-musl AS healthprobe
+FROM ${BASE_IMAGE}
+COPY --from=healthprobe /bin/busybox /busybox

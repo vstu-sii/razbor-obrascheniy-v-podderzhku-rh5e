@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: Support Triage
+    folder: Support Triage
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

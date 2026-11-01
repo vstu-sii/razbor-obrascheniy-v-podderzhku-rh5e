@@ -1,0 +1,26 @@
+# Isolated synthetic fixtures only; never use this configuration for production.
+services:
+  event-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: audit
+      POSTGRES_PASSWORD: synthetic_lab04_only
+      POSTGRES_DB: lab04_audit
+    ports: ['127.0.0.1:18532:5432']
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U audit -d lab04_audit']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  quota-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: audit
+      POSTGRES_PASSWORD: synthetic_infra_only
+      POSTGRES_DB: infra_audit
+    ports: ['127.0.0.1:18522:5432']
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U audit -d infra_audit']
+      interval: 2s
+      timeout: 3s
+      retries: 30

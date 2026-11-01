@@ -1,0 +1,48 @@
+{
+  "observed": {
+    "attempts_preserved": true,
+    "unknown_charge_reserved": true,
+    "total_model_calls": 2,
+    "nested_retries_included": true
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "889eae77-9765-4205-9e4b-7cabde26e092",
+        "event_id": "7c44d748-fb40-4afb-b1e8-cd2111ef9a84",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 2,
+        "reason": null,
+        "proposal_id": "9e44f42b-4bc1-4949-b097-076b765f257c"
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "889eae77-9765-4205-9e4b-7cabde26e092",
+        "attempt_no": 1,
+        "state": "unknown",
+        "reserved_tokens": 65738
+      },
+      {
+        "job_id": "889eae77-9765-4205-9e4b-7cabde26e092",
+        "attempt_no": 2,
+        "state": "completed",
+        "reserved_tokens": 65738
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "7c44d748-fb40-4afb-b1e8-cd2111ef9a84",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 2,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

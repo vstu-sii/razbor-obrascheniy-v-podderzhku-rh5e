@@ -1,0 +1,253 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: triage
+      POSTGRES_DB: triage
+      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
+    entrypoint:
+    - sh
+    - -c
+    - until test -s /run/secrets/db-password; do sleep 1; done; exec docker-entrypoint.sh
+      postgres
+    volumes:
+    - database:/var/lib/postgresql/data
+    - credentials:/run/secrets:ro
+    depends_on:
+      credentials:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U triage -d triage
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  credentials:
+    image: python:3.12-slim
+    user: '0'
+    command:
+    - python
+    - /provision.py
+    volumes:
+    - ./backend/provision.py:/provision.py:ro
+    - credentials:/secrets
+    - runtime-logs:/logs
+    - loki-data:/loki-data
+    - tempo-data:/tempo-data
+    - alloy-data:/alloy-data
+    restart: 'no'
+  app:
+    build:
+      context: .
+      args:
+        APP_REVISION: ${APP_REVISION:-local}
+    environment:
+      DB_HOST: db
+      DB_PASSWORD_FILE: /run/secrets/db-password
+      APP_FACTORY: backend.main:create_app
+      START_WORKER: 'false'
+      METRICS_TOKEN_FILE: /run/secrets/metrics-token
+      PROMPT_VERSION: ${PROMPT_VERSION:-v2.1}
+      BASELINE_MODE: ${BASELINE_MODE:-extractive}
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      MAX_RUNNING: ${MAX_RUNNING:-2}
+      MAX_PENDING: ${MAX_PENDING:-100}
+      MODEL_REQUESTS_PER_MINUTE: ${MODEL_REQUESTS_PER_MINUTE:-20}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-1000000}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-https://cloud.langfuse.com}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+      SERVICE_NAME: app
+      LOG_DIRECTORY: /logs
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      USER_REQUESTS_PER_DAY: ${USER_REQUESTS_PER_DAY:-100}
+      USER_TOKENS_PER_DAY: ${USER_TOKENS_PER_DAY:-1000000}
+      USER_MODEL_CALLS_PER_DAY: ${USER_MODEL_CALLS_PER_DAY:-100}
+      ANOMALY_TOKENS_PER_MINUTE: ${ANOMALY_TOKENS_PER_MINUTE:-200000}
+      OPERATOR_TOKENS: ${OPERATOR_TOKENS:-}
+    volumes:
+    - credentials:/run/secrets:ro
+    - traces:/data
+    - runtime-logs:/logs
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+    - 127.0.0.1:${PORT:-8000}:8000
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)
+      interval: 3s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+    image: ${TRIAGE_IMAGE:-support-triage:lab04}
+    init: true
+  ai:
+    environment:
+      DB_HOST: db
+      DB_PASSWORD_FILE: /run/secrets/db-password
+      APP_FACTORY: backend.ai_service:create_app
+      START_WORKER: 'false'
+      METRICS_TOKEN_FILE: /run/secrets/metrics-token
+      PROMPT_VERSION: ${PROMPT_VERSION:-v2.1}
+      BASELINE_MODE: ${BASELINE_MODE:-extractive}
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      MAX_RUNNING: ${MAX_RUNNING:-2}
+      MAX_PENDING: ${MAX_PENDING:-100}
+      MODEL_REQUESTS_PER_MINUTE: ${MODEL_REQUESTS_PER_MINUTE:-20}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-1000000}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-https://cloud.langfuse.com}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+      SERVICE_NAME: ai
+      LOG_DIRECTORY: /logs
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      USER_REQUESTS_PER_DAY: ${USER_REQUESTS_PER_DAY:-100}
+      USER_TOKENS_PER_DAY: ${USER_TOKENS_PER_DAY:-1000000}
+      USER_MODEL_CALLS_PER_DAY: ${USER_MODEL_CALLS_PER_DAY:-100}
+      ANOMALY_TOKENS_PER_MINUTE: ${ANOMALY_TOKENS_PER_MINUTE:-200000}
+    volumes:
+    - credentials:/run/secrets:ro
+    - traces:/data
+    - runtime-logs:/logs
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)
+      interval: 3s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+    image: ${TRIAGE_IMAGE:-support-triage:lab04}
+    init: true
+  worker:
+    command:
+    - python
+    - -m
+    - backend.worker
+    environment:
+      DB_HOST: db
+      DB_PASSWORD_FILE: /run/secrets/db-password
+      APP_FACTORY: backend.main:create_app
+      START_WORKER: 'false'
+      METRICS_TOKEN_FILE: /run/secrets/metrics-token
+      PROMPT_VERSION: ${PROMPT_VERSION:-v2.1}
+      BASELINE_MODE: ${BASELINE_MODE:-extractive}
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      MAX_RUNNING: ${MAX_RUNNING:-2}
+      MAX_PENDING: ${MAX_PENDING:-100}
+      MODEL_REQUESTS_PER_MINUTE: ${MODEL_REQUESTS_PER_MINUTE:-20}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-1000000}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-https://cloud.langfuse.com}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+      AI_BASE_URL: http://ai:8000
+      SERVICE_NAME: worker
+      LOG_DIRECTORY: /logs
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      USER_REQUESTS_PER_DAY: ${USER_REQUESTS_PER_DAY:-100}
+      USER_TOKENS_PER_DAY: ${USER_TOKENS_PER_DAY:-1000000}
+      USER_MODEL_CALLS_PER_DAY: ${USER_MODEL_CALLS_PER_DAY:-100}
+      ANOMALY_TOKENS_PER_MINUTE: ${ANOMALY_TOKENS_PER_MINUTE:-200000}
+    volumes:
+    - credentials:/run/secrets:ro
+    - traces:/data
+    - runtime-logs:/logs
+    depends_on:
+      app:
+        condition: service_healthy
+      ai:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import pathlib,time; p=pathlib.Path('/tmp/worker-heartbeat'); assert p.exists()
+        and time.time()-p.stat().st_mtime<60
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+    image: ${TRIAGE_IMAGE:-support-triage:lab04}
+    init: true
+  ingress:
+    environment:
+      DB_HOST: db
+      DB_PASSWORD_FILE: /run/secrets/db-password
+      APP_FACTORY: backend.ingress:create_app
+      START_WORKER: 'false'
+      METRICS_TOKEN_FILE: /run/secrets/metrics-token
+      PROMPT_VERSION: ${PROMPT_VERSION:-v2.1}
+      BASELINE_MODE: ${BASELINE_MODE:-extractive}
+      DEMO_OPERATOR_TOKEN: ${DEMO_OPERATOR_TOKEN:-}
+      MAX_RUNNING: ${MAX_RUNNING:-2}
+      MAX_PENDING: ${MAX_PENDING:-100}
+      MODEL_REQUESTS_PER_MINUTE: ${MODEL_REQUESTS_PER_MINUTE:-20}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-1000000}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      LANGFUSE_BASE_URL: ${LANGFUSE_BASE_URL:-https://cloud.langfuse.com}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+      BACKEND_URL: http://app:8000
+      SERVICE_NAME: ingress
+      LOG_DIRECTORY: /logs
+      OTEL_EXPORTER_OTLP_ENDPOINT: ${OTEL_EXPORTER_OTLP_ENDPOINT:-}
+      USER_REQUESTS_PER_DAY: ${USER_REQUESTS_PER_DAY:-100}
+      USER_TOKENS_PER_DAY: ${USER_TOKENS_PER_DAY:-1000000}
+      USER_MODEL_CALLS_PER_DAY: ${USER_MODEL_CALLS_PER_DAY:-100}
+      ANOMALY_TOKENS_PER_MINUTE: ${ANOMALY_TOKENS_PER_MINUTE:-200000}
+    volumes:
+    - credentials:/run/secrets:ro
+    - traces:/data
+    - runtime-logs:/logs
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+    - 127.0.0.1:${INGRESS_PORT:-8001}:8000
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://localhost:8000/health',timeout=3)
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+    image: ${TRIAGE_IMAGE:-support-triage:lab04}
+    init: true
+volumes:
+  database: null
+  credentials: null
+  traces: null
+  runtime-logs: null
+  loki-data: null
+  tempo-data: null
+  alloy-data: null

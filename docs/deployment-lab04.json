@@ -1,0 +1,60 @@
+{
+  "checked_utc": "2026-10-27",
+  "scope": "LAB04_public_release_and_local_Docker_monitoring",
+  "public_release": {
+    "proposal_id": "e5bcf0a7-5ccc-423b-8e17-11d1d3614e16",
+    "review_id": "59f1f066-ead5-45f4-b012-40d3fa52aded",
+    "revision": "600c194a2abacfec44cc0fc2ed65967973a21c5e",
+    "utc": "2026-10-27T10:00:07.440714+00:00",
+    "url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+    "scope": "public_synthetic_extractively_processed",
+    "retention_check": false,
+    "ui_health_auth_review": true,
+    "operator_not_metrics": true,
+    "external_action_performed": false
+  },
+  "rollback": {
+    "proposal_id": "e5bcf0a7-5ccc-423b-8e17-11d1d3614e16",
+    "review_id": "59f1f066-ead5-45f4-b012-40d3fa52aded",
+    "revision": "5a2050056e64204523fa7e7d578babb361f3c001",
+    "utc": "2026-10-27T10:03:28.873921+00:00",
+    "url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+    "scope": "public_synthetic_extractively_processed",
+    "retention_check": true,
+    "ui_health_auth_review": true,
+    "operator_not_metrics": true,
+    "external_action_performed": false
+  },
+  "return": {
+    "proposal_id": "e5bcf0a7-5ccc-423b-8e17-11d1d3614e16",
+    "review_id": "59f1f066-ead5-45f4-b012-40d3fa52aded",
+    "revision": "600c194a2abacfec44cc0fc2ed65967973a21c5e",
+    "utc": "2026-10-27T10:07:45.026075+00:00",
+    "url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+    "scope": "public_synthetic_extractively_processed",
+    "retention_check": true,
+    "ui_health_auth_review": true,
+    "operator_not_metrics": true,
+    "external_action_performed": false
+  },
+  "automatic_main_release": "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40484448961",
+  "rollback_run": "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485091870",
+  "return_run": "https://github.com/SIISKI/siiski_volchkova_shared_repository/actions/runs/40485522609",
+  "monitoring": {
+    "scope": "local_Docker_by_participant_choice",
+    "revision": "600c194a2abacfec44cc0fc2ed65967973a21c5e",
+    "checks": {
+      "metrics": true,
+      "logs": true,
+      "traces": true,
+      "spend_alert": true
+    },
+    "panels": 8,
+    "api": "http://127.0.0.1:8000",
+    "grafana": "http://127.0.0.1:18301",
+    "hosted_public_monitoring": false
+  },
+  "permanent_hosted_monitoring": false,
+  "live_paid_LLM_called": false,
+  "LAB_publication": false
+}

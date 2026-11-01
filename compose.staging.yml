@@ -1,0 +1,176 @@
+services:
+  app:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:4318
+  ai:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:4318
+  worker:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:4318
+  ingress:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:4318
+  prometheus:
+    image: prom/prometheus:v3.15.1
+    volumes:
+    - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml:ro
+    - credentials:/run/secrets:ro
+    - prometheus-data:/prometheus
+    ports:
+    - 127.0.0.1:${PROMETHEUS_PORT:-18300}:9090
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O- http://127.0.0.1:9090/-/ready >/dev/null
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana:13.2.4
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: 'false'
+      GF_USERS_ALLOW_SIGN_UP: 'false'
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana-password
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/triage.json
+    volumes:
+    - ./monitoring/grafana-datasources.yml:/etc/grafana/provisioning/datasources/triage.yml:ro
+    - ./monitoring/grafana-dashboards.yml:/etc/grafana/provisioning/dashboards/triage.yml:ro
+    - ./monitoring/triage.json:/var/lib/grafana/dashboards/triage.json:ro
+    - credentials:/run/secrets:ro
+    - grafana-data:/var/lib/grafana
+    ports:
+    - 127.0.0.1:${GRAFANA_PORT:-18301}:3000
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O- http://127.0.0.1:3000/api/health >/dev/null
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    depends_on:
+    - prometheus
+    - loki
+    - tempo
+    restart: unless-stopped
+  loki:
+    image: support-triage-monitor-loki:lab04
+    user: '10001'
+    command:
+    - -config.file=/etc/loki.yml
+    volumes:
+    - ./monitoring/loki.yml:/etc/loki.yml:ro
+    - loki-data:/loki
+    ports:
+    - 127.0.0.1:${LOKI_PORT:-18500}:3100
+    healthcheck:
+      test:
+      - CMD
+      - /busybox
+      - wget
+      - -q
+      - -O
+      - /dev/null
+      - http://127.0.0.1:3100/ready
+      interval: 5s
+      timeout: 3s
+      retries: 40
+    depends_on:
+      credentials:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: monitoring/Dockerfile.probe
+      args:
+        BASE_IMAGE: grafana/loki:3.7.9
+  tempo:
+    image: support-triage-monitor-tempo:lab04
+    user: '10001'
+    command:
+    - -config.file=/etc/tempo.yml
+    volumes:
+    - ./monitoring/tempo.yml:/etc/tempo.yml:ro
+    - tempo-data:/var/tempo
+    ports:
+    - 127.0.0.1:${TEMPO_PORT:-18600}:3200
+    healthcheck:
+      test:
+      - CMD
+      - /busybox
+      - wget
+      - -q
+      - -O
+      - /dev/null
+      - http://127.0.0.1:3200/ready
+      interval: 5s
+      timeout: 3s
+      retries: 40
+    depends_on:
+      credentials:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: monitoring/Dockerfile.probe
+      args:
+        BASE_IMAGE: grafana/tempo:2.10.10
+  alloy:
+    image: support-triage-monitor-alloy:lab04
+    user: '10001'
+    command:
+    - run
+    - --storage.path=/var/lib/alloy
+    - --server.http.listen-addr=0.0.0.0:12345
+    - /etc/alloy/config.alloy
+    volumes:
+    - ./monitoring/alloy.alloy:/etc/alloy/config.alloy:ro
+    - runtime-logs:/logs:ro
+    - alloy-data:/var/lib/alloy
+    depends_on:
+      loki:
+        condition: service_healthy
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: monitoring/Dockerfile.probe
+      args:
+        BASE_IMAGE: grafana/alloy:v1.21.2
+    healthcheck:
+      test:
+      - CMD
+      - /busybox
+      - wget
+      - -q
+      - -O
+      - /dev/null
+      - http://127.0.0.1:12345/-/ready
+      interval: 5s
+      timeout: 3s
+      retries: 40
+  alertmanager:
+    image: prom/alertmanager:v0.34.1
+    command:
+    - --config.file=/etc/alertmanager/alertmanager.yml
+    volumes:
+    - ./monitoring/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+    - alertmanager-data:/alertmanager
+    ports:
+    - 127.0.0.1:${ALERTMANAGER_PORT:-18302}:9093
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O- http://127.0.0.1:9093/-/ready >/dev/null
+      interval: 5s
+      timeout: 3s
+      retries: 30
+volumes:
+  prometheus-data: null
+  grafana-data: null
+  alertmanager-data: null
