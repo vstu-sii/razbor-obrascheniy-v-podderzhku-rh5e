@@ -1,0 +1,690 @@
+{
+  "kind": "offline_design_spikes",
+  "python": "3.11.1",
+  "sha256": {
+    "fixtures/cases.jsonl": "67bf520a39a1d7ea452c0cebefac41edfa81d38a7ef241ce0d4c4d9f355c57f9",
+    "fixtures/kb.jsonl": "030a000de2072a0e65665a43b5b33f61e759973ee09773d3da8111deca315449",
+    "api/openapi.yaml": "b5da3c41ee6384b88e9c7afe51fecb236a4a01aaae54ca2588e2eac2c86fe103",
+    "experiments/lab2_checks.py": "1ee0583fa18bc0dee48f037490bd9ab56d0ea87fcf8311212e2ddc638128a35c"
+  },
+  "valid_synthetic_requests": 40,
+  "retrieval": {
+    "scope": "draft synthetic diagnostic, NOT product quality",
+    "methods": {
+      "overlap": {
+        "positive_cases": 10,
+        "mean_recall_at_3": 0.8,
+        "misses": [
+          "UC01-01",
+          "UC01-07"
+        ],
+        "no_gold_evidence_cases_with_hits": [
+          "UC02-01",
+          "UC02-02",
+          "UC02-03",
+          "UC02-05",
+          "UC02-06",
+          "UC02-07",
+          "UC02-09",
+          "UC03-01",
+          "UC03-03",
+          "UC03-05",
+          "UC03-06",
+          "UC03-09",
+          "UC03-10"
+        ],
+        "rows": [
+          {
+            "id": "UC01-01",
+            "retrieved": [],
+            "expected": [
+              "KB-2FA-v1"
+            ],
+            "recall_at_3": 0.0
+          },
+          {
+            "id": "UC01-02",
+            "retrieved": [
+              "KB-2FA-v1",
+              "KB-ERROR-v1"
+            ],
+            "expected": [
+              "KB-2FA-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-03",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-04",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-05",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [
+              "KB-API-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-06",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [
+              "KB-API-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-07",
+            "retrieved": [],
+            "expected": [
+              "KB-NOTIFY-v1"
+            ],
+            "recall_at_3": 0.0
+          },
+          {
+            "id": "UC01-08",
+            "retrieved": [
+              "KB-ERROR-v1",
+              "KB-2FA-v1"
+            ],
+            "expected": [
+              "KB-ERROR-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-09",
+            "retrieved": [
+              "KB-ROLE-v1"
+            ],
+            "expected": [
+              "KB-ROLE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-10",
+            "retrieved": [
+              "KB-API-v1",
+              "KB-INVOICE-v1",
+              "KB-ROLE-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC02-01",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-02",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-03",
+            "retrieved": [
+              "KB-API-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-04",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-05",
+            "retrieved": [
+              "KB-ERROR-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-06",
+            "retrieved": [
+              "KB-2FA-v1",
+              "KB-API-v1",
+              "KB-NOTIFY-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-07",
+            "retrieved": [
+              "KB-2FA-v1",
+              "KB-API-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-08",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-09",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-10",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-01",
+            "retrieved": [
+              "KB-2FA-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-02",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-03",
+            "retrieved": [
+              "KB-ERROR-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-04",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-05",
+            "retrieved": [
+              "KB-API-v1",
+              "KB-2FA-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-06",
+            "retrieved": [
+              "KB-2FA-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-07",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-08",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-09",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-10",
+            "retrieved": [
+              "KB-2FA-v1",
+              "KB-API-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          }
+        ]
+      },
+      "bm25": {
+        "positive_cases": 10,
+        "mean_recall_at_3": 0.8,
+        "misses": [
+          "UC01-01",
+          "UC01-07"
+        ],
+        "no_gold_evidence_cases_with_hits": [
+          "UC02-01",
+          "UC02-02",
+          "UC02-03",
+          "UC02-05",
+          "UC02-06",
+          "UC02-07",
+          "UC02-09",
+          "UC03-01",
+          "UC03-03",
+          "UC03-05",
+          "UC03-06",
+          "UC03-09",
+          "UC03-10"
+        ],
+        "rows": [
+          {
+            "id": "UC01-01",
+            "retrieved": [],
+            "expected": [
+              "KB-2FA-v1"
+            ],
+            "recall_at_3": 0.0
+          },
+          {
+            "id": "UC01-02",
+            "retrieved": [
+              "KB-2FA-v1",
+              "KB-ERROR-v1"
+            ],
+            "expected": [
+              "KB-2FA-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-03",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-04",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-05",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [
+              "KB-API-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-06",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [
+              "KB-API-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-07",
+            "retrieved": [],
+            "expected": [
+              "KB-NOTIFY-v1"
+            ],
+            "recall_at_3": 0.0
+          },
+          {
+            "id": "UC01-08",
+            "retrieved": [
+              "KB-ERROR-v1",
+              "KB-2FA-v1"
+            ],
+            "expected": [
+              "KB-ERROR-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-09",
+            "retrieved": [
+              "KB-ROLE-v1"
+            ],
+            "expected": [
+              "KB-ROLE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC01-10",
+            "retrieved": [
+              "KB-INVOICE-v1",
+              "KB-ROLE-v1",
+              "KB-API-v1"
+            ],
+            "expected": [
+              "KB-INVOICE-v1"
+            ],
+            "recall_at_3": 1.0
+          },
+          {
+            "id": "UC02-01",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-02",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-03",
+            "retrieved": [
+              "KB-INVOICE-v1",
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-04",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-05",
+            "retrieved": [
+              "KB-ERROR-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-06",
+            "retrieved": [
+              "KB-API-v1",
+              "KB-NOTIFY-v1",
+              "KB-2FA-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-07",
+            "retrieved": [
+              "KB-NOTIFY-v1",
+              "KB-ROLE-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-08",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-09",
+            "retrieved": [
+              "KB-API-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC02-10",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-01",
+            "retrieved": [
+              "KB-2FA-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-02",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-03",
+            "retrieved": [
+              "KB-ERROR-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-04",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-05",
+            "retrieved": [
+              "KB-API-v1",
+              "KB-NOTIFY-v1",
+              "KB-ROLE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-06",
+            "retrieved": [
+              "KB-2FA-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-07",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-08",
+            "retrieved": [],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-09",
+            "retrieved": [
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          },
+          {
+            "id": "UC03-10",
+            "retrieved": [
+              "KB-NOTIFY-v1",
+              "KB-ROLE-v1",
+              "KB-INVOICE-v1"
+            ],
+            "expected": [],
+            "recall_at_3": null
+          }
+        ]
+      }
+    }
+  },
+  "contract": {
+    "checks": [
+      {
+        "case": "valid_answer",
+        "expected_allowed": true,
+        "allowed": true,
+        "reason": "structural_checks_only"
+      },
+      {
+        "case": "no_evidence",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "not_analyzed_answer_regression",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "human_review_false",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "unknown_mode",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "wrong_request",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "request_id"
+      },
+      {
+        "case": "empty_reply",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "clarify_without_gap",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "clarify_valid",
+        "expected_allowed": true,
+        "allowed": true,
+        "reason": "structural_checks_only"
+      },
+      {
+        "case": "escalate_with_reply",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "schema"
+      },
+      {
+        "case": "escalate_valid",
+        "expected_allowed": true,
+        "allowed": true,
+        "reason": "structural_checks_only"
+      },
+      {
+        "case": "fallback_valid",
+        "expected_allowed": true,
+        "allowed": true,
+        "reason": "structural_checks_only"
+      },
+      {
+        "case": "invented_source",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "evidence_provenance"
+      },
+      {
+        "case": "wrong_version",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "evidence_provenance"
+      },
+      {
+        "case": "forged_excerpt",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "evidence_provenance"
+      },
+      {
+        "case": "source_not_retrieved",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "evidence_provenance"
+      },
+      {
+        "case": "draft_source",
+        "expected_allowed": false,
+        "allowed": false,
+        "reason": "evidence_provenance"
+      },
+      {
+        "case": "unsupported_claim_with_real_source",
+        "expected_allowed": true,
+        "allowed": true,
+        "reason": "structural_checks_only"
+      }
+    ],
+    "passed": 18,
+    "counterexample": "Authentic evidence with an unsupported reply passes; human grounding review required."
+  }
+}
