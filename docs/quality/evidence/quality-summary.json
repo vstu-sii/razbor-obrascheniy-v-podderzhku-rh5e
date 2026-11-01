@@ -1,0 +1,87 @@
+{
+  "source": "Q-006 real external Mistral outputs with fixture context",
+  "record_coverage": [
+    43,
+    43
+  ],
+  "unique_input_groups": 38,
+  "schema_valid": [
+    38,
+    38
+  ],
+  "mode_correct": [
+    33,
+    38
+  ],
+  "category_correct": [
+    36,
+    38
+  ],
+  "false_answer_on_nonanswer": [
+    0,
+    28
+  ],
+  "tokens_unique_inputs": 96484,
+  "model_call_empirical_p95_ms": 15505.612,
+  "first_pass_http_ok": [
+    34,
+    38
+  ],
+  "additional_calls": 4,
+  "total_attempts": 42,
+  "content_review_scope": "34 initial answers reviewed; 4 added answers have no content score",
+  "semantic_review": {
+    "usable": 16,
+    "needs_edit": 14,
+    "unusable": 4,
+    "reviewed": 34
+  },
+  "mode_errors": [
+    {
+      "case_id": "UC03-10",
+      "expected": "escalate",
+      "actual": "clarify"
+    },
+    {
+      "case_id": "UC04-01",
+      "expected": "answer",
+      "actual": "clarify"
+    },
+    {
+      "case_id": "UC04-05",
+      "expected": "escalate",
+      "actual": "clarify"
+    },
+    {
+      "case_id": "UC04-06",
+      "expected": "escalate",
+      "actual": "clarify"
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "expected": "escalate",
+      "actual": "clarify"
+    }
+  ],
+  "category_errors": [
+    {
+      "case_id": "UC02-10",
+      "expected": "other",
+      "actual": "product_error"
+    },
+    {
+      "case_id": "UC04-04",
+      "expected": "settings",
+      "actual": "other"
+    }
+  ],
+  "runtime_e2e_measured_by_this_summary": false,
+  "source_sha256_lf": {
+    "cases.jsonl": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+    "baseline-independent-responses.jsonl": "337b7ee01b1d4e671d175922594da10eb17c74d1531fdbd83bdcc024abd432a8",
+    "baseline-responses.jsonl": "e225283139878a579f482203c842753d459c44a6d0c9c4375458be8c32e5a9fe",
+    "baseline-report.json": "810b72987b14c3c46ea229fb454f7ff2c3b6276e27dc26c08033fc7a364a5b08",
+    "team-output-review.json": "ec108ebdff03c60fd80b929b127a67d62862032a37912734ac203748f4876727",
+    "output-review-summary.json": "04a29e61fba6645efab85d7282393b122555df19fcaff148da2e1e090e7d4d0d"
+  }
+}

@@ -1,0 +1,40 @@
+@startuml
+title Автоматическая подготовка карточки по событию
+
+actor "Клиент" as Customer
+participant "Система поддержки" as Helpdesk
+participant "Приём событий" as Ingress
+queue "Очередь разбора" as Queue
+participant "Исполнитель разбора" as Worker
+database "Карточки обращений" as Store
+actor "Оператор" as Operator
+
+Customer -> Helpdesk: отправляет обращение или новое сообщение
+Helpdesk -> Ingress: ticket.created / customer.message_received (id, версия)
+Ingress -> Ingress: проверяет повтор события
+Ingress -> Queue: сохраняет одну задачу на версию
+Ingress --> Helpdesk: подтверждает после сохранения
+
+loop пока есть доступная мощность
+  Worker -> Queue: получает следующую задачу
+  Queue --> Worker: обращение и версия
+  Worker -> Store: сохраняет состояние «разбирается»
+  Worker -> Worker: готовит предложение и проверяет его
+  Worker -> Store: сохраняет карточку или причину сбоя
+end
+
+Operator -> Store: открывает очередь обращений
+Store --> Operator: готовая карточка или статус ожидания/ошибки
+Operator -> Helpdesk: подтверждает отправку или передачу
+
+note over Ingress,Worker
+  Повторные события объединяются.
+  Общая параллельность и очередь ограничены настройками.
+  После ограниченных повторов карточка требует ручной проверки.
+end note
+
+note over Operator,Helpdesk
+  Разбор автоматический.
+  Внешнее действие подтверждает оператор.
+end note
+@enduml

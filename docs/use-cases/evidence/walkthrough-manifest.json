@@ -1,0 +1,28 @@
+{
+  "exported_utc": "2026-10-15T21:02:17.773374+00:00",
+  "base_commit": "1c2e9eea21441a4b59eb960e2c9f5b7d7a048466",
+  "version_kind": "base commit plus task changes identified by normalized source hashes",
+  "environment": "local Windows, loopback port 8000, SQLite, Mistral Free, synthetic data",
+  "public_deployment_verified": false,
+  "langfuse_dashboard_verified": false,
+  "source_sha256_lf": {
+    "frontend": "1570183fe4527449adabdfe052e226cb37ab2ad911d9050d85d6bef399dda8a3",
+    "backend": "1d9be2cca9be20e84996d2f328e463b71b83e633308ddc0adfa5b04d94d0178e",
+    "baseline": "464b04ed6faa638c243fd47df1b855fb6a26fa7bc7374ade0bfa32471d646822",
+    "walkthrough_launcher": "a53ce4d459fefbe7b8119cf4038be0108653456c23158c7f2e298fff672fb625",
+    "prompt": "536ceece56cda97aaf96ef2767d720e205fe32089d6c95336a84e8652384ce7d"
+  },
+  "artifacts_sha256": {
+    "walkthrough-records.json": "b70bd6fa1de05e57fc39640ad821eac854a97c8bca01d2dcc0d773c96257f329",
+    "walkthrough-traces.jsonl": "6054f0faa4c998ff45c56a4ee099e73311b17113df664c3e96a28b9f02e5a9d9",
+    "agent-actions.json": "863efc1d95890f809ac4daf084cc86d3b243099a515d7fceb3b402fcd672ee42"
+  },
+  "records": 14,
+  "reviews": 14,
+  "proposal_immutability_checks": 14,
+  "human_independence_claimed": false,
+  "walkthrough_assistance": "step-by-step instructions and correction of mistaken field/button use",
+  "agent_corrective_reviews": 1,
+  "timestamp_note": "SQLite created_at and reviewed_at are UTC. Initial traces recorded started_utc after response; latency_ms is the measured duration.",
+  "verified_runtime_commit": "6f40e6d77997bd5767583f4aa6a70313cc78ba50"
+}

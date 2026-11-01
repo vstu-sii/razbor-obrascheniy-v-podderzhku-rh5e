@@ -1,0 +1,9 @@
+[
+  {
+    "executor": "agent",
+    "action": "correct_literal_placeholder_after_human_edit",
+    "proposal_id": "f1341b7a-12e2-4c7c-89c0-6271ce7f9e2f",
+    "review_id": "20b00880-9c0b-44df-8255-a00bc9a73b3a",
+    "reason": "Агент заменил буквальное описание ответа полным текстом по статье. По поручению участника, после человеческой проверки операции edited."
+  }
+]
