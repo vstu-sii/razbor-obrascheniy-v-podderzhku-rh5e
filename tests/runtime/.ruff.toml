@@ -1,0 +1,2 @@
+# Preserve the verified application snapshot; lint the Quality harness separately.
+exclude = ["*"]

@@ -1,0 +1,129 @@
+{
+  "observed": {
+    "ucs_checked": 4,
+    "sources_and_modes_checked": true,
+    "review_stored_separately": true,
+    "external_helpdesk_writes": 0
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "f00e37e6-bf76-43ac-aea7-1d1e94919bb1",
+        "event_id": "8dc5406b-5880-41a9-b371-417841bd452a",
+        "ticket_ref": "uc-0",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "252996ce-c6e8-4a9a-adeb-2dcc3b2a94c8"
+      },
+      {
+        "job_id": "21baa790-9544-4bba-8210-8df50a7f2f36",
+        "event_id": "b2725dbe-4fec-4811-912a-877b46ff62a5",
+        "ticket_ref": "uc-1",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "cf7c9064-d54b-4355-a880-0ac9f1f4858c"
+      },
+      {
+        "job_id": "2ae3864f-5d1d-499e-94bf-7a4e66807312",
+        "event_id": "c51fab55-c3b8-4395-ba89-3092d1e6cd5f",
+        "ticket_ref": "uc-2",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "b1101823-02a6-4a1f-92e1-a05ba7496230"
+      },
+      {
+        "job_id": "f8da26d5-b781-4685-ba6a-5dd9120bb1d2",
+        "event_id": "82635dc8-61e2-4b67-aed1-b7450592f88e",
+        "ticket_ref": "uc-3",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "57df15fb-b0b8-4f4a-8d12-2893eea657d9"
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "f00e37e6-bf76-43ac-aea7-1d1e94919bb1",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65736
+      },
+      {
+        "job_id": "21baa790-9544-4bba-8210-8df50a7f2f36",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65736
+      },
+      {
+        "job_id": "2ae3864f-5d1d-499e-94bf-7a4e66807312",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65736
+      },
+      {
+        "job_id": "f8da26d5-b781-4685-ba6a-5dd9120bb1d2",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65736
+      }
+    ],
+    "reviews": [
+      {
+        "review_id": "672d85f4-c6fe-4009-9a54-aba3f3d1aeb4",
+        "proposal_id": "252996ce-c6e8-4a9a-adeb-2dcc3b2a94c8",
+        "decision": "accepted"
+      },
+      {
+        "review_id": "1f3fddf9-2340-4fe7-9518-7e6087afa428",
+        "proposal_id": "cf7c9064-d54b-4355-a880-0ac9f1f4858c",
+        "decision": "edited"
+      },
+      {
+        "review_id": "2e543df5-e939-40df-8d83-1f67f9cfe6c7",
+        "proposal_id": "b1101823-02a6-4a1f-92e1-a05ba7496230",
+        "decision": "accepted"
+      },
+      {
+        "review_id": "9233497a-85ea-4d5b-836f-b86d7976d5fa",
+        "proposal_id": "57df15fb-b0b8-4f4a-8d12-2893eea657d9",
+        "decision": "rejected"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "8dc5406b-5880-41a9-b371-417841bd452a",
+        "ticket_ref": "uc-0",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "b2725dbe-4fec-4811-912a-877b46ff62a5",
+        "ticket_ref": "uc-1",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "c51fab55-c3b8-4395-ba89-3092d1e6cd5f",
+        "ticket_ref": "uc-2",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "82635dc8-61e2-4b67-aed1-b7450592f88e",
+        "ticket_ref": "uc-3",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 4,
+  "database": "SQLite",
+  "external_model_calls": 0
+}

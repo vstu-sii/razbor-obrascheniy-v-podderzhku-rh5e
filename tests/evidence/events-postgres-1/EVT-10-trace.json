@@ -1,0 +1,57 @@
+{
+  "observed": {
+    "calls_without_budget": 0,
+    "reservation_preserved": true,
+    "global_limits_respected": true
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "7d5e0167-0a39-49ca-9075-7be52cf698f1",
+        "event_id": "ec83afa1-000d-4a77-9f39-02da9f6d8fef",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "running",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": null
+      },
+      {
+        "job_id": "3e4f9a83-58cd-4f02-b067-7d8c33017f01",
+        "event_id": "c6cc3f2b-4186-448d-a08e-8b25c8c68d6d",
+        "ticket_ref": "quota-2",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "7d5e0167-0a39-49ca-9075-7be52cf698f1",
+        "attempt_no": 1,
+        "state": "reserved",
+        "reserved_tokens": 65738
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "ec83afa1-000d-4a77-9f39-02da9f6d8fef",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "c6cc3f2b-4186-448d-a08e-8b25c8c68d6d",
+        "ticket_ref": "quota-2",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 0,
+  "database": "PostgreSQL",
+  "external_model_calls": 0
+}

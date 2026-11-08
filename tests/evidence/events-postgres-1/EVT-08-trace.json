@@ -1,0 +1,88 @@
+{
+  "observed": {
+    "global_running_limit_respected": true,
+    "remaining_jobs_wait": true
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "b7c9ec7b-2b9e-4a1d-b92a-bbf8af34ff0d",
+        "event_id": "c2844312-eac8-4e41-aa53-65176e4d11f0",
+        "ticket_ref": "parallel-1",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      },
+      {
+        "job_id": "60c6bdb0-f458-4740-a7f5-d1aefc2d81b0",
+        "event_id": "54d7eb23-510c-438d-a07b-cc287e157478",
+        "ticket_ref": "parallel-2",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      },
+      {
+        "job_id": "511422bb-a842-4f96-9237-c5c12467702f",
+        "event_id": "213b2d09-6b2a-4190-a185-319bac907939",
+        "ticket_ref": "parallel-3",
+        "input_version": 1,
+        "state": "queued",
+        "attempts": 0,
+        "reason": null,
+        "proposal_id": null
+      },
+      {
+        "job_id": "90fdd97e-b509-4ed4-8d99-9ede29aa9ae1",
+        "event_id": "51b70973-ed1c-48ab-aada-9221a230c1f0",
+        "ticket_ref": "parallel-0",
+        "input_version": 1,
+        "state": "running",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": null
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "90fdd97e-b509-4ed4-8d99-9ede29aa9ae1",
+        "attempt_no": 1,
+        "state": "reserved",
+        "reserved_tokens": 65742
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "51b70973-ed1c-48ab-aada-9221a230c1f0",
+        "ticket_ref": "parallel-0",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "c2844312-eac8-4e41-aa53-65176e4d11f0",
+        "ticket_ref": "parallel-1",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "54d7eb23-510c-438d-a07b-cc287e157478",
+        "ticket_ref": "parallel-2",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      },
+      {
+        "event_id": "213b2d09-6b2a-4190-a185-319bac907939",
+        "ticket_ref": "parallel-3",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 0,
+  "database": "PostgreSQL",
+  "external_model_calls": 0
+}

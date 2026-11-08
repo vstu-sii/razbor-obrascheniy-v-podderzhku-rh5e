@@ -1,0 +1,40 @@
+{
+  "observed": {
+    "created_jobs": 1,
+    "manual_start_required": false
+  },
+  "actual_database_rows": {
+    "jobs": [
+      {
+        "job_id": "328dbc21-eab4-464a-9c1e-314bacf98098",
+        "event_id": "a946d262-81d1-4ece-b4ba-3e6512bc453a",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "state": "ready",
+        "attempts": 1,
+        "reason": null,
+        "proposal_id": "28431171-6dd8-4d72-9f27-008c168c0eee"
+      }
+    ],
+    "attempts": [
+      {
+        "job_id": "328dbc21-eab4-464a-9c1e-314bacf98098",
+        "attempt_no": 1,
+        "state": "completed",
+        "reserved_tokens": 65738
+      }
+    ],
+    "reviews": [],
+    "events": [
+      {
+        "event_id": "a946d262-81d1-4ece-b4ba-3e6512bc453a",
+        "ticket_ref": "ticket",
+        "input_version": 1,
+        "event_type": "ticket.created"
+      }
+    ]
+  },
+  "controlled_transport_calls": 1,
+  "database": "SQLite",
+  "external_model_calls": 0
+}
