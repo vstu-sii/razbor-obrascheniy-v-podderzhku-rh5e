@@ -1,38 +1,16 @@
-# Трассировка вызовов
+# Трассировка AI Engineer, LAB03
 
-В `Baseline.call_model` используется Langfuse SDK 4.0.0. Каждая внешняя
-попытка создаёт generation observation с названием `support-baseline`,
-идентификатором модели и статистикой входных и выходных токенов.
-Повторный вызов создаёт отдельное наблюдение.
+Каждый новый внешний этап каскада обёрнут Langfuse SDK в `ml/cascade/providers.py`.
+Для синтетического стенда TRACE_SYNTHETIC_CONTENT=true записывает промпт и raw
+ответ; ключи передаются только локальным env, см. .env.example. Отсутствие ключей
+не выдаётся за подтверждённый внешний trace. Ошибки Mistral также видны как ERROR.
 
-Настройки перечислены в [.env.example](.env.example): `LANGFUSE_BASE_URL`,
-`LANGFUSE_PUBLIC_KEY`, `LANGFUSE_SECRET_KEY`. При
-`TRACE_SYNTHETIC_CONTENT=true` в наблюдение передаются prompt и ответ.
-Этот режим используется с синтетическими обращениями. При значении `false`
-передаются идентификатор запроса и выбранный режим ответа.
+В ml/experiments/cascade/evidence/ сохранены реальные GET Observations API v2:
+34 generations в четырёх сериях (v2, v3, первый и исправленный 2FA followup).
+Ссылки на dashboard находятся в карточках review/. Это не задним числом
+реконструированные вызовы. Старый опыт 15.10 отдельно: его 42 попытки не объявлены
+записанными в новом Langfuse. Внешняя панель требует доступа к проекту владельца.
 
-Локальный журнал `TRACE_PATH` содержит request_id, хеш входа, найденные
-источники, время обработки, usage, число попыток и результат проверки.
-
-Внешняя модель настраивается через `MODEL_BASE_URL`, `MODEL_NAME`,
-`MODEL_API_KEY`; для её вызова требуется `BASELINE_MODE=llm`.
-В `MODEL_BASE_URL` указывается адрес API до `/chat/completions`, например
-`https://api.mistral.ai/v1`. В личном окружении задаются значения ключей.
-
-Чтобы запускать API с настройками из файла без дополнительных модулей:
-
-```powershell
-Copy-Item ml/tracing/.env.example .env
-Get-Content .env | ForEach-Object {
-    if ($_ -match '^([A-Z][A-Z0-9_]*)=(.*)$') {
-        [Environment]::SetEnvironmentVariable($Matches[1], $Matches[2], 'Process')
-    }
-}
-python -m uvicorn backend.routers.ai:create_app --factory --host 127.0.0.1 --port 8001
-```
-
-Swagger UI: `http://127.0.0.1:8001/docs`. Для `/v1/analyze` используется
-Bearer-токен из `DEMO_OPERATOR_TOKEN`. При подключении к общему backend
-вызывается `create_router(AnalyzeRequest, operator_dependency, engine)`.
-
-Документация SDK: [Langfuse Python SDK](https://langfuse.com/docs/observability/sdk/overview).
+Воспроизведение evidence работает без ключей и не делает генераций.
+Фактические чеки ApiMira являются источником стоимости; цена каталога Langfuse
+не заменяет биллинг посредника. Курс участника 89 ₽/$.

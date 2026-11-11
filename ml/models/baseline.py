@@ -30,12 +30,12 @@ def retrieve(text, history, version, kb):
                     for t in query & bag.keys())
         if score > 0:
             ranked.append((score, doc['source_id'], doc))
-    return [doc for _, _, doc in sorted(ranked, key=lambda value: (-value[0], value[1]))[:3]]
+    return [doc for _, _, doc in sorted(ranked, key=lambda value: (-value[0], value[1]))]
 
 def fallback(request_id, reason):
     return {'request_id': request_id, 'status': 'not_analyzed', 'mode': 'escalate',
             'category': 'other', 'urgency': 'unassessed', 'urgency_reason': 'Нужна оценка оператора',
-            'summary': 'Автоматический разбор недоступен или не прошёл проверку',
+            'summary': 'Требуется проверка специалистом',
             'known_facts': [], 'missing_data': [], 'next_step': 'Оператор проверяет исходное обращение',
             'evidence': [], 'draft_reply': None, 'needs_human_review': True, 'warnings': [reason]}
 
@@ -122,12 +122,16 @@ class Baseline:
                                   usage_details={'input': usage.get('prompt_tokens', 0), 'output': usage.get('completion_tokens', 0)})
         return card, usage
 
-    def analyze(self, request):
+    def analyze(self, request, max_attempts=2, deadline_seconds=55):
         started = time.perf_counter()
         sources = retrieve(request['ticket_text'], request['history'], request['kb_version'], self.kb)
         raw, usage, reason = None, None, None
         attempts = 0
-        for attempt in range(2 if self.mode == 'llm' else 1):
+        current_version = any(item['status'] == 'approved' and item['version'] == request['kb_version'] for item in self.kb)
+        model_blocked = self.mode == 'llm' and not current_version
+        if model_blocked:
+            reason = 'no_current_knowledge_version'
+        for attempt in range(0 if model_blocked else (min(max_attempts, 2) if self.mode == 'llm' else 1)):
             attempts = attempt + 1
             try:
                 if self.mode == 'disabled':
@@ -135,7 +139,7 @@ class Baseline:
                 if self.mode == 'extractive':
                     raw = self.extractive(request, sources)
                 else:
-                    remaining = 55 - (time.perf_counter() - started)
+                    remaining = min(55, deadline_seconds) - (time.perf_counter() - started)
                     if remaining <= 0:
                         break
                     raw, usage = self.call_model(request, sources, min(25, remaining))
@@ -151,7 +155,7 @@ class Baseline:
                   'attempts': attempts, 'schema_valid': isinstance(raw, dict) and Draft202012Validator(self.schema).is_valid(raw),
                   'gate_passed': passed, 'provider': self.mode, 'request_id': request['request_id'],
                   'http_status': 200 if raw is not None and self.mode == 'llm' else None,
-                  'transport_kind': 'external_http' if self.mode == 'llm' else 'local_function', 'billed_usd': None}
+                  'transport_kind': 'external_http' if self.mode == 'llm' and attempts else 'local_function', 'billed_usd': None}
         if self.trace_path:
             path = Path(self.trace_path)
             path.parent.mkdir(parents=True, exist_ok=True)

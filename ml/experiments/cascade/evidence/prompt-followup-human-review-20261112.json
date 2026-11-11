@@ -1,0 +1,29 @@
+{
+  "review_date": "2026-11-12",
+  "review_kind": "participant review, not independent held-out evaluation",
+  "original_export_sha256": "9b0b71e33390ca9d4aa06dd967b2fe4ffc0625c2db3cd8b4d552f9a92b017357",
+  "cards_sha256": "9de2e86fcd13fe470adb01a3354930bdeca68bf8f8e0fa5b665b218c60a2912f",
+  "ratings": {
+    "Частично": 1,
+    "Неверно": 1,
+    "Верно": 1
+  },
+  "rows": [
+    {
+      "row": 0,
+      "case_id": "two_factor_steps",
+      "rating": "Частично"
+    },
+    {
+      "row": 1,
+      "case_id": "two_factor_and_invoice",
+      "rating": "Неверно"
+    },
+    {
+      "row": 2,
+      "case_id": "two_factor_lost_phone",
+      "rating": "Верно"
+    }
+  ],
+  "publication_note": "Free-form working comments omitted; grades/case IDs and source hashes retained."
+}

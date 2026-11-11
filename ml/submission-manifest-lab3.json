@@ -1,0 +1,518 @@
+{
+  "lab": 3,
+  "role": "ai-engineer",
+  "course": "https://sii.sergeivolchkov.ru/labs/lab3.md",
+  "source_commit": "25287e311bfd9d0065f9a5874232ab4781ce39ba",
+  "preserved_previous_ai_commit": "889ca3cefff68ffe8b2ebf28df20e864433ac7d1",
+  "scope": "AI-only export; shared Delivery runtime excluded",
+  "files": [
+    {
+      "path": "backend/routers/ai.py",
+      "sha256": "d24c98b7cdbbb09160411bdd712c1e72ed5fd361535bb440d20ab025c0dd6122"
+    },
+    {
+      "path": "docs/experiments/lab3/baseline-20261015.md",
+      "sha256": "419d27f8fe6ab24427f809dd7948377688cbd23d6ad229dfecfaf4c29e33a511"
+    },
+    {
+      "path": "docs/experiments/lab3/ordinary-correctness-20261110.md",
+      "sha256": "8c8788996907c6830c5206b3b6863a210fdbaccf80daa5e4232e16927652b6ee"
+    },
+    {
+      "path": "docs/experiments/lab3/prompt-followup-20261112.md",
+      "sha256": "e2b40563f7702ca3d721e39a9933253555f0a44691f4c2a345b9047e7f1de9f5"
+    },
+    {
+      "path": "docs/experiments/lab3/support-policy-review-20261112.md",
+      "sha256": "c68985a089a256ecc0c751ebddc1f662cbeec6c4432ac7031e975c5e257f36f5"
+    },
+    {
+      "path": "docs/experiments/lab3.md",
+      "sha256": "c6689c6e62306c9a5652d86511a0098f10183afa7de3b62ce05a5606b3718c0f"
+    },
+    {
+      "path": "ml/cascade/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ml/cascade/assessment.py",
+      "sha256": "91e7b66cd7b3578c2c98259818cd83d1c967952195d70b522912f06a418bc5a6"
+    },
+    {
+      "path": "ml/cascade/context.py",
+      "sha256": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e"
+    },
+    {
+      "path": "ml/cascade/engine.py",
+      "sha256": "25260938347cfa7730eaf634105723f96f0052cfbdb32b5e3a16e6efa1f59312"
+    },
+    {
+      "path": "ml/cascade/mistral-system.txt",
+      "sha256": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e"
+    },
+    {
+      "path": "ml/cascade/providers.py",
+      "sha256": "b881b4fb228bf015e023f3bc059373c52df9f6bd663023ed7282d7a9504f71f1"
+    },
+    {
+      "path": "ml/contracts/response.schema.json",
+      "sha256": "a2d9c81fe2cd4934030b8c74f52298721cdbcad71510187ea8ddc238f11550c9"
+    },
+    {
+      "path": "ml/contracts/validation.py",
+      "sha256": "20b2fbf94fab8233df644a32428427c6628d5280e6146284852ae783cd06bbfe"
+    },
+    {
+      "path": "ml/data/cascade/kb.jsonl",
+      "sha256": "11ca9c5a18bfe902bd93ca66a4ec0ea4618a2edfeb2868d427a83498e30aa31d"
+    },
+    {
+      "path": "ml/data/cases.jsonl",
+      "sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd"
+    },
+    {
+      "path": "ml/data/kb.jsonl",
+      "sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1"
+    },
+    {
+      "path": "ml/experiments/baseline-floors.json",
+      "sha256": "b2434e6c67859980a2276aa1b31395ce1d986e96fa76e9badaa7d62c22df03e4"
+    },
+    {
+      "path": "ml/experiments/cascade/check_submission.py",
+      "sha256": "fecda7ace7f263c4ecd2b96181f7049e63b40ca04978ab15b791be1d11f4623b"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/billing-known_error.json",
+      "sha256": "8f0f06457d562d4bdf3b2ec900a4157630f84b075df6d3bc4a595322b469745c"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/billing-two_questions.json",
+      "sha256": "a90641d678506fa1a73f8674f7d1ff0bfe5533f11119192f2a9a8412bd691b53"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/billing-unknown_procedure.json",
+      "sha256": "868c29b52e92ae005b6d0369885b0ff27d639aa9f4cef912d260dc5385323e6f"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/budget-after.json",
+      "sha256": "832413231d640978d1140a36c881f8b3540db36f333906d84488a7a940847ddd"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/config.json",
+      "sha256": "724e4de5c173f18e04d2fd684d28e136e356c35b10a24fc1c8449b34c592c4d2"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-history.json",
+      "sha256": "7b06b266534cb1302a79e346bcfc75db7c4b905c7ffe7b03cfd149848c6fb4ec"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-invoice.json",
+      "sha256": "1013c61460760966173f0b67db28159acb2712a2ccae2acde8d68dcd62af07d6"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-known_error.json",
+      "sha256": "0bcb9fd325a0fdfed98eeefef8e82cc6c667fbf1392acaa70d4de2bc9c9e941c"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-missing_code.json",
+      "sha256": "bb10365a83c1364e4ff9e32a5c09c32a9c6b5cece2aa6c6588f355d6457b17f5"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-notifications.json",
+      "sha256": "27e8e507b5b50f50b209c0e9e5ecd7a65c94d36ac22741ec9847a29c0ef5e207"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-observer_role.json",
+      "sha256": "4f69d5b6aba47c854e9025cd49834d5540cc660608bfa8fad6b16bcb6d645dad"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-two_factor.json",
+      "sha256": "01be680ddc251368d8efe419c3b76c3de6411cb3a1110534b0ae128f685a45bd"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-two_questions.json",
+      "sha256": "90afff95515f96092a95d72e349b9ec3f1dc7c031303bbd4b9e11f0495b7174d"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/langfuse-unknown_procedure.json",
+      "sha256": "7a41f33f138a0f6b967f4f6f6afbcb9470601c1266d847edc8c2c56e8d3935db"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/results.jsonl",
+      "sha256": "c62f6a62cf77350ee6c8250571a43c9c6979bde216e8d935256cad6ac7288bde"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v2-live-20261110/summary.json",
+      "sha256": "1c090e721ac9e11d8e31ca8deb04a77a0cc5eaf2f07f36cfe4ea3d6ebc778da0"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-followup-20261110/budget-after.json",
+      "sha256": "95a62d5163ad25a16e69e0d10b50976fa4d9b2722f210ac01fdc97d771942849"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-followup-20261110/config.json",
+      "sha256": "85a41f5fc9f37c40b9bef76ef905a7d355d0d3ae24f2a18f6f1b8021730ba069"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-followup-20261110/langfuse-history.json",
+      "sha256": "f608742b4c6c6eb5c961d22a6a5674fb49b6ea06452142cdceccf57dbdaf8c71"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-followup-20261110/langfuse-two_questions.json",
+      "sha256": "ae16d9722919c03345025b6d1fcf7b447696d17d4cfa515e8bbf26c6aa4a7825"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-followup-20261110/results.jsonl",
+      "sha256": "00cd912c947d90ee0ad66432e19b4310ec2622990bbcf9966a1be03ce5fc9775"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-human-review-20261111.json",
+      "sha256": "15fade6f1320bb401de06f8f0fa33a556e9509f3c42b5e09f8b9a9ab43d8c167"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/billing-unknown_procedure.json",
+      "sha256": "411102ecf33034c3f7ea51add1835197114a17a033561d1b91ffc53101511563"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/budget-after.json",
+      "sha256": "5c7cec0e0e37e0acbef0296aa62f19ca97b47b3bf179736c7100cf956de651bb"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/config.json",
+      "sha256": "adffdb4a8f50b6e54f3f724f2ef83a470a86765743d740469f22b01d66e31144"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-invoice.json",
+      "sha256": "d6c0df2630a92a6cacfb0aee604ccfc518e4348f1c421b4d38a60246c5f5968e"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-known_error.json",
+      "sha256": "3e95741b78d61777f1cb643f11fb425b522f7bedfca4e9b80a5d35feb89e4010"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-missing_code.json",
+      "sha256": "7fdb639c4c0937da00042f917a7fe23609e508f52770aa7128a82d3f34983c20"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-notifications.json",
+      "sha256": "5050938480be0913615a741a9d86ad7e3200ebea481b9076b380a8169c50057d"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-observer_role.json",
+      "sha256": "f20711d2dabaf2c2e90a5f81ef87c0024659ba76897f0d0468c5180aba48f8dd"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-two_factor.json",
+      "sha256": "baeb0109a4494f43c8a42a98ce647b864bd6a75485c55dd29e76950c732800c0"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/langfuse-unknown_procedure.json",
+      "sha256": "81901534b62c62df05048e4c531900e325f269306576f9fe7452164b0d7ea57a"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-remaining-20261110/results.jsonl",
+      "sha256": "9d5881bb1289120b2f400fe31a14b6f0b378b56cb033c58d8112c2a7e55cdd51"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-summary-20261110/config.json",
+      "sha256": "f19072429cb8cca41c36d64022f68b0f942511d7ffc6d29668cb34c8d8312dca"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/ordinary-v3-summary-20261110/summary.json",
+      "sha256": "c6ee5333361f61e88e051e62e72f1459df22d8e06d0a7aa3f8899430a1f6656a"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-human-review-20261112.json",
+      "sha256": "4d6cb29d44e748f6a140f480402e241161787a281bbee86bd4bed7e9deb7a659"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/billing-two_factor_and_invoice.json",
+      "sha256": "abc2e2c214b13395cd8373ee40391c4e6fcb73779796252e6aab858ad8ccae75"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/billing-two_factor_lost_phone.json",
+      "sha256": "db0f8bbfdad6855f1185e87c8ac13323aef257127f570d77c7b3a36428aeb052"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/billing-two_factor_steps.json",
+      "sha256": "ac61a3b7ae2ae4277fa7ce3507137723739aa6bef9bd76e10ec7cb50c61f7dac"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/budget-after.json",
+      "sha256": "cd45e9bf301948ee89b8025d0cfa3127551c4e21c886292613d2dcd9b0f13bbf"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/config.json",
+      "sha256": "d31cd366c440597edb4d29a9ad86125b6b4be048e1a7f50f88b136330a948638"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/langfuse-two_factor_and_invoice.json",
+      "sha256": "6aa0af03781878c0952ed0c6cacacf220f187aae2a4a9a0b595c2f870676ed14"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/langfuse-two_factor_lost_phone.json",
+      "sha256": "81ec606195867b936077cb94b92489d1e7e3eb1676a18e8259bdd13b65ec81ac"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/langfuse-two_factor_steps.json",
+      "sha256": "de5d655d11fc5295e5680846dfd1a26250bf86365a5c125e30c735cc718a5d0a"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/results.jsonl",
+      "sha256": "7278b62f28588808282948b309cabdaf87ad4a257092ae37d9cb91845dfe15d1"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/summary.json",
+      "sha256": "b374043d3384debd29604db998ded3c8b9048026d299f6dd84b9dcfc25a8af44"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/prompt-followup-live-20261112/verification.json",
+      "sha256": "1eecda894321e51d0c153faa1943aa480b603c56b353d8c7861f46038d8728e7"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-human-review-20261112.json",
+      "sha256": "fabdf9b6643b51393c10645ebf429a8a59d8b1cc9ee43c61b0eda4fa0176938e"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/billing-two_factor_and_invoice.json",
+      "sha256": "0b1fadd8b3e04e82807f832968e85e8fa2f3cdbf1660639d9305e965b012c735"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/billing-two_factor_lost_phone.json",
+      "sha256": "9ec32e78bbe7259dac68461788ac9d901c8e916f81ccff83ebaa98cc28bdf374"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/billing-two_factor_steps.json",
+      "sha256": "42bcbb2656d20da03dc5c0f9ef4524fc1cd88fa7ab6c1a35f164671a3c38fc27"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/budget-after.json",
+      "sha256": "a49364cb3d8b5068f14aac82b01e865ca3a000376ed9e5d81497e257983fef5a"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/config.json",
+      "sha256": "442b87580f964fe99da3255ba9f78bff85f3dc8720554f2133b1494674ead743"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/langfuse-two_factor_and_invoice.json",
+      "sha256": "8d3fd9df52d219cc125cb2729d951d972f442104c2916ec69d5af76968facf7e"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/langfuse-two_factor_lost_phone.json",
+      "sha256": "e40612f13bf210196514150c5f47d0cf9d5ffd6e7700d42409bf5fef705c222a"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/langfuse-two_factor_steps.json",
+      "sha256": "a26b834804624a07b1090fbb6e2b96db38bf8ffb6baddb3d635dd4fac6933f07"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/results.jsonl",
+      "sha256": "f9b18b2c7565de8466ac120bb70c0f9d635a08dfe3eb0f1896ad05c312d824e9"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/stopped.json",
+      "sha256": "98897a5fc0ef24c66803702e6bd1046c4e883e61d555335fa77cfcbf83b85b11"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/summary.json",
+      "sha256": "c9f4b1ee711af45a236502dd892b9fc9d618093c5553bebc216d45619828806b"
+    },
+    {
+      "path": "ml/experiments/cascade/evidence/support-policy-live-20261112/verification.json",
+      "sha256": "8ac5acda5b8a2b07e8144f1e0df73b9a14dc00d1b15e2fb712664def7c2dbcc2"
+    },
+    {
+      "path": "ml/experiments/cascade/plans/ordinary-plan-v2.json",
+      "sha256": "2f458c2b7913fba7cdfb7b05cbd1ee89581f96f96b8436eaf872a3d4ad5ffb10"
+    },
+    {
+      "path": "ml/experiments/cascade/plans/ordinary-plan-v3-followup.json",
+      "sha256": "3e3d2f951427982de267383089319a7cc5db93e68b2f3be0ba23f869626aea32"
+    },
+    {
+      "path": "ml/experiments/cascade/plans/ordinary-plan-v3-remaining.json",
+      "sha256": "b60bec0c407e5a35a0690ba6629e1eb1ee31d5417c8c9f7ea99365a4b4478985"
+    },
+    {
+      "path": "ml/experiments/cascade/plans/prompt-followup-plan-20261112.json",
+      "sha256": "f1be13b42dbebcc1d1f28675ed3b308c01084d743e49ea510b771a2f3d43c509"
+    },
+    {
+      "path": "ml/experiments/cascade/plans/support-policy-plan-20261112.json",
+      "sha256": "791596d865f72174e9b2addba6c94a1c18718d2db55c6bb0707e8a3acfae6fd9"
+    },
+    {
+      "path": "ml/experiments/cascade/replay.py",
+      "sha256": "490c3d353fcb62b5c54f16a95ce32e2ed21ba03504394e10689d2a0223d9ab07"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v2-cards-20261110.html",
+      "sha256": "65fcfb0cf59492408634ff11eb36039793add4ebfb4c002bbdf6f74a39ff75ef"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v2-cards-20261110.json",
+      "sha256": "049c0db58d6f4cf775e0ccbee52c7bc00793a65c0c61da9e6cf35882b5399f10"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v2-cards-20261110.md",
+      "sha256": "f9f55a813b77b7de9421e9862ca3add596629b42429b94f814b2c2806361ac29"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v3-cards-20261110.html",
+      "sha256": "41c0e3ca295bc20201c339347a18ac08e2f8f2276d1330a7f01b0925ac005b7a"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v3-cards-20261110.json",
+      "sha256": "0024d29b54339e2d47770fda9b3b81f76e3f3db60ba563c2c80cf70e57cd1b2e"
+    },
+    {
+      "path": "ml/experiments/cascade/review/ordinary-v3-cards-20261110.md",
+      "sha256": "37cd291072229b4b2177aa99233450d0accc97734f8023db52554e5bdcc7fe9a"
+    },
+    {
+      "path": "ml/experiments/cascade/review/prompt-followup-cards-20261112.html",
+      "sha256": "9a60bc9fe7636b1d657251593d6c880d49549246d9b9538bd495002cfc482f32"
+    },
+    {
+      "path": "ml/experiments/cascade/review/prompt-followup-cards-20261112.json",
+      "sha256": "9de2e86fcd13fe470adb01a3354930bdeca68bf8f8e0fa5b665b218c60a2912f"
+    },
+    {
+      "path": "ml/experiments/cascade/review/prompt-followup-cards-20261112.md",
+      "sha256": "a0eeb0649d83e427018c712e17dd02f26ad25f91e8e1aafcd18c4f927d09fc8c"
+    },
+    {
+      "path": "ml/experiments/cascade/review/support-policy-cards-20261112.html",
+      "sha256": "c28b6e3b7f804d890fe3edca752a0a23af53d089a392a236b88d7b68624de34b"
+    },
+    {
+      "path": "ml/experiments/cascade/review/support-policy-cards-20261112.json",
+      "sha256": "65233654a056d993973931eb22e164b8797c39f92d6b5ddae3bd8c82a4503dd6"
+    },
+    {
+      "path": "ml/experiments/cascade/review/support-policy-cards-20261112.md",
+      "sha256": "4d84fa0b7de89bd3eeff50f70466846b74eac446b5664ec9a4dc880ec3d9ead1"
+    },
+    {
+      "path": "ml/experiments/cascade/review/support-policy-human-review-20261112.json",
+      "sha256": "5d0caa51b3405fe3e5c25782c17d35391e5aaaf3549e6493b9e6588cf96b149d"
+    },
+    {
+      "path": "ml/experiments/cascade/review/support-policy-reviewed-20261112.html",
+      "sha256": "21a7c66f1a4b6010c9c15c3f4856fb1b57dcbfb466127f41ae5538bca9eebe2e"
+    },
+    {
+      "path": "ml/experiments/check_baseline.py",
+      "sha256": "3091a137e273036cda19f0b85b9ab7b91dfd0a9c1409f1b9d10b3162a8f9adb8"
+    },
+    {
+      "path": "ml/experiments/evaluate.py",
+      "sha256": "d84158eba73917ce928c2a095426874c23cff48d2d621a38a70b7b1ce40c9cc2"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-completion-attempts.jsonl",
+      "sha256": "62fe54b80fa79b6833b3e3f1ac551a1e06dc5a9d3e0fef0bf170f47ae4dc6591"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-coverage.json",
+      "sha256": "571a6c586a1a29b838741d793b42a66be2b348b99991c39a7ece2d31f9c4cd7e"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-independent-responses.jsonl",
+      "sha256": "337b7ee01b1d4e671d175922594da10eb17c74d1531fdbd83bdcc024abd432a8"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-report.json",
+      "sha256": "810b72987b14c3c46ea229fb454f7ff2c3b6276e27dc26c08033fc7a364a5b08"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-responses.jsonl",
+      "sha256": "e225283139878a579f482203c842753d459c44a6d0c9c4375458be8c32e5a9fe"
+    },
+    {
+      "path": "ml/experiments/evidence/baseline-source-manifest.json",
+      "sha256": "debbbe991ec236ba76a5c4d5c455cbf3078281682c1bfdf0e2c8876bfe311b0b"
+    },
+    {
+      "path": "ml/experiments/evidence/iteration-v2/config.json",
+      "sha256": "9d3d668ce8ba1360e1683da98ccc7dd17424b76babde75c920073e9c61f1642b"
+    },
+    {
+      "path": "ml/experiments/evidence/iteration-v2/responses.jsonl",
+      "sha256": "534f7e120528ba8a636099a1b1771f9a592f0a1bba89c9da8af52ebccbfd3387"
+    },
+    {
+      "path": "ml/experiments/evidence/requests.csv",
+      "sha256": "ca7009ba86235b7cb1b27991a985871ee401b66b6cd4d49d81c50469a3f095b5"
+    },
+    {
+      "path": "ml/experiments/evidence/retrieval-report.json",
+      "sha256": "901d2d82d10026897e1ebb3350226f3200845cdc4742e9d6d35b66c6bf14541f"
+    },
+    {
+      "path": "ml/experiments/free_api.py",
+      "sha256": "ed21d175189fec86e05865cb212bca420c0bccb6249cc957433f5ad4f3341fa9"
+    },
+    {
+      "path": "ml/experiments/prompt-v2.md",
+      "sha256": "536ceece56cda97aaf96ef2767d720e205fe32089d6c95336a84e8652384ce7d"
+    },
+    {
+      "path": "ml/experiments/response.schema.json",
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c"
+    },
+    {
+      "path": "ml/experiments/retrieval.py",
+      "sha256": "7f00018ee9e2ce7b299203cdebb08c41c051f3afdba97c624ef10a6ca226b921"
+    },
+    {
+      "path": "ml/experiments/run.py",
+      "sha256": "cc36bfb02354a88e4da5cb94cfdc053d84b7df92b7959451bfe89097fedf774f"
+    },
+    {
+      "path": "ml/experiments/run_iteration.py",
+      "sha256": "43b4b56b2adaa9378af2e1698e978f6ec058e4f38746136c2494b030029e57b5"
+    },
+    {
+      "path": "ml/models/baseline.py",
+      "sha256": "45c1541d6ca68784494b8c40edc38aea0d1c691a48894883ee507a403e537d89"
+    },
+    {
+      "path": "ml/README-lab3.md",
+      "sha256": "23b3f914a790e1bb6cec595d4783f5075fe84afbf9e4b445976d4b31aaa97942"
+    },
+    {
+      "path": "ml/requirements.txt",
+      "sha256": "c971958b3981fe83dfa62deef7055b8db5a17d4594c62714d3c5b2baf578399d"
+    },
+    {
+      "path": "ml/tracing/.env.example",
+      "sha256": "0a511909589a94739b13326852e4c07eec0d2839d028722ffcee1a7bd6be022a"
+    },
+    {
+      "path": "ml/tracing/README.md",
+      "sha256": "c79e1aa73c3af5e7c27807eada4f520cde4a8dd3a050a93750b1f1e9a2143db5"
+    },
+    {
+      "path": "notebooks/lab3_baseline.ipynb",
+      "sha256": "383d0e5afc6dbfcc8d09557cef55e9912c238a10488676694039aa3a09042d87"
+    },
+    {
+      "path": "notebooks/lab3_ordinary_v2.ipynb",
+      "sha256": "fcc98efb6b0545ca257ab05282980de84184fdfa9a3bf8258e0a1a1e579b2746"
+    },
+    {
+      "path": "notebooks/lab3_ordinary_v3.ipynb",
+      "sha256": "62f40acd3012893a83ce3b28d29fdcc8f6191790a88ae457c9341e4b2dba4cc1"
+    },
+    {
+      "path": "notebooks/lab3_prompt_followup_20261112.ipynb",
+      "sha256": "c991b87a75bb347ea711f97e5258631700f9f9534b48e717ca71d824493b9c2a"
+    },
+    {
+      "path": "notebooks/lab3_support_policy_20261112.ipynb",
+      "sha256": "16575817a12ebf405375396dbc1fb6edb9dedc1ac2f7454c07e4dbd2f7b7402f"
+    }
+  ]
+}

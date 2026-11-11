@@ -10,7 +10,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, ConfigDict, Field
 
 from ml.models.baseline import Baseline
-from ml.experiments.evaluate import SCHEMA, provenance_gate, read_jsonl
+from ml.contracts.validation import SCHEMA, provenance_gate, read_jsonl
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -45,9 +45,12 @@ def create_app():
     token = os.environ.get('DEMO_OPERATOR_TOKEN', '')
     if not token:
         raise RuntimeError('Set DEMO_OPERATOR_TOKEN')
+    mode = os.environ.get('BASELINE_MODE', 'extractive')
+    if mode not in ('extractive', 'disabled'):
+        raise RuntimeError('Live cascade requires the Delivery queue reservation boundary')
     engine = Baseline(
-        read_jsonl(ROOT / 'ml/data/kb.jsonl'), SCHEMA, provenance_gate,
-        mode=os.environ.get('BASELINE_MODE', 'extractive'),
+        read_jsonl(ROOT / 'ml/data/cascade/kb.jsonl'), SCHEMA, provenance_gate,
+        mode=mode,
         trace_path=os.environ.get('TRACE_PATH', str(ROOT / 'runtime/traces.jsonl')),
     )
     bearer = HTTPBearer(auto_error=False)
