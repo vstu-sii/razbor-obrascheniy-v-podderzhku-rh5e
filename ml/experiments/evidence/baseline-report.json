@@ -1,0 +1,1847 @@
+{
+  "scope": "reviewed_synthetic_development_not_product_acceptance",
+  "models": {
+    "free_api": {
+      "n": 43,
+      "by_uc": {
+        "UC-01": 12,
+        "UC-02": 10,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 43,
+        "denominator": 43,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 43,
+        "denominator": 43,
+        "value": 1.0
+      },
+      "gate_passed": {
+        "numerator": 43,
+        "denominator": 43,
+        "value": 1.0
+      },
+      "mode_correct": {
+        "numerator": 38,
+        "denominator": 43,
+        "value": 0.8837209302325582
+      },
+      "category_correct": {
+        "numerator": 41,
+        "denominator": 43,
+        "value": 0.9534883720930233
+      },
+      "http_ok": {
+        "numerator": 43,
+        "denominator": 43,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.932996632996633
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 29,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 43,
+        "p50_ms": 4812.475,
+        "empirical_p95_ms": 9958.688,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 43,
+        "sum_observed_total": 109283
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC02-10",
+        "UC03-10",
+        "UC04-01",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "EDGE-STALE-01"
+      ],
+      "provided_context_recall_at_3": {
+        "n_positive": 15,
+        "value": 1.0
+      }
+    }
+  },
+  "details": [
+    {
+      "case_id": "UC01-02",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5845.535,
+      "usage": {
+        "prompt_tokens": 2238,
+        "total_tokens": 2640,
+        "completion_tokens": 402,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-03",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4559.622,
+      "usage": {
+        "prompt_tokens": 2230,
+        "total_tokens": 2554,
+        "completion_tokens": 324,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-04",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4052.23,
+      "usage": {
+        "prompt_tokens": 2234,
+        "total_tokens": 2570,
+        "completion_tokens": 336,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-05",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5437.245,
+      "usage": {
+        "prompt_tokens": 2241,
+        "total_tokens": 2607,
+        "completion_tokens": 366,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-06",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 17450.371,
+      "usage": {
+        "prompt_tokens": 2242,
+        "total_tokens": 2608,
+        "completion_tokens": 366,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-07",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4415.417,
+      "usage": {
+        "prompt_tokens": 2233,
+        "total_tokens": 2602,
+        "completion_tokens": 369,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-08",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4812.475,
+      "usage": {
+        "prompt_tokens": 2241,
+        "total_tokens": 2638,
+        "completion_tokens": 397,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC01-10",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4251.493,
+      "usage": {
+        "prompt_tokens": 2234,
+        "total_tokens": 2607,
+        "completion_tokens": 373,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-01",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3744.887,
+      "usage": {
+        "prompt_tokens": 2153,
+        "total_tokens": 2434,
+        "completion_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-02",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 6838.565,
+      "usage": {
+        "prompt_tokens": 2151,
+        "total_tokens": 2507,
+        "completion_tokens": 356,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-03",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3663.217,
+      "usage": {
+        "prompt_tokens": 2151,
+        "total_tokens": 2423,
+        "completion_tokens": 272,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-05",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 9958.688,
+      "usage": {
+        "prompt_tokens": 2152,
+        "total_tokens": 2487,
+        "completion_tokens": 335,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-07",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 4936.926,
+      "usage": {
+        "prompt_tokens": 2157,
+        "total_tokens": 2537,
+        "completion_tokens": 380,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-08",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3953.763,
+      "usage": {
+        "prompt_tokens": 2152,
+        "total_tokens": 2494,
+        "completion_tokens": 342,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-09",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3618.662,
+      "usage": {
+        "prompt_tokens": 2154,
+        "total_tokens": 2409,
+        "completion_tokens": 255,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC02-10",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "other",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5035.88,
+      "usage": {
+        "prompt_tokens": 2155,
+        "total_tokens": 2595,
+        "completion_tokens": 440,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-01",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 8522.053,
+      "usage": {
+        "prompt_tokens": 2165,
+        "total_tokens": 2491,
+        "completion_tokens": 326,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-02",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3812.916,
+      "usage": {
+        "prompt_tokens": 2156,
+        "total_tokens": 2463,
+        "completion_tokens": 307,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-03",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 6866.023,
+      "usage": {
+        "prompt_tokens": 2166,
+        "total_tokens": 2502,
+        "completion_tokens": 336,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-04",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 15505.612,
+      "usage": {
+        "prompt_tokens": 2155,
+        "total_tokens": 2447,
+        "completion_tokens": 292,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-05",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5634.135,
+      "usage": {
+        "prompt_tokens": 2160,
+        "total_tokens": 2430,
+        "completion_tokens": 270,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-06",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 7620.578,
+      "usage": {
+        "prompt_tokens": 2158,
+        "total_tokens": 2406,
+        "completion_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-07",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3291.318,
+      "usage": {
+        "prompt_tokens": 2159,
+        "total_tokens": 2414,
+        "completion_tokens": 255,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-08",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 4518.593,
+      "usage": {
+        "prompt_tokens": 2163,
+        "total_tokens": 2498,
+        "completion_tokens": 335,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-09",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3956.183,
+      "usage": {
+        "prompt_tokens": 2165,
+        "total_tokens": 2408,
+        "completion_tokens": 243,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC03-10",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 4563.061,
+      "usage": {
+        "prompt_tokens": 2163,
+        "total_tokens": 2517,
+        "completion_tokens": 354,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-01",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4475.037,
+      "usage": {
+        "prompt_tokens": 2253,
+        "total_tokens": 2602,
+        "completion_tokens": 349,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-02",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5940.861,
+      "usage": {
+        "prompt_tokens": 2176,
+        "total_tokens": 2568,
+        "completion_tokens": 392,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-03",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5171.492,
+      "usage": {
+        "prompt_tokens": 2170,
+        "total_tokens": 2430,
+        "completion_tokens": 260,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-04",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "settings",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 8708.175,
+      "usage": {
+        "prompt_tokens": 2171,
+        "total_tokens": 2645,
+        "completion_tokens": 474,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-05",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 6089.38,
+      "usage": {
+        "prompt_tokens": 2180,
+        "total_tokens": 2575,
+        "completion_tokens": 395,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-06",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5776.833,
+      "usage": {
+        "prompt_tokens": 2173,
+        "total_tokens": 2651,
+        "completion_tokens": 478,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-07",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 7648.288,
+      "usage": {
+        "prompt_tokens": 2174,
+        "total_tokens": 2616,
+        "completion_tokens": 442,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-08",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4482.378,
+      "usage": {
+        "prompt_tokens": 2245,
+        "total_tokens": 2608,
+        "completion_tokens": 363,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-09",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3319.488,
+      "usage": {
+        "prompt_tokens": 2169,
+        "total_tokens": 2419,
+        "completion_tokens": 250,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "UC04-10",
+      "uc": "UC-04",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 5287.485,
+      "usage": {
+        "prompt_tokens": 2261,
+        "total_tokens": 2624,
+        "completion_tokens": 363,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "REG-02",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4559.622,
+      "usage": {
+        "prompt_tokens": 2230,
+        "total_tokens": 2554,
+        "completion_tokens": 324,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "REG-05",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4251.493,
+      "usage": {
+        "prompt_tokens": 2234,
+        "total_tokens": 2607,
+        "completion_tokens": 373,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "REG-06",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 3744.887,
+      "usage": {
+        "prompt_tokens": 2153,
+        "total_tokens": 2434,
+        "completion_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "REG-07",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4415.417,
+      "usage": {
+        "prompt_tokens": 2233,
+        "total_tokens": 2602,
+        "completion_tokens": 369,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "REG-08",
+      "uc": "UC-01",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": 1.0,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 1,
+      "latency_ms": 4415.417,
+      "usage": {
+        "prompt_tokens": 2233,
+        "total_tokens": 2602,
+        "completion_tokens": 369,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "uc": "UC-02",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5314.089,
+      "usage": {
+        "prompt_tokens": 2495,
+        "total_tokens": 2935,
+        "completion_tokens": 440,
+        "prompt_tokens_details": {
+          "cached_tokens": 2048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "uc": "UC-03",
+      "provider": "free_api",
+      "http_ok": true,
+      "transport_kind": "external_http",
+      "completion_available": true,
+      "schema_valid": true,
+      "gate_passed": true,
+      "gate_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "expected_mode": "escalate",
+      "actual_mode": "clarify",
+      "expected_category": "other",
+      "actual_category": "other",
+      "false_answer": false,
+      "human_review_violation": false,
+      "recall_at_3": null,
+      "no_gold_evidence_with_hits": false,
+      "evidence_citations": 0,
+      "latency_ms": 5988.028,
+      "usage": {
+        "prompt_tokens": 2174,
+        "total_tokens": 2523,
+        "completion_tokens": 349,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "service_tier": "standard"
+      },
+      "billed_usd": null,
+      "operator_review": "pending",
+      "semantic_grounding": null
+    }
+  ],
+  "retrieval_quality_measured": false,
+  "context_mode": "fixture",
+  "run_kind": "new_lab03_live_baseline_with_recorded_timeout_completion",
+  "baseline_model": "ministral-14b-2512",
+  "dataset_sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+  "coverage": {
+    "unique_evaluated_cases": 43,
+    "dataset_cases": 43,
+    "new_baseline_run": true,
+    "all_records_covered": true,
+    "distinct_model_inputs": 38,
+    "shared_input_records": 5,
+    "total_attempts_including_timeouts": 42,
+    "initial_timeouts_preserved": 4
+  },
+  "independent_group_metrics": {
+    "free_api": {
+      "n": 38,
+      "by_uc": {
+        "UC-01": 8,
+        "UC-02": 9,
+        "UC-03": 11,
+        "UC-04": 10
+      },
+      "completion_available": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "schema_valid": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "gate_passed": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "mode_correct": {
+        "numerator": 33,
+        "denominator": 38,
+        "value": 0.868421052631579
+      },
+      "category_correct": {
+        "numerator": 36,
+        "denominator": 38,
+        "value": 0.9473684210526315
+      },
+      "http_ok": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "category_macro_f1": {
+        "classes_in_sample": [
+          "access",
+          "integrations",
+          "other",
+          "payment",
+          "product_error",
+          "settings"
+        ],
+        "value": 0.9181818181818181
+      },
+      "false_answer_on_nonanswer_cases": {
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0.0
+      },
+      "human_review_violations": 0,
+      "no_gold_evidence_with_hits": 0,
+      "latency": {
+        "n_observed": 38,
+        "p50_ms": 5103.686,
+        "empirical_p95_ms": 15505.612,
+        "minimum_30_observations": true,
+        "sufficient_for_product_p95": false
+      },
+      "billing": {
+        "n_observed": 0,
+        "sum_observed_usd": 0
+      },
+      "tokens": {
+        "n_observed": 38,
+        "sum_observed_total": 96484
+      },
+      "not_measured": [
+        "operator_card_usability",
+        "semantic_fact_recall",
+        "unsupported_atomic_claim_rate",
+        "urgency_f1_without_gold_labels",
+        "tone",
+        "end_to_end_product_latency",
+        "production_cost_rub"
+      ],
+      "by_case_failures": [
+        "UC02-10",
+        "UC03-10",
+        "UC04-01",
+        "UC04-04",
+        "UC04-05",
+        "UC04-06",
+        "EDGE-STALE-01"
+      ],
+      "provided_context_recall_at_3": {
+        "n_positive": 11,
+        "value": 1.0
+      }
+    }
+  },
+  "note": "43 record-level rows reuse 5 identical inputs. Primary independent metrics use 38 groups, not 43 independent calls."
+}

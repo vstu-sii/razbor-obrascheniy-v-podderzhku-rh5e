@@ -1,0 +1,31 @@
+{
+  "utc": "2026-11-10T12:15:02.209501+00:00",
+  "endpoint": "https://apimira.com/v1/account/usage",
+  "http_status": 200,
+  "matching": "unique model + exact input/output usage + absolute timestamp delta <=60s",
+  "changes": [
+    {
+      "attempt_id": "a2b87c14-2b91-438c-9732-fb796b003d3b",
+      "previous_billed_micro_usd": null,
+      "billed_micro_usd": 5300,
+      "provider_record": {
+        "id": "2af3e575-c602-4c42-9131-765d2199cdbd",
+        "created_at": "2026-11-10T12:15:00.097Z",
+        "model": "openai/gpt-5.6-sol",
+        "operation": "chat",
+        "status": "success",
+        "tokens_in": 6172,
+        "cached_tokens_in": 0,
+        "images_in": 0,
+        "tokens_out": 277,
+        "cost_usd": 0.0053,
+        "price_input_usd_per_1m_tokens": 0.68,
+        "price_cached_input_usd_per_1m_tokens": 0.0756,
+        "price_output_usd_per_1m_tokens": 3.98,
+        "price_generation_usd": null,
+        "latency_ms": 9988
+      },
+      "method": "unique model + exact input/output usage + absolute timestamp delta <=60s"
+    }
+  ]
+}

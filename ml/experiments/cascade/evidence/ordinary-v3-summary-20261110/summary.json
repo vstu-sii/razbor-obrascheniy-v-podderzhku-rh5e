@@ -1,0 +1,66 @@
+{
+  "protocol": "ordinary-v3-20261110",
+  "scope": "Disjoint cases, same frozen v3 sources, eight ordinary and two boundary cases. Engineering diagnostic, not independent acceptance.",
+  "planned_cases": 10,
+  "observed_jobs": 10,
+  "groups": {
+    "ordinary": {
+      "jobs": 8,
+      "expected_mode_matches": 8,
+      "automatic": 8,
+      "manual": 0,
+      "mistral_http_200": 8,
+      "mistral_gate_passed": 8,
+      "sol_http_200": 0,
+      "sol_attempts": 0,
+      "reasons": {
+        "complete_coverage": 7,
+        "needs_customer_data": 1
+      },
+      "required_articles": 8,
+      "found_required_articles": 8,
+      "confirmed_micro_usd": 0,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 7804.5,
+      "confirmed_cost_rub": "0",
+      "unknown_reserve_rub": "0"
+    },
+    "boundary": {
+      "jobs": 2,
+      "expected_mode_matches": 2,
+      "automatic": 0,
+      "manual": 2,
+      "mistral_http_200": 1,
+      "mistral_gate_passed": 0,
+      "sol_http_200": 1,
+      "sol_attempts": 1,
+      "reasons": {
+        "model_escalation": 1,
+        "risk_requires_human": 1
+      },
+      "required_articles": 0,
+      "found_required_articles": 0,
+      "confirmed_micro_usd": 5355,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 9336.5,
+      "confirmed_cost_rub": "0.476595",
+      "unknown_reserve_rub": "0"
+    }
+  },
+  "money_cap_rub": "18.407652",
+  "additional_budget_rub": 10,
+  "budget_before": {
+    "attempts": 69,
+    "reserved_tokens": 3994035,
+    "sol_accounted_micro_usd": 112015,
+    "sol_unknown_micro_usd": 61110
+  },
+  "budget_after": {
+    "attempts": 80,
+    "reserved_tokens": 4709379,
+    "sol_accounted_micro_usd": 117370,
+    "sol_unknown_micro_usd": 61110
+  },
+  "human_acceptance": false,
+  "all_observed_traces_read_back": true
+}

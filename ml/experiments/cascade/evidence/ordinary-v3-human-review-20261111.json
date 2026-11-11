@@ -1,0 +1,63 @@
+{
+  "review_date": "2026-11-11",
+  "review_kind": "participant review, not independent held-out evaluation",
+  "original_export_sha256": "c63744070e1b1fe2d238be36a2aa56d485dfac315361efa950a8d464440e92fd",
+  "cards_sha256": "0024d29b54339e2d47770fda9b3b81f76e3f3db60ba563c2c80cf70e57cd1b2e",
+  "ratings": {
+    "Верно": 9,
+    "Частично": 1
+  },
+  "rows": [
+    {
+      "row": 0,
+      "case_id": "history",
+      "rating": "Верно"
+    },
+    {
+      "row": 1,
+      "case_id": "two_questions",
+      "rating": "Верно"
+    },
+    {
+      "row": 2,
+      "case_id": "invoice",
+      "rating": "Верно"
+    },
+    {
+      "row": 3,
+      "case_id": "notifications",
+      "rating": "Верно"
+    },
+    {
+      "row": 4,
+      "case_id": "known_error",
+      "rating": "Верно"
+    },
+    {
+      "row": 5,
+      "case_id": "two_factor",
+      "rating": "Частично"
+    },
+    {
+      "row": 6,
+      "case_id": "observer_role",
+      "rating": "Верно"
+    },
+    {
+      "row": 7,
+      "case_id": "missing_code",
+      "rating": "Верно"
+    },
+    {
+      "row": 8,
+      "case_id": "unknown_procedure",
+      "rating": "Верно"
+    },
+    {
+      "row": 9,
+      "case_id": "secret_leak",
+      "rating": "Верно"
+    }
+  ],
+  "publication_note": "Free-form working comments omitted; grades/case IDs and source hashes retained."
+}
