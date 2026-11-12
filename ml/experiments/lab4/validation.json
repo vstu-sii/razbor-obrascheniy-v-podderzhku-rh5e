@@ -30,7 +30,7 @@
     "final_engine_replay_passed": 2
   },
   "notebook": {
-    "executed_code_cells": 9,
+    "executed_code_cells": 11,
     "external_calls": 0
   },
   "offline_reproduction_identical": true,
@@ -116,5 +116,18 @@
       "read_back_generations": 31,
       "generations_with_input_output": 25
     }
+  },
+  "approved_historical_comparison": {
+    "cases": 12,
+    "old_gate_passed": 5,
+    "new_automatic": 8,
+    "new_human": 4,
+    "new_sol_jobs": 6,
+    "new_sol_automatic": 4,
+    "requested_role_case_ids": [
+      "UC01-09"
+    ],
+    "delivered_role_case_ids": [],
+    "human_review": "pending"
   }
 }

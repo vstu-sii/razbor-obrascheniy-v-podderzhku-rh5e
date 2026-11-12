@@ -1,0 +1,22 @@
+{
+  "planned": 12,
+  "observed": 12,
+  "paired_complete": 12,
+  "mistral_http_200": 8,
+  "sol_invocations": 6,
+  "a_automatic": 4,
+  "b_automatic": 8,
+  "a_human": 8,
+  "b_human": 4,
+  "recovered_answer_ids": [
+    "UC01-05",
+    "UC01-07",
+    "UC01-09"
+  ],
+  "recovered_clarify_ids": [
+    "UC02-05"
+  ],
+  "mode_matches_a": 6,
+  "mode_matches_b": 10,
+  "human_quality_review": "pending; mode/schema counts are not semantic correctness"
+}

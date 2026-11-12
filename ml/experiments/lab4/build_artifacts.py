@@ -128,6 +128,37 @@ from decimal import Decimal
 spending=comparison['summary']['spending']
 assert Decimal(spending['confirmed_rub'])+Decimal(spending['unknown_reserve_rub'])<=10
 print('Стоимость включает первоначальные записи с исправленным затем полем истории; резерв не равен списанию.')''')])
+    notebook.cells.extend([
+        nb.v4.new_markdown_cell('''## Основное согласованное сравнение: первая Mistral → текущий каскад
+A — реальные ответы из commit 2087c67 от 15.10. B — новый живой каскад
+на тех же 12 входах и той же KBv1. Старые проверки и новая автоматизация —
+разные показатели; эффект всей итерации не приписывается только Sol.'''),
+        nb.v4.new_code_cell('''first_dir=data/'first-mistral-vs-cascade'
+first=json.loads((first_dir/'comparison.json').read_text(encoding='utf-8'))
+assert first['baseline_commit'].startswith('2087c67') and first['kb_identical']
+assert len(first['rows'])==12
+for name,expected_hash in first['source_sha256_lf'].items():
+    assert hashlib.sha256((first_dir/name).read_text(encoding='utf-8').encode()).hexdigest()==expected_hash
+old_kb=[json.loads(l) for l in (first_dir/'A-first-mistral/kb.jsonl').read_text(encoding='utf-8').splitlines() if l.strip()]
+def knowledge_v1(items):
+    return sorted([{k:r[k] for k in ['source_id','version','title','excerpt']} for r in items if r['version']=='v1' and r['status']=='approved'],key=lambda r:r['source_id'])
+assert knowledge_v1(old_kb)==knowledge_v1(kb)
+print('Первый Mistral A: неизменённые Git-свидетельства. Тексты/история и KBv1 совпадают.')'''),
+        nb.v4.new_code_cell('''counts=first['counts']
+assert counts['old_gate_passed']==5 and counts['new_automatic']==8 and counts['new_human']==4
+assert counts['new_sol_jobs']==6 and counts['new_sol_automatic']==4
+assert counts['delivered_role_case_ids']==[] and counts['requested_role_case_ids']==['UC01-09']
+print('Разные показатели: A — 5/12 по старым проверкам; B — 8 auto и 4 human.')
+print('Sol: 6 вызовов, 4 автоматических следующих шага. Human grades:',counts['human_review'])
+for case_id in ['UC01-04','UC01-09','UC02-05']:
+    row=next(r for r in first['rows'] if r['case_id']==case_id)
+    print(row['input']['ticket_text'])
+    print('A:',row['a']['raw_card']['draft_reply'],row['a']['raw_card']['next_step'])
+    print('B:',row['b']['final_card']['draft_reply'],row['change'])
+new_budget=json.loads((first_dir/'B-current-cascade/budget.json').read_text(encoding='utf-8'))
+assert Decimal(new_budget['new_confirmed_rub'])==Decimal('2.293975')
+assert Decimal(new_budget['new_unknown_reserve_rub'])==0
+print('Новый расход:',new_budget['new_confirmed_rub'],'RUB; FX89. Пересборка notebook не вызывает модели.')''')])
     # Project keeps the same portable AI contract/data aliases as publication.
     target=ROOT/'docs/experiments/lab4.ipynb';target.parent.mkdir(parents=True,exist_ok=True)
     nb.write(notebook,target)

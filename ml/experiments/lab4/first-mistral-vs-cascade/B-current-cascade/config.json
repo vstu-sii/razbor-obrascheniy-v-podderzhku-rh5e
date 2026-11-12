@@ -1,0 +1,203 @@
+{
+  "created_utc": "2026-11-12T21:54:41.737924+00:00",
+  "protocol": "Historical first-Mistral A versus a new live current-cascade B on the same 12 customer inputs and unchanged v1 KB.",
+  "methodology": "Development before/after, not a one-factor A/B. A is real old evidence at commit 2087c67, B is current Mistral with conditional Sol. Retain unchanged and unsuccessful cases.",
+  "cases": [
+    {
+      "id": "UC01-02",
+      "text": "Как получить код восстановления 2FA после включения?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-03",
+      "text": "Где администратору скачать счёт?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-04",
+      "text": "Мне нужен акт за оплату, куда зайти?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-05",
+      "text": "Где создать новый токен интеграции?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-06",
+      "text": "Можно ли ещё раз посмотреть старый токен?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-07",
+      "text": "Где отключить письма об обновлениях?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-08",
+      "text": "Импорт CSV показывает E42, что делать?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC01-09",
+      "text": "Как выдать коллеге роль наблюдателя?",
+      "history": [],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC02-05",
+      "text": "Импорт падает",
+      "history": [],
+      "expected_modes": [
+        "clarify"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC02-07",
+      "text": "Странная сумма в оплате",
+      "history": [],
+      "expected_modes": [
+        "clarify"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC03-05",
+      "text": "Интеграция отправила токен в публичный чат",
+      "history": [],
+      "expected_modes": [
+        "escalate"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    },
+    {
+      "id": "UC03-06",
+      "text": "У всех пользователей пропал доступ к сервису",
+      "history": [],
+      "expected_modes": [
+        "escalate"
+      ],
+      "required_sources": [],
+      "review_note": "Сравнивать именно запрос и все поля карточки; автоматический режим не равен правильному содержанию."
+    }
+  ],
+  "kb_version": "v1",
+  "models": {
+    "mistral": "ministral-14b-2512",
+    "sol": "openai/gpt-5.6-sol"
+  },
+  "source_sha256_lf": {
+    "ml/cascade/assessment.py": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+    "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/cascade/engine.py": "97e3578c79b9c46e054c215365b5b59abe5148ee475fc9d8b8a1c6e40f3eb1f2",
+    "ml/cascade/mistral-system.txt": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
+    "ml/cascade/providers.py": "c0c9000f08bb14a4b20948bd054165c75e5f47d88b479348547cb194e94a3d10",
+    "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+    "ml/cascade/security.py": "dfc0092bfe0af090c3f35caae4c85dc222029c784a35944db94e332c19121515",
+    "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+    "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/tools/propose_card.py": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+    "ml/tools/README.md": "1d9aaeb51469aa639777519172bdf9705b95bd7a4aa12f3e79e2f7511fcd906e",
+    "ml/prompts_v2/cascade-mistral.txt": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
+    "ml/prompts_v2/cascade-sol.txt": "3498f5f2add5d1ec91970880f2cf1eff7c1c6741dfef51a29003174f1491826a",
+    "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+    "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+    "ml/contracts/response.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+    "ml/contracts/validation.py": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+    "ml/data/cascade/kb.jsonl": "1a708c12adb0d3760b0bc98b21be1877ea041b8c77cd800a1bd2d862fc3dcbd6",
+    "ml/experiments/lab4/run_comparison.py": "bb33631701bddf6a1b2a25323c538e597da48e525ab8ac0c338aefa94a2563a1"
+  },
+  "fx_rub_per_usd": 89,
+  "previous_accounted_micro_usd": 164803,
+  "lifetime_cap_rub": "32.856357",
+  "old_lifetime_cap_rub": "18.407652",
+  "new_experiment_allowance_rub": "10",
+  "previous_technical_reserve": 5276257,
+  "technical_cap": 10000000,
+  "max_attempts_per_case": 2,
+  "attempt_timeout_seconds": 25,
+  "retries": 0,
+  "cache_enabled": false,
+  "seconds_between_cases": 8,
+  "human_quality_review": "pending",
+  "execution": "AI engine with persistent local reservations, not a public queue/end-to-end deployment test",
+  "baseline_commit": "2087c67a88575ff36893993c869954bd0ff308b1",
+  "baseline_total_observations": 42,
+  "baseline_selected": 12,
+  "selection": "12 predeclared coverage examples: navigation, old token, recovery codes, import, billing, leak, outage; not a representative error rate.",
+  "baseline_source_manifest": {
+    "commit": "2087c67a88575ff36893993c869954bd0ff308b1",
+    "date": "2026-10-15",
+    "scope": "First live Mistral-only LAB03 generation, before the next prompt iteration; NOT LAB02 and NOT extractive baseline.",
+    "files": {
+      "responses.jsonl": {
+        "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/evidence/generation-responses.jsonl",
+        "sha256_lf": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d"
+      },
+      "cases.jsonl": {
+        "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/docs/quality/golden-dataset/cases.jsonl",
+        "sha256_lf": "e9b65cddaaedb3335ba89e0aa6962cc4af673e2550988a21b6340652afb097fc"
+      },
+      "kb.jsonl": {
+        "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/docs/quality/golden-dataset/kb.jsonl",
+        "sha256_lf": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1"
+      },
+      "response.schema.json": {
+        "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/response.schema.json",
+        "sha256_lf": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c"
+      },
+      "generation-report.json": {
+        "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/evidence/generation-report.json",
+        "sha256_lf": "1f43f4f53aa0ff27bd95082c7637ab23b50db1d84c4a6a4e2500bea76a06676d"
+      }
+    }
+  },
+  "old_and_new_kb_v1_identical": true,
+  "experiment_start_accounted_micro_usd": 256813,
+  "teacher_publication_authorized": false,
+  "wrapper_sha256_lf": "97f56c2769a88eb9891c2a5b7a4abf827a4249969d097e711b86bcc00a0cb347"
+}

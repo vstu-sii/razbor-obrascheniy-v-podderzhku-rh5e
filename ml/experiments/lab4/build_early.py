@@ -37,7 +37,7 @@ def main():
     for r in recovery:
         parts.append('<article><h2>'+esc(r['case_id'])+'</h2><p>'+esc(r['input']['ticket_text'])+'</p><div class="pair">'+panel('Первый ответ Mistral',stage(r,'mistral'))+panel('Второй этап Sol',stage(r,'sol'))+'</div></article>')
     for r in problems:
-        parts.append('<article><h2>Сохранённый нерешённый пример: '+esc(r['case_id'])+'</h2>'+panel('Mistral',stage(r,'mistral'))+'<p>Успешный второй этап в этой записи отсутствует; не приписываем Sol исправление.</p></article>')
+        parts.append('<article><h2>Сохранённый нерешённый пример: '+esc(r['case_id'])+'</h2><p><strong>Запрос клиента:</strong> '+esc(r['input']['ticket_text'])+'</p><pre>История: '+esc(json.dumps(r['input']['history'],ensure_ascii=False))+'</pre>'+panel('Mistral',stage(r,'mistral'))+'<p>Успешный второй этап в этой записи отсутствует; не приписываем Sol исправление.</p></article>')
     (HERE/'early-cards.html').write_text(''.join(parts),encoding='utf-8',newline='\n')
     print('Historical evidence: one role before/after pair, three actual Sol recoveries, two unrecovered examples')
 

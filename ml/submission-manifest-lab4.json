@@ -17,22 +17,22 @@
     },
     {
       "path": "docs/experiments/lab4.ipynb",
-      "sha256_lf": "99299ad1a31cbbf652e60b1eb0b6cf7e9a087450ad3139a577c92785430a6709",
+      "sha256_lf": "1c639140c24c6678cab060e51273ee382f8b9d2407c1f9b440b2f0054f2c886e",
       "source": "project/docs/experiments/lab4.ipynb"
     },
     {
       "path": "docs/experiments/lab4.md",
-      "sha256_lf": "359e366143ae3596d460e5a30d61236f1b4bef97d647bc29912a8be4295e1345",
+      "sha256_lf": "181120d22e43e5b89d9bfd229f3e246fc7820c75bf3cabe324f337646c04e944",
       "source": "project/docs/experiments/lab4.md"
     },
     {
       "path": "docs/ml-changes.md",
-      "sha256_lf": "934e047ce9cbc4fc251729829dd8ce2d739eb81c0eeb7f9eb2e1427be2501948",
+      "sha256_lf": "f37fe5a50cfc449126bd246a27122e1ae299ce48ed8582a71e99d8b880570c97",
       "source": "project/docs/ml-changes.md"
     },
     {
       "path": "docs/ml-cost.md",
-      "sha256_lf": "ee233efcc1dfc573dda4e988e66b8d8681eb56f6614a5d227e827fc8255cc7b4",
+      "sha256_lf": "d45f6b2c9b3e14c391b3fc074911575a946425026509c0ec1f417a1a85f984ed",
       "source": "project/docs/ml-cost.md"
     },
     {
@@ -57,17 +57,17 @@
     },
     {
       "path": "ml/cascade/engine.py",
-      "sha256_lf": "d4e360182812180319289e1c55dc3829793547185fbd80bc4b1f8ab27a7ee113",
+      "sha256_lf": "97e3578c79b9c46e054c215365b5b59abe5148ee475fc9d8b8a1c6e40f3eb1f2",
       "source": "project/ml/cascade/engine.py"
     },
     {
       "path": "ml/cascade/mistral-system.txt",
-      "sha256_lf": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+      "sha256_lf": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
       "source": "project/ml/cascade/mistral-system.txt"
     },
     {
       "path": "ml/cascade/providers.py",
-      "sha256_lf": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+      "sha256_lf": "c0c9000f08bb14a4b20948bd054165c75e5f47d88b479348547cb194e94a3d10",
       "source": "project/ml/cascade/providers.py"
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "path": "ml/experiments/lab4/build_artifacts.py",
-      "sha256_lf": "7885003bb3a74d1defe927a50c9f49ef6490f0bcae87eb43e4d36f452e58e725",
+      "sha256_lf": "af79d9dd21d3bd68b9ed531188977111ee390b9be0cc269cfb73f4fe9aaf291d",
       "source": "project/ml/experiments/lab4/build_artifacts.py"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "path": "ml/experiments/lab4/build_early.py",
-      "sha256_lf": "0cf979bb3b3dc9338b517563b8d6bf2c9119b9c70ef982e5735084441d95049f",
+      "sha256_lf": "e25a2ee9293d0c17fc21fd41be552d0c6bf8e944700adbf51a445dd356fc9c4d",
       "source": "project/ml/experiments/lab4/build_early.py"
     },
     {
@@ -167,13 +167,168 @@
     },
     {
       "path": "ml/experiments/lab4/early-cards.html",
-      "sha256_lf": "023b9b63bd0c805856721452d6885b170b4fdd7c73de6f99887e419a1a6f4757",
+      "sha256_lf": "b799d5cd0b16396b232757ec7579e471c51c48b2527b4cb7240da77cffa2657b",
       "source": "project/ml/experiments/lab4/early-cards.html"
     },
     {
       "path": "ml/experiments/lab4/early-progress.json",
       "sha256_lf": "8dca6941470e88dc2d7010986a3adc81c2502f5c2fb8c8fe9f26a0eecf9bd8e3",
       "source": "project/ml/experiments/lab4/early-progress.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/cases.jsonl",
+      "sha256_lf": "e9b65cddaaedb3335ba89e0aa6962cc4af673e2550988a21b6340652afb097fc",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/cases.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/generation-report.json",
+      "sha256_lf": "1f43f4f53aa0ff27bd95082c7637ab23b50db1d84c4a6a4e2500bea76a06676d",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/generation-report.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/kb.jsonl",
+      "sha256_lf": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/kb.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/response.schema.json",
+      "sha256_lf": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/response.schema.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/responses.jsonl",
+      "sha256_lf": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/responses.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/SOURCE.json",
+      "sha256_lf": "8abb2c4d0cf91caa0ecd19732f92f5ace5e871c603b3405b0d21c2bce53835ff",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/SOURCE.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/budget.json",
+      "sha256_lf": "c0ce5fdc6e88b329cb9fae3cb06c17c4dbe6dc1f82aa41f8cc0e8da173a2dc25",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/cards.html",
+      "sha256_lf": "66ddfb2f166dd99d6d34391eab1a6f32de9de6a649f178613c34a2d60c02f7db",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/config.json",
+      "sha256_lf": "508346eef597880812558edb218f3485a88d975c30a969e6c5f6c519dce8051f",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-02.json",
+      "sha256_lf": "7234d3172617bd9a7079d62a8119d85684ffec7418f6ef09df59037d4810934c",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-02.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-03.json",
+      "sha256_lf": "0c99205fdf32d9db088c2cd6960c200937f7554eb410d03f8750bf0056467f90",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-03.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-04.json",
+      "sha256_lf": "c20993d24525f5de91e977de8cdeb5b24877307cfd7663a750c9e775ef57bb45",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-04.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-05.json",
+      "sha256_lf": "c8d8bfaa2003117842e31a34510a5f94eaab9524e64e9caa3b4242ed2cba3ecf",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-06.json",
+      "sha256_lf": "02387ebeab66b13202c259c85e9146a222301857e7c3eb5f00705f06ee9e732b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-06.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-07.json",
+      "sha256_lf": "324c5317979817f6a37997990a44e5e9bc7c2633733013c8d8d27774599d16d2",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-07.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-08.json",
+      "sha256_lf": "0a1887e384241f4ae3cd23f47cdd9ba0920a0f80ef5a246305a364c9a96b962b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-08.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-09.json",
+      "sha256_lf": "888f1de78df0951abe3f8d346da763583423fdd3b168ce51796c19aa5b83ce7e",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-09.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-05.json",
+      "sha256_lf": "e75d95793d45382477c995b23c10ef6164acc6be439eb0ba08fe1e7060fcae14",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-07.json",
+      "sha256_lf": "d43cc915fd23fc8d9a47fc134d4c5d5091eeab54dac6e4178f4d76c6dc8c9ae8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-07.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-05.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-06.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-06.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/ledger-export.json",
+      "sha256_lf": "b24552ccd130274e9e011b9b25e22784a3aa883b747819c4bc75fc0f747d0570",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/ledger-export.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/results.jsonl",
+      "sha256_lf": "bfdae1ee263980a18237720acf83f17288790537ea11eaa4120d398a20515432",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/started.json",
+      "sha256_lf": "f00425e9e68ac7cb930df48541e496d068fcbc27f2ada7ad9c2aea1bf40f4f69",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/started.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/summary.json",
+      "sha256_lf": "045da43c03bacd1adcf0d1b941a09f9567303f03b1a042a8984e81990a65a8e6",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/build_report.py",
+      "sha256_lf": "66361762f35592fef06dc5d18896b6bdcfe835fdc6a04144c25f17ba285c244b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/build_report.py"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/comparison.json",
+      "sha256_lf": "9de3cf07b86b25f579800d17cd334152a7ddbefe0ea7fb30251d575a8cb6e4a4",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/comparison.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/README.md",
+      "sha256_lf": "991f0b323e2d52d32e6535db088b19cf22c4f0828b16a25f341541eb83fceec8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/README.md"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/report.html",
+      "sha256_lf": "e959dc69268ec1c8c0a1cf3009ca619d81ec10aee5007e6cf6907db390934685",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/report.html"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/report.md",
+      "sha256_lf": "2078dba40b7c6b190d4c87da50b175e1b84f1cf4490af8a3ac24db1e113ae0ce",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/report.md"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/validation.json",
+      "sha256_lf": "595a56f37073325388c50dd766f8eb31e9e6595548f41c2a138eda1a5e84c9e8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/validation.json"
     },
     {
       "path": "ml/experiments/lab4/historical-ab/expected.json",
@@ -842,7 +997,7 @@
     },
     {
       "path": "ml/experiments/lab4/validation.json",
-      "sha256_lf": "5cf9e3dec92ef3dfe08f005489768b36404c68cf56d197eb9859ed497b4b1642",
+      "sha256_lf": "1c44e14e109029c6a0b530d85de346ace502e176b6bd58c064da8f2f233d4ee2",
       "source": "project/ml/experiments/lab4/validation.json"
     },
     {
@@ -857,12 +1012,12 @@
     },
     {
       "path": "ml/prompts_v2/cascade-mistral.txt",
-      "sha256_lf": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+      "sha256_lf": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
       "source": "project/ml/prompts_v2/cascade-mistral.txt"
     },
     {
       "path": "ml/prompts_v2/cascade-sol.txt",
-      "sha256_lf": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
+      "sha256_lf": "3498f5f2add5d1ec91970880f2cf1eff7c1c6741dfef51a29003174f1491826a",
       "source": "project/ml/prompts_v2/cascade-sol.txt"
     },
     {
@@ -898,7 +1053,7 @@
     {
       "path": ".github/workflows/ai-lab4.yml",
       "source": ".github/workflows/ai-lab4.yml",
-      "sha256_lf": "84450c99848b10e36ae5436c21164d444e1d2353e5c39aee8c13da8bf7d1b477"
+      "sha256_lf": "6d3e4cf0c0361f2cefd232e78b2a8ed59a24f08745f5bb7b88256efeaf3928e3"
     }
   ]
 }
