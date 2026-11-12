@@ -70,6 +70,7 @@ def main():
     assert ablation['mistral_only_automatic']==0 and ablation['cascade_automatic']==2
     (HERE/'progress-20261112.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     parts=['<!doctype html><meta charset="utf-8"><title>LAB04: ошибки и исправления</title><style>body{font:17px system-ui;max-width:1100px;margin:32px auto;color:#182231}article{border:1px solid #ccd3dc;border-radius:12px;padding:22px;margin:20px 0}pre{white-space:pre-wrap;background:#f3f5f8;padding:15px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:700px){.pair{display:block}}</style><h1>LAB04: реальные ошибки, правки и результат</h1><p>История разработки и абляция сохранённых этапов. Новых вызовов нет. Оценки человека не добавлены.</p>']
+    parts.append('<p><a href="early-cards.html">Больше ранних ошибок и реальных восстановлений Sol</a> · <a href="comparison-cards-20261113.html">Новое парное сравнение на текущей версии</a></p>')
     esc=lambda value:html.escape(str(value)).replace('\n','&#10;').replace('\r','&#13;')
     for item in examples:
         parts.append('<article><h2>'+esc(item['case_id'])+'</h2><pre>'+esc(item['input']['ticket_text']+'\nИстория: '+json.dumps(item['input']['history'],ensure_ascii=False))+'</pre><div class="pair">')

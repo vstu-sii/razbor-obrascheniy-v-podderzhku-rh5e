@@ -6,6 +6,8 @@ Python 3.11+. Из корня LAB (в DEVELOPMENT сначала cd project):
 python -m pip install -r ml/requirements-lab4.txt
 python ml/experiments/lab4/checks.py
 python ml/experiments/lab4/build_progress.py
+python ml/experiments/lab4/build_early.py
+python ml/experiments/lab4/build_comparison.py
 python ml/experiments/lab4/run.py --output validation-output/lab4-replay
 ```
 
@@ -26,3 +28,12 @@ Delivery. Самостоятельный CascadeEngine.analyze() запреща�
 AI endpoint находятся в интеграционном PR к Delivery PR39. В teacher AI-пакете
 они представлены в ml/integration/ как reference, не подменяют чужой worker.
 Старые baseline-данные и LAB03 отчёт не переписываются.
+
+Дополнение 13.11: comparison-cards-20261113.html показывает 16 основных входов,
+targeted-retrieval-20261113/cards.html — два отдельных направленных опыта,
+early-cards.html — более ранние ошибки/восстановления. Оценки человека пустые.
+run_comparison.py без --live только готовит план в новой папке. Его живые
+вызовы требуют предварительно разрешённого денежного допуска и локальных
+ключей; завершённую серию runner повторять/перезаписывать не позволяет.
+Новый допуск 10 ₽ и cap 24.667467 ₽ относятся к опыту 13.11, а не меняют
+исторические конфигурации runner run.py и старых лабораторных.

@@ -30,7 +30,7 @@
     "final_engine_replay_passed": 2
   },
   "notebook": {
-    "executed_code_cells": 7,
+    "executed_code_cells": 9,
     "external_calls": 0
   },
   "offline_reproduction_identical": true,
@@ -72,5 +72,49 @@
       "cascade_human": 1
     },
     "delivery_evidence": "Attributed frozen D021 LAB05 JSON; no new public smoke"
+  },
+  "live_followup_20261113": {
+    "planned": 16,
+    "observed": 16,
+    "paired_complete": 16,
+    "mistral_http_200": 14,
+    "sol_invocations": 8,
+    "a_automatic": 8,
+    "b_automatic": 8,
+    "a_human": 8,
+    "b_human": 8,
+    "recovered_answer_ids": [],
+    "recovered_clarify_ids": [],
+    "mode_matches_a": 11,
+    "mode_matches_b": 11,
+    "human_quality_review": "pending; mode/schema counts are not semantic correctness",
+    "methodology": "A and B share the exact same first Mistral attempt; B alone may invoke Sol. Not two independent generations and not held-out accuracy.",
+    "input_fixture_correction": "Two initial history records used role instead of API speaker; repeated only these two with speaker. Original records excluded from primary counts but retained in spending and raw evidence.",
+    "live_mistral_calls_primary": 16,
+    "broad_live_calls_including_fixture_correction": 27,
+    "total_live_calls_including_targeted": 31,
+    "sol_recovery_after_http_200": 0,
+    "sol_recovery_after_transport_failure": 0,
+    "a_latency_median_ms": 6548.0975,
+    "b_latency_median_ms": 13248.721000000001,
+    "raw_sol_200": 5,
+    "failed_sol_reasons": {
+      "attempt_deadline_exceeded": 3,
+      "model_escalation": 2,
+      "semantic_requires_human": 1,
+      "sol_incomplete_coverage": 2
+    },
+    "spending": {
+      "fx_rub_per_usd": 89,
+      "confirmed_rub": "2.857434",
+      "unknown_reserve_rub": "5.331456",
+      "authorized_this_experiment_rub": "10",
+      "meaning": "Confirmed provider receipts and conservative unknown reserves, including both corrected fixture calls; no reserve presented as actual charge."
+    },
+    "langfuse": {
+      "expected_generations": 31,
+      "read_back_generations": 31,
+      "generations_with_input_output": 25
+    }
   }
 }

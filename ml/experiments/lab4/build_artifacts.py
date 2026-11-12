@@ -100,6 +100,34 @@ assert manual['attempts'][1]['diagnostics']['http_status']==200 and manual['need
 persist=json.loads((data/'delivery-d021/persistence-smoke.json').read_text(encoding='utf-8'))
 assert persist['passed'] and all(c['card_preserved'] for c in persist['cases'])
 print('Delivery LAB05: последующая интеграционная проверка, не наш A/B. Обе карточки пережили restart.')""")])
+    notebook.cells.extend([
+        nb.v4.new_markdown_cell('''## Дополнение 13.11: ранние ошибки и новый парный опыт
+Один и тот же первый живой ответ Mistral используется в A и B; Sol вызывается
+только по реальному решению текущего движка. Это парная абляция этапа, не две
+независимые генерации. Исправленные входы истории и их расходы сохранены.
+Режим/схема не заменяют независимую оценку содержания.'''),
+        nb.v4.new_code_cell('''early=json.loads((data/'early-progress.json').read_text(encoding='utf-8'))
+for name,expected_hash in early['source_sha256_lf'].items():
+    assert hashlib.sha256((data/'historical-early'/name).read_text(encoding='utf-8').encode()).hexdigest()==expected_hash
+assert len(early['recoveries'])==3 and len(early['unrecovered_examples'])==2
+print('Ранние реальные восстановления Sol:')
+for row in early['recoveries']:
+    print(row['case_id'],[(a['provider'],a['diagnostics']['gate_reason']) for a in row['attempts']])
+print('Выбранные примеры, не оценка общей частоты ошибок.')'''),
+        nb.v4.new_code_cell('''comparison=json.loads((data/'comparison-20261113.json').read_text(encoding='utf-8'))
+for name,expected_hash in comparison['source_sha256_lf'].items():
+    assert hashlib.sha256((data/name).read_text(encoding='utf-8').encode()).hexdigest()==expected_hash
+assert len(comparison['rows'])==16
+for row in comparison['rows']:
+    assert row['a']==row['stages'][0] and row['b']==row['stages'][-1]
+    assert all(set(h)=={'speaker','text'} for h in row['input']['history'])
+    for stage in row['stages']: assert Draft202012Validator(SCHEMA).is_valid(stage['final_card'])
+print(json.dumps(comparison['summary'],ensure_ascii=False,indent=2))
+print('Оценка человека:',comparison['human_review'])
+from decimal import Decimal
+spending=comparison['summary']['spending']
+assert Decimal(spending['confirmed_rub'])+Decimal(spending['unknown_reserve_rub'])<=10
+print('Стоимость включает первоначальные записи с исправленным затем полем истории; резерв не равен списанию.')''')])
     # Project keeps the same portable AI contract/data aliases as publication.
     target=ROOT/'docs/experiments/lab4.ipynb';target.parent.mkdir(parents=True,exist_ok=True)
     nb.write(notebook,target)

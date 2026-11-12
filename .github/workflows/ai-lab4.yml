@@ -18,3 +18,5 @@ jobs:
       - run: python ml/experiments/lab4/checks.py
       - run: python ml/experiments/lab4/run.py --output "$RUNNER_TEMP/lab4-replay"
       - run: python ml/experiments/lab4/build_progress.py
+      - run: python ml/experiments/lab4/build_early.py
+      - run: python ml/experiments/lab4/build_comparison.py
