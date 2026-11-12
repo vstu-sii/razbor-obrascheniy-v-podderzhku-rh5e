@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-26T20:34:04.155494+00:00",
+  "hypothesis": "v2 improves acceptance by a fixed quote-only gate",
+  "case_ids": [
+    "UC01-02",
+    "UC01-03",
+    "UC02-01",
+    "UC02-02",
+    "UC03-01",
+    "UC03-02",
+    "UC04-01",
+    "UC04-02"
+  ],
+  "model": "ministral-14b-2512",
+  "max_generation_calls": 16,
+  "retries": 0,
+  "free_account_confirmed_by_participant": true,
+  "held_constant": [
+    "inputs",
+    "KB",
+    "retrieval",
+    "model",
+    "schema",
+    "strict_output_gate",
+    "timeout"
+  ],
+  "dataset_sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+  "source_sha256": "d6f0345dab629fdf66c855e85bd05c533af9dca9d8110b795ac7c6a8a4e80546",
+  "split": "reviewed_development_not_independent_test"
+}

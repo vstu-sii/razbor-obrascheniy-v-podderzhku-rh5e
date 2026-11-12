@@ -5,11 +5,17 @@ import json
 import re
 import time
 import unicodedata
+from pathlib import Path
 from jsonschema import Draft202012Validator
-from ml.models.baseline import retrieve, fallback
+from ml.models.baseline import fallback
+from ml.cascade.security import untrusted_instruction_reason
+from ml.cascade.retrieval import retrieve
 from ml.cascade.providers import HTTPProvider, ProviderFailure, MODELS, pack_sources
 from ml.cascade.assessment import validate_assessment, expand_sources
 from ml.cascade.context import make_context, checked_context
+from ml.cascade.cache import AnswerCache
+from ml.tools.propose_card import execute_proposal
+from ml.cascade.providers import build_payload
 
 
 TOKEN_EXPOSURE_GUIDANCE = (
@@ -95,12 +101,13 @@ def supplement_sol_sources(context):
 class CascadeEngine:
     mode = 'cascade'
 
-    def __init__(self, kb, schema, gate, provider=None, trace_path=None):
+    def __init__(self, kb, schema, gate, provider=None, trace_path=None, answer_cache=None):
         self.kb, self.schema, self.gate = kb, schema, gate
         self.provider = provider or HTTPProvider()
         self.trace_path = trace_path
+        self.answer_cache = answer_cache
 
-    def analyze_attempt(self, request, provider, timeout, job_id, attempt_id, stage_context=None):
+    def analyze_attempt(self, request, provider, timeout, job_id, attempt_id, stage_context=None, cache_scope=None):
         started = time.perf_counter()
         context = checked_context(stage_context, request) if stage_context is not None else make_context(self.kb, request)
         kb = context['kb_snapshot']
@@ -112,7 +119,7 @@ class CascadeEngine:
             supplement_sol_sources(context)
             sources = context['sources']
         expected = context['questions'] if provider == 'sol' and context['questions'] else None
-        raw, assessment, usage, passed, reason = None, None, None, False, input_policy(request)
+        raw, assessment, usage, passed, reason = None, None, None, False, (input_policy(request) or untrusted_instruction_reason(request, sources))
         reply = {}
         packing = None
         skip = bool(reason)
@@ -125,6 +132,31 @@ class CascadeEngine:
         blocked = skip
         assessment_valid = False
         safe_candidate = False
+        cache_key = None
+        if not skip and self.answer_cache is not None and cache_scope is not None:
+            policy_sources = [Path(__file__), *[Path(__file__).with_name(name) for name in
+                ('assessment.py','providers.py','retrieval.py','cache.py','security.py')],
+                Path(__file__).parents[1]/'tools/propose_card.py',
+                Path(__file__).parents[1]/'models/baseline.py']
+            policy = hashlib.sha256(b''.join(p.read_bytes() for p in policy_sources) +
+                json.dumps(build_payload(provider, dict(request, request_id=""), [], self.schema),
+                           ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+            cache_key = AnswerCache.key(cache_scope, provider, request, context, self.schema, policy)
+            cached = self.answer_cache.get(cache_key)
+            if cached is not None:
+                for field in ('raw_card', 'final_card'):
+                    cached[field]['request_id'] = request['request_id']
+                # Revalidate references and output against the current reservation.
+                valid, _ = self.gate(cached['raw_card'], request['request_id'], request['kb_version'],
+                                    cached['stage_context']['sources'])
+                if valid and not semantic_rule(cached['raw_card'], request,
+                                               cached['stage_context']['sources'], cached['assessment']):
+                    cached.update(request_id=request['request_id'], job_id=job_id, attempt_id=attempt_id,
+                                  usage=None, attempts=0, not_sent=True, cache_hit=True,
+                                  latency_ms=round((time.perf_counter()-started)*1000,3),
+                                  completion_id=None, http_status=None, billed_micro_usd=0)
+                    cached['stage_context']['input_hash'] = context['input_hash']
+                    return cached
         if not skip:
             try:
                 trace_id = hashlib.sha256(job_id.encode()).hexdigest()[:32]
@@ -136,7 +168,8 @@ class CascadeEngine:
                 reply = self.provider(provider, provider_request, sources, self.schema, timeout, trace_id)
                 raw, usage = reply['card'], reply['usage']
                 assessment = reply.get('assessment')
-                passed, reason = self.gate(raw, request['request_id'], request['kb_version'], sources)
+                passed, reason = execute_proposal(raw, request, sources, self.schema, self.gate,
+                    permissions=frozenset({'propose_card'}), deadline=started+timeout)
                 if passed and (raw['status'] != 'proposed' or raw['needs_human_review'] is not True):
                     passed, reason = False, 'model_cannot_resolve_candidate'
                 if passed:
@@ -230,6 +263,9 @@ class CascadeEngine:
                   'finish_reason': reply.get('finish_reason'), 'not_sent': blocked or reply.get('not_sent', False),
                   'transport_error': reply.get('transport_error'), 'attempt_timeout_seconds': timeout,
                   'billed_micro_usd': None, 'inference_skipped': blocked}
+        result['cache_hit'] = False
+        if cache_key is not None:
+            self.answer_cache.put(cache_key, result)
         return result
 
     def analyze(self, request, **kwargs):

@@ -1,0 +1,27 @@
+# Изменения AI Engineer в LAB04
+
+1. Основа — интеграция Delivery PR39, commit 0cdf39b. Перенесены последние
+   инструкции/assessment LAB03, сохранены Delivery input-policy и поиск без top-3.
+   LAB02 не меняется.
+2. Runtime-промпты обеих моделей находятся в ml/prompts_v2/cascade-*.txt и
+   загружаются provider. Legacy v2/v2.1 сохранены как история.
+3. Компактный JSON не удаляет статьи/поля. Поиск измерен до новых генераций.
+4. AnswerCache: только проверенные невысокоприоритетные answer, TTL 300 с,
+   128 записей. AI endpoint получает actor scope из authoritative queue после
+   auth/single-use claim. Текст клиента не задаёт scope. Отказы, важные случаи,
+   clarify/escalate не кэшируются.
+5. ml/tools/propose_card.py содержит execute_proposal: schema/provenance,
+   ровно право propose_card, deadline до/после валидации. Нет сети, БД,
+   выдачи ролей или отправки. HTTP timeout обрабатывает provider: Mistral → Sol,
+   Sol → ручной исход, без бесконечных retry. Неизвестный tool call не исполняется.
+6. Сохранены планы, raw responses, A/B, поиск, cache/payload измерения,
+   живые ответы и Langfuse. Notebook выполнен офлайн, без новых API-вызовов.
+
+Решение и цена: [ADR-005](adr/ADR-005-ai-cascade-cache.md).
+[Эксперименты](experiments/lab4.md), [расходы](ml-cost.md).
+
+Delivery владеет очередью/резервами/деплоем; cache подключён в AI endpoint
+после существующего claim, worker и миграции не менялись. Quality владеет
+независимым набором и CI-порогами, они не ослаблялись. Product — важные случаи
+и содержание реальной БЗ. AI-answer не доказывает отправку в настоящий helpdesk.
+Render этим task не деплоился; merge остаётся человеку.

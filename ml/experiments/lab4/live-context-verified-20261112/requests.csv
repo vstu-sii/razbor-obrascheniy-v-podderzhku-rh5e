@@ -1,0 +1,3 @@
+variant,provider,mode,input_tokens,output_tokens,latency_ms,paid_sol_rub,cache_repeat
+spaced,mistral,answer,3915,1237,23021.918,0,True
+compact,mistral,answer,3894,1168,21939.402,0,True

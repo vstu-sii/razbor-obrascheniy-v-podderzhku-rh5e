@@ -1,0 +1,47 @@
+{
+  "protocol": "ordinary-v3-targeted-followup-20261110",
+  "scope": "Two explicit follow-ups after prompt clarification; not a rerun of all eight ordinary cases. Same additional-10-RUB window, no budget reset.",
+  "budget": {
+    "additional_rub": 10,
+    "accounted_before_micro_usd": 94468,
+    "new_lifetime_cap_rub": "18.407652",
+    "fx": 89
+  },
+  "cases": [
+    {
+      "id": "history",
+      "group": "ordinary",
+      "text": "Код E42.",
+      "history": [
+        {
+          "speaker": "customer",
+          "text": "Импорт CSV завершился ошибкой."
+        },
+        {
+          "speaker": "operator",
+          "text": "Уточните код ошибки импорта."
+        }
+      ],
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [
+        "KB-ERROR-v1"
+      ],
+      "note": "Учитывать явную историю и отвечать по уже указанному коду."
+    },
+    {
+      "id": "two_questions",
+      "group": "ordinary",
+      "text": "Где скачать счёт и как отключить email-уведомления?",
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1"
+      ],
+      "note": "Покрыть обе задачи, сохранить условие статьи про администратора без подтверждения роли клиента."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "protocol": "support-policy-review-20261112",
+  "scope": "Same three requests after participant review; support KB snapshot and 25s first-stage timeout. Engineering repeat, no independent accuracy.",
+  "planned_cases": 3,
+  "observed_jobs": 3,
+  "groups": {
+    "ordinary": {
+      "jobs": 2,
+      "expected_mode_matches": 2,
+      "automatic": 2,
+      "manual": 0,
+      "mistral_http_200": 0,
+      "mistral_gate_passed": 0,
+      "sol_http_200": 2,
+      "sol_attempts": 2,
+      "reasons": {
+        "complete_coverage": 2
+      },
+      "required_articles": 3,
+      "found_required_articles": 3,
+      "confirmed_micro_usd": 17135,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 47648.5,
+      "confirmed_cost_rub": "1.525015",
+      "unknown_reserve_rub": "0"
+    },
+    "boundary": {
+      "jobs": 1,
+      "expected_mode_matches": 1,
+      "automatic": 0,
+      "manual": 1,
+      "mistral_http_200": 0,
+      "mistral_gate_passed": 0,
+      "sol_http_200": 1,
+      "sol_attempts": 1,
+      "reasons": {
+        "semantic_requires_human": 1
+      },
+      "required_articles": 0,
+      "found_required_articles": 0,
+      "confirmed_micro_usd": 7067,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 15891,
+      "confirmed_cost_rub": "0.628963",
+      "unknown_reserve_rub": "0"
+    }
+  },
+  "money_cap_rub": "18.407652",
+  "additional_budget_rub": 10,
+  "budget_before": {
+    "attempts": 86,
+    "reserved_tokens": 4993961,
+    "sol_accounted_micro_usd": 140601,
+    "sol_unknown_micro_usd": 61110
+  },
+  "budget_after": {
+    "attempts": 92,
+    "reserved_tokens": 5276257,
+    "sol_accounted_micro_usd": 164803,
+    "sol_unknown_micro_usd": 61110
+  },
+  "human_acceptance": false,
+  "all_observed_traces_read_back": true
+}

@@ -1,0 +1,698 @@
+{
+  "external_model_calls": 0,
+  "historical_ab": {
+    "v1": {
+      "n": 8,
+      "valid_quote_gate": 7,
+      "mode_correct": 6,
+      "category_correct": 4,
+      "total_tokens": 13298
+    },
+    "v2": {
+      "n": 8,
+      "valid_quote_gate": 8,
+      "mode_correct": 8,
+      "category_correct": 7,
+      "total_tokens": 14689
+    }
+  },
+  "retrieval": [
+    {
+      "case_id": "history",
+      "kb_version": "v1",
+      "required": [
+        "KB-ERROR-v1"
+      ],
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-ERROR-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "two_questions",
+      "kb_version": "v1",
+      "required": [
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1"
+      ],
+      "retrieved": [
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1"
+      ],
+      "required_found": 2,
+      "required_total": 2,
+      "all_required_found": true
+    },
+    {
+      "case_id": "invoice",
+      "kb_version": "v1",
+      "required": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieved": [
+        "KB-INVOICE-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "notifications",
+      "kb_version": "v1",
+      "required": [
+        "KB-NOTIFY-v1"
+      ],
+      "retrieved": [
+        "KB-NOTIFY-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "known_error",
+      "kb_version": "v1",
+      "required": [
+        "KB-ERROR-v1"
+      ],
+      "retrieved": [
+        "KB-ERROR-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "two_factor",
+      "kb_version": "v1",
+      "required": [
+        "KB-2FA-v1"
+      ],
+      "retrieved": [
+        "KB-2FA-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "observer_role",
+      "kb_version": "v1",
+      "required": [
+        "KB-ROLE-v1"
+      ],
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-API-v1",
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "missing_code",
+      "kb_version": "v1",
+      "required": [],
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-API-v1",
+        "KB-ERROR-v1"
+      ],
+      "required_found": 0,
+      "required_total": 0,
+      "all_required_found": true
+    },
+    {
+      "case_id": "unknown_procedure",
+      "kb_version": "v1",
+      "required": [],
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-API-v1",
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1"
+      ],
+      "required_found": 0,
+      "required_total": 0,
+      "all_required_found": true
+    },
+    {
+      "case_id": "secret_leak",
+      "kb_version": "v1",
+      "required": [],
+      "retrieved": [
+        "KB-2FA-v1",
+        "KB-API-v1",
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1"
+      ],
+      "required_found": 0,
+      "required_total": 0,
+      "all_required_found": true
+    },
+    {
+      "case_id": "two_factor_steps",
+      "kb_version": "support-20261112",
+      "required": [
+        "KB-2FA-support-20261112"
+      ],
+      "retrieved": [
+        "KB-2FA-support-20261112"
+      ],
+      "required_found": 1,
+      "required_total": 1,
+      "all_required_found": true
+    },
+    {
+      "case_id": "two_factor_and_invoice",
+      "kb_version": "support-20261112",
+      "required": [
+        "KB-2FA-support-20261112",
+        "KB-INVOICE-support-20261112"
+      ],
+      "retrieved": [
+        "KB-2FA-support-20261112",
+        "KB-INVOICE-support-20261112"
+      ],
+      "required_found": 2,
+      "required_total": 2,
+      "all_required_found": true
+    },
+    {
+      "case_id": "two_factor_lost_phone",
+      "kb_version": "support-20261112",
+      "required": [],
+      "retrieved": [
+        "KB-2FA-support-20261112",
+        "KB-ERROR-support-20261112"
+      ],
+      "required_found": 0,
+      "required_total": 0,
+      "all_required_found": true
+    }
+  ],
+  "lossless_context": [
+    {
+      "case_id": "history",
+      "provider": "mistral",
+      "before_context_bytes": 862,
+      "after_context_bytes": 831,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "history",
+      "provider": "sol",
+      "before_context_bytes": 862,
+      "after_context_bytes": 831,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "two_questions",
+      "provider": "mistral",
+      "before_context_bytes": 688,
+      "after_context_bytes": 664,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1",
+        "KB-INVOICE-v1"
+      ]
+    },
+    {
+      "case_id": "two_questions",
+      "provider": "sol",
+      "before_context_bytes": 688,
+      "after_context_bytes": 664,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1",
+        "KB-INVOICE-v1"
+      ]
+    },
+    {
+      "case_id": "invoice",
+      "provider": "mistral",
+      "before_context_bytes": 419,
+      "after_context_bytes": 403,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-INVOICE-v1"
+      ]
+    },
+    {
+      "case_id": "invoice",
+      "provider": "sol",
+      "before_context_bytes": 419,
+      "after_context_bytes": 403,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-INVOICE-v1"
+      ]
+    },
+    {
+      "case_id": "notifications",
+      "provider": "mistral",
+      "before_context_bytes": 419,
+      "after_context_bytes": 403,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1"
+      ]
+    },
+    {
+      "case_id": "notifications",
+      "provider": "sol",
+      "before_context_bytes": 419,
+      "after_context_bytes": 403,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1"
+      ]
+    },
+    {
+      "case_id": "known_error",
+      "provider": "mistral",
+      "before_context_bytes": 448,
+      "after_context_bytes": 432,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1"
+      ]
+    },
+    {
+      "case_id": "known_error",
+      "provider": "sol",
+      "before_context_bytes": 448,
+      "after_context_bytes": 432,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1"
+      ]
+    },
+    {
+      "case_id": "two_factor",
+      "provider": "mistral",
+      "before_context_bytes": 453,
+      "after_context_bytes": 437,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "two_factor",
+      "provider": "sol",
+      "before_context_bytes": 453,
+      "after_context_bytes": 437,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "observer_role",
+      "provider": "mistral",
+      "before_context_bytes": 1535,
+      "after_context_bytes": 1487,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ROLE-v1",
+        "KB-API-v1",
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "observer_role",
+      "provider": "sol",
+      "before_context_bytes": 1535,
+      "after_context_bytes": 1487,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ROLE-v1",
+        "KB-API-v1",
+        "KB-INVOICE-v1",
+        "KB-NOTIFY-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "missing_code",
+      "provider": "mistral",
+      "before_context_bytes": 1064,
+      "after_context_bytes": 1032,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1",
+        "KB-API-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "missing_code",
+      "provider": "sol",
+      "before_context_bytes": 1064,
+      "after_context_bytes": 1032,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-ERROR-v1",
+        "KB-API-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "unknown_procedure",
+      "provider": "mistral",
+      "before_context_bytes": 1521,
+      "after_context_bytes": 1473,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1",
+        "KB-API-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "unknown_procedure",
+      "provider": "sol",
+      "before_context_bytes": 1521,
+      "after_context_bytes": 1473,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1",
+        "KB-API-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "secret_leak",
+      "provider": "mistral",
+      "before_context_bytes": 1530,
+      "after_context_bytes": 1482,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-API-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "secret_leak",
+      "provider": "sol",
+      "before_context_bytes": 1530,
+      "after_context_bytes": 1482,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-API-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1",
+        "KB-2FA-v1"
+      ]
+    },
+    {
+      "case_id": "two_factor_steps",
+      "provider": "mistral",
+      "before_context_bytes": 1913,
+      "after_context_bytes": 1897,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-support-20261112"
+      ]
+    },
+    {
+      "case_id": "two_factor_steps",
+      "provider": "sol",
+      "before_context_bytes": 1913,
+      "after_context_bytes": 1897,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-support-20261112"
+      ]
+    },
+    {
+      "case_id": "two_factor_and_invoice",
+      "provider": "mistral",
+      "before_context_bytes": 2210,
+      "after_context_bytes": 2186,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-INVOICE-support-20261112",
+        "KB-2FA-support-20261112"
+      ]
+    },
+    {
+      "case_id": "two_factor_and_invoice",
+      "provider": "sol",
+      "before_context_bytes": 2210,
+      "after_context_bytes": 2186,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-INVOICE-support-20261112",
+        "KB-2FA-support-20261112"
+      ]
+    },
+    {
+      "case_id": "two_factor_lost_phone",
+      "provider": "mistral",
+      "before_context_bytes": 2198,
+      "after_context_bytes": 2174,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-support-20261112",
+        "KB-ERROR-support-20261112"
+      ]
+    },
+    {
+      "case_id": "two_factor_lost_phone",
+      "provider": "sol",
+      "before_context_bytes": 2198,
+      "after_context_bytes": 2174,
+      "identical_decoded_context": true,
+      "source_ids": [
+        "KB-2FA-support-20261112",
+        "KB-ERROR-support-20261112"
+      ]
+    }
+  ],
+  "system_replay": [
+    {
+      "case_id": "history",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "two_questions",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "invoice",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "notifications",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "known_error",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "two_factor",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "observer_role",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "missing_code",
+      "expected_modes": [
+        "clarify"
+      ],
+      "mode": "clarify",
+      "reason": "needs_customer_data",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "unknown_procedure",
+      "expected_modes": [
+        "escalate"
+      ],
+      "mode": "escalate",
+      "reason": "model_escalation",
+      "expected_mode": true,
+      "automatic": false,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "secret_leak",
+      "expected_modes": [
+        "escalate"
+      ],
+      "mode": "escalate",
+      "reason": "risk_requires_human",
+      "expected_mode": true,
+      "automatic": false,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "two_factor_steps",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "two_factor_and_invoice",
+      "expected_modes": [
+        "answer"
+      ],
+      "mode": "answer",
+      "reason": "complete_coverage",
+      "expected_mode": true,
+      "automatic": true,
+      "scope": "saved-response replay, not new model quality"
+    },
+    {
+      "case_id": "two_factor_lost_phone",
+      "expected_modes": [
+        "escalate"
+      ],
+      "mode": "escalate",
+      "reason": "semantic_requires_human",
+      "expected_mode": true,
+      "automatic": false,
+      "scope": "saved-response replay, not new model quality"
+    }
+  ],
+  "cache_replay": [
+    {
+      "case_id": "history",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "two_questions",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "invoice",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "notifications",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "known_error",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "two_factor",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    },
+    {
+      "case_id": "observer_role",
+      "uncached_generations": 2,
+      "cached_generations": 1,
+      "duplicate_same_card": true,
+      "accounting": "controlled saved-response replay; not live billing"
+    }
+  ],
+  "mode_matches": 13,
+  "cases": 13
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-12",
+  "ai_checks": {
+    "passed": 9,
+    "external_calls": 0
+  },
+  "existing_runtime_tests": {
+    "passed": 110,
+    "sqlite": true,
+    "postgres_local": false
+  },
+  "existing_quality": {
+    "records": 49,
+    "distinct_inputs": 38,
+    "mode": "35/38",
+    "category": "36/38",
+    "false_answer": "0/28",
+    "thresholds_changed": false
+  },
+  "controlled_security": {
+    "blocked": 16,
+    "bypassed": []
+  },
+  "new_live": {
+    "model": "ministral-14b-2512",
+    "http_200": 2,
+    "sol_calls": 0,
+    "cache_hits": 2,
+    "langfuse_generations_read_back": 2,
+    "final_engine_replay_passed": 2
+  },
+  "notebook": {
+    "executed_code_cells": 4,
+    "external_calls": 0
+  },
+  "offline_reproduction_identical": true,
+  "source_hashes": {
+    "ml/cascade/assessment.py": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+    "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/cascade/engine.py": "d4e360182812180319289e1c55dc3829793547185fbd80bc4b1f8ab27a7ee113",
+    "ml/cascade/mistral-system.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+    "ml/cascade/providers.py": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+    "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+    "ml/cascade/security.py": "096444d0abeb876c962ca2c32f0bffc1ad6ef16e63f187a0a6d8874260079f8e",
+    "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+    "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/tools/propose_card.py": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+    "ml/tools/README.md": "1d9aaeb51469aa639777519172bdf9705b95bd7a4aa12f3e79e2f7511fcd906e",
+    "ml/prompts_v2/cascade-mistral.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+    "ml/prompts_v2/cascade-sol.txt": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
+    "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+    "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9"
+  }
+}

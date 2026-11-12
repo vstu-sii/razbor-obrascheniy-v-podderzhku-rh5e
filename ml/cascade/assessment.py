@@ -10,7 +10,8 @@ import unicodedata
 
 from jsonschema import Draft202012Validator
 
-from ml.models.baseline import retrieve, tokenize
+from ml.models.baseline import tokenize
+from ml.cascade.retrieval import retrieve
 
 
 QUESTION_SCHEMA = {

@@ -1,0 +1,24 @@
+{
+  "model": "ministral-14b-2512",
+  "generation_attempts": 16,
+  "halted": null,
+  "complete": true,
+  "billing_observed": false,
+  "paid_fallback": false,
+  "versions": {
+    "v1": {
+      "n": 8,
+      "valid_quote_gate": 7,
+      "mode_correct": 6,
+      "category_correct": 4,
+      "total_tokens": 13298
+    },
+    "v2": {
+      "n": 8,
+      "valid_quote_gate": 8,
+      "mode_correct": 8,
+      "category_correct": 7,
+      "total_tokens": 14689
+    }
+  }
+}
