@@ -1,0 +1,12 @@
+{
+  "source_branch": "lab03/ai-engineer/ai-013-live-evidence",
+  "source_revision": "fb48f0c510f2bf8d82384314ac579a57e219ff23",
+  "protocol_satisfied": false,
+  "north_star_observations": 0,
+  "reason": "Ratings do not record two independent reviewers, original three binary judgments and 30 distinct cases.",
+  "files": {
+    "ordinary-v3-human-review-20261111.json": "36df91f3f49d23813fd6b585d428c65caf21d91d33158172da227a0dc49de9c8",
+    "prompt-followup-human-review-20261112.json": "c82a01051b6df933d70e1defc9c65f0309cf96dfbd6cdc1b718c761dc0eb2553",
+    "support-policy-human-review-20261112.json": "94e6db72be9dac1b54eac4148a772888f19cd170938e24201137416d6b36436e"
+  }
+}

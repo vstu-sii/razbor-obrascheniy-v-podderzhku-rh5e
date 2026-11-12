@@ -1,0 +1,221 @@
+{
+  "release_tag": "lab5-release-delivery-2026-11-12",
+  "commit": "d41349ffd86f749506987bcc398b0a5fa3239917",
+  "public_url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+  "provider_deploy_url": "https://dashboard.render.com/web/srv-dbfn5jou01pc73bs8llg/deploys/dep-dbqskelg1s2s73f92khg",
+  "settings": {
+    "BASELINE_MODE": "cascade",
+    "CASCADE_LIVE_ENABLED": "true",
+    "SOL_LIVE_ENABLED": "true",
+    "MISTRAL_FREE_CONFIRMED": "true",
+    "CASCADE_BUDGET_RUB": "10"
+  },
+  "provider_keys": "Configured by participant directly in Render; values omitted",
+  "models": {
+    "mistral": "ministral-14b-2512",
+    "sol": "openai/gpt-5.6-sol"
+  },
+  "operator_authorization": "Existing app_settings credential used in memory, not changed",
+  "database_direct_writes": false,
+  "main_modified": false,
+  "teacher_lab_modified": false,
+  "public_smoke": {
+    "base_url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+    "expected_revision": "d41349ffd86f749506987bcc398b0a5fa3239917",
+    "started_utc": "2026-11-12T14:21:16.681820+00:00",
+    "read_only": true,
+    "samples": [
+      {
+        "utc": "2026-11-12T14:21:17.069298+00:00",
+        "status": 200,
+        "health": {
+          "status": "ok",
+          "revision": "d41349ffd86f749506987bcc398b0a5fa3239917",
+          "baseline_mode": "cascade",
+          "architecture": "event-queue-v1",
+          "infrastructure": "lab04"
+        },
+        "latency_ms": 385.194
+      }
+    ],
+    "ui": {
+      "status": 200,
+      "exact_file_match": true,
+      "sha256": "4581fba88db38b270f179b9472707471576f4a79fe824c1d536d025ed033d3c4"
+    },
+    "unauthenticated": {
+      "/api/tickets": 401,
+      "/api/proposals": 401,
+      "/api/traces": 401
+    },
+    "completed_utc": "2026-11-12T14:21:18.065057+00:00",
+    "passed": true
+  },
+  "authenticated_smoke": {
+    "started_utc": "2026-11-12T14:21:00.561163+00:00",
+    "url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+    "revision": "d41349ffd86f749506987bcc398b0a5fa3239917",
+    "synthetic": true,
+    "maximum_tickets": 2,
+    "credential_source": "existing app_settings, read-only transaction",
+    "database_writes_directly": false,
+    "cases": [
+      {
+        "name": "ordinary",
+        "ticket_ref": "delivery-d021-ordinary-5f45edf958",
+        "admission_status": 202,
+        "job_id": "d6c7d4d9-d096-4e88-8352-72cabfd06669",
+        "job_state": "ready",
+        "proposal_id": "920fd254-2d0c-4134-90cc-9ae45671fb22",
+        "card_mode": "answer",
+        "card_status": "resolved",
+        "needs_human_review": false,
+        "persisted_input_matches": true,
+        "attempts": [
+          {
+            "attempt_no": 1,
+            "provider": "mistral",
+            "model": "ministral-14b-2512",
+            "state": "completed",
+            "reserved_micro_usd": 0,
+            "billed_micro_usd": null,
+            "diagnostics": {
+              "route_reason": "complete_coverage",
+              "http_status": 200,
+              "returned_model": "ministral-14b-2512",
+              "usage": {
+                "prompt_tokens": 3663,
+                "total_tokens": 4176,
+                "completion_tokens": 513,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "service_tier": "standard"
+              },
+              "finish_reason": "tool_calls",
+              "transport_error": null,
+              "gate_passed": true,
+              "not_sent": false,
+              "cache_hit": false
+            },
+            "raw_card_received": true
+          }
+        ],
+        "passed": true
+      },
+      {
+        "name": "manual",
+        "ticket_ref": "delivery-d021-manual-20b45abdb1",
+        "admission_status": 202,
+        "job_id": "3ccbeabb-e8d1-4425-92b6-8b2d9d60f39d",
+        "job_state": "manual_review",
+        "proposal_id": "dce4c9c0-5fc7-432f-b5ab-796274bdd20e",
+        "card_mode": "escalate",
+        "card_status": "proposed",
+        "needs_human_review": true,
+        "persisted_input_matches": true,
+        "attempts": [
+          {
+            "attempt_no": 1,
+            "provider": "mistral",
+            "model": "ministral-14b-2512",
+            "state": "completed",
+            "reserved_micro_usd": 0,
+            "billed_micro_usd": null,
+            "diagnostics": {
+              "route_reason": "attempt_deadline_exceeded",
+              "http_status": null,
+              "returned_model": null,
+              "usage": null,
+              "finish_reason": null,
+              "transport_error": "TimeoutError",
+              "gate_passed": false,
+              "not_sent": false,
+              "cache_hit": false
+            },
+            "raw_card_received": false
+          },
+          {
+            "attempt_no": 2,
+            "provider": "sol",
+            "model": "openai/gpt-5.6-sol",
+            "state": "completed",
+            "reserved_micro_usd": 19968,
+            "billed_micro_usd": null,
+            "diagnostics": {
+              "route_reason": "semantic_requires_human",
+              "http_status": 200,
+              "returned_model": "openai/gpt-5.6-sol",
+              "usage": {
+                "prompt_tokens": 6507,
+                "completion_tokens": 332,
+                "total_tokens": 6839,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                }
+              },
+              "finish_reason": "tool_calls",
+              "transport_error": null,
+              "gate_passed": false,
+              "not_sent": false,
+              "cache_hit": false
+            },
+            "raw_card_received": true
+          }
+        ],
+        "review_id": "04864892-513c-4714-a819-712c54fbe4ea",
+        "review_persisted": true,
+        "passed": true
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "baseline_mode": "cascade",
+      "architecture": "event-queue-v1",
+      "infrastructure": "lab04",
+      "revision": "d41349ffd86f749506987bcc398b0a5fa3239917"
+    },
+    "existing_cards_count_before": 4,
+    "passed": true,
+    "completed_utc": "2026-11-12T14:21:43.051477+00:00",
+    "provider_http_200": [
+      "mistral",
+      "sol"
+    ]
+  },
+  "persistence_after_observed_restart": {
+    "utc": "2026-11-12T14:24:52.850490+00:00",
+    "read_only": true,
+    "cases": [
+      {
+        "name": "ordinary",
+        "proposal_id": "920fd254-2d0c-4134-90cc-9ae45671fb22",
+        "card_preserved": true,
+        "review_preserved": false
+      },
+      {
+        "name": "manual",
+        "proposal_id": "dce4c9c0-5fc7-432f-b5ab-796274bdd20e",
+        "card_preserved": true,
+        "review_preserved": true
+      }
+    ],
+    "health": {
+      "status": "ok",
+      "baseline_mode": "cascade",
+      "architecture": "event-queue-v1",
+      "infrastructure": "lab04",
+      "revision": "d41349ffd86f749506987bcc398b0a5fa3239917"
+    },
+    "passed": true
+  },
+  "restart_observed": "Render Events: Service restarted by you, 2026-11-12 17:23 Europe/Moscow",
+  "limitations": [
+    "Two synthetic smoke cases are not a quality benchmark",
+    "Provider usage is not independently reconciled billing",
+    "No week-long uptime claim"
+  ]
+}

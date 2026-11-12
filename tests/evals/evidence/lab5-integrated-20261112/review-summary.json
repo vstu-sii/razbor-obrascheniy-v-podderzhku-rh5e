@@ -1,0 +1,113 @@
+{
+  "provenance": {
+    "utc": "2026-11-12T17:24:42.519883+00:00",
+    "revision": "c62596e2564c9d378f6b78bf64cb448356296bfa",
+    "tag": null,
+    "tag_verified": false,
+    "runtime_sources": {
+      "repository": "SIISKI/siiski_volchkova_shared_repository",
+      "revision": "D-019 Delivery LAB05 reliability candidate based on 0e5e152",
+      "scope": "current canonical application, no duplicate runtime snapshot",
+      "hash_convention": "UTF-8 LF-normalized text",
+      "files": {
+        "backend/ai_service.py": "f4e8f16674a1917fc16928238fc69e27f9eabe90186a6c6b8f84e354de49101d",
+        "backend/bootstrap.py": "bf4ece08f531108067de6f6b3062033d415ee9065224ef588ff58caf0729d684",
+        "backend/contracts/evaluate.py": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+        "backend/contracts/response.schema.json": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+        "backend/events.py": "f3e2a33cdfe4f6501fce3ece5bc139c2a1f2fb0db33b1e5edc8be0de2491a8b9",
+        "backend/guards/auth.py": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85",
+        "backend/guards/identity.py": "7a784446abd1ec9013144b166d872d385152c703c35f4f7ce2c7eea914d7bab2",
+        "backend/guards/inference.py": "ea68ec5f19f14b490d78ae946732c1e32eb3905aa2ed9fa9702ef8780a44c975",
+        "backend/ingress.py": "add9e1d285f35dec1c6c462f642ad6740e272a320b99ab850d75efb2826a365d",
+        "backend/limits/daily.py": "cbe204198e45afea47468786aaeccadad537cefb0fd817ca367ca1e51dfc2ce3",
+        "backend/limits/degradation.py": "5261b41881fb033283a525a7d38a8c39ef12f7a6388bb5b4ccff505b9b00bca2",
+        "backend/limits/settings.py": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63",
+        "backend/main.py": "39caa843b02b7c2eac40b90972c32319ec377adbf7b1f845580198c542570703",
+        "backend/models/store.py": "321dca7a93ce96a45a5cb8c4f8ca096b6b769fe581b0055dc72431803bfea696",
+        "backend/observability.py": "fe66bc921fba8431f96db76b273f81515454f4952882f002719f841d574427a8",
+        "backend/provision.py": "c1af3b5c6dda4213ee175d52bce3df7e3b6770b16faf07a5340abfe83010a7e9",
+        "backend/routers/ai.py": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c",
+        "backend/worker.py": "818f86593e3bd3cc0bac5bbb2f01ecbfac793c58116bda9fa3a185c8f4563e34",
+        "data/kb.jsonl": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+        "frontend/index.html": "4581fba88db38b270f179b9472707471576f4a79fe824c1d536d025ed033d3c4",
+        "frontend/prototype/index.html": "306bcfe996abc1797baf94af68d84432216f231e1f04e05738ffb57aefb75f81",
+        "migrations/001_init.sql": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41",
+        "migrations/002_review_context.sql": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b",
+        "migrations/003_event_queue.sql": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50",
+        "migrations/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+        "migrations/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+        "migrations/postgresql/001_init.sql": "5e82da3db733ab1ea0b00b2e6a914081b6429ec22a87af408a7f3d33823385ad",
+        "migrations/postgresql/002_review_context.sql": "1dd7930da1a3854717bca1de26071a1ff10974735fd47f0166ca637111485131",
+        "migrations/postgresql/003_event_queue.sql": "2f8a299f33a0303c0c454332652b0e9488f082d24c946770b6c8de05faafd8fc",
+        "migrations/postgresql/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+        "migrations/postgresql/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+        "ml/models/baseline.py": "1415cd750e8721c416524093566f4c4084191d12b02734c45ad034c247ebc703",
+        "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+        "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+        "ml/tools/propose_card.py": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+        "requirements.txt": "81e9dd4fc663b8a4e81a4f51439012ea2789400d35b692221f388a92d18e9d7a",
+        "backend/cascade_queue.py": "e57f3038bd478ba590d85bc2e7babd524304d2033eb624c727b9263b8ad9a128",
+        "backend/contracts/cascade.py": "f9d290d1a98b9986477668694822223ae5ca390f23b3bc162e6e89a300ad71bf",
+        "backend/contracts/cascade.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+        "ml/cascade/assessment.py": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+        "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+        "ml/cascade/engine.py": "d20b5b11805606328b59a62331e121d9fee1d1bcff86b54b0b2f6bed0237c821",
+        "ml/cascade/mistral-system.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+        "ml/cascade/providers.py": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+        "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+        "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "migrations/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+        "migrations/007_cascade_claim.sql": "038060fabfce10456a867ec38050c88af2074ce47a41835dc9d4c2cc279f0b6b",
+        "migrations/postgresql/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+        "migrations/postgresql/007_cascade_claim.sql": "1bb178f0656161100732df6e036f31cc8cdcd25db34e2cfedbd24336da7e1544",
+        "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+        "ml/cascade/security.py": "8843419baad19742a22bad01118241ab0f7e83028017a50e61c88a3908f7c7da",
+        "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+        "ml/prompts_v2/cascade-mistral.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+        "ml/prompts_v2/cascade-sol.txt": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
+        "ml/data/cascade/kb.jsonl": "1a708c12adb0d3760b0bc98b21be1877ea041b8c77cd800a1bd2d862fc3dcbd6"
+      },
+      "base_revision": "d2a684b40632645a09fbef7439008ab5a0186014"
+    },
+    "mode": "legacy_golden_and_cascade_saved_response_replay_plus_actual_application_controls",
+    "external_model_calls": 0
+  },
+  "checks": [
+    {
+      "check": "full-eval",
+      "exit_code": 0
+    },
+    {
+      "check": "application",
+      "exit_code": 0
+    },
+    {
+      "check": "contracts",
+      "exit_code": 0
+    },
+    {
+      "check": "events-sqlite",
+      "exit_code": 0
+    },
+    {
+      "check": "security",
+      "exit_code": 0
+    },
+    {
+      "check": "cascade-release",
+      "exit_code": 0
+    },
+    {
+      "check": "events-postgres",
+      "exit_code": 0
+    }
+  ],
+  "all_passed": true,
+  "postgres_checked": true,
+  "not_measured": [
+    "human North Star",
+    "new live LLM generation",
+    "production billing",
+    "week-long uptime"
+  ]
+}
