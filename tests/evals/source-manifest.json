@@ -1,0 +1,350 @@
+{
+  "source_repository": "SIISKI/siiski_volchkova_shared_repository",
+  "source_commit": "d6f58298ba0ffee1a4a862e6d80e397da947b1dc",
+  "runtime_release_tag": "lab5-release-delivery-2026-11-12",
+  "runtime_commit": "d41349ffd86f749506987bcc398b0a5fa3239917",
+  "scope": "Quality reports, presentation, immutable evidence and minimal offline runtime dependencies",
+  "files": {
+    "tests/evals/requirements.lock": {
+      "sha256": "edb91c42b1aab2b0461acc0037cc4d728ba75b693ccd78e4b30bbceed714430f",
+      "binary": false,
+      "source": "requirements.lock"
+    },
+    "tests/evals/response.schema.json": {
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "binary": false,
+      "source": "tests/evals/response.schema.json"
+    },
+    "tests/evals/ruff.toml": {
+      "sha256": "8e342698391a77b6266ea1153beaf49fe248a5c817eb87024252530e9ec6d5a1",
+      "binary": false,
+      "source": "Quality publication adaptation"
+    },
+    "tests/evals/run_lab5.py": {
+      "sha256": "402a25f4ee785377c8c3509ccd8e9d2e513f7c2b30baf74bbe33077b003f9757",
+      "binary": false,
+      "source": "Quality publication adaptation"
+    },
+    "tests/evals/score_saved.py": {
+      "sha256": "d15d26ecaeb3f9bfab0d5be0b8e25e8676493f3a0b999f9cef14c1e398aed338",
+      "binary": false,
+      "source": "tests/evals/score_saved.py"
+    },
+    "tests/evals/evidence/deployment-cascade-providers.json": {
+      "sha256": "fa2b7b41d4116b925b10c8f80345333ba0f482fa55e14cea5fe573caf009167c",
+      "binary": false,
+      "source": "docs/deployment-cascade-providers.json"
+    },
+    "tests/evals/runtime/data/kb.jsonl": {
+      "sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+      "binary": false,
+      "source": "data/kb.jsonl"
+    },
+    "tests/evals/runtime/ml/cascade/assessment.py": {
+      "sha256": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+      "binary": false,
+      "source": "ml/cascade/assessment.py"
+    },
+    "tests/evals/runtime/ml/cascade/cache.py": {
+      "sha256": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+      "binary": false,
+      "source": "ml/cascade/cache.py"
+    },
+    "tests/evals/runtime/ml/cascade/context.py": {
+      "sha256": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+      "binary": false,
+      "source": "ml/cascade/context.py"
+    },
+    "tests/evals/runtime/ml/cascade/engine.py": {
+      "sha256": "d20b5b11805606328b59a62331e121d9fee1d1bcff86b54b0b2f6bed0237c821",
+      "binary": false,
+      "source": "ml/cascade/engine.py"
+    },
+    "tests/evals/runtime/ml/cascade/mistral-system.txt": {
+      "sha256": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+      "binary": false,
+      "source": "ml/cascade/mistral-system.txt"
+    },
+    "tests/evals/runtime/ml/cascade/providers.py": {
+      "sha256": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+      "binary": false,
+      "source": "ml/cascade/providers.py"
+    },
+    "tests/evals/runtime/ml/cascade/retrieval.py": {
+      "sha256": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+      "binary": false,
+      "source": "ml/cascade/retrieval.py"
+    },
+    "tests/evals/runtime/ml/cascade/security.py": {
+      "sha256": "8843419baad19742a22bad01118241ab0f7e83028017a50e61c88a3908f7c7da",
+      "binary": false,
+      "source": "ml/cascade/security.py"
+    },
+    "tests/evals/runtime/ml/cascade/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary": false,
+      "source": "ml/cascade/__init__.py"
+    },
+    "tests/evals/runtime/ml/contracts/response.schema.json": {
+      "sha256": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+      "binary": false,
+      "source": "ml/contracts/response.schema.json"
+    },
+    "tests/evals/runtime/ml/contracts/validation.py": {
+      "sha256": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+      "binary": false,
+      "source": "ml/contracts/validation.py"
+    },
+    "tests/evals/runtime/ml/models/baseline.py": {
+      "sha256": "1415cd750e8721c416524093566f4c4084191d12b02734c45ad034c247ebc703",
+      "binary": false,
+      "source": "ml/models/baseline.py"
+    },
+    "tests/evals/runtime/ml/prompts_v2/cascade-mistral.txt": {
+      "sha256": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+      "binary": false,
+      "source": "ml/prompts_v2/cascade-mistral.txt"
+    },
+    "tests/evals/runtime/ml/prompts_v2/cascade-sol.txt": {
+      "sha256": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
+      "binary": false,
+      "source": "ml/prompts_v2/cascade-sol.txt"
+    },
+    "tests/evals/runtime/ml/tools/propose_card.py": {
+      "sha256": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+      "binary": false,
+      "source": "ml/tools/propose_card.py"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/run.py": {
+      "sha256": "7cd5cee63f4626075e5d23e27595617f7ca6af6c7089b73a1ae14ecf1423d651",
+      "binary": false,
+      "source": "ml/experiments/lab4/run.py"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/expected.json": {
+      "sha256": "a6f64468d610e2912f7ae851742036dee805a3c4ff541ed6b7b9760a5f1ca6eb",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-ab/expected.json"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/report.json": {
+      "sha256": "51c4b8cf0ef115da8c038e85516734f0065ecb05df4679537b5e484eaddb1b67",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-ab/report.json"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/responses.jsonl": {
+      "sha256": "ae4d10eb8711a9253df31add299a04f75ca8ec668eb50128e077cd9064ede05b",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-ab/responses.jsonl"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl": {
+      "sha256": "255b167e99bb69ba3fad7b54390f956d27c4c96a126c032dc7198b043763b49b",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl": {
+      "sha256": "0b958a478970eb42a65cd7dbd547a6b4b6ec551d8353b1523c514ecc6cb38180",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl": {
+      "sha256": "db7171f200050e3a3288effa5c79bc778b0d63ae1ed52b5897932e318e905d43",
+      "binary": false,
+      "source": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl"
+    },
+    "tests/evals/runtime/ml/data/cascade/kb.jsonl": {
+      "sha256": "1a708c12adb0d3760b0bc98b21be1877ea041b8c77cd800a1bd2d862fc3dcbd6",
+      "binary": false,
+      "source": "ml/data/cascade/kb.jsonl"
+    },
+    "tests/evals/runtime/backend/contracts/evaluate.py": {
+      "sha256": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+      "binary": false,
+      "source": "backend/contracts/evaluate.py"
+    },
+    "tests/evals/runtime/backend/contracts/response.schema.json": {
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "binary": false,
+      "source": "backend/contracts/response.schema.json"
+    },
+    "tests/evals/fixtures/cascade/unsupported-reissue.json": {
+      "sha256": "757673e68edb10869f95e60d3b98c799c459baf0ded6f2afdcbf27aa2178f852",
+      "binary": false,
+      "source": "tests/evals/fixtures/cascade/unsupported-reissue.json"
+    },
+    "tests/evals/fixtures/golden-dataset/cases.jsonl": {
+      "sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+      "binary": false,
+      "source": "tests/evals/fixtures/golden-dataset/cases.jsonl"
+    },
+    "tests/evals/fixtures/golden-dataset/live-regressions.jsonl": {
+      "sha256": "4d967bc481fedc6d39cc26df098ead136b1210a52a0787df08799050aa29be31",
+      "binary": false,
+      "source": "tests/evals/fixtures/golden-dataset/live-regressions.jsonl"
+    },
+    "tests/evals/evidence/lab5-cascade/cascade-controls.json": {
+      "sha256": "ab8ef808fddf86d61f87b7b8ffd3a1d5574d44788b9f2c994a31be3d41b7f5dd",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/cascade-controls.json"
+    },
+    "tests/evals/evidence/lab5-cascade/cascade-summary.json": {
+      "sha256": "7f1c8891b2bf97c4edcd06e55ca2be0e7d0bade0283d3e7c7a4d5d5653259b1d",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/cascade-summary.json"
+    },
+    "tests/evals/evidence/lab5-cascade/grounding-regressions.json": {
+      "sha256": "02e3c829ea20a974fe378b54f8cf640a3cccfa7cfe6e73e0b8cb1837023d5070",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/grounding-regressions.json"
+    },
+    "tests/evals/evidence/lab5-cascade/human-review-audit.json": {
+      "sha256": "05dc3704959a47c9442e4a05e6b8592ac4719243bb7e6ab1cb59fa7cf246e740",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/human-review-audit.json"
+    },
+    "tests/evals/evidence/lab5-cascade/ordinary-v3-human-review-20261111.json": {
+      "sha256": "36df91f3f49d23813fd6b585d428c65caf21d91d33158172da227a0dc49de9c8",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/ordinary-v3-human-review-20261111.json"
+    },
+    "tests/evals/evidence/lab5-cascade/prompt-followup-human-review-20261112.json": {
+      "sha256": "c82a01051b6df933d70e1defc9c65f0309cf96dfbd6cdc1b718c761dc0eb2553",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/prompt-followup-human-review-20261112.json"
+    },
+    "tests/evals/evidence/lab5-cascade/public-health.json": {
+      "sha256": "bbcf6cf99de2cf8972df9ceddb3be9d37690ac14885b9fff17f29275587dc75b",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/public-health.json"
+    },
+    "tests/evals/evidence/lab5-cascade/saved-cascade.json": {
+      "sha256": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/saved-cascade.json"
+    },
+    "tests/evals/evidence/lab5-cascade/support-policy-human-review-20261112.json": {
+      "sha256": "94e6db72be9dac1b54eac4148a772888f19cd170938e24201137416d6b36436e",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/support-policy-human-review-20261112.json"
+    },
+    "tests/evals/evidence/lab5-delivery-20261112/load.json": {
+      "sha256": "6d611da9a6096ffd17b2e8a617191d81d7cbb9715fbb08819153aa87140cfbf1",
+      "binary": false,
+      "source": "tests/evidence/lab5-delivery-20261112/load.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/cascade-controls.json": {
+      "sha256": "ab8ef808fddf86d61f87b7b8ffd3a1d5574d44788b9f2c994a31be3d41b7f5dd",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/cascade-controls.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/grounding-regressions.json": {
+      "sha256": "02e3c829ea20a974fe378b54f8cf640a3cccfa7cfe6e73e0b8cb1837023d5070",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/grounding-regressions.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/integration.json": {
+      "sha256": "0ef6ebad4fe5b37223ff68f1b29c630c07448c21c154c6200dfc8d8210bbd6dd",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/integration.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/release-summary.json": {
+      "sha256": "1c73df04438bd2446a88d568d3e70b48358cfff7adf14f0b6125b772d43ca25a",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/release-summary.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/review-summary.json": {
+      "sha256": "7cbb285b771752041754f36349c4d7da861cf7e7c8c4e3d11601ea424acda42c",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/review-summary.json"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/security.json": {
+      "sha256": "0d572c8f38b494d65cc046af00770268d9ac9471026e0207d1c6bfc34e3c30c4",
+      "binary": false,
+      "source": "tests/evidence/lab5-integrated-20261112/security.json"
+    },
+    "tests/evals/evidence/model-v2.1/all-record-responses.jsonl": {
+      "sha256": "aef895416d2cdab49736c6bb2c8493635038b77a45b93e357919a3ec9cab10e7",
+      "binary": false,
+      "source": "tests/evidence/model-v2.1/all-record-responses.jsonl"
+    },
+    "tests/evals/evidence/model-v2.1/independent-responses.jsonl": {
+      "sha256": "661af094235f917a61c9eb8fef978e3d754ef7fe9e0e80bbd2b0ee5d5d07dea9",
+      "binary": false,
+      "source": "tests/evidence/model-v2.1/independent-responses.jsonl"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-before-fix/report.json": {
+      "sha256": "0f14cb940de818fe390f9c8b90fe1ccb2749bb782092f4cd6685fd61adc51124",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-before-fix/report.json"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-before-fix/results.jsonl": {
+      "sha256": "27bbd4cec249c347a3c7e889ddc2747363cc142fd21056a845c79869217f88c2",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-before-fix/results.jsonl"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-paced/report.json": {
+      "sha256": "7cc41bc9fd91a20d5c39fc64d50ae7e1e9961eb91a468aead621de144dc9173d",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-paced/report.json"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-paced/results.jsonl": {
+      "sha256": "155f38b5107a42eec22af2acfe6b610b310ea0a71af5178f70415f70825a5d3f",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-paced/results.jsonl"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-preflight/report.json": {
+      "sha256": "3f7c19db2c4140e49351c304d8db4a1d979f13b96061a5ce3b5584dc3c52f640",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-preflight/report.json"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-preflight/results.jsonl": {
+      "sha256": "c615d545a9d731694d11184dd8f6244b5964b7b8cdda2e25af56a96a036bb705",
+      "binary": false,
+      "source": "tests/evidence/lab5-cascade/live-free-preflight/results.jsonl"
+    },
+    "docs/quality/cascade-metrics.png": {
+      "sha256": "3e6140a06677d7b0a8dcf581c3e6858b5001996a666877613c34881f3d98faa7",
+      "binary": true,
+      "source": "docs/quality/cascade-metrics.png"
+    },
+    "docs/quality/delivery-monitoring.png": {
+      "sha256": "02fab76eb827dc0d02391d7323665eb3107f991808e9fce30d52cdf8739344cb",
+      "binary": true,
+      "source": "docs/delivery-monitoring.png"
+    },
+    "docs/quality/final-quality-report.md": {
+      "sha256": "35a4783131bfa0a65f1ec28609c6a130804f9dbd81cc7b340b1204a8819ebd86",
+      "binary": false,
+      "source": "docs/quality/final-quality-report.md"
+    },
+    "docs/quality/final-security-report.md": {
+      "sha256": "c9b3d44243f78b40ed0df421e605486a6f433f0cf0b759c0c1bf4fe4494075b0",
+      "binary": false,
+      "source": "docs/quality/final-security-report.md"
+    },
+    "docs/quality/metrics-history.png": {
+      "sha256": "a8f1cb7fa7062d0c85a7716160d85b0f4a0fc552acaf5e47120c0a2c7a7145ed",
+      "binary": true,
+      "source": "docs/quality/metrics-history.png"
+    },
+    "docs/quality/quality-demo.pptx": {
+      "sha256": "f85738f0b799792e8f3590aa753d57d737d380b747c0d969c378f1dad5eed06a",
+      "binary": true,
+      "source": "Quality publication adaptation"
+    },
+    "docs/quality/release-ci.png": {
+      "sha256": "96c780999c8710e1b1bd027ab8952b8883b540c140a491d69659a003174f1111",
+      "binary": true,
+      "source": "Q-014 participant-provided crop of docs/quality/release-ci.png"
+    },
+    "docs/quality/trust-facts.md": {
+      "sha256": "6f28c18359f0d07cd044c7beb65bb859174e04ef17fad5ff85c6f178fcc4d845",
+      "binary": false,
+      "source": "docs/quality/trust-facts.md"
+    },
+    ".github/workflows/quality-lab5.yml": {
+      "sha256": "7bcc96a867b1303cb54ca47243f11c103076ec1cb9d20eea73eb14b560b980c1",
+      "binary": false,
+      "source": "Quality publication adaptation"
+    }
+  },
+  "external_model_calls": 0
+}

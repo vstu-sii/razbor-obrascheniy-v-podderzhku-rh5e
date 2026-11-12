@@ -1,0 +1,50 @@
+{
+  "protocol": "real free Mistral through current queue; Sol prohibited, not full two-provider cascade",
+  "started": "2026-11-12T06:52:33.580380+00:00",
+  "ended": "2026-11-12T06:52:46.711855+00:00",
+  "dataset_records": 49,
+  "dataset_distinct_inputs": 38,
+  "evaluated_distinct_inputs": 2,
+  "covered_records": 5,
+  "full_dataset_covered": false,
+  "provider_call_attempts": 2,
+  "paid_calls": 0,
+  "mode_correct": {
+    "numerator": 0,
+    "denominator": 2,
+    "value": 0.0
+  },
+  "category_correct": {
+    "numerator": 0,
+    "denominator": 2,
+    "value": 0.0
+  },
+  "final_schema_valid": {
+    "numerator": 2,
+    "denominator": 2,
+    "value": 1.0
+  },
+  "false_answer": {
+    "numerator": 1,
+    "denominator": 1,
+    "value": 1.0
+  },
+  "automatic": 1,
+  "source_hashes": {
+    "ml/cascade/assessment.py": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+    "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/cascade/engine.py": "d4e360182812180319289e1c55dc3829793547185fbd80bc4b1f8ab27a7ee113",
+    "ml/cascade/providers.py": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+    "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+    "ml/cascade/security.py": "dfc0092bfe0af090c3f35caae4c85dc222029c784a35944db94e332c19121515",
+    "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+    "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limitations": [
+    "Known development data, not independent test.",
+    "Golden review policy predates automatic resolution; labels were not changed.",
+    "Unavailable paid fallback can reduce mode/category accuracy.",
+    "No human usability measurement or provider billing proof."
+  ]
+}
