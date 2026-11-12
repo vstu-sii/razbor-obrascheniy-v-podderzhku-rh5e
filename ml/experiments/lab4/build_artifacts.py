@@ -69,6 +69,37 @@ for row in live:
     replay=CascadeEngine(kb,SCHEMA,provenance_gate,provider=recorded).analyze_attempt(row['input'],'mistral',25,'current-replay','current-replay')
     assert replay['automatic_resolution'], replay['gate_reason']
 print('Both new outputs also pass the final current engine; no external calls.')''')]
+    notebook.cells.extend([
+        nb.v4.new_markdown_cell("## История исправлений и вклад резервной модели\nНе новый независимый A/B: старые серии разработки и отключение этапа Sol на сохранённых первых ответах."),
+        nb.v4.new_code_cell("""progress = json.loads((data/'progress-20261112.json').read_text(encoding='utf-8'))
+import hashlib
+for path, expected in progress['source_sha256_lf'].items():
+    assert hashlib.sha256((data/path).read_text(encoding='utf-8').encode()).hexdigest() == expected
+assert progress['ordinary_v2'] == dict(n=8,mode_matches=6,answer=5,clarify=2,escalate=1)
+assert progress['ordinary_v3'] == dict(n=8,mode_matches=8,answer=7,clarify=1,escalate=0)
+print('Итерация системы v2 → v3:',progress['ordinary_v2'],progress['ordinary_v3'])
+for item in progress['prompt_examples']:
+    print(item['case_id'],item['input']['ticket_text'])
+    for side in ['before','after']:
+        print(side, [(s['provider'], (s.get('raw_card') or {}).get('draft_reply')) for s in item[side]['stages']])"""),
+        nb.v4.new_code_cell("""a=progress['ablation']
+assert (a['cases'],a['mistral_only_automatic'],a['cascade_automatic'],a['cascade_human']) == (3,0,2,1)
+print('Абляция тех же первых этапов:',a)
+for item in progress['recovery']:
+    print(item['case_id'],item['mistral_reason'],'→',item['cascade_mode'])
+human = next(r['final_card'] for r in progress['recovery'] if not r['cascade_automatic'])
+assert human['summary'] and human['known_facts'] and human['evidence'] and human['next_step']
+assert human['draft_reply'] is None and human['needs_human_review'] is True
+print('Специалист получает содержательную карточку:',human['summary'],human['known_facts'],human['next_step'])"""),
+        nb.v4.new_code_cell("""delivery=json.loads((data/'delivery-d021/live-smoke.json').read_text(encoding='utf-8'))
+assert delivery['passed'] and len(delivery['cases'])==2
+ordinary,manual=delivery['cases']
+assert ordinary['card_status']=='resolved' and not ordinary['needs_human_review']
+assert [s['provider'] for s in manual['attempts']]==['mistral','sol']
+assert manual['attempts'][1]['diagnostics']['http_status']==200 and manual['needs_human_review']
+persist=json.loads((data/'delivery-d021/persistence-smoke.json').read_text(encoding='utf-8'))
+assert persist['passed'] and all(c['card_preserved'] for c in persist['cases'])
+print('Delivery LAB05: последующая интеграционная проверка, не наш A/B. Обе карточки пережили restart.')""")])
     # Project keeps the same portable AI contract/data aliases as publication.
     target=ROOT/'docs/experiments/lab4.ipynb';target.parent.mkdir(parents=True,exist_ok=True)
     nb.write(notebook,target)

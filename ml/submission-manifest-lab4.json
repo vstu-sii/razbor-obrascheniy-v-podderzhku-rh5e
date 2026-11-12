@@ -11,23 +11,28 @@
       "source": "project/docs/adr/ADR-005-ai-cascade-cache.md"
     },
     {
+      "path": "docs/experiments/lab4-context-optimization.md",
+      "sha256_lf": "fb9babe3039dd2af16e548e4c87108b07dc34e1c5f7c8244f7661aa6b4ca4a2a",
+      "source": "project/docs/experiments/lab4-context-optimization.md"
+    },
+    {
       "path": "docs/experiments/lab4.ipynb",
-      "sha256_lf": "34b8a4d4356b4978c37755059ec9259b4170a48a0e7acab540645859d78a008f",
+      "sha256_lf": "77854b23b022c196d97e34d3c0b0ec0c8435bec77c3dbe20fbb27b0843c270ff",
       "source": "project/docs/experiments/lab4.ipynb"
     },
     {
       "path": "docs/experiments/lab4.md",
-      "sha256_lf": "288507e0330dbb84f5c4e0c14657349fd4a2cad5fcfb7e895c88b5b0803bb105",
+      "sha256_lf": "46f5f11bd727f067607d29a736469ac368ade92520d1dee12acb7aa7c124135b",
       "source": "project/docs/experiments/lab4.md"
     },
     {
       "path": "docs/ml-changes.md",
-      "sha256_lf": "52fd3d2d263da2df2d071aad3f8e087c8f33740ecbb433ab339b61b9bcf98893",
+      "sha256_lf": "bd76fb8e4594c8baafba70c0ede807e852a32fe457e7f6d9582a3e97fc20b29c",
       "source": "project/docs/ml-changes.md"
     },
     {
       "path": "docs/ml-cost.md",
-      "sha256_lf": "e6ae323f5bf87f135584c69b261c60fdbc7cf50f6800584c95b6fc3dae9e565f",
+      "sha256_lf": "631507fdc1288d124df888ee25195eb32b483a6af745e227f543f29f1e9c4cc1",
       "source": "project/docs/ml-cost.md"
     },
     {
@@ -97,13 +102,38 @@
     },
     {
       "path": "ml/experiments/lab4/build_artifacts.py",
-      "sha256_lf": "ba445206e3248195594010ce2c1eb54df5a634d7700354c75613b9a77a83a6b4",
+      "sha256_lf": "c38280e52a1ce73cf5fa96319ac0657612e777677a2cbcde910d891533c60baa",
       "source": "project/ml/experiments/lab4/build_artifacts.py"
+    },
+    {
+      "path": "ml/experiments/lab4/build_progress.py",
+      "sha256_lf": "c38892721c7ff64cef45ac127add16840a274febe67beffab79df7ce7f7af0ef",
+      "source": "project/ml/experiments/lab4/build_progress.py"
     },
     {
       "path": "ml/experiments/lab4/checks.py",
       "sha256_lf": "9e0054b7d30e735941bba5af60f3479e056bf3f2556fd48a697c2dfcae212615",
       "source": "project/ml/experiments/lab4/checks.py"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/live-smoke.json",
+      "sha256_lf": "fc5dcc44e038d07cb34697c9a8037a970134d49b7d56d1e3295397cb0c3ca0dd",
+      "source": "project/ml/experiments/lab4/delivery-d021/live-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/persistence-smoke.json",
+      "sha256_lf": "2cf7477052a925d8d68fd9a47ec3f3ce974fc98f84b37aa5f547af0447172d94",
+      "source": "project/ml/experiments/lab4/delivery-d021/persistence-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/public-smoke.json",
+      "sha256_lf": "9672909c78204c24b8905975443bed89079a1fcc6276ef9c95bbd18c2ca0ddb1",
+      "source": "project/ml/experiments/lab4/delivery-d021/public-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/SOURCE.md",
+      "sha256_lf": "461ff497303a003f2193fa3d0866e15a458f8acbcb880c7f8bb89023b28ab44e",
+      "source": "project/ml/experiments/lab4/delivery-d021/SOURCE.md"
     },
     {
       "path": "ml/experiments/lab4/historical-ab/expected.json",
@@ -286,6 +316,61 @@
       "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl"
     },
     {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_and_invoice.json",
+      "sha256_lf": "44b0d8cfad9417a4dd301b1437b3c64e1ec8027a49421c35a6e2ec73a99c1bd9",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_lost_phone.json",
+      "sha256_lf": "b6e8df1d2028d66029701dedcea6a34ae96bb437153b215431a19973bf572552",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_steps.json",
+      "sha256_lf": "874fe14f301432d8308a7fcf3bb894367390b9478a6a0bcba820f1fc1b6bbf98",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/budget-after.json",
+      "sha256_lf": "a8a7b0f8c312032c9218532cc8287f3f95b4c2c1e430097c770524aab6d68049",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/config.json",
+      "sha256_lf": "88eabe17b1e133f77e7e94a27565488fda0dc4fbe1aa32fd7411187f80fc3408",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_and_invoice.json",
+      "sha256_lf": "417fd6a585b2fe4aedb9cf9b4ec5fb28310e35620f004e4977046c8ce2ce239c",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_lost_phone.json",
+      "sha256_lf": "7ef4f0e52bf0272def546685e87bea966a3b7df0157e33f5f5de860ad79418bf",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_steps.json",
+      "sha256_lf": "efb272fea56febf5cac77ac3b68ee5c76fb35e7d4bc4db5abd48bc7ba63cd577",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/results.jsonl",
+      "sha256_lf": "f2a985fcabca7064cdd13defbc07e3521a819d0a551e7c98cb16e2798f3b004c",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/summary.json",
+      "sha256_lf": "081bd9f1cf5eeba3eaf784e4da863b4f0623a04a41e77774c879695fbef92e31",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/verification.json",
+      "sha256_lf": "8166f64f68ef70640a202836d285ab1f132e2cf797ac6268bd06bf450caa384a",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/verification.json"
+    },
+    {
       "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_and_invoice.json",
       "sha256_lf": "9327ad0567f3391927d1dadde85bd0c93c59ba0d58a1062091530ab7335ead0a",
       "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_and_invoice.json"
@@ -451,13 +536,23 @@
       "source": "project/ml/experiments/lab4/plans/support-policy-plan-20261112.json"
     },
     {
+      "path": "ml/experiments/lab4/progress-20261112.json",
+      "sha256_lf": "0b1847fcfeb148472f0b3f0512b5dfbe259a4a81d20cd0bc08da91caa0570bf6",
+      "source": "project/ml/experiments/lab4/progress-20261112.json"
+    },
+    {
+      "path": "ml/experiments/lab4/progress-cards-20261112.html",
+      "sha256_lf": "8a50451b3737acec6d3a7044732dca98b469ba480b3f96bc805d91d09c674979",
+      "source": "project/ml/experiments/lab4/progress-cards-20261112.html"
+    },
+    {
       "path": "ml/experiments/lab4/run.py",
       "sha256_lf": "7cd5cee63f4626075e5d23e27595617f7ca6af6c7089b73a1ae14ecf1423d651",
       "source": "project/ml/experiments/lab4/run.py"
     },
     {
       "path": "ml/experiments/lab4/validation.json",
-      "sha256_lf": "61a595b6c25f16f85f033ee90c8b1b581c4e0bf0b65932286bf4c4df9cbb62a9",
+      "sha256_lf": "e57b42380d16769a48bfe433dd172e3553eab600233e1017273047a7d7991216",
       "source": "project/ml/experiments/lab4/validation.json"
     },
     {
@@ -492,7 +587,7 @@
     },
     {
       "path": "ml/README-lab4.md",
-      "sha256_lf": "d819424cae3cf58119a58c13fac9b24e6a328106bbab6644cf1ae9ee10798093",
+      "sha256_lf": "488b534570847a7cec8e9ce6d0b832f84539a5faf6e97827fa582ef843ffb5c6",
       "source": "project/ml/README-lab4.md"
     },
     {
@@ -513,7 +608,7 @@
     {
       "path": ".github/workflows/ai-lab4.yml",
       "source": ".github/workflows/ai-lab4.yml",
-      "sha256_lf": "bd16b02d3e752a8924e0250411245c92d753909fa021534a4d491fc51c46c182"
+      "sha256_lf": "253119c3fd6321ccdc0915971d5aef197df66bbeef6139eeb0b925822c4b7264"
     }
   ]
 }

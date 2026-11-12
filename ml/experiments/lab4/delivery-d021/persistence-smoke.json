@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-12T14:24:52.850490+00:00",
+  "read_only": true,
+  "cases": [
+    {
+      "name": "ordinary",
+      "proposal_id": "920fd254-2d0c-4134-90cc-9ae45671fb22",
+      "card_preserved": true,
+      "review_preserved": false
+    },
+    {
+      "name": "manual",
+      "proposal_id": "dce4c9c0-5fc7-432f-b5ab-796274bdd20e",
+      "card_preserved": true,
+      "review_preserved": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "baseline_mode": "cascade",
+    "architecture": "event-queue-v1",
+    "infrastructure": "lab04",
+    "revision": "d41349ffd86f749506987bcc398b0a5fa3239917"
+  },
+  "passed": true
+}

@@ -30,7 +30,7 @@
     "final_engine_replay_passed": 2
   },
   "notebook": {
-    "executed_code_cells": 4,
+    "executed_code_cells": 7,
     "external_calls": 0
   },
   "offline_reproduction_identical": true,
@@ -51,5 +51,26 @@
     "ml/prompts_v2/cascade-sol.txt": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
     "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
     "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9"
+  },
+  "report_followup": {
+    "new_external_calls": 0,
+    "new_spend_rub": 0,
+    "ordinary_before": {
+      "answer": 5,
+      "clarify": 2,
+      "human": 1
+    },
+    "ordinary_after": {
+      "answer": 7,
+      "clarify": 1,
+      "human": 0
+    },
+    "saved_stage_ablation": {
+      "cases": 3,
+      "mistral_only_answer": 0,
+      "cascade_answer": 2,
+      "cascade_human": 1
+    },
+    "delivery_evidence": "Attributed frozen D021 LAB05 JSON; no new public smoke"
   }
 }

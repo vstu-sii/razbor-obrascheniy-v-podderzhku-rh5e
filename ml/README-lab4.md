@@ -5,6 +5,7 @@ Python 3.11+. Из корня LAB (в DEVELOPMENT сначала cd project):
 ```sh
 python -m pip install -r ml/requirements-lab4.txt
 python ml/experiments/lab4/checks.py
+python ml/experiments/lab4/build_progress.py
 python ml/experiments/lab4/run.py --output validation-output/lab4-replay
 ```
 
