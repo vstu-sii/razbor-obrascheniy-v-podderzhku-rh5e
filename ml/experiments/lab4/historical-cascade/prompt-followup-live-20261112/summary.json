@@ -1,0 +1,65 @@
+{
+  "protocol": "prompt-followup-20261112",
+  "scope": "Three synthetic requests after the human review; a new demo KB version, not independent accuracy",
+  "planned_cases": 3,
+  "observed_jobs": 3,
+  "groups": {
+    "ordinary": {
+      "jobs": 2,
+      "expected_mode_matches": 1,
+      "automatic": 1,
+      "manual": 1,
+      "mistral_http_200": 0,
+      "mistral_gate_passed": 0,
+      "sol_http_200": 2,
+      "sol_attempts": 2,
+      "reasons": {
+        "complete_coverage": 1,
+        "assessment_clarify_fields": 1
+      },
+      "required_articles": 3,
+      "found_required_articles": 3,
+      "confirmed_micro_usd": 16774,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 36922.0,
+      "confirmed_cost_rub": "1.492886",
+      "unknown_reserve_rub": "0"
+    },
+    "boundary": {
+      "jobs": 1,
+      "expected_mode_matches": 1,
+      "automatic": 0,
+      "manual": 1,
+      "mistral_http_200": 0,
+      "mistral_gate_passed": 0,
+      "sol_http_200": 1,
+      "sol_attempts": 1,
+      "reasons": {
+        "evidence_provenance": 1
+      },
+      "required_articles": 0,
+      "found_required_articles": 0,
+      "confirmed_micro_usd": 6457,
+      "unknown_sol_reserve_micro_usd": 0,
+      "median_end_to_end_ms": 28453,
+      "confirmed_cost_rub": "0.574673",
+      "unknown_reserve_rub": "0"
+    }
+  },
+  "money_cap_rub": "18.407652",
+  "additional_budget_rub": 10,
+  "budget_before": {
+    "attempts": 80,
+    "reserved_tokens": 4709379,
+    "sol_accounted_micro_usd": 117370,
+    "sol_unknown_micro_usd": 61110
+  },
+  "budget_after": {
+    "attempts": 86,
+    "reserved_tokens": 4993961,
+    "sol_accounted_micro_usd": 140601,
+    "sol_unknown_micro_usd": 61110
+  },
+  "human_acceptance": false,
+  "all_observed_traces_read_back": true
+}

@@ -1,0 +1,35 @@
+{
+  "checked_utc": "2026-11-11T21:57:46.530937+00:00",
+  "frozen_and_deployed_hashes_match": true,
+  "source_hashes": {
+    "ml/cascade/engine.py": "25260938347cfa7730eaf634105723f96f0052cfbdb32b5e3a16e6efa1f59312",
+    "ml/cascade/providers.py": "b881b4fb228bf015e023f3bc059373c52df9f6bd663023ed7282d7a9504f71f1",
+    "ml/cascade/mistral-system.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+    "ml/cascade/assessment.py": "91e7b66cd7b3578c2c98259818cd83d1c967952195d70b522912f06a418bc5a6",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/models/baseline.py": "45c1541d6ca68784494b8c40edc38aea0d1c691a48894883ee507a403e537d89",
+    "backend/events.py": "ed96eb2188baab0bdfad7924329ae2dcbec187c8f8d30de153ad267f5c23851c",
+    "backend/worker.py": "e65662fd21f8835750260bd4332afabdeefcccc410b6dd9acd769f49a49b36f1",
+    "backend/main.py": "a2564882c05a0f12e905b601a7610f71b171997ff768c2df061b64d21282e753",
+    "backend/ai_service.py": "7952cbf2e58cb0e249fdf09119815870b0bad37dd46400b5e7c8ade3a973d1dd",
+    "backend/contracts/response.schema.json": "a2d9c81fe2cd4934030b8c74f52298721cdbcad71510187ea8ddc238f11550c9",
+    "data/kb.jsonl": "11ca9c5a18bfe902bd93ca66a4ec0ea4618a2edfeb2868d427a83498e30aa31d",
+    "experiments/run_final_live.py": "ce8e0876d3bfe10adddec843f07d905cc781754da6175fcd4f78d30d5a2aa1f7"
+  },
+  "budget": {
+    "attempts": 92,
+    "reserved_tokens": 5276257,
+    "sol_accounted_micro_usd": 164803,
+    "sol_unknown_micro_usd": 61110
+  },
+  "token_budget": 10000000,
+  "pending_jobs": 0,
+  "health": {
+    "status": "ok",
+    "baseline_mode": "cascade",
+    "architecture": "event-queue-v1"
+  },
+  "notebook_executed_code_cells": 5,
+  "html_scripts_parse": true,
+  "no_dataset_caveats_in_new_customer_drafts": true
+}

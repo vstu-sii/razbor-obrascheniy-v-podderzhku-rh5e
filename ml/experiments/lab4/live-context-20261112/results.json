@@ -1,0 +1,792 @@
+[
+  {
+    "variant": "spaced",
+    "input": {
+      "ticket_ref": "lab4-context-pair",
+      "ticket_text": "Где администратору скачать счёт и как пошагово включить двухфакторную аутентификацию через приложение?",
+      "history": [],
+      "kb_version": "support-20261112",
+      "request_id": "1af1372d-c09f-4757-8855-52c044b98215"
+    },
+    "trace_id": "a1a52bb042a95c9bf23c46414668bf98",
+    "stages": [
+      {
+        "provider": "mistral",
+        "model": "ministral-14b-2512",
+        "request_id": "1af1372d-c09f-4757-8855-52c044b98215",
+        "attempt_id": "116a95f7-837b-4e57-96e6-28e12eb732b9",
+        "job_id": "40bd451e-f68a-43bd-a943-c945f5a6cf0d",
+        "raw_card": null,
+        "final_card": {
+          "request_id": "1af1372d-c09f-4757-8855-52c044b98215",
+          "status": "not_analyzed",
+          "mode": "escalate",
+          "category": "other",
+          "urgency": "unassessed",
+          "urgency_reason": "Нужна оценка оператора",
+          "summary": "Автоматический разбор недоступен или не прошёл проверку",
+          "known_facts": [],
+          "missing_data": [],
+          "next_step": "Оператор проверяет исходное обращение",
+          "evidence": [],
+          "draft_reply": null,
+          "needs_human_review": true,
+          "warnings": [
+            "invalid_local_ca_bundle"
+          ]
+        },
+        "automatic_resolution": false,
+        "retrieved_ids": [
+          "KB-INVOICE-support-20261112",
+          "KB-2FA-support-20261112"
+        ],
+        "usage": null,
+        "latency_ms": 14.766,
+        "schema_valid": false,
+        "gate_passed": false,
+        "gate_reason": "invalid_local_ca_bundle",
+        "cascade_next": true,
+        "route_reason": "invalid_local_ca_bundle",
+        "assessment": null,
+        "stage_context": {
+          "context_version": "semantic-v1",
+          "input_hash": "eabd92f460ffa02ec681cba8a983a817c8af1b45c442ce6812324bb7f1cfdaa2",
+          "kb_version": "support-20261112",
+          "kb_hash": "4d7e39b9d148c09469045d85655e9b99fe01cdd87b48fe52415eeca35e1286f5",
+          "kb_snapshot": [
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "questions": [],
+          "retrieval": {
+            "sol_snapshot_supplement_ids": [
+              "KB-API-support-20261112",
+              "KB-ERROR-support-20261112",
+              "KB-NOTIFY-support-20261112",
+              "KB-ROLE-support-20261112"
+            ]
+          }
+        },
+        "context_packing": {
+          "provider": "mistral",
+          "candidate_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112"
+          ],
+          "included_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112"
+          ],
+          "omitted_ids": [],
+          "payload_bytes": 21222,
+          "payload_limit_bytes": 250304
+        },
+        "retrieval": {
+          "sol_snapshot_supplement_ids": [
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ]
+        },
+        "attempts": 1,
+        "http_status": null,
+        "returned_model": null,
+        "completion_id": null,
+        "finish_reason": null,
+        "not_sent": true,
+        "transport_error": null,
+        "attempt_timeout_seconds": 25,
+        "billed_micro_usd": null,
+        "inference_skipped": false,
+        "cache_hit": false,
+        "reserved_at": 1794441298.0919244
+      },
+      {
+        "provider": "sol",
+        "model": "openai/gpt-5.6-sol",
+        "request_id": "1af1372d-c09f-4757-8855-52c044b98215",
+        "attempt_id": "6eba526c-3f99-4ea5-a551-4ce96d88a60b",
+        "job_id": "40bd451e-f68a-43bd-a943-c945f5a6cf0d",
+        "raw_card": null,
+        "final_card": {
+          "request_id": "1af1372d-c09f-4757-8855-52c044b98215",
+          "status": "not_analyzed",
+          "mode": "escalate",
+          "category": "other",
+          "urgency": "unassessed",
+          "urgency_reason": "Нужна оценка оператора",
+          "summary": "Автоматический разбор недоступен или не прошёл проверку",
+          "known_facts": [],
+          "missing_data": [],
+          "next_step": "Оператор проверяет исходное обращение",
+          "evidence": [],
+          "draft_reply": null,
+          "needs_human_review": true,
+          "warnings": [
+            "invalid_local_ca_bundle"
+          ]
+        },
+        "automatic_resolution": false,
+        "retrieved_ids": [
+          "KB-INVOICE-support-20261112",
+          "KB-2FA-support-20261112",
+          "KB-API-support-20261112",
+          "KB-ERROR-support-20261112",
+          "KB-NOTIFY-support-20261112",
+          "KB-ROLE-support-20261112"
+        ],
+        "usage": null,
+        "latency_ms": 12.806,
+        "schema_valid": false,
+        "gate_passed": false,
+        "gate_reason": "invalid_local_ca_bundle",
+        "cascade_next": false,
+        "route_reason": "invalid_local_ca_bundle",
+        "assessment": null,
+        "stage_context": {
+          "context_version": "semantic-v1",
+          "input_hash": "eabd92f460ffa02ec681cba8a983a817c8af1b45c442ce6812324bb7f1cfdaa2",
+          "kb_version": "support-20261112",
+          "kb_hash": "4d7e39b9d148c09469045d85655e9b99fe01cdd87b48fe52415eeca35e1286f5",
+          "kb_snapshot": [
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "questions": [],
+          "retrieval": {
+            "sol_snapshot_supplement_ids": [
+              "KB-API-support-20261112",
+              "KB-ERROR-support-20261112",
+              "KB-NOTIFY-support-20261112",
+              "KB-ROLE-support-20261112"
+            ]
+          }
+        },
+        "context_packing": {
+          "provider": "sol",
+          "candidate_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112",
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ],
+          "included_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112",
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ],
+          "omitted_ids": [],
+          "payload_bytes": 15732,
+          "payload_limit_bytes": 15904
+        },
+        "retrieval": {
+          "sol_snapshot_supplement_ids": [
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ]
+        },
+        "attempts": 1,
+        "http_status": null,
+        "returned_model": null,
+        "completion_id": null,
+        "finish_reason": null,
+        "not_sent": true,
+        "transport_error": null,
+        "attempt_timeout_seconds": 25,
+        "billed_micro_usd": null,
+        "inference_skipped": false,
+        "cache_hit": false,
+        "reserved_at": 1794441298.1109092
+      }
+    ],
+    "final_card": {
+      "request_id": "1af1372d-c09f-4757-8855-52c044b98215",
+      "status": "not_analyzed",
+      "mode": "escalate",
+      "category": "other",
+      "urgency": "unassessed",
+      "urgency_reason": "Нужна оценка оператора",
+      "summary": "Автоматический разбор недоступен или не прошёл проверку",
+      "known_facts": [],
+      "missing_data": [],
+      "next_step": "Оператор проверяет исходное обращение",
+      "evidence": [],
+      "draft_reply": null,
+      "needs_human_review": true,
+      "warnings": [
+        "invalid_local_ca_bundle"
+      ]
+    }
+  },
+  {
+    "variant": "compact",
+    "input": {
+      "ticket_ref": "lab4-context-pair",
+      "ticket_text": "Где администратору скачать счёт и как пошагово включить двухфакторную аутентификацию через приложение?",
+      "history": [],
+      "kb_version": "support-20261112",
+      "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f"
+    },
+    "trace_id": "d96e61eb8ae5df86d644c78ada7eb322",
+    "stages": [
+      {
+        "provider": "mistral",
+        "model": "ministral-14b-2512",
+        "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f",
+        "attempt_id": "c6ec1119-8b19-43f6-84de-5fac6f6b85f9",
+        "job_id": "65d7dad1-d7c9-4184-8817-6a94906309fd",
+        "raw_card": null,
+        "final_card": {
+          "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f",
+          "status": "not_analyzed",
+          "mode": "escalate",
+          "category": "other",
+          "urgency": "unassessed",
+          "urgency_reason": "Нужна оценка оператора",
+          "summary": "Автоматический разбор недоступен или не прошёл проверку",
+          "known_facts": [],
+          "missing_data": [],
+          "next_step": "Оператор проверяет исходное обращение",
+          "evidence": [],
+          "draft_reply": null,
+          "needs_human_review": true,
+          "warnings": [
+            "invalid_local_ca_bundle"
+          ]
+        },
+        "automatic_resolution": false,
+        "retrieved_ids": [
+          "KB-INVOICE-support-20261112",
+          "KB-2FA-support-20261112"
+        ],
+        "usage": null,
+        "latency_ms": 10.856,
+        "schema_valid": false,
+        "gate_passed": false,
+        "gate_reason": "invalid_local_ca_bundle",
+        "cascade_next": true,
+        "route_reason": "invalid_local_ca_bundle",
+        "assessment": null,
+        "stage_context": {
+          "context_version": "semantic-v1",
+          "input_hash": "aba61217701c450bc2d1fb9c46ab82856270db129f2865c8c240d2a494a4202c",
+          "kb_version": "support-20261112",
+          "kb_hash": "4d7e39b9d148c09469045d85655e9b99fe01cdd87b48fe52415eeca35e1286f5",
+          "kb_snapshot": [
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "questions": [],
+          "retrieval": {
+            "sol_snapshot_supplement_ids": [
+              "KB-API-support-20261112",
+              "KB-ERROR-support-20261112",
+              "KB-NOTIFY-support-20261112",
+              "KB-ROLE-support-20261112"
+            ]
+          }
+        },
+        "context_packing": {
+          "provider": "mistral",
+          "candidate_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112"
+          ],
+          "included_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112"
+          ],
+          "omitted_ids": [],
+          "payload_bytes": 21222,
+          "payload_limit_bytes": 250304
+        },
+        "retrieval": {
+          "sol_snapshot_supplement_ids": [
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ]
+        },
+        "attempts": 1,
+        "http_status": null,
+        "returned_model": null,
+        "completion_id": null,
+        "finish_reason": null,
+        "not_sent": true,
+        "transport_error": null,
+        "attempt_timeout_seconds": 25,
+        "billed_micro_usd": null,
+        "inference_skipped": false,
+        "cache_hit": false,
+        "reserved_at": 1794441299.379819
+      },
+      {
+        "provider": "sol",
+        "model": "openai/gpt-5.6-sol",
+        "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f",
+        "attempt_id": "e85c4656-00b7-4925-8a1c-c9aeb7021cf4",
+        "job_id": "65d7dad1-d7c9-4184-8817-6a94906309fd",
+        "raw_card": null,
+        "final_card": {
+          "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f",
+          "status": "not_analyzed",
+          "mode": "escalate",
+          "category": "other",
+          "urgency": "unassessed",
+          "urgency_reason": "Нужна оценка оператора",
+          "summary": "Автоматический разбор недоступен или не прошёл проверку",
+          "known_facts": [],
+          "missing_data": [],
+          "next_step": "Оператор проверяет исходное обращение",
+          "evidence": [],
+          "draft_reply": null,
+          "needs_human_review": true,
+          "warnings": [
+            "invalid_local_ca_bundle"
+          ]
+        },
+        "automatic_resolution": false,
+        "retrieved_ids": [
+          "KB-INVOICE-support-20261112",
+          "KB-2FA-support-20261112",
+          "KB-API-support-20261112",
+          "KB-ERROR-support-20261112",
+          "KB-NOTIFY-support-20261112",
+          "KB-ROLE-support-20261112"
+        ],
+        "usage": null,
+        "latency_ms": 11.701,
+        "schema_valid": false,
+        "gate_passed": false,
+        "gate_reason": "invalid_local_ca_bundle",
+        "cascade_next": false,
+        "route_reason": "invalid_local_ca_bundle",
+        "assessment": null,
+        "stage_context": {
+          "context_version": "semantic-v1",
+          "input_hash": "aba61217701c450bc2d1fb9c46ab82856270db129f2865c8c240d2a494a4202c",
+          "kb_version": "support-20261112",
+          "kb_hash": "4d7e39b9d148c09469045d85655e9b99fe01cdd87b48fe52415eeca35e1286f5",
+          "kb_snapshot": [
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "sources": [
+            {
+              "source_id": "KB-INVOICE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Счёт и акт",
+              "excerpt": "Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы."
+            },
+            {
+              "source_id": "KB-2FA-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Настройка 2FA через приложение",
+              "excerpt": "1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана."
+            },
+            {
+              "source_id": "KB-API-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Токен интеграции",
+              "excerpt": "Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается."
+            },
+            {
+              "source_id": "KB-ERROR-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Ошибка импорта",
+              "excerpt": "Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8."
+            },
+            {
+              "source_id": "KB-NOTIFY-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Уведомления",
+              "excerpt": "Пользователь меняет email-уведомления в личных настройках раздела Уведомления."
+            },
+            {
+              "source_id": "KB-ROLE-support-20261112",
+              "version": "support-20261112",
+              "status": "approved",
+              "title": "Роли",
+              "excerpt": "Администратор аккаунта может выдать роль наблюдателя в разделе Команда."
+            }
+          ],
+          "questions": [],
+          "retrieval": {
+            "sol_snapshot_supplement_ids": [
+              "KB-API-support-20261112",
+              "KB-ERROR-support-20261112",
+              "KB-NOTIFY-support-20261112",
+              "KB-ROLE-support-20261112"
+            ]
+          }
+        },
+        "context_packing": {
+          "provider": "sol",
+          "candidate_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112",
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ],
+          "included_ids": [
+            "KB-INVOICE-support-20261112",
+            "KB-2FA-support-20261112",
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ],
+          "omitted_ids": [],
+          "payload_bytes": 15732,
+          "payload_limit_bytes": 15904
+        },
+        "retrieval": {
+          "sol_snapshot_supplement_ids": [
+            "KB-API-support-20261112",
+            "KB-ERROR-support-20261112",
+            "KB-NOTIFY-support-20261112",
+            "KB-ROLE-support-20261112"
+          ]
+        },
+        "attempts": 1,
+        "http_status": null,
+        "returned_model": null,
+        "completion_id": null,
+        "finish_reason": null,
+        "not_sent": true,
+        "transport_error": null,
+        "attempt_timeout_seconds": 25,
+        "billed_micro_usd": null,
+        "inference_skipped": false,
+        "cache_hit": false,
+        "reserved_at": 1794441299.395867
+      }
+    ],
+    "final_card": {
+      "request_id": "b7f8e161-5b24-4e0e-a7ad-10c2f04e0d5f",
+      "status": "not_analyzed",
+      "mode": "escalate",
+      "category": "other",
+      "urgency": "unassessed",
+      "urgency_reason": "Нужна оценка оператора",
+      "summary": "Автоматический разбор недоступен или не прошёл проверку",
+      "known_facts": [],
+      "missing_data": [],
+      "next_step": "Оператор проверяет исходное обращение",
+      "evidence": [],
+      "draft_reply": null,
+      "needs_human_review": true,
+      "warnings": [
+        "invalid_local_ca_bundle"
+      ]
+    }
+  }
+]

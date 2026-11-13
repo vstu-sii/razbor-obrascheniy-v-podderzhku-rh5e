@@ -1,0 +1,57 @@
+{
+  "scope": "selected unchanged historical records, not new runs or a representative sample",
+  "records": [
+    {
+      "file": "role-before.jsonl",
+      "source_repository": "https://github.com/SIISKI/siiski_volchkova_shared_repository",
+      "source_path": "docs/roles/ai-engineer/tasks/lab03-ai-013-cascade/evidence/live-cascade-trusted-ca.jsonl",
+      "source_commit": "6048b9644eca9213b6034d73806b2530eee71276",
+      "source_sha256_lf": "ce7dd9a8bc0a9ce003ede056f10b4cbaec72b2b8c385482615c572c5c970faff",
+      "selected_case_ids": [
+        "invoice"
+      ]
+    },
+    {
+      "file": "role-after.jsonl",
+      "source_repository": "https://github.com/SIISKI/siiski_volchkova_shared_repository",
+      "source_path": "docs/roles/ai-engineer/tasks/lab03-ai-013-cascade/evidence/live-role-prompt.jsonl",
+      "source_commit": "d6866df727048f56dbeea4f42ccc4de3437b23a4",
+      "source_sha256_lf": "6fb2c57c25cc7020709a009ac85afa3d0fca66083d6e74dd28b3b63aab1eaf89",
+      "selected_case_ids": [
+        "invoice"
+      ]
+    },
+    {
+      "file": "invoice-recovery.jsonl",
+      "source_repository": "https://github.com/SIISKI/siiski_volchkova_shared_repository",
+      "source_path": "docs/roles/ai-engineer/tasks/lab03-ai-013-cascade/evidence/final-live-20261110/results.jsonl",
+      "source_commit": "d354035ded38b641eb5e36ca52c6c588fec84e1f",
+      "source_sha256_lf": "b7cd42803b15d0d71f1dc99bc5ce7e99165a23c7eb28603077ceff98c91e4431",
+      "selected_case_ids": [
+        "invoice"
+      ]
+    },
+    {
+      "file": "paced-recovery.jsonl",
+      "source_repository": "https://github.com/SIISKI/siiski_volchkova_shared_repository",
+      "source_path": "docs/roles/ai-engineer/tasks/lab03-ai-013-cascade/evidence/final-live-paced-20261110/results.jsonl",
+      "source_commit": "d354035ded38b641eb5e36ca52c6c588fec84e1f",
+      "source_sha256_lf": "c64e99836955c8e5d639890c1acdd2b90129e2130e319e49169e3e855ea4b278",
+      "selected_case_ids": [
+        "punctuation",
+        "history",
+        "wrong_amount"
+      ]
+    },
+    {
+      "file": "notification-rejection.jsonl",
+      "source_repository": "https://github.com/SIISKI/siiski_volchkova_shared_repository",
+      "source_path": "docs/roles/ai-engineer/tasks/lab03-ai-013-cascade/evidence/final-live-simple-20261110/results.jsonl",
+      "source_commit": "d354035ded38b641eb5e36ca52c6c588fec84e1f",
+      "source_sha256_lf": "1da9b68141b12e9aa954d48d7603bb501f13d70c2802760f1f7f8e910c54d03d",
+      "selected_case_ids": [
+        "notifications"
+      ]
+    }
+  ]
+}

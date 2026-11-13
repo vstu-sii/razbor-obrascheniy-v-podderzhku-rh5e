@@ -1,0 +1,16 @@
+{
+  "planned": 2,
+  "observed": 2,
+  "paired_complete": 2,
+  "mistral_http_200": 2,
+  "sol_invocations": 0,
+  "a_automatic": 2,
+  "b_automatic": 2,
+  "a_human": 0,
+  "b_human": 0,
+  "recovered_answer_ids": [],
+  "recovered_clarify_ids": [],
+  "mode_matches_a": 2,
+  "mode_matches_b": 2,
+  "human_quality_review": "pending; mode/schema counts are not semantic correctness"
+}

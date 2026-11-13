@@ -1,0 +1,32 @@
+{
+  "base_url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+  "expected_revision": "d41349ffd86f749506987bcc398b0a5fa3239917",
+  "started_utc": "2026-11-12T14:21:16.681820+00:00",
+  "read_only": true,
+  "samples": [
+    {
+      "utc": "2026-11-12T14:21:17.069298+00:00",
+      "status": 200,
+      "health": {
+        "status": "ok",
+        "revision": "d41349ffd86f749506987bcc398b0a5fa3239917",
+        "baseline_mode": "cascade",
+        "architecture": "event-queue-v1",
+        "infrastructure": "lab04"
+      },
+      "latency_ms": 385.194
+    }
+  ],
+  "ui": {
+    "status": 200,
+    "exact_file_match": true,
+    "sha256": "4581fba88db38b270f179b9472707471576f4a79fe824c1d536d025ed033d3c4"
+  },
+  "unauthenticated": {
+    "/api/tickets": 401,
+    "/api/proposals": 401,
+    "/api/traces": 401
+  },
+  "completed_utc": "2026-11-12T14:21:18.065057+00:00",
+  "passed": true
+}

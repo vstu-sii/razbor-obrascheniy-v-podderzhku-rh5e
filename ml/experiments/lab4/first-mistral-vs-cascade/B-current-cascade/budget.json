@@ -1,0 +1,9 @@
+{
+  "fx_rub_per_usd": 89,
+  "new_confirmed_rub": "2.293975",
+  "new_unknown_reserve_rub": "0",
+  "lifetime_accounted_rub": "25.150332",
+  "lifetime_cap_rub": "32.856357",
+  "technical_reserved": 8069661,
+  "technical_cap": 10000000
+}

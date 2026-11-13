@@ -1,0 +1,50 @@
+{
+  "protocol": "support-policy-review-20261112",
+  "scope": "Same three requests after participant review; support KB snapshot and 25s first-stage timeout. Engineering repeat, no independent accuracy.",
+  "budget": {
+    "additional_rub": 10,
+    "accounted_before_micro_usd": 94468,
+    "new_lifetime_cap_rub": "18.407652",
+    "fx": 89
+  },
+  "cases": [
+    {
+      "id": "two_factor_steps",
+      "group": "ordinary",
+      "text": "Как включить 2FA через приложение-аутентификатор? Дайте базовую пошаговую инструкцию.",
+      "kb_version": "support-20261112",
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [
+        "KB-2FA-support-20261112"
+      ],
+      "note": "Конкретные шаги из статьи, собственная страница сервиса для ввода, не выдуманная ссылка на инструкцию."
+    },
+    {
+      "id": "two_factor_and_invoice",
+      "group": "ordinary",
+      "text": "Где администратору скачать счёт и как пошагово включить двухфакторную аутентификацию через приложение?",
+      "kb_version": "support-20261112",
+      "expected_modes": [
+        "answer"
+      ],
+      "required_sources": [
+        "KB-2FA-support-20261112",
+        "KB-INVOICE-support-20261112"
+      ],
+      "note": "Два вопроса с достаточной процедурой; общая справка не подтверждает роль клиента."
+    },
+    {
+      "id": "two_factor_lost_phone",
+      "group": "boundary",
+      "text": "Телефон с приложением 2FA потерян, резервных кодов нет. Как восстановить доступ к аккаунту?",
+      "kb_version": "support-20261112",
+      "expected_modes": [
+        "escalate"
+      ],
+      "required_sources": [],
+      "note": "Статья про включение не даёт процедуру восстановления. Естественная эскалация Mistral → Sol → человек; не запрашивать секреты."
+    }
+  ]
+}

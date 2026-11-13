@@ -1,0 +1,1059 @@
+{
+  "lab": 4,
+  "role": "ai-engineer",
+  "course": "https://sii.sergeivolchkov.ru/labs/lab4",
+  "delivery_parent": "0cdf39bd5387a293a21c93a46aaba449ae951879",
+  "normalization": "UTF-8 LF; hashes are normalized text bytes",
+  "files": [
+    {
+      "path": "docs/adr/ADR-005-ai-cascade-cache.md",
+      "sha256_lf": "4470c52284d6c6e77a84cc21cd0217ef9e990c69d9a9382645b0ffc695b88606",
+      "source": "project/docs/adr/ADR-005-ai-cascade-cache.md"
+    },
+    {
+      "path": "docs/experiments/lab4-context-optimization.md",
+      "sha256_lf": "fb9babe3039dd2af16e548e4c87108b07dc34e1c5f7c8244f7661aa6b4ca4a2a",
+      "source": "project/docs/experiments/lab4-context-optimization.md"
+    },
+    {
+      "path": "docs/experiments/lab4.ipynb",
+      "sha256_lf": "1c639140c24c6678cab060e51273ee382f8b9d2407c1f9b440b2f0054f2c886e",
+      "source": "project/docs/experiments/lab4.ipynb"
+    },
+    {
+      "path": "docs/experiments/lab4.md",
+      "sha256_lf": "181120d22e43e5b89d9bfd229f3e246fc7820c75bf3cabe324f337646c04e944",
+      "source": "project/docs/experiments/lab4.md"
+    },
+    {
+      "path": "docs/ml-changes.md",
+      "sha256_lf": "ff3013800657adc11107091c96289d66fd8135334432f81fd99060d51609e12a",
+      "source": "project/docs/ml-changes.md"
+    },
+    {
+      "path": "docs/ml-cost.md",
+      "sha256_lf": "d45f6b2c9b3e14c391b3fc074911575a946425026509c0ec1f417a1a85f984ed",
+      "source": "project/docs/ml-cost.md"
+    },
+    {
+      "path": "ml/cascade/__init__.py",
+      "sha256_lf": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "project/ml/cascade/__init__.py"
+    },
+    {
+      "path": "ml/cascade/assessment.py",
+      "sha256_lf": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+      "source": "project/ml/cascade/assessment.py"
+    },
+    {
+      "path": "ml/cascade/cache.py",
+      "sha256_lf": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+      "source": "project/ml/cascade/cache.py"
+    },
+    {
+      "path": "ml/cascade/context.py",
+      "sha256_lf": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+      "source": "project/ml/cascade/context.py"
+    },
+    {
+      "path": "ml/cascade/engine.py",
+      "sha256_lf": "97e3578c79b9c46e054c215365b5b59abe5148ee475fc9d8b8a1c6e40f3eb1f2",
+      "source": "project/ml/cascade/engine.py"
+    },
+    {
+      "path": "ml/cascade/mistral-system.txt",
+      "sha256_lf": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
+      "source": "project/ml/cascade/mistral-system.txt"
+    },
+    {
+      "path": "ml/cascade/providers.py",
+      "sha256_lf": "df790c4bc60bb089f11038ad92d9cd6d134c5c3c7ec151f9777f010dc9bae536",
+      "source": "project/ml/cascade/providers.py"
+    },
+    {
+      "path": "ml/cascade/retrieval.py",
+      "sha256_lf": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+      "source": "project/ml/cascade/retrieval.py"
+    },
+    {
+      "path": "ml/cascade/security.py",
+      "sha256_lf": "dfc0092bfe0af090c3f35caae4c85dc222029c784a35944db94e332c19121515",
+      "source": "project/ml/cascade/security.py"
+    },
+    {
+      "path": "ml/cascade/service_cache.py",
+      "sha256_lf": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+      "source": "project/ml/cascade/service_cache.py"
+    },
+    {
+      "path": "ml/contracts/response.schema.json",
+      "sha256_lf": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+      "source": "project/ml/contracts/response.schema.json"
+    },
+    {
+      "path": "ml/contracts/validation.py",
+      "sha256_lf": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+      "source": "project/ml/contracts/validation.py"
+    },
+    {
+      "path": "ml/data/cascade/kb.jsonl",
+      "sha256_lf": "1a708c12adb0d3760b0bc98b21be1877ea041b8c77cd800a1bd2d862fc3dcbd6",
+      "source": "project/ml/data/cascade/kb.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/build_artifacts.py",
+      "sha256_lf": "af79d9dd21d3bd68b9ed531188977111ee390b9be0cc269cfb73f4fe9aaf291d",
+      "source": "project/ml/experiments/lab4/build_artifacts.py"
+    },
+    {
+      "path": "ml/experiments/lab4/build_comparison.py",
+      "sha256_lf": "4886d1f12fc8bcae12b76925ec6c13c5b6f67998667090da9e7a1a39576ece03",
+      "source": "project/ml/experiments/lab4/build_comparison.py"
+    },
+    {
+      "path": "ml/experiments/lab4/build_early.py",
+      "sha256_lf": "e25a2ee9293d0c17fc21fd41be552d0c6bf8e944700adbf51a445dd356fc9c4d",
+      "source": "project/ml/experiments/lab4/build_early.py"
+    },
+    {
+      "path": "ml/experiments/lab4/build_progress.py",
+      "sha256_lf": "bb9bf9bf8e6c6c20fbc086e63f50d8fe36e573824e3480237b0caac61cd0e405",
+      "source": "project/ml/experiments/lab4/build_progress.py"
+    },
+    {
+      "path": "ml/experiments/lab4/checks.py",
+      "sha256_lf": "9e0054b7d30e735941bba5af60f3479e056bf3f2556fd48a697c2dfcae212615",
+      "source": "project/ml/experiments/lab4/checks.py"
+    },
+    {
+      "path": "ml/experiments/lab4/comparison-20261113/cards.html",
+      "sha256_lf": "c1aac5e93478174e91173ff45a89a8c9a4e210480f82358779317598e09c6796",
+      "source": "project/ml/experiments/lab4/comparison-20261113/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/comparison-20261113/summary.json",
+      "sha256_lf": "f2712d083ad6a9e9e64ef1cd24f3c28802ac0147467dff1814db99512bb4ca53",
+      "source": "project/ml/experiments/lab4/comparison-20261113/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/comparison-20261113.json",
+      "sha256_lf": "440f1e768331c6fb6f0c324ecbe7d2b7434a142423e95f3ad271722263c456da",
+      "source": "project/ml/experiments/lab4/comparison-20261113.json"
+    },
+    {
+      "path": "ml/experiments/lab4/comparison-cards-20261113.html",
+      "sha256_lf": "23175b12225fc0d3c9cf4db21d11cedfdde2ac1af6442c6db589ffe8ae82ab36",
+      "source": "project/ml/experiments/lab4/comparison-cards-20261113.html"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/live-smoke.json",
+      "sha256_lf": "fc5dcc44e038d07cb34697c9a8037a970134d49b7d56d1e3295397cb0c3ca0dd",
+      "source": "project/ml/experiments/lab4/delivery-d021/live-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/persistence-smoke.json",
+      "sha256_lf": "2cf7477052a925d8d68fd9a47ec3f3ce974fc98f84b37aa5f547af0447172d94",
+      "source": "project/ml/experiments/lab4/delivery-d021/persistence-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/public-smoke.json",
+      "sha256_lf": "9672909c78204c24b8905975443bed89079a1fcc6276ef9c95bbd18c2ca0ddb1",
+      "source": "project/ml/experiments/lab4/delivery-d021/public-smoke.json"
+    },
+    {
+      "path": "ml/experiments/lab4/delivery-d021/SOURCE.md",
+      "sha256_lf": "461ff497303a003f2193fa3d0866e15a458f8acbcb880c7f8bb89023b28ab44e",
+      "source": "project/ml/experiments/lab4/delivery-d021/SOURCE.md"
+    },
+    {
+      "path": "ml/experiments/lab4/early-cards.html",
+      "sha256_lf": "b799d5cd0b16396b232757ec7579e471c51c48b2527b4cb7240da77cffa2657b",
+      "source": "project/ml/experiments/lab4/early-cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/early-progress.json",
+      "sha256_lf": "8dca6941470e88dc2d7010986a3adc81c2502f5c2fb8c8fe9f26a0eecf9bd8e3",
+      "source": "project/ml/experiments/lab4/early-progress.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/cases.jsonl",
+      "sha256_lf": "e9b65cddaaedb3335ba89e0aa6962cc4af673e2550988a21b6340652afb097fc",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/cases.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/generation-report.json",
+      "sha256_lf": "1f43f4f53aa0ff27bd95082c7637ab23b50db1d84c4a6a4e2500bea76a06676d",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/generation-report.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/kb.jsonl",
+      "sha256_lf": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/kb.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/response.schema.json",
+      "sha256_lf": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/response.schema.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/responses.jsonl",
+      "sha256_lf": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/responses.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/SOURCE.json",
+      "sha256_lf": "8abb2c4d0cf91caa0ecd19732f92f5ace5e871c603b3405b0d21c2bce53835ff",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/A-first-mistral/SOURCE.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/budget.json",
+      "sha256_lf": "c0ce5fdc6e88b329cb9fae3cb06c17c4dbe6dc1f82aa41f8cc0e8da173a2dc25",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/cards.html",
+      "sha256_lf": "66ddfb2f166dd99d6d34391eab1a6f32de9de6a649f178613c34a2d60c02f7db",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/config.json",
+      "sha256_lf": "508346eef597880812558edb218f3485a88d975c30a969e6c5f6c519dce8051f",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-02.json",
+      "sha256_lf": "7234d3172617bd9a7079d62a8119d85684ffec7418f6ef09df59037d4810934c",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-02.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-03.json",
+      "sha256_lf": "0c99205fdf32d9db088c2cd6960c200937f7554eb410d03f8750bf0056467f90",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-03.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-04.json",
+      "sha256_lf": "c20993d24525f5de91e977de8cdeb5b24877307cfd7663a750c9e775ef57bb45",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-04.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-05.json",
+      "sha256_lf": "c8d8bfaa2003117842e31a34510a5f94eaab9524e64e9caa3b4242ed2cba3ecf",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-06.json",
+      "sha256_lf": "02387ebeab66b13202c259c85e9146a222301857e7c3eb5f00705f06ee9e732b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-06.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-07.json",
+      "sha256_lf": "324c5317979817f6a37997990a44e5e9bc7c2633733013c8d8d27774599d16d2",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-07.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-08.json",
+      "sha256_lf": "0a1887e384241f4ae3cd23f47cdd9ba0920a0f80ef5a246305a364c9a96b962b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-08.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-09.json",
+      "sha256_lf": "888f1de78df0951abe3f8d346da763583423fdd3b168ce51796c19aa5b83ce7e",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC01-09.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-05.json",
+      "sha256_lf": "e75d95793d45382477c995b23c10ef6164acc6be439eb0ba08fe1e7060fcae14",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-07.json",
+      "sha256_lf": "d43cc915fd23fc8d9a47fc134d4c5d5091eeab54dac6e4178f4d76c6dc8c9ae8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC02-07.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-05.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-05.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-06.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/langfuse-UC03-06.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/ledger-export.json",
+      "sha256_lf": "b24552ccd130274e9e011b9b25e22784a3aa883b747819c4bc75fc0f747d0570",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/ledger-export.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/results.jsonl",
+      "sha256_lf": "bfdae1ee263980a18237720acf83f17288790537ea11eaa4120d398a20515432",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/started.json",
+      "sha256_lf": "f00425e9e68ac7cb930df48541e496d068fcbc27f2ada7ad9c2aea1bf40f4f69",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/started.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/summary.json",
+      "sha256_lf": "045da43c03bacd1adcf0d1b941a09f9567303f03b1a042a8984e81990a65a8e6",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/B-current-cascade/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/build_report.py",
+      "sha256_lf": "66361762f35592fef06dc5d18896b6bdcfe835fdc6a04144c25f17ba285c244b",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/build_report.py"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/comparison.json",
+      "sha256_lf": "9de3cf07b86b25f579800d17cd334152a7ddbefe0ea7fb30251d575a8cb6e4a4",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/comparison.json"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/README.md",
+      "sha256_lf": "991f0b323e2d52d32e6535db088b19cf22c4f0828b16a25f341541eb83fceec8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/README.md"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/report.html",
+      "sha256_lf": "e959dc69268ec1c8c0a1cf3009ca619d81ec10aee5007e6cf6907db390934685",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/report.html"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/report.md",
+      "sha256_lf": "2078dba40b7c6b190d4c87da50b175e1b84f1cf4490af8a3ac24db1e113ae0ce",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/report.md"
+    },
+    {
+      "path": "ml/experiments/lab4/first-mistral-vs-cascade/validation.json",
+      "sha256_lf": "595a56f37073325388c50dd766f8eb31e9e6595548f41c2a138eda1a5e84c9e8",
+      "source": "project/ml/experiments/lab4/first-mistral-vs-cascade/validation.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-ab/expected.json",
+      "sha256_lf": "a6f64468d610e2912f7ae851742036dee805a3c4ff541ed6b7b9760a5f1ca6eb",
+      "source": "project/ml/experiments/lab4/historical-ab/expected.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-ab/plan.json",
+      "sha256_lf": "cd0bc8c79e5aa5ddcea58b5efe82ce7f0df8064a40cf30cb6b80fa76b809447a",
+      "source": "project/ml/experiments/lab4/historical-ab/plan.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-ab/report.json",
+      "sha256_lf": "51c4b8cf0ef115da8c038e85516734f0065ecb05df4679537b5e484eaddb1b67",
+      "source": "project/ml/experiments/lab4/historical-ab/report.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-ab/responses.jsonl",
+      "sha256_lf": "ae4d10eb8711a9253df31add299a04f75ca8ec668eb50128e077cd9064ede05b",
+      "source": "project/ml/experiments/lab4/historical-ab/responses.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-known_error.json",
+      "sha256_lf": "a834058bfe1e059b027a9b6cccd2ab3aba2a8d7911eed16b3d1bfcbe23fca60d",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-known_error.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-two_questions.json",
+      "sha256_lf": "68ee57b5646e3532c090669d7123ea58c24e23ae5607e747ef080fe9691ef013",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-two_questions.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-unknown_procedure.json",
+      "sha256_lf": "019e52e84711eb4aaee04ff841b6504ae5e619d7db22b6c3578688e95b4aaf63",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-unknown_procedure.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/budget-after.json",
+      "sha256_lf": "8c5dd9e505443cbc6c32ec544b76ed687a251d25fb5913966b597ff6b9053b54",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/config.json",
+      "sha256_lf": "3e11524a0e30b0cd1f4ef2210201dfef1147707c4e85240f32a9a829f715e067",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-history.json",
+      "sha256_lf": "87f18c018fbb42febc2a890d7e21d405bb8d9130ae475cc66644cb1bc7b58367",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-history.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-invoice.json",
+      "sha256_lf": "f026e2107e3bb34769c46323eee64356e2182acc9a7c78a7e9b84b991e680ca4",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-known_error.json",
+      "sha256_lf": "3da1823fe02b4a15f4362c993ec7b589fc4ea2f2f2d675cff7f44b7315058df3",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-known_error.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-missing_code.json",
+      "sha256_lf": "78b6ee1a8d76381352ea2694a3d2477726adb57cb5e25c65045bff6a53d058b6",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-missing_code.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-notifications.json",
+      "sha256_lf": "966dc8baf31870d43e3679807f10da85dd15e7fc15fff4fa84bf8ee25608a9e8",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-notifications.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-observer_role.json",
+      "sha256_lf": "c1b3cd7b122b8154c08acb91a6801b4cf5b42f01e030091da5f247bd1da577e3",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-observer_role.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_factor.json",
+      "sha256_lf": "b434d3102719a9f88fa0276787a27141eaf44cf805406b4ae992062751db18e4",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_factor.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_questions.json",
+      "sha256_lf": "705311dbfb968ca1ce6fc13a50338af7b75b83580b8925a3f82b81d28f294885",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_questions.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-unknown_procedure.json",
+      "sha256_lf": "069fdb311b44ca7ebe50f2ceaa23df4461f8563a9cf11a462e81f0e8ee3232cb",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-unknown_procedure.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/results.jsonl",
+      "sha256_lf": "b4137b527135e4ed8ba875714bee0f12722b1d6c2e22bef89ca6eb4974f8d8f2",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/summary.json",
+      "sha256_lf": "4ffc8fa9aca21cad027d3b319a6e060ff1428ee345564fad150d825a3c9e6fb9",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/budget-after.json",
+      "sha256_lf": "d9dc28e6dbf0a27c48c6b9f691bc558c7d997812b6041a69087ce460ad446619",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/config.json",
+      "sha256_lf": "ca3d1bf2a4c02284ef58976e96b1a57c1334422a9a88687806386e3f61ed0712",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-history.json",
+      "sha256_lf": "c7959aed4a494596c67c4882601c963a01c83f2413ed2a79a7fc1d821b373476",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-history.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-two_questions.json",
+      "sha256_lf": "a7983418ffde2a51c5a9fe60a93ae9dd12ff094d7498c0bbe9eab795219686ab",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-two_questions.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl",
+      "sha256_lf": "255b167e99bb69ba3fad7b54390f956d27c4c96a126c032dc7198b043763b49b",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/billing-unknown_procedure.json",
+      "sha256_lf": "4d486ad7d39ec6e2912125ff6de3810ba3e1a7555a0821a07ffcf2bedfc23184",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/billing-unknown_procedure.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/budget-after.json",
+      "sha256_lf": "972d1ede129bb165fcf87258203c143bec11db43dc31533bdc160f220fce6e56",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/config.json",
+      "sha256_lf": "e89da5bf5a793b32e048058014f9f6b7ec65f59ca62276bdfacf650b12f53337",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-invoice.json",
+      "sha256_lf": "029318574df05758c5cf0e82c3f53ecc79fc3239ae721eb607ab7a98a46f929e",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-known_error.json",
+      "sha256_lf": "d07bbd5c8e0b38fa887c017569139d6c1efaa9df2cfa77ac3f69058dee01c2ec",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-known_error.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-missing_code.json",
+      "sha256_lf": "a25d88d416939db02262836cbaf0cc4e3603232479adf4c31d503aeead2a6f63",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-missing_code.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-notifications.json",
+      "sha256_lf": "c083e1af35ef22e9590b790c1e7e36a3f235c82c2b6721dde16e59f0a0170c88",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-notifications.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-observer_role.json",
+      "sha256_lf": "49ab771d08c0720f2678ac3b9d1020bb385cb64fb9b69a33d4bb8267394e953f",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-observer_role.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-two_factor.json",
+      "sha256_lf": "73d7c81f3b4bae8fce736d0f1c5e28fe63672cb592b10332ce3da6ae6ddcd50f",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-two_factor.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-unknown_procedure.json",
+      "sha256_lf": "36b1e65f0ea1e0f33e3f5e1e7073dbb7c24e077585d39272905d58089994fb48",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-unknown_procedure.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl",
+      "sha256_lf": "0b958a478970eb42a65cd7dbd547a6b4b6ec551d8353b1523c514ecc6cb38180",
+      "source": "project/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_and_invoice.json",
+      "sha256_lf": "44b0d8cfad9417a4dd301b1437b3c64e1ec8027a49421c35a6e2ec73a99c1bd9",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_lost_phone.json",
+      "sha256_lf": "b6e8df1d2028d66029701dedcea6a34ae96bb437153b215431a19973bf572552",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_steps.json",
+      "sha256_lf": "874fe14f301432d8308a7fcf3bb894367390b9478a6a0bcba820f1fc1b6bbf98",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/billing-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/budget-after.json",
+      "sha256_lf": "a8a7b0f8c312032c9218532cc8287f3f95b4c2c1e430097c770524aab6d68049",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/config.json",
+      "sha256_lf": "88eabe17b1e133f77e7e94a27565488fda0dc4fbe1aa32fd7411187f80fc3408",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_and_invoice.json",
+      "sha256_lf": "417fd6a585b2fe4aedb9cf9b4ec5fb28310e35620f004e4977046c8ce2ce239c",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_lost_phone.json",
+      "sha256_lf": "7ef4f0e52bf0272def546685e87bea966a3b7df0157e33f5f5de860ad79418bf",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_steps.json",
+      "sha256_lf": "efb272fea56febf5cac77ac3b68ee5c76fb35e7d4bc4db5abd48bc7ba63cd577",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/langfuse-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/results.jsonl",
+      "sha256_lf": "f2a985fcabca7064cdd13defbc07e3521a819d0a551e7c98cb16e2798f3b004c",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/summary.json",
+      "sha256_lf": "081bd9f1cf5eeba3eaf784e4da863b4f0623a04a41e77774c879695fbef92e31",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/verification.json",
+      "sha256_lf": "8166f64f68ef70640a202836d285ab1f132e2cf797ac6268bd06bf450caa384a",
+      "source": "project/ml/experiments/lab4/historical-cascade/prompt-followup-live-20261112/verification.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_and_invoice.json",
+      "sha256_lf": "9327ad0567f3391927d1dadde85bd0c93c59ba0d58a1062091530ab7335ead0a",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_lost_phone.json",
+      "sha256_lf": "af8ec98caaacbf99d623b73a50abf804f4405423beb679d37743b6eb1d57046a",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_steps.json",
+      "sha256_lf": "aaf00db2b35d22fc3419ed84f636a2656ef31ee858c914f1c0172147e1608aed",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/budget-after.json",
+      "sha256_lf": "0be3a95c96486d2dd4483713ee4c93ad11db7c3f99d186646583fbcae132aee1",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/budget-after.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/config.json",
+      "sha256_lf": "f2ce9973526555e958ff7e7a6528609d4e1896173211c2d9fea93fd68f8178e3",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_and_invoice.json",
+      "sha256_lf": "d62f2608149df0008130cea9a1fa93355ff14cee1d4c696c54a35fe9c8c225d7",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_and_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_lost_phone.json",
+      "sha256_lf": "6dc88d0992b46ef860e066d850196a33a16de294074c97c383833907992e7545",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_steps.json",
+      "sha256_lf": "42101809574397a91e6892af7072549f78e54c5203e774b7c0f9d18bc14dc5d6",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_steps.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl",
+      "sha256_lf": "db7171f200050e3a3288effa5c79bc778b0d63ae1ed52b5897932e318e905d43",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/stopped.json",
+      "sha256_lf": "bbe3c9b7b8509dfc32dc150c619d4fb01195e6085aef2976e4a5350067aea624",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/stopped.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/summary.json",
+      "sha256_lf": "4525a534b1e768bea4a20a8bd2c9760e5a9f01e7a75c314f60098935b46f5d3a",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/verification.json",
+      "sha256_lf": "125e4182e88466a0b2fe24c347d6af561caccf842d7fb1bee32549ffa23cd041",
+      "source": "project/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/verification.json"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/invoice-recovery.jsonl",
+      "sha256_lf": "c84a9ed81873e906f5422a9bb5b030b56b36102fb331ccf9028000b69677601a",
+      "source": "project/ml/experiments/lab4/historical-early/invoice-recovery.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/notification-rejection.jsonl",
+      "sha256_lf": "cbb7792c68a65a24292c0d6bc19b9c449ab6de0bcbb52d5e25de7e0981bcac1d",
+      "source": "project/ml/experiments/lab4/historical-early/notification-rejection.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/paced-recovery.jsonl",
+      "sha256_lf": "ddb7ef297df272180e81d46a068ed964d3505d3939abb9d429120bc8f2501ff0",
+      "source": "project/ml/experiments/lab4/historical-early/paced-recovery.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/role-after.jsonl",
+      "sha256_lf": "6fb2c57c25cc7020709a009ac85afa3d0fca66083d6e74dd28b3b63aab1eaf89",
+      "source": "project/ml/experiments/lab4/historical-early/role-after.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/role-before.jsonl",
+      "sha256_lf": "a6975bdfe52d9e3e4b3d6bf72487dcc324aa89e666f59c7e3f970f76fce5b10b",
+      "source": "project/ml/experiments/lab4/historical-early/role-before.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/historical-early/SOURCE.json",
+      "sha256_lf": "aa4c23baef0f325d15af3f2db93afe6ff876c2b63991133a25f47d62689d0739",
+      "source": "project/ml/experiments/lab4/historical-early/SOURCE.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/budget.json",
+      "sha256_lf": "53cdba182f96243c7b98306b51e7a7c4439015e37257e939a0b800623a4ad4f8",
+      "source": "project/ml/experiments/lab4/live-context-20261112/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/config.json",
+      "sha256_lf": "d2d35bcfa32337ac00a3712cddf48dcb16537a92f4eaaa6a55222b56fdc903b2",
+      "source": "project/ml/experiments/lab4/live-context-20261112/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/langfuse-compact.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/live-context-20261112/langfuse-compact.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/langfuse-spaced.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/live-context-20261112/langfuse-spaced.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/preflight-accounting-correction.json",
+      "sha256_lf": "8ca9460458d4801b0bb6b512f817b9332def81c9812484ccfee02f18742bc282",
+      "source": "project/ml/experiments/lab4/live-context-20261112/preflight-accounting-correction.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-20261112/results.json",
+      "sha256_lf": "47da76e5d54f531ff1bc0fedf82eebfc5a756ed468cb4eee7010ab49b632c83f",
+      "source": "project/ml/experiments/lab4/live-context-20261112/results.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/budget.json",
+      "sha256_lf": "d7b5c68f381258b2b59b0ea24402246c420f7460dfcd105e55e75ca487ed9230",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/cards.html",
+      "sha256_lf": "e470f4af40f0843ef5d88d039c39e8809993c8fcadfb37dc8da289538c2e1378",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/config.json",
+      "sha256_lf": "d2d35bcfa32337ac00a3712cddf48dcb16537a92f4eaaa6a55222b56fdc903b2",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/langfuse-compact-verified.json",
+      "sha256_lf": "3168dcdf0ef2fd3d9f7f6d793c2a257f4a62bd400f6ae090244eadee0527cf83",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/langfuse-compact-verified.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/langfuse-compact.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/langfuse-compact.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced-verified.json",
+      "sha256_lf": "7ed53375d5938b850addd32f15a6312b8d02f4c24151db742d9b21b6df271b5e",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced-verified.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced.json"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/requests.csv",
+      "sha256_lf": "cc87c55fa5eb085ef56c18d86ac8e518bf03daa9ea763b63c4b73da2c47b91fc",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/requests.csv"
+    },
+    {
+      "path": "ml/experiments/lab4/live-context-verified-20261112/results.json",
+      "sha256_lf": "a05180c480ebc56963a85369e415686074b203a7dc11cd0c21f787561e22b659",
+      "source": "project/ml/experiments/lab4/live-context-verified-20261112/results.json"
+    },
+    {
+      "path": "ml/experiments/lab4/offline-20261112/offline.json",
+      "sha256_lf": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+      "source": "project/ml/experiments/lab4/offline-20261112/offline.json"
+    },
+    {
+      "path": "ml/experiments/lab4/offline-final-20261112/offline.json",
+      "sha256_lf": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+      "source": "project/ml/experiments/lab4/offline-final-20261112/offline.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/budget.json",
+      "sha256_lf": "782ad9272c6674ca9c0caa34b525d99db773633795ab733b418d3e67144edf9f",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/cards.html",
+      "sha256_lf": "6913e4fb44ae1bdbc54374708fd9d967e1a36588e281c62887b40e82d11bca1a",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/config.json",
+      "sha256_lf": "78c4010fe2ec670a64adb957b7370e10f7b70e90188d20d73e0a40ebe4ff3b3d",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_e42.json",
+      "sha256_lf": "36732a7a3e39dc351046c402c00f8e9c467758f91e39beb0d830fc642a7b253b",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_e42.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_invoice-verified.json",
+      "sha256_lf": "462639657fe7759bccd579d5dc796d3c749ecad2c20282b8d7f9e1cb496a52fb",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_invoice-verified.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_invoice.json",
+      "sha256_lf": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/langfuse-history_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/ledger-export.json",
+      "sha256_lf": "b391b7fca3112345843db4996d94acaa3854e60ce6da1f3087c53d17385b8456",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/ledger-export.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/results.jsonl",
+      "sha256_lf": "d6d449883b1ee12403b1da602037e117c8367189ccfbf7a319e34924bdb25df1",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/started.json",
+      "sha256_lf": "e5da10db6b3f511fae9b22648607cacec9b3ba74a0a2ea51ae0453440677fc76",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/started.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-history-correction-20261113/summary.json",
+      "sha256_lf": "d807f473fc67fcaae07c36d1585b12c4f61c8cce889d166909872f022de9f241",
+      "source": "project/ml/experiments/lab4/paired-history-correction-20261113/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/budget.json",
+      "sha256_lf": "9c5b1524867a0172b7288f95d75025999865a6b3b4eae46d2488f576bedb33e1",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/cards.html",
+      "sha256_lf": "dcbf8196794177392fcc1f9f65495377a52133042484fa060dfbda29682c5dbf",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/config.json",
+      "sha256_lf": "55ae7c72c36402e0029e81644e8618343d6864cfbb979e47ed76cdbc0f36a108",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-four_topics.json",
+      "sha256_lf": "440c2cee2c918efab484c73a5d9ce1ed1687c60d74e37de95b07e64b1c22222c",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-four_topics.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-history_e42.json",
+      "sha256_lf": "c8bacf871f1dd4bf98b6e0c21236da8365640fee01fbbd4b8e7516ad541197a2",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-history_e42.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-history_invoice.json",
+      "sha256_lf": "498ac2fdf60573c689f7bcb16c7f1687656e5976a3af1299956291bd0c50b731",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-history_invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-invoice.json",
+      "sha256_lf": "1ccadec080947f61a87e179da2d9484ece9efc7d4184b6e29058617b7cce8ccd",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-invoice.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-invoice_notify.json",
+      "sha256_lf": "74e0b36eebcfb1ca41ec5d367c9cb3ff2447f85d1d0f69439e81d2c4a78eada8",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-invoice_notify.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-invoice_two_factor.json",
+      "sha256_lf": "b6d2fd43d7cd643125898279d6dd9cf7d4725d85e4ab8566685eee3739b36591",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-invoice_two_factor.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-lost_phone.json",
+      "sha256_lf": "ab83e9b2edd805e96dff89c97eba92dad17c94c6dff01a683e08295254f3f602",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-lost_phone.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-missing_error.json",
+      "sha256_lf": "ddabb934823820e4628591c9ad58c4e1d7b2fd18f9d0d6600f98ba15ea622dd5",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-missing_error.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-new_token.json",
+      "sha256_lf": "9f53beeb4eb2ebc20df5c0ecbd08b6334378fdad98005875f81c23634b9e56f7",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-new_token.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-notifications.json",
+      "sha256_lf": "db5ab5699aa892cb95bb3fc1dae1949b501829c7b46307147b1bf93221b8ee68",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-notifications.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-observer_role.json",
+      "sha256_lf": "a958aa7ab0d50cb85a2e92d78d80e4df0aa997706c0fab4d3602252c7050ff0a",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-observer_role.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-role_notify.json",
+      "sha256_lf": "f940010e17ed263320295d5da607874c931ede70ebf83fa442f622db40031fa4",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-role_notify.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-three_topics.json",
+      "sha256_lf": "67bd4509a2c58c26acc8d4dbf0caa1519a58a4dae896525bfed5f212d6d5609d",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-three_topics.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-two_factor.json",
+      "sha256_lf": "b8c2763d2568b3c774be36e8ae2efa729cc1d21456bf1f980285952c69b9ea25",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-two_factor.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-unknown_region.json",
+      "sha256_lf": "579972aae3c36a0db011e0a63dfde6abc69b8af593ef6aa4044ed3a22bab2b4a",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-unknown_region.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/langfuse-wrong_amount.json",
+      "sha256_lf": "9883b39ceff24d36043814f3db211ec0066b2694c0c5cea604577968433c4992",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/langfuse-wrong_amount.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/ledger-export.json",
+      "sha256_lf": "90495b17072754c8e89b9740e441dff55597d89d0b962a7568b6973451314948",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/ledger-export.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/results.jsonl",
+      "sha256_lf": "b341120d7d0d33e312dafac56af9016eb04909091789b18101de45d6f42a87d9",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/started.json",
+      "sha256_lf": "f954a1a964983360c6098ce441c8e20f02d9b9c82ffd7d791c9973beb1767d96",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/started.json"
+    },
+    {
+      "path": "ml/experiments/lab4/paired-live-20261113/summary.json",
+      "sha256_lf": "8399f0634ca971bd4a70a9160d9dd47c0b6145bf552144b74bd1349e99e66443",
+      "source": "project/ml/experiments/lab4/paired-live-20261113/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/plans/ordinary-plan-v2.json",
+      "sha256_lf": "2f458c2b7913fba7cdfb7b05cbd1ee89581f96f96b8436eaf872a3d4ad5ffb10",
+      "source": "project/ml/experiments/lab4/plans/ordinary-plan-v2.json"
+    },
+    {
+      "path": "ml/experiments/lab4/plans/ordinary-plan-v3-followup.json",
+      "sha256_lf": "547161ed5b315c6c34514b495c81e482b1612dbf9f7f08354776164b9a068e1a",
+      "source": "project/ml/experiments/lab4/plans/ordinary-plan-v3-followup.json"
+    },
+    {
+      "path": "ml/experiments/lab4/plans/ordinary-plan-v3-remaining.json",
+      "sha256_lf": "9dd8791fdf0f0d5d71fe53e611764247b35a9eb89175b1ed200ade022f3021fe",
+      "source": "project/ml/experiments/lab4/plans/ordinary-plan-v3-remaining.json"
+    },
+    {
+      "path": "ml/experiments/lab4/plans/support-policy-plan-20261112.json",
+      "sha256_lf": "18904d6475124d4a6a3a45956b6bc037dcfe205d71be03df25165d16b877c898",
+      "source": "project/ml/experiments/lab4/plans/support-policy-plan-20261112.json"
+    },
+    {
+      "path": "ml/experiments/lab4/progress-20261112.json",
+      "sha256_lf": "0b1847fcfeb148472f0b3f0512b5dfbe259a4a81d20cd0bc08da91caa0570bf6",
+      "source": "project/ml/experiments/lab4/progress-20261112.json"
+    },
+    {
+      "path": "ml/experiments/lab4/progress-cards-20261112.html",
+      "sha256_lf": "76ad001052ddce9d466e8a9f6991b4a94b1739a5ae344acc6c160ac0b6860c4b",
+      "source": "project/ml/experiments/lab4/progress-cards-20261112.html"
+    },
+    {
+      "path": "ml/experiments/lab4/run.py",
+      "sha256_lf": "dcc7b99634a2fba4ac5e7151043614b6344955f44c08a1975a6cefff47e9e031",
+      "source": "project/ml/experiments/lab4/run.py"
+    },
+    {
+      "path": "ml/experiments/lab4/run_comparison.py",
+      "sha256_lf": "bb33631701bddf6a1b2a25323c538e597da48e525ab8ac0c338aefa94a2563a1",
+      "source": "project/ml/experiments/lab4/run_comparison.py"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/budget.json",
+      "sha256_lf": "54705bc9dea049758ac1fec682e7d9e35e7eda45e8a8240bc678f2757dca887f",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/budget.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/cards.html",
+      "sha256_lf": "d6f54d9b9052d2b64cb42ada9f663ff5512a07a55674b728e6e1ccf03e444383",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/cards.html"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/config.json",
+      "sha256_lf": "033101a5e65a057164b219eaa39063bb952ee89bf263215fdc69beb4beb22649",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/config.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/langfuse-email_synonym-verified.json",
+      "sha256_lf": "943e53e4599725e4ddd2dfd5bb2c253018f7b1070e42af4abdac70ab41c382d3",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/langfuse-email_synonym-verified.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/langfuse-email_synonym.json",
+      "sha256_lf": "cbfc7db0c8756500a6b6415e74ed1db867f6ebbbabb6a8b0965979c0fa108ecf",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/langfuse-email_synonym.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/langfuse-invoice_synonym.json",
+      "sha256_lf": "d0afa7344656e0b6328fd5a1e121fd339388ccac0d288411a1b935d68523bd93",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/langfuse-invoice_synonym.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/ledger-export.json",
+      "sha256_lf": "d5625be192e2004c903ca8a3124ab77613b3c8565311c2a7efad52d6d7f08b7f",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/ledger-export.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/results.jsonl",
+      "sha256_lf": "725f2e0e168b69dfbdc4ea1ec3eb9b3a3ab971bee673b013d5ae52c1ab5ea6ec",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/results.jsonl"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/started.json",
+      "sha256_lf": "d0d84c32ff88dab6bf43fd8f5cd0511cb6f21b77da060b692829cf9f86cea152",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/started.json"
+    },
+    {
+      "path": "ml/experiments/lab4/targeted-retrieval-20261113/summary.json",
+      "sha256_lf": "91b125db97f5a8e4e37e8f6656b10c148d237fdf2dc13226590ddd74c8c32384",
+      "source": "project/ml/experiments/lab4/targeted-retrieval-20261113/summary.json"
+    },
+    {
+      "path": "ml/experiments/lab4/validation.json",
+      "sha256_lf": "e14185ae603ad433da418fd35ff0330a59e953f1caa9e80134fa38f0369e7601",
+      "source": "project/ml/experiments/lab4/validation.json"
+    },
+    {
+      "path": "ml/integration/ai_service.py",
+      "sha256_lf": "0823b3e5c6af84b8b6c17911a82ffcf3a5cef2520851ac145a99e7f63c3d8ce7",
+      "source": "project/ml/integration/ai_service.py"
+    },
+    {
+      "path": "ml/integration/README.md",
+      "sha256_lf": "c4440999c77ee0e064cce523140c1de70b4e36eb2fddf8ef2a673d16c66eff2f",
+      "source": "project/ml/integration/README.md"
+    },
+    {
+      "path": "ml/prompts_v2/cascade-mistral.txt",
+      "sha256_lf": "a1c26093371cb9e0ff3756440ab8e40fc85f19c39bf9ff4cd200c5955a984c88",
+      "source": "project/ml/prompts_v2/cascade-mistral.txt"
+    },
+    {
+      "path": "ml/prompts_v2/cascade-sol.txt",
+      "sha256_lf": "3498f5f2add5d1ec91970880f2cf1eff7c1c6741dfef51a29003174f1491826a",
+      "source": "project/ml/prompts_v2/cascade-sol.txt"
+    },
+    {
+      "path": "ml/prompts_v2/system-2.1.txt",
+      "sha256_lf": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+      "source": "project/ml/prompts_v2/system-2.1.txt"
+    },
+    {
+      "path": "ml/prompts_v2/system.txt",
+      "sha256_lf": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+      "source": "project/ml/prompts_v2/system.txt"
+    },
+    {
+      "path": "ml/README-lab4.md",
+      "sha256_lf": "47fc17673b37eab342f0f56b56af97924070644123f55a851c022f18411432b2",
+      "source": "project/ml/README-lab4.md"
+    },
+    {
+      "path": "ml/requirements-lab4.txt",
+      "sha256_lf": "0dc685ee990e5528f7a245d895a2b3f254c7d0036c048439a0177b3fcf9adcab",
+      "source": "project/ml/requirements-lab4.txt"
+    },
+    {
+      "path": "ml/tools/propose_card.py",
+      "sha256_lf": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+      "source": "project/ml/tools/propose_card.py"
+    },
+    {
+      "path": "ml/tools/README.md",
+      "sha256_lf": "1d9aaeb51469aa639777519172bdf9705b95bd7a4aa12f3e79e2f7511fcd906e",
+      "source": "project/ml/tools/README.md"
+    },
+    {
+      "path": ".github/workflows/ai-lab4.yml",
+      "source": ".github/workflows/ai-lab4.yml",
+      "sha256_lf": "6d3e4cf0c0361f2cefd232e78b2a8ed59a24f08745f5bb7b88256efeaf3928e3"
+    }
+  ]
+}

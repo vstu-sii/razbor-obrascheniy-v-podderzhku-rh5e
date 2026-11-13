@@ -1,0 +1,27 @@
+{
+  "commit": "2087c67a88575ff36893993c869954bd0ff308b1",
+  "date": "2026-10-15",
+  "scope": "First live Mistral-only LAB03 generation, before the next prompt iteration; NOT LAB02 and NOT extractive baseline.",
+  "files": {
+    "responses.jsonl": {
+      "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/evidence/generation-responses.jsonl",
+      "sha256_lf": "c72bc9ca01361fedb7f1a9aeaee9efa8e8cbecaa14b119c391275fae33850c9d"
+    },
+    "cases.jsonl": {
+      "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/docs/quality/golden-dataset/cases.jsonl",
+      "sha256_lf": "e9b65cddaaedb3335ba89e0aa6962cc4af673e2550988a21b6340652afb097fc"
+    },
+    "kb.jsonl": {
+      "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/docs/quality/golden-dataset/kb.jsonl",
+      "sha256_lf": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1"
+    },
+    "response.schema.json": {
+      "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/response.schema.json",
+      "sha256_lf": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c"
+    },
+    "generation-report.json": {
+      "path": "docs/roles/quality-safety/tasks/lab03-q-004-standalone-submission/submission/tests/evals/evidence/generation-report.json",
+      "sha256_lf": "1f43f4f53aa0ff27bd95082c7637ab23b50db1d84c4a6a4e2500bea76a06676d"
+    }
+  }
+}

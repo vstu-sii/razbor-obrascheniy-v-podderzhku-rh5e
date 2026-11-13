@@ -1,0 +1,266 @@
+[
+  {
+    "id": "00828906-5648-4025-a128-d0878ac70005",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": null,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "1df7670a-9fc6-4128-b1de-06ecb310f143",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": null,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "b4cfd89e-b87e-4698-bdf9-f8811fa2eb17",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "3c6572d1-35e4-4134-8a6b-5842f603b598",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "255ed43e-3e4b-4319-abd7-d93a510ca4c7",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 4505,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "0616ca3a-9465-41cc-bc3e-3edfd04b7092",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "64ca687e-8d3e-481d-8a2e-f48b576232b4",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "9b6f6330-1c6c-48a0-b1bc-4453cb36d97a",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "a2256dd7-6f29-47ca-b50e-941c1fea58d8",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 3566,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "732ade76-d73d-47ff-8e0b-89314fd80202",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "b20986c3-eda4-434f-9e4d-e94cc3124162",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": null,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "c1f083c3-bc6a-4ae7-b38d-f7993df69328",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "0ceeb4c5-430e-47c9-a6f4-18f8d8704b1b",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "95a74aaa-2ff7-42d9-9a92-d7c924df6102",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": null,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "9768ce99-f27e-4b01-ac92-a7ad8818a561",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "17114e35-aef1-41e5-ade6-be89c33efb8a",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "f435ef72-f89b-4108-bad5-6396b8ad9331",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "fa1d0336-3848-4472-87f8-4da8778cdf66",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 6093,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "c34c5274-83b9-4a09-b7e2-a75e379e7806",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "81167974-bddd-4573-bbb0-aed0cd05b71f",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": null,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "100db4ff-7f32-4d5d-b62b-cd7b466c8f60",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "5272a312-3ab5-4fcf-8b0f-f2a0f3bdf85a",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "50ac59c8-9ffb-438d-b736-2c44a446695c",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 3330,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "f93cbde3-8197-4bb7-ae5c-2acd1d87f666",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "048062f9-7cec-402a-89bc-0679baaec549",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 4543,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "d81bf7fd-dbc6-463d-b5a0-9ef74e508d39",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "0f6ff912-41d4-486b-aa6f-3c1af9d84f35",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 3442,
+    "tokens": 21600,
+    "this_series": false
+  },
+  {
+    "id": "712c4f2f-ae2f-463f-a63c-7b25e424be84",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "4a9f255c-f874-4eed-af93-4001d5302eaf",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": false
+  },
+  {
+    "id": "3d2ccbfa-664a-4f87-8a3b-ddd26988a6e8",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": true
+  },
+  {
+    "id": "cf887e7a-c37c-4638-a9cc-a20427caa0e8",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 3330,
+    "tokens": 21600,
+    "this_series": true
+  },
+  {
+    "id": "3db7db75-f3e2-4c0c-b42a-a619a0afcdb2",
+    "provider": "mistral",
+    "reserve": 0,
+    "billed": 0,
+    "tokens": 72398,
+    "this_series": true
+  },
+  {
+    "id": "69240130-57ea-4276-9806-d37a6680e3ed",
+    "provider": "sol",
+    "reserve": 19968,
+    "billed": 3297,
+    "tokens": 21600,
+    "this_series": true
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "reason": "All four local failures occurred before HTTP I/O; no model generation or bill. Initial conservative reserves released.",
+  "new_confirmed_rub": 0,
+  "new_accounted_rub": 0,
+  "prior_lifetime_rub": "14.667467"
+}

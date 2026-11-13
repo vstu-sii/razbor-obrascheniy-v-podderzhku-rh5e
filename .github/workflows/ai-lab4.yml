@@ -1,0 +1,23 @@
+name: AI LAB04 evidence
+on:
+  push:
+    branches: ['lab04/ai-engineer/**']
+  pull_request:
+    paths: ['ml/**', 'docs/experiments/lab4*', '.github/workflows/ai-lab4.yml']
+permissions:
+  contents: read
+jobs:
+  offline-ai:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r ml/requirements-lab4.txt
+      - run: python ml/experiments/lab4/checks.py
+      - run: python ml/experiments/lab4/run.py --output "$RUNNER_TEMP/lab4-replay"
+      - run: python ml/experiments/lab4/build_progress.py
+      - run: python ml/experiments/lab4/build_early.py
+      - run: python ml/experiments/lab4/build_comparison.py
+      - run: python ml/experiments/lab4/first-mistral-vs-cascade/build_report.py
