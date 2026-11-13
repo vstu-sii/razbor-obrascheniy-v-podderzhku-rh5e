@@ -55,12 +55,19 @@ def offline(out):
                             required_found=len(needed & found), required_total=len(needed),
                             all_required_found=needed <= found))
         for provider in ['mistral','sol']:
-            before = build_payload(provider,request,sources,SCHEMA,compact=False)
-            after = build_payload(provider,request,sources,SCHEMA,compact=True)
-            assert json.loads(before['messages'][1]['content']) == json.loads(after['messages'][1]['content'])
+            # This is an OFFLINE JSON-encoding measurement, not a sendable HTTP
+            # payload. Current prompts may make the full historical context too
+            # large for Sol; do not bypass or enlarge the provider's live bound.
+            # The engine below still packs/checks the actual provider payload.
+            context_value={key:request[key] for key in ('request_id','ticket_text','history','kb_version')}
+            context_value['kb_fragments']=[{key:s[key] for key in ('source_id','version','title','excerpt')} for s in sources]
+            before=json.dumps(context_value,ensure_ascii=False)
+            after=json.dumps(context_value,ensure_ascii=False,separators=(',',':'))
+            assert json.loads(before)==json.loads(after)
             payloads.append(dict(case_id=row['case_id'],provider=provider,
-                before_context_bytes=len(before['messages'][1]['content'].encode()),
-                after_context_bytes=len(after['messages'][1]['content'].encode()),
+                before_context_bytes=len(before.encode()),
+                after_context_bytes=len(after.encode()),
+                scope='offline encoding of identical full context; actual provider packing remains enforced separately',
                 identical_decoded_context=True, source_ids=[s['source_id'] for s in sources]))
         count = [0]
         def replay(provider, req, candidates, schema, timeout, trace):

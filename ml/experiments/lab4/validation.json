@@ -129,5 +129,16 @@
     ],
     "delivered_role_case_ids": [],
     "human_review": "pending"
+  },
+  "publication_recheck": {
+    "system_replay": "13/13",
+    "retrieval": "9/9",
+    "cache_pairs": 7,
+    "ai_tests": 9,
+    "new_model_calls": 0,
+    "source_sha256_lf": {
+      "ml/cascade/providers.py": "df790c4bc60bb089f11038ad92d9cd6d134c5c3c7ec151f9777f010dc9bae536",
+      "ml/experiments/lab4/run.py": "dcc7b99634a2fba4ac5e7151043614b6344955f44c08a1975a6cefff47e9e031"
+    }
   }
 }
