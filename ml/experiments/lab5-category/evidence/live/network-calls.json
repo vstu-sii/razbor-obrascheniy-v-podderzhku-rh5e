@@ -1,0 +1,163 @@
+[
+  {
+    "id": "8fab6cc4-5e8d-438c-b57f-6571f05552a6",
+    "case_id": "UC01-05",
+    "provider": "mistral",
+    "technical": 33550,
+    "utc": "2026-11-19T21:23:31.656866+00:00"
+  },
+  {
+    "id": "19c560e0-1292-4e2b-adf3-656b2fe9559f",
+    "case_id": "UC01-05",
+    "provider": "sol",
+    "technical": 18670,
+    "utc": "2026-11-19T21:23:34.915577+00:00"
+  },
+  {
+    "id": "a7d24fb3-0603-4140-959c-32e31c757015",
+    "case_id": "UC01-03",
+    "provider": "mistral",
+    "technical": 33468,
+    "utc": "2026-11-19T21:24:01.695923+00:00"
+  },
+  {
+    "id": "c325e32f-3d6e-46fd-b3a7-c7a9aae7b91c",
+    "case_id": "UC01-03",
+    "provider": "sol",
+    "technical": 18665,
+    "utc": "2026-11-19T21:24:05.125550+00:00"
+  },
+  {
+    "id": "268ab505-ba1e-47ed-b77f-6a3abedb5f3f",
+    "case_id": "UC02-09",
+    "provider": "mistral",
+    "technical": 33534,
+    "utc": "2026-11-19T21:24:34.603741+00:00"
+  },
+  {
+    "id": "eb5c60ef-45bb-40a4-87be-345d7694d6f1",
+    "case_id": "UC02-10",
+    "provider": "mistral",
+    "technical": 33218,
+    "utc": "2026-11-19T21:25:04.943619+00:00"
+  },
+  {
+    "id": "4885e841-251b-4f60-be56-367a0279b2fe",
+    "case_id": "UC02-07",
+    "provider": "mistral",
+    "technical": 34547,
+    "utc": "2026-11-19T21:25:35.449960+00:00"
+  },
+  {
+    "id": "612a9421-821c-447b-8091-07c7f2317803",
+    "case_id": "UC02-08",
+    "provider": "mistral",
+    "technical": 33205,
+    "utc": "2026-11-19T21:26:05.989400+00:00"
+  },
+  {
+    "id": "dfca0979-7656-4c01-81d9-44c8c770ee7b",
+    "case_id": "UC02-03",
+    "provider": "mistral",
+    "technical": 33752,
+    "utc": "2026-11-19T21:26:36.256651+00:00"
+  },
+  {
+    "id": "91696bb5-bb70-42c1-b786-d7f4fa389288",
+    "case_id": "UC02-03",
+    "provider": "sol",
+    "technical": 18631,
+    "utc": "2026-11-19T21:26:41.212404+00:00"
+  },
+  {
+    "id": "bdb5f3e9-f5b7-4e7c-98d3-294326dfb8ca",
+    "case_id": "UC04-04",
+    "provider": "mistral",
+    "technical": 33519,
+    "utc": "2026-11-19T21:27:06.952388+00:00"
+  },
+  {
+    "id": "beb050c9-4e4b-4c3f-bb80-f93976303529",
+    "case_id": "UC04-04",
+    "provider": "sol",
+    "technical": 18639,
+    "utc": "2026-11-19T21:27:10.917823+00:00"
+  },
+  {
+    "id": "07773db6-9618-41e1-aab3-169488744797",
+    "case_id": "UC04-07",
+    "provider": "mistral",
+    "technical": 33205,
+    "utc": "2026-11-19T21:27:37.619617+00:00"
+  },
+  {
+    "id": "2007aa6f-4fb2-4930-b6c1-f2dac816d648",
+    "case_id": "UC04-03",
+    "provider": "mistral",
+    "technical": 33446,
+    "utc": "2026-11-19T21:28:07.790893+00:00"
+  },
+  {
+    "id": "267b8a49-fae8-4ef0-b2f7-1b3b5972dcd5",
+    "case_id": "UC04-06",
+    "provider": "mistral",
+    "technical": 33216,
+    "utc": "2026-11-19T21:28:38.561185+00:00"
+  },
+  {
+    "id": "91d6972c-e503-45ea-ab96-9170bdc3ceb7",
+    "case_id": "UC04-06",
+    "provider": "sol",
+    "technical": 18653,
+    "utc": "2026-11-19T21:28:43.240486+00:00"
+  },
+  {
+    "id": "2de27552-f801-49f9-a8b3-688da7f8a747",
+    "case_id": "UC03-01",
+    "provider": "mistral",
+    "technical": 33598,
+    "utc": "2026-11-19T21:29:08.989720+00:00"
+  },
+  {
+    "id": "ad895f0b-e4f9-40fd-9be4-d98220429daf",
+    "case_id": "UC03-01",
+    "provider": "sol",
+    "technical": 18729,
+    "utc": "2026-11-19T21:29:12.955083+00:00"
+  },
+  {
+    "id": "6b9ffc13-3097-4861-b33c-0bb8e05f7af0",
+    "case_id": "UC03-02",
+    "provider": "mistral",
+    "technical": 33250,
+    "utc": "2026-11-19T21:29:39.384179+00:00"
+  },
+  {
+    "id": "1e251356-819d-4a6e-bf5b-2c0db043ca34",
+    "case_id": "UC03-02",
+    "provider": "sol",
+    "technical": 18687,
+    "utc": "2026-11-19T21:29:42.833401+00:00"
+  },
+  {
+    "id": "8f314b4c-d7ba-4045-b7cf-1cff39a9585b",
+    "case_id": "UC03-07",
+    "provider": "mistral",
+    "technical": 33248,
+    "utc": "2026-11-19T21:30:09.713729+00:00"
+  },
+  {
+    "id": "68ac30a5-a4ac-4269-aa5d-572cbcb8a4ed",
+    "case_id": "UC03-07",
+    "provider": "sol",
+    "technical": 18685,
+    "utc": "2026-11-19T21:30:12.903586+00:00"
+  },
+  {
+    "id": "3f7fe600-eb6a-4871-bfe8-5b143e98a53b",
+    "case_id": "REG-e42-1",
+    "provider": "mistral",
+    "technical": 35907,
+    "utc": "2026-11-19T21:31:07.139455+00:00"
+  }
+]

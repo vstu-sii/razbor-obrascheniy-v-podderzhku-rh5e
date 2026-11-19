@@ -1,0 +1,398 @@
+[
+  {
+    "request_id": "8101c679-db54-4d21-96d8-85758ee254bd",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8f9f9850-5186-4596-bcba-7c2e00cf52f1",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3046
+  },
+  {
+    "request_id": "9a816d7a-e0f1-40cb-84ab-26ad5473ec0c",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "c0d43d95-af60-4842-9338-4730832ab9cc",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "bd530614-4b75-4ba7-bc02-b40c6f7fbaa7",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "1b52f06c-ab10-4241-9844-85b782ba6492",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "49bde326-39ea-42b5-bd95-3756b5440ef2",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8f2f8ce7-bb61-42af-8e9c-02d78b962495",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2946
+  },
+  {
+    "request_id": "9ddb9af1-fbee-4272-be9c-be43764cda00",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "997ad673-bae2-4050-89c8-33d754584e94",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3043
+  },
+  {
+    "request_id": "edb3c021-a23d-44fb-8c84-d6fd79e39159",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "f7a6b910-f3d6-49cb-b9cb-633f22edfea5",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "dd3aad47-70cb-4127-9830-54c30bb68323",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "2ffcbd46-6b98-4eb2-aae7-647928ebf9cd",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "f342411b-0451-4258-9e65-76f5271d789d",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "655aa73b-cc14-46d1-83b3-4e8e5b449f74",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "2d1405a1-204e-41ae-aac7-b5f4ee52030f",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "f3512d2e-44f6-4089-9d45-590d1c43714f",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2195
+  },
+  {
+    "request_id": "ed653ccf-c1e3-4383-bc75-2df6406127c5",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "5aa84db7-da36-43e1-a61d-bb042ae48c5e",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "810b2d3e-f65b-4b46-ace1-8d4e100274e7",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "a39986e7-9ee0-41a0-be47-cdd1fcade331",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2648
+  },
+  {
+    "request_id": "2131e3ad-069f-4710-ab6a-b3e83277bba7",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "bff7a9c0-e00b-455e-a2da-41ee9afdae55",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "004701a7-9794-4066-aa3c-779806daa66c",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "a45a82cd-c405-4cab-a7b4-35446f2a82e1",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3630
+  },
+  {
+    "request_id": "fbefc46c-e0dc-4c17-8e08-187272e891b4",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "2448652e-85fd-48a0-af81-cdd794270c8e",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2181
+  },
+  {
+    "request_id": "ea2899df-dec6-4013-ba4a-ba580d2ebb8f",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "5ce99377-28e0-4bf6-b128-91a63fa5fcd7",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "7ebaa1ac-878c-4d0a-bfae-643ee081752d",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 1626
+  },
+  {
+    "request_id": "a10202f0-aa11-4acb-8917-8e739a8de821",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8ea3870f-38de-4e1d-80cc-d85b29ed4a17",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "7e0d2ded-eb58-45d7-9ef3-dd16ff4737c0",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "2aee81a5-cb92-4d32-b04a-928d392c19e0",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2500
+  },
+  {
+    "request_id": "043da708-4f83-4526-9e45-24599c6169c6",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "6208a95f-10f0-4d64-90f6-babc4b291cd4",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "0caa6c64-acdc-4cab-8f93-a03f187d3368",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "52d1134d-f509-4b41-aeb0-b114c642c913",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 1798
+  },
+  {
+    "request_id": "8e5fcfce-9711-4d6d-8ea6-f964d0659e7a",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "776077e9-1642-4f6d-8915-1e7828e7c121",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "232b2ef4-9c6b-453d-af64-3e5d7fec065e",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "fb0dc23e-51b3-4221-b607-7c97bb31e9d0",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2048
+  },
+  {
+    "request_id": "d60c6e57-1083-4bef-bbce-1f15eeafdfd3",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8d1ee339-b5a9-4299-834a-76a2b7fe25fe",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "705dae6e-d751-4077-843a-8149550d1434",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "7c20470e-83ec-4d00-b288-736b3ba07cf8",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "ff05b057-6a3c-41a9-a226-4f909368962e",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3336
+  },
+  {
+    "request_id": "26dc8e68-abbe-4b50-8df7-c8c713bb96fb",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "1ad324a8-a27a-4f53-b897-061f92301220",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3064
+  },
+  {
+    "request_id": "e6e130a3-a6ab-4688-a49a-8461db099991",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "dff79d2f-df01-42f6-8c5c-0ec0a85817c7",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "9d82ef67-0838-4f97-810d-0eb5764caec8",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "5dffc922-95ea-436d-b388-2dbd5f7d4a3b",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "fa39cf3f-1117-4c25-adaf-cddbdb900d34",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "c0d79fbd-46b5-42a1-be0d-c8b0d9b8850d",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "70faa5bb-226b-4302-a000-5742fab167df",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "e2144fbc-cbe0-4377-954a-71c828f114e0",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "c7805ce6-8e46-4f76-a268-b943faf08610",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "a5ab0462-474e-4d9f-83fb-b6bce49e65a0",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "bea411f3-38d3-4e41-bd83-365b589e697d",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8f61ae27-a008-4615-8c8c-ecd5467e0319",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "0fea3ab1-cd09-4f5b-8945-84fdb3d30c89",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "6938ce95-f8b3-46a6-a53b-9bfd8abc6981",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 4686
+  },
+  {
+    "request_id": "f67b1c4c-b7e6-4ee1-ab96-c8781891b1d1",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "a46b989e-d2be-4f24-8596-04d26438cacf",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 4986
+  }
+]

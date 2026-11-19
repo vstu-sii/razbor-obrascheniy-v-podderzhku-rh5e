@@ -1,0 +1,20 @@
+[
+  {
+    "request_id": "d66b80ca-95ce-4cc7-90a7-7ccfe892693f",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "1980c574-c88a-4a5c-a950-db976bdd7655",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 4924
+  },
+  {
+    "request_id": "f19bedf7-b0d8-467e-b2a2-5fcc785d7a12",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  }
+]

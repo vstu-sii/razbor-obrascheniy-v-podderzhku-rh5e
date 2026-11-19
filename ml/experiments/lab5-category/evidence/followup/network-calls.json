@@ -1,0 +1,23 @@
+[
+  {
+    "id": "d66b80ca-95ce-4cc7-90a7-7ccfe892693f",
+    "case_id": "REG-e42-1",
+    "provider": "mistral",
+    "technical": 36552,
+    "utc": "2026-11-19T21:35:12.738217+00:00"
+  },
+  {
+    "id": "1980c574-c88a-4a5c-a950-db976bdd7655",
+    "case_id": "REG-e42-1",
+    "provider": "sol",
+    "technical": 21574,
+    "utc": "2026-11-19T21:35:20.610321+00:00"
+  },
+  {
+    "id": "f19bedf7-b0d8-467e-b2a2-5fcc785d7a12",
+    "case_id": "UC02-08",
+    "provider": "mistral",
+    "technical": 33850,
+    "utc": "2026-11-19T21:35:43.239612+00:00"
+  }
+]

@@ -1,0 +1,811 @@
+{
+  "source_development_commit": "0d2abc0",
+  "source_runtime_tag": "lab5-ai-engineer-categories-2026-11-20-r2",
+  "runtime_source_hashes": {
+    "backend/ai_service.py": "93839162b57acffa6c2d585f85657b78bde3501dbe93a39f74086349faa2ed75",
+    "backend/bootstrap.py": "bf4ece08f531108067de6f6b3062033d415ee9065224ef588ff58caf0729d684",
+    "backend/cascade_queue.py": "260d9eb5e3a2f85b2e122bf15ffd8cbbd9a5aee0ea676d390892ce2a84ef7223",
+    "backend/contracts/cascade.py": "f9d290d1a98b9986477668694822223ae5ca390f23b3bc162e6e89a300ad71bf",
+    "backend/contracts/cascade.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+    "backend/contracts/evaluate.py": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+    "backend/contracts/response.schema.json": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+    "backend/events.py": "f3e2a33cdfe4f6501fce3ece5bc139c2a1f2fb0db33b1e5edc8be0de2491a8b9",
+    "backend/guards/auth.py": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85",
+    "backend/guards/identity.py": "7a784446abd1ec9013144b166d872d385152c703c35f4f7ce2c7eea914d7bab2",
+    "backend/guards/inference.py": "ea68ec5f19f14b490d78ae946732c1e32eb3905aa2ed9fa9702ef8780a44c975",
+    "backend/handoff.py": "f2369d9fd6283c7f3a8abba13927b21c14d95d3ecc42812af6e9785399952fe1",
+    "backend/ingress.py": "add9e1d285f35dec1c6c462f642ad6740e272a320b99ab850d75efb2826a365d",
+    "backend/limits/daily.py": "cbe204198e45afea47468786aaeccadad537cefb0fd817ca367ca1e51dfc2ce3",
+    "backend/limits/degradation.py": "5261b41881fb033283a525a7d38a8c39ef12f7a6388bb5b4ccff505b9b00bca2",
+    "backend/limits/settings.py": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63",
+    "backend/main.py": "d7ca112f161ca516c969724fe285abd8ba20e62ed136d16029a0f5480a6d02ef",
+    "backend/models/store.py": "be4554f405fb47358051a61a9b45c24c4369e164a6f96d57f7e80648a976d184",
+    "backend/observability.py": "fe66bc921fba8431f96db76b273f81515454f4952882f002719f841d574427a8",
+    "backend/provision.py": "c1af3b5c6dda4213ee175d52bce3df7e3b6770b16faf07a5340abfe83010a7e9",
+    "backend/routers/ai.py": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c",
+    "backend/worker.py": "56c3b55077d60fb39211d0f24dc5e97b49fbe028abf44223d223ffe18072ad98",
+    "migrations/001_init.sql": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41",
+    "migrations/002_review_context.sql": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b",
+    "migrations/003_event_queue.sql": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50",
+    "migrations/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+    "migrations/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+    "migrations/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+    "migrations/007_cascade_claim.sql": "038060fabfce10456a867ec38050c88af2074ce47a41835dc9d4c2cc279f0b6b",
+    "migrations/008_provider_state.sql": "09b18162c0d2c2a8656b1d1a98e9b83e50b3ebf6cd764887030b5dcee948ca47",
+    "migrations/postgresql/001_init.sql": "5e82da3db733ab1ea0b00b2e6a914081b6429ec22a87af408a7f3d33823385ad",
+    "migrations/postgresql/002_review_context.sql": "1dd7930da1a3854717bca1de26071a1ff10974735fd47f0166ca637111485131",
+    "migrations/postgresql/003_event_queue.sql": "2f8a299f33a0303c0c454332652b0e9488f082d24c946770b6c8de05faafd8fc",
+    "migrations/postgresql/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+    "migrations/postgresql/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+    "migrations/postgresql/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+    "migrations/postgresql/007_cascade_claim.sql": "1bb178f0656161100732df6e036f31cc8cdcd25db34e2cfedbd24336da7e1544",
+    "migrations/postgresql/008_provider_state.sql": "09b18162c0d2c2a8656b1d1a98e9b83e50b3ebf6cd764887030b5dcee948ca47",
+    "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/cascade/assessment.py": "fe6f262baadb026f25eee63a9caa90f6326650e900cab0e314398bec91fa6207",
+    "ml/cascade/billing.py": "f5be8cc7955d317f686cb8087a4cb05c4bc564114f2aeca40903e61b77394ec0",
+    "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+    "ml/cascade/category.py": "658a9029baf612cbac84d73667c3a23a393b2aa09884760524372630dc0f7f82",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/cascade/dialogue.py": "4aea10b6b6258215f8a1bc44061d5e5fc00a009e583d25ed9c42366276645f53",
+    "ml/cascade/engine.py": "7b9d4d80ef8ab82739f1097e0843c8ba463bf3aa1560882dd02be2644b41f47d",
+    "ml/cascade/mistral-system.txt": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11",
+    "ml/cascade/providers.py": "6bcd5b26f2240f31cd7038cfc2aa8c5169e6ce96ed0efe6823f003894eba29f2",
+    "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+    "ml/cascade/security.py": "dfc0092bfe0af090c3f35caae4c85dc222029c784a35944db94e332c19121515",
+    "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+    "ml/contracts/response.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+    "ml/contracts/validation.py": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+    "ml/data/cascade/kb.jsonl": "8658947fe19fd48292168d43f468fdd9399b61a3ba139123e4b8ed8b9597cbcb",
+    "ml/models/baseline.py": "568592d469e945ec3c99afff0857a5ca16f9ec87d321c9c1dfa86cda654fbe8f",
+    "ml/prompts_v2/cascade-mistral.txt": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11",
+    "ml/prompts_v2/cascade-sol.txt": "c3a199449b0445d0b824c042484918bab7bf045ac7862af63ec40fb5a8536754",
+    "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+    "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+    "ml/tools/propose_card.py": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19"
+  },
+  "teacher_base_commit": "aa5cf30ccc075dcca462bd8e5bf1a7f48286cda6",
+  "required_ai_documents": [
+    "docs/ml-final-metrics.md",
+    "docs/experiments/lab5.md",
+    "docs/experiments/lab5.ipynb",
+    "docs/ml-documentation.md"
+  ],
+  "authorization": "Participant explicitly requested publishing the current AI LAB05 package to the teacher repository; no merge or deployment.",
+  "teacher_branch": "lab5-ai-engineer-testing",
+  "teacher_export_tag": "lab5-ai-engineer-categories-2026-11-20-r2",
+  "integration_adjustments": {
+    "requirements.txt": "Retain pytest/ruff/pydantic dependencies of existing teacher CI alongside the evaluated AI runtime dependencies.",
+    ".github/workflows/ci.yml": "Retain legacy app style checks and add the real cascade regression suite without reformatting frozen test fixtures."
+  },
+  "checks": {
+    "sqlite_unittest": 148,
+    "pytest_with_legacy": 150,
+    "legacy_style": "passed",
+    "docker_build": "passed",
+    "notebook_executed": 8,
+    "runtime_source_hashes_match": true,
+    "local_markdown_links": "passed",
+    "secret_values_found": 0,
+    "private_paths_found": 0,
+    "new_model_calls": 0
+  },
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "076018fff752187e9a66e6e80f7006e51edce4b066383ee7ac59d65e97a988df"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "09e10c63d08e08a20cfd5224299d1e1ca0237e3a94dc153242b16e34a9bddf97"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "488c20274e3437d66eec1b69ee438f684d40f23c643ae551d3bea6a5df31d1c9"
+    },
+    {
+      "path": "backend/ai_service.py",
+      "sha256": "93839162b57acffa6c2d585f85657b78bde3501dbe93a39f74086349faa2ed75"
+    },
+    {
+      "path": "backend/bootstrap.py",
+      "sha256": "bf4ece08f531108067de6f6b3062033d415ee9065224ef588ff58caf0729d684"
+    },
+    {
+      "path": "backend/cascade_queue.py",
+      "sha256": "260d9eb5e3a2f85b2e122bf15ffd8cbbd9a5aee0ea676d390892ce2a84ef7223"
+    },
+    {
+      "path": "backend/contracts/cascade.py",
+      "sha256": "f9d290d1a98b9986477668694822223ae5ca390f23b3bc162e6e89a300ad71bf"
+    },
+    {
+      "path": "backend/contracts/cascade.schema.json",
+      "sha256": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8"
+    },
+    {
+      "path": "backend/contracts/evaluate.py",
+      "sha256": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc"
+    },
+    {
+      "path": "backend/contracts/response.schema.json",
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c"
+    },
+    {
+      "path": "backend/events.py",
+      "sha256": "f3e2a33cdfe4f6501fce3ece5bc139c2a1f2fb0db33b1e5edc8be0de2491a8b9"
+    },
+    {
+      "path": "backend/guards/auth.py",
+      "sha256": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85"
+    },
+    {
+      "path": "backend/guards/identity.py",
+      "sha256": "7a784446abd1ec9013144b166d872d385152c703c35f4f7ce2c7eea914d7bab2"
+    },
+    {
+      "path": "backend/guards/inference.py",
+      "sha256": "ea68ec5f19f14b490d78ae946732c1e32eb3905aa2ed9fa9702ef8780a44c975"
+    },
+    {
+      "path": "backend/handoff.py",
+      "sha256": "f2369d9fd6283c7f3a8abba13927b21c14d95d3ecc42812af6e9785399952fe1"
+    },
+    {
+      "path": "backend/ingress.py",
+      "sha256": "add9e1d285f35dec1c6c462f642ad6740e272a320b99ab850d75efb2826a365d"
+    },
+    {
+      "path": "backend/limits/daily.py",
+      "sha256": "cbe204198e45afea47468786aaeccadad537cefb0fd817ca367ca1e51dfc2ce3"
+    },
+    {
+      "path": "backend/limits/degradation.py",
+      "sha256": "5261b41881fb033283a525a7d38a8c39ef12f7a6388bb5b4ccff505b9b00bca2"
+    },
+    {
+      "path": "backend/limits/settings.py",
+      "sha256": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63"
+    },
+    {
+      "path": "backend/main.py",
+      "sha256": "d7ca112f161ca516c969724fe285abd8ba20e62ed136d16029a0f5480a6d02ef"
+    },
+    {
+      "path": "backend/models/store.py",
+      "sha256": "be4554f405fb47358051a61a9b45c24c4369e164a6f96d57f7e80648a976d184"
+    },
+    {
+      "path": "backend/observability.py",
+      "sha256": "fe66bc921fba8431f96db76b273f81515454f4952882f002719f841d574427a8"
+    },
+    {
+      "path": "backend/provision.py",
+      "sha256": "c1af3b5c6dda4213ee175d52bce3df7e3b6770b16faf07a5340abfe83010a7e9"
+    },
+    {
+      "path": "backend/routers/ai.py",
+      "sha256": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c"
+    },
+    {
+      "path": "backend/worker.py",
+      "sha256": "56c3b55077d60fb39211d0f24dc5e97b49fbe028abf44223d223ffe18072ad98"
+    },
+    {
+      "path": "cascade.env.example",
+      "sha256": "ce7a725b07d178ddd3d75fd353b4bdb420d7d589e2683ecc532f5832a21bb12a"
+    },
+    {
+      "path": "compose.cascade.yml",
+      "sha256": "207a41e9876ac06387f1dc896a2ac4b10f83ae123721169b53f422ee18c3eb8a"
+    },
+    {
+      "path": "data/kb.jsonl",
+      "sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1"
+    },
+    {
+      "path": "docs/experiments/assets/lab5-category/category-comparison.png",
+      "sha256": "a96410a680eef3bb27883dd86f93f59dd0e88dd9bba9e22eab047ef8cd96cbcf"
+    },
+    {
+      "path": "docs/experiments/assets/lab5/ablation.png",
+      "sha256": "a7000bbad5b0c20e906cb6654746732ed90c3b01d72f71b113d6ec8fc8259a35"
+    },
+    {
+      "path": "docs/experiments/assets/lab5/cost-per-api-call.png",
+      "sha256": "fb7aa95ab81d7155ccf02e31fd11d731cd18713e7e17c0b49fb67eb4aa77b07c"
+    },
+    {
+      "path": "docs/experiments/assets/lab5/latency-cost-per-case.png",
+      "sha256": "7a6ca5f2112369485b924c7cd94b30b3562f8117e47b1a190da0df21de664c5f"
+    },
+    {
+      "path": "docs/experiments/assets/lab5/quality-history.png",
+      "sha256": "bef3576a053722562e8481839416e1781884a29e6a39bc8a18d9e1331a78b6d1"
+    },
+    {
+      "path": "docs/experiments/lab5-category.md",
+      "sha256": "d65c7c4e20b98dc662e2f7f045f9fc71b91529302681c4597c9f0300f7bfd951"
+    },
+    {
+      "path": "docs/experiments/lab5-final-20261119.md",
+      "sha256": "25071c5a1e931505edfca78024a3103cc4c5b79e6bed91aabb745b1dbec1c984"
+    },
+    {
+      "path": "docs/experiments/lab5.ipynb",
+      "sha256": "f18c17009dbd477f62ea442e4373e0a5403a569a6196b4f3c6a13ccf39da6a46"
+    },
+    {
+      "path": "docs/experiments/lab5.md",
+      "sha256": "c4ad0547debedfa500c233e6bcbb51e8a7bc3dfb85b39de99ebf36db7d985a29"
+    },
+    {
+      "path": "docs/ml-documentation.md",
+      "sha256": "084dbed9167afc3d0de41fd9cf9db2be683e45fcbc76a368962e53451102d47f"
+    },
+    {
+      "path": "docs/ml-final-metrics.md",
+      "sha256": "bb038c7976d938ab2dccda5e99e6060113f67942b77ec48695470c2b6e3ae955"
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "db13f24da1680f16dbb9eb2feffb6ede481240c4086a39a4bb2d49342e3b572e"
+    },
+    {
+      "path": "migrations/001_init.sql",
+      "sha256": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41"
+    },
+    {
+      "path": "migrations/002_review_context.sql",
+      "sha256": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b"
+    },
+    {
+      "path": "migrations/003_event_queue.sql",
+      "sha256": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50"
+    },
+    {
+      "path": "migrations/004_daily_limits.sql",
+      "sha256": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0"
+    },
+    {
+      "path": "migrations/005_daily_calls.sql",
+      "sha256": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8"
+    },
+    {
+      "path": "migrations/006_cascade.sql",
+      "sha256": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9"
+    },
+    {
+      "path": "migrations/007_cascade_claim.sql",
+      "sha256": "038060fabfce10456a867ec38050c88af2074ce47a41835dc9d4c2cc279f0b6b"
+    },
+    {
+      "path": "migrations/008_provider_state.sql",
+      "sha256": "09b18162c0d2c2a8656b1d1a98e9b83e50b3ebf6cd764887030b5dcee948ca47"
+    },
+    {
+      "path": "migrations/postgresql/001_init.sql",
+      "sha256": "5e82da3db733ab1ea0b00b2e6a914081b6429ec22a87af408a7f3d33823385ad"
+    },
+    {
+      "path": "migrations/postgresql/002_review_context.sql",
+      "sha256": "1dd7930da1a3854717bca1de26071a1ff10974735fd47f0166ca637111485131"
+    },
+    {
+      "path": "migrations/postgresql/003_event_queue.sql",
+      "sha256": "2f8a299f33a0303c0c454332652b0e9488f082d24c946770b6c8de05faafd8fc"
+    },
+    {
+      "path": "migrations/postgresql/004_daily_limits.sql",
+      "sha256": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0"
+    },
+    {
+      "path": "migrations/postgresql/005_daily_calls.sql",
+      "sha256": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8"
+    },
+    {
+      "path": "migrations/postgresql/006_cascade.sql",
+      "sha256": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9"
+    },
+    {
+      "path": "migrations/postgresql/007_cascade_claim.sql",
+      "sha256": "1bb178f0656161100732df6e036f31cc8cdcd25db34e2cfedbd24336da7e1544"
+    },
+    {
+      "path": "migrations/postgresql/008_provider_state.sql",
+      "sha256": "09b18162c0d2c2a8656b1d1a98e9b83e50b3ebf6cd764887030b5dcee948ca47"
+    },
+    {
+      "path": "ml/cascade/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "ml/cascade/assessment.py",
+      "sha256": "fe6f262baadb026f25eee63a9caa90f6326650e900cab0e314398bec91fa6207"
+    },
+    {
+      "path": "ml/cascade/billing.py",
+      "sha256": "f5be8cc7955d317f686cb8087a4cb05c4bc564114f2aeca40903e61b77394ec0"
+    },
+    {
+      "path": "ml/cascade/cache.py",
+      "sha256": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265"
+    },
+    {
+      "path": "ml/cascade/category.py",
+      "sha256": "658a9029baf612cbac84d73667c3a23a393b2aa09884760524372630dc0f7f82"
+    },
+    {
+      "path": "ml/cascade/context.py",
+      "sha256": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e"
+    },
+    {
+      "path": "ml/cascade/dialogue.py",
+      "sha256": "4aea10b6b6258215f8a1bc44061d5e5fc00a009e583d25ed9c42366276645f53"
+    },
+    {
+      "path": "ml/cascade/engine.py",
+      "sha256": "7b9d4d80ef8ab82739f1097e0843c8ba463bf3aa1560882dd02be2644b41f47d"
+    },
+    {
+      "path": "ml/cascade/mistral-system.txt",
+      "sha256": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11"
+    },
+    {
+      "path": "ml/cascade/providers.py",
+      "sha256": "6bcd5b26f2240f31cd7038cfc2aa8c5169e6ce96ed0efe6823f003894eba29f2"
+    },
+    {
+      "path": "ml/cascade/retrieval.py",
+      "sha256": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46"
+    },
+    {
+      "path": "ml/cascade/security.py",
+      "sha256": "dfc0092bfe0af090c3f35caae4c85dc222029c784a35944db94e332c19121515"
+    },
+    {
+      "path": "ml/cascade/service_cache.py",
+      "sha256": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a"
+    },
+    {
+      "path": "ml/contracts/response.schema.json",
+      "sha256": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8"
+    },
+    {
+      "path": "ml/contracts/validation.py",
+      "sha256": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53"
+    },
+    {
+      "path": "ml/data/cascade/kb.jsonl",
+      "sha256": "8658947fe19fd48292168d43f468fdd9399b61a3ba139123e4b8ed8b9597cbcb"
+    },
+    {
+      "path": "ml/experiments/lab5-category/.gitignore",
+      "sha256": "96125f37797e1797cb860870c9c9a22ec24eca2af4bd14981bd1a2e210bc5dcf"
+    },
+    {
+      "path": "ml/experiments/lab5-category/README.md",
+      "sha256": "ee13f730e9a088e2e1493c2e029eeded11d229b18c26da3bdea0e8ce6a74a875"
+    },
+    {
+      "path": "ml/experiments/lab5-category/analysis.py",
+      "sha256": "1f84e46e2a90b35bc608241bbc22c906898f9f8478a8e68e9b207fe8b1228ad5"
+    },
+    {
+      "path": "ml/experiments/lab5-category/build_review.py",
+      "sha256": "52443e4540179ae4f9d5a5e9b569be00c18c90e5c8fe1f41617782aafa54547a"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/analysis/comparison.json",
+      "sha256": "9cb492119118d4f0241c329ea908a1fd01395994ede124b4a5bbc44006173796"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/budget.json",
+      "sha256": "0b53fa90ed6b3e38a8c043522ae870fd7bcd1b97f88f854dd8623c73c2d5250b"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup-review.html",
+      "sha256": "8fd917c2c88eace7bc6fedd66e98e5664e11bf6b7870dc6d6becb3bcb90ff80b"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/billing-receipts.json",
+      "sha256": "04fb0cf79cb1c71822c0d52491bcd6b957c9953ba61d1e602dbf079a60ad3650"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/budget.json",
+      "sha256": "065a23a5ed1363b71e132d5eec0cd4b1c0553e2dee37bbcaaa641903a0784671"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/completion.json",
+      "sha256": "6e072c04602fe2add7fe83ad9f58b86928884a3d2dde9cd34eae83e00a14ec96"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/config.json",
+      "sha256": "79129e2fb30190378e0cdd8e2e15dbf90e134569e72fa886177f0a1c47c9af76"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/langfuse-readback.json",
+      "sha256": "4862a7350d5db20734befbc9d48f0551cdbc0e30a5d16d65bc9ec45609f7c67b"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/ledger.json",
+      "sha256": "b50496e166526ea7d2e2e8e7c78902f944bcf63e6629cd54d1d6fc56b3ad2e55"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/network-calls.json",
+      "sha256": "7145fc7cedd73ba8c81e5d67bd447b18ac0724109f5dbc206e0d09cf7304e8b6"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/plan.json",
+      "sha256": "8b5b387f0748db6b23d99cee3429a3a090d59cadfe4c7007ab1ef080bb89e31e"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/previous-budget.json",
+      "sha256": "6c5828105ed614e88df487ce65f930c072f19a70a3c7c62a2346eb1927fe5b89"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/results.jsonl",
+      "sha256": "919a4d956e035d0a43711fb143de4fa6902b35bc388f15cb991f8e0daebe95be"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/started.json",
+      "sha256": "e859fdba69f8ff59302cac20088e9afaa3233e2056bcf3efc32263d0818da5a0"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/followup/verification.json",
+      "sha256": "a8684947b70b62be42f1df96660977a7fecd7096ad3dbc6c86a2f63aecb18ed6"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/billing-receipts.json",
+      "sha256": "74c0331cf88d4d6538c21ee7ce1a4e3041f13f86799621f76768c665ee0e430e"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/budget.json",
+      "sha256": "6c5828105ed614e88df487ce65f930c072f19a70a3c7c62a2346eb1927fe5b89"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/completion.json",
+      "sha256": "52c59b6e3bc56dd6800e1b07f3341ab7adff1da825c5f8ec8a9778f0245c447e"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/config.json",
+      "sha256": "e62380d38ce354d9096633cc1ea4db210be00a328185d622439a9f50c8094f6d"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/langfuse-readback.json",
+      "sha256": "9599959bdf8b28fa45d9fa949ba939a78408fbdf5ac4bd43122933effd14ce00"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/ledger.json",
+      "sha256": "7bc09ecd78f3067d76153cbf7fbf3093ab5b658dfa05741fecb9f59d8303fcf4"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/network-calls.json",
+      "sha256": "52e11ea30c86c89155e6ddf9a147da4cc596381007b18e229695311b8317c585"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/plan.json",
+      "sha256": "b3ad7d0975ad6557fd44229711e8451fb61bbebaf5b5f308f90058ec6eb88554"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/previous-budget.json",
+      "sha256": "62ffedff0f0d464ace8ff58c4efd8b22df02c094d4dfb8b8636de3915283d9f7"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/results.jsonl",
+      "sha256": "61bd81aa75b975019f681b8464ed8d0b20d8c5a87490b112dd3c03bdf5c4f411"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/started.json",
+      "sha256": "3d514a3a74bae17a9e18b9cfe637f30a796760e74a3b242cca3e95e32d433a93"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/live/verification.json",
+      "sha256": "62224beb856bb2fe37166469898f8b58ba4a168408593cce0e22072b308cce7d"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/replay/report.json",
+      "sha256": "8ae96adf02474f86776102aeb8f26f96120ef4f7a0fdcd636be1ece843890750"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/replay/results.jsonl",
+      "sha256": "5dbef89d103cdb5f95893ab1dfdf0c345336a45d8c394a2ff1cf79b40c99f4ea"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/review.html",
+      "sha256": "731c176ba3199b1656b93730fa9f7c542fe6b30e04a0177a71067b95e3d87890"
+    },
+    {
+      "path": "ml/experiments/lab5-category/evidence/verification.json",
+      "sha256": "f57552bbaa3581932c049c0aa4324ab195c9b17284800fb52f28e8c59d4242e4"
+    },
+    {
+      "path": "ml/experiments/lab5-category/fixtures/cases.jsonl",
+      "sha256": "7b66867c979499347307b791590c4b8042e5b210c7df2cf12ca20f6cfe5cd864"
+    },
+    {
+      "path": "ml/experiments/lab5-category/fixtures/sources.json",
+      "sha256": "61806360e8784976c696b6619404f9b924e47c0eedef0f08fe4975b0a6d8a9a6"
+    },
+    {
+      "path": "ml/experiments/lab5-category/history/prior-budget.json",
+      "sha256": "62ffedff0f0d464ace8ff58c4efd8b22df02c094d4dfb8b8636de3915283d9f7"
+    },
+    {
+      "path": "ml/experiments/lab5-category/run.py",
+      "sha256": "31c9f737637dc9c5a8c778f471ce344ae289d562999dee76816c82b7ed2a0e01"
+    },
+    {
+      "path": "ml/experiments/lab5-category/submission-manifest.json",
+      "sha256": "aae9b40d3af85248fe7969844ddc4762aec91d25d55b4441ba60a8fca6b16b56"
+    },
+    {
+      "path": "ml/experiments/lab5-category/verify_traces.py",
+      "sha256": "33c37534ab99bbeded9bcef9c15e2ce3c55980f26d637953f97af6e6c17b24e5"
+    },
+    {
+      "path": "ml/experiments/lab5/.gitattributes",
+      "sha256": "768eebbf44a4f4d010cb668fd1499340e45ec919aea84ba623f8c700d5788125"
+    },
+    {
+      "path": "ml/experiments/lab5/.gitignore",
+      "sha256": "96125f37797e1797cb860870c9c9a22ec24eca2af4bd14981bd1a2e210bc5dcf"
+    },
+    {
+      "path": "ml/experiments/lab5/README.md",
+      "sha256": "576cdde2a25a7e0b951b2f19c8a3aaccc6c7c757b25f3ed450bbbf20adb9ef91"
+    },
+    {
+      "path": "ml/experiments/lab5/analyze.py",
+      "sha256": "fa65165423b532354d6ab89f7d9d1dffb677cde6d15f3762534a30eecce36ae2"
+    },
+    {
+      "path": "ml/experiments/lab5/build_review.py",
+      "sha256": "09d15b408ac9b9faa93138785f0615f0027dc0510005d0ca6908ea84b721db85"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/analysis/ablation.json",
+      "sha256": "65f7442e148e48d64cd6d5239c0cc4f76836d104b3e74a36c76c2536cd3d45b2"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/analysis/cost-per-attempt.json",
+      "sha256": "93356240a6e3e00173001b21d5ef0c7d65cd3c75865055debe8c797eb56ebe1b"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/analysis/cost-per-case.json",
+      "sha256": "4504224bbb2ac912a02de4686ec358575fce12c8f3c3f87529f74b1d5629c57d"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/analysis/metrics.json",
+      "sha256": "418409b318393ec340d20a746a2d8ef79f56607ef8c1a15a48f89ec4bb1548e6"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/billing-receipts.json",
+      "sha256": "8b48f2b03793ca38d756520b0d3d437aa5f09b88607a87d84a28f0a854d0bbef"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/budget.json",
+      "sha256": "8729c23bfb8e0dd094b37d1453f92e4c4257bffc044a64f48a42f3c23c323ba5"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/completion.json",
+      "sha256": "b71c45a0586fceb6c47b2c2a2ed93366cfeda7ad41712cae0281b52711658f67"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/config.json",
+      "sha256": "9fdffa74dd23c6f18ea0a7edd1c7f3533168c78ebc4ed10db730fcda7b13feac"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/ledger.json",
+      "sha256": "7e2fa957bf591a98e0bf0210bdfbd94bd5c8194fab88e06540074a47f607bdff"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/network-calls.json",
+      "sha256": "71397ba1f77e8457a065845c46537e9742d7b17c94351d330b5b35660ac204d3"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/budget.json",
+      "sha256": "7f27a0e7b2606ddeaf1669dc8df96976ba62f544fecc5bdba31194fac5ab3c50"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/completion.json",
+      "sha256": "211bf70c7cbe836bb3cdd495de29b5ac9e1335c00c6bf24c7730c5713065694c"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/config.json",
+      "sha256": "84c928de46ccd962a622a184017031bd0e461acab4bc88652e1b52a4e56bbf1f"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/langfuse-readback.json",
+      "sha256": "599e8d35d6186109a8e50984f7c8131aa828f4e9874a1f6bd141f50ec3c09f7e"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/results.jsonl",
+      "sha256": "dcf264ca66116cb0801d841451149e4926f31524354c0ea0e092ede672f05d0d"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/initial/verification.json",
+      "sha256": "b0db24c248e5750a904aa7c33ba3c8de61a3bd8e4a54e21b4e6b90d1cd7b2c27"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/budget.json",
+      "sha256": "0c634508bdb726767d318bd4954007452412d3179db7fa68f3b41543b4765652"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/completion.json",
+      "sha256": "bb6346ad34aba6da94933052505f60354289712ec350bb32d4cf057a0e366577"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/config.json",
+      "sha256": "8d68912989c3da9e65747826fd26c7414adccd655ae839912dd273fd4f3d18de"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/langfuse-readback.json",
+      "sha256": "0a687f2256f90597617d4ff3ca753ed9977b0c037e675b7b5574a40b5d2f0360"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/results.jsonl",
+      "sha256": "649eba0eebec34038ca4c2e4c1de01d4b7216e800b4d6fa481670f6048cea64f"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/phases/resume/verification.json",
+      "sha256": "8a51860cf9e7c0f8b08311011455abe97abf2111c36341c991d13b2a1ea54a7d"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/plan.json",
+      "sha256": "851765497b4c9f7a3cc40497ee66156cdcbbfbde0d5fb956602235b1e4b831de"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/results.jsonl",
+      "sha256": "752dbc283f541afad6a02934dd4fe3767981f829070b08f63761fb875c698169"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/final/verification.json",
+      "sha256": "56aad2a1492559431c14edae40d9471fcf48311aea7209f72d7b5cce8bc48d8e"
+    },
+    {
+      "path": "ml/experiments/lab5/evidence/review.html",
+      "sha256": "27745dcbad327fd721d26c46d2788aff76c1f9dbded250aaeff2ed1048b5067f"
+    },
+    {
+      "path": "ml/experiments/lab5/fixtures/cases.jsonl",
+      "sha256": "846c56f338e481a13db98e071665e6ef8512d9145cdfdca031816b5b70d20950"
+    },
+    {
+      "path": "ml/experiments/lab5/fixtures/sources.json",
+      "sha256": "1363bd541f3e1189751a29c40337215620aa5da51e6607603db591d1aec05c9e"
+    },
+    {
+      "path": "ml/experiments/lab5/history/human-review-accepted.json",
+      "sha256": "5785fd1bbe61ee1c0cd11586d1cc05254795aab774acc2302269e9531033223c"
+    },
+    {
+      "path": "ml/experiments/lab5/history/lab3-first-mistral.json",
+      "sha256": "b82a1ba68d6ddd2e87e3e077eb9cee8e644c16ba8e930e09a0f0b6c3f7a768f4"
+    },
+    {
+      "path": "ml/experiments/lab5/history/lab4-replay.json",
+      "sha256": "6707a489a6622e24adc4f0b89fe85a207e877909435e282fee1b4814b6522468"
+    },
+    {
+      "path": "ml/experiments/lab5/history/lab5-quality-20261112.json",
+      "sha256": "82240f1f4a7f910b262d37ad00dd5cccb129dddc61653cba853ada5d104cfc81"
+    },
+    {
+      "path": "ml/experiments/lab5/history/prior-budget.json",
+      "sha256": "75acb60847840762dcfe0970a07af17207f9aaf0b22a898c891ad5bd97aa40d1"
+    },
+    {
+      "path": "ml/experiments/lab5/requirements-analysis.txt",
+      "sha256": "d57e6f2fc5532f7b3e4820327a2359c3f60e4072c3791adc8fd8682a13d8d258"
+    },
+    {
+      "path": "ml/experiments/lab5/resume_final.py",
+      "sha256": "a4c91dbb1fedd4a14539bbeb39f16b763cc916ba12856ba59c26b89e363c7ef5"
+    },
+    {
+      "path": "ml/experiments/lab5/run_final.py",
+      "sha256": "f79950e3de5dfc0f1cff4ceb16f698f9e9fc1324642ca9d586eff65bca505170"
+    },
+    {
+      "path": "ml/experiments/lab5/verify_traces.py",
+      "sha256": "8649337ed484cc599c51a98b5a7ddc17e7be641aa720553cfe9aac4afd2f79b4"
+    },
+    {
+      "path": "ml/integration/ai_service.py",
+      "sha256": "93839162b57acffa6c2d585f85657b78bde3501dbe93a39f74086349faa2ed75"
+    },
+    {
+      "path": "ml/models/baseline.py",
+      "sha256": "568592d469e945ec3c99afff0857a5ca16f9ec87d321c9c1dfa86cda654fbe8f"
+    },
+    {
+      "path": "ml/prompts_v2/cascade-mistral.txt",
+      "sha256": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11"
+    },
+    {
+      "path": "ml/prompts_v2/cascade-sol.txt",
+      "sha256": "c3a199449b0445d0b824c042484918bab7bf045ac7862af63ec40fb5a8536754"
+    },
+    {
+      "path": "ml/prompts_v2/system-2.1.txt",
+      "sha256": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea"
+    },
+    {
+      "path": "ml/prompts_v2/system.txt",
+      "sha256": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9"
+    },
+    {
+      "path": "ml/tools/README.md",
+      "sha256": "104c0920279038ab6b1901674232f3e3f32cb2717e3a8e4f1e3ca25f3207b913"
+    },
+    {
+      "path": "ml/tools/propose_card.py",
+      "sha256": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19"
+    },
+    {
+      "path": "ops/release.py",
+      "sha256": "d862cf3a5895e782cc60952866e8558fdd5616b96f388cbe268e93a18ef8d991"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "c75c359e4e5407b05648c09712f0b982e20f1df2f89ec52d3649e2883e4ef4a5"
+    },
+    {
+      "path": "tests/test_article_context.py",
+      "sha256": "d565005b702f402d31de0366e169aba143c2c14b750d763dea3b82632da8e7f6"
+    },
+    {
+      "path": "tests/test_cascade.py",
+      "sha256": "dcf9c5ddd2c30d691c1d6439f4bb78be50f5d9d7f5908b62590338a55d044b43"
+    },
+    {
+      "path": "tests/test_cascade_integration.py",
+      "sha256": "fdb46f899ad33d89619bf64be8eee44df50edeebc516c7d7dfb6a3fbc27bde88"
+    },
+    {
+      "path": "tests/test_category_preservation.py",
+      "sha256": "5510b45febab6d7da690f775066a1429d5a6072f938258221f73ca726b2d3a28"
+    },
+    {
+      "path": "tests/test_delivery.py",
+      "sha256": "d818833474b6f1354c386244154ae0684cc86a3c248fe09394d43f1947647eb3"
+    },
+    {
+      "path": "tests/test_dialogue_facts.py",
+      "sha256": "199e86a8c56e09b7061030a7aee5688fa7a686ede8c7ebd427b97c8aa946315a"
+    },
+    {
+      "path": "tests/test_events.py",
+      "sha256": "6a4c1afe52df009875102ce4c72fc7f3fdb7acfbab67d3d6dca75aeb69fb07e1"
+    },
+    {
+      "path": "tests/test_handoff.py",
+      "sha256": "b22114c9a0a83c2ed6e5d6203f187e44ebecbd97817c3a83a5ffbd8792e9f45a"
+    },
+    {
+      "path": "tests/test_infrastructure.py",
+      "sha256": "47024d709b6149d8d2015f6409a6b1df7a080afbb33949b360b7b2ceb5a11ede"
+    },
+    {
+      "path": "tests/test_processing.py",
+      "sha256": "b875ac4500a8867f8c36cef2a4a6119e6c7413f37b86aa6abbc6cccd59e965d7"
+    },
+    {
+      "path": "tests/test_product_error_review.py",
+      "sha256": "0c5733239e14ac2cd047b49a29c6e788b378f5f558a579463df141cb4a0dd5f0"
+    },
+    {
+      "path": "tests/test_release.py",
+      "sha256": "8f321aac70b4f6adcb31b9c72ef459d86afa18f1f3306326365c810a400c8e1e"
+    },
+    {
+      "path": "tests/test_semantic_cascade.py",
+      "sha256": "61bac9b0390a946ab172db6dd2b6361a3e60c7bce3f70735932a937a18dfad14"
+    },
+    {
+      "path": "tests/test_sol_before_human.py",
+      "sha256": "492581a2874bb62632a76529827244c60ea20b0db6618306f8a361253f3a7411"
+    }
+  ],
+  "hash_scope": "Git blob bytes after text line-ending normalization; the source-package manifest retains the original archive byte hashes."
+}

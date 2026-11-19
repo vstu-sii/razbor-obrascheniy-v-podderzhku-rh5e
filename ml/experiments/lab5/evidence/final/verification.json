@@ -1,0 +1,10 @@
+{
+  "runtime_hashes": true,
+  "release_tag": "lab5-ai-engineer-testing-2026-11-19",
+  "expected_generations": 58,
+  "observed_generations": 58,
+  "missing": [],
+  "phases": 2,
+  "new_model_calls": 0,
+  "budget_verified": true
+}

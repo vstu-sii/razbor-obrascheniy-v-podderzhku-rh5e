@@ -1,0 +1,266 @@
+[
+  {
+    "case_id": "UC01-02",
+    "confirmed_rub": "0.271094",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 24908.138
+  },
+  {
+    "case_id": "UC01-03",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 9032.382
+  },
+  {
+    "case_id": "UC01-04",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 5760.019
+  },
+  {
+    "case_id": "UC01-05",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 5990.085
+  },
+  {
+    "case_id": "UC01-06",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 5649.556
+  },
+  {
+    "case_id": "UC01-07",
+    "confirmed_rub": "0.262194",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 26638.26
+  },
+  {
+    "case_id": "UC01-08",
+    "confirmed_rub": "0.270827",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 18801.264
+  },
+  {
+    "case_id": "UC01-10",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 7953.701
+  },
+  {
+    "case_id": "UC02-01",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 5090.975
+  },
+  {
+    "case_id": "UC02-02",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 4860.336
+  },
+  {
+    "case_id": "UC02-03",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 50779.042
+  },
+  {
+    "case_id": "UC02-05",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 7352.209
+  },
+  {
+    "case_id": "UC02-07",
+    "confirmed_rub": "0.195355",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 53115.686
+  },
+  {
+    "case_id": "UC02-08",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 55477.684
+  },
+  {
+    "case_id": "UC02-09",
+    "confirmed_rub": "0.235672",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 14928.161
+  },
+  {
+    "case_id": "UC02-10",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 65156.82
+  },
+  {
+    "case_id": "UC03-01",
+    "confirmed_rub": "0.32307",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 46771.606
+  },
+  {
+    "case_id": "UC03-02",
+    "confirmed_rub": "0.194109",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 17526.316
+  },
+  {
+    "case_id": "UC03-03",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 12623.912
+  },
+  {
+    "case_id": "UC03-04",
+    "confirmed_rub": "0.144714",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 59998.894
+  },
+  {
+    "case_id": "UC03-05",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 551.291
+  },
+  {
+    "case_id": "UC03-06",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 30302.121
+  },
+  {
+    "case_id": "UC03-07",
+    "confirmed_rub": "0.2225",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 56508.995
+  },
+  {
+    "case_id": "UC03-08",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 3974.066
+  },
+  {
+    "case_id": "UC03-09",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 30248.55
+  },
+  {
+    "case_id": "UC03-10",
+    "confirmed_rub": "0.160022",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 49845.759
+  },
+  {
+    "case_id": "UC04-01",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 17568.589
+  },
+  {
+    "case_id": "UC04-02",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 10573.546
+  },
+  {
+    "case_id": "UC04-03",
+    "confirmed_rub": "0.182272",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 21591.62
+  },
+  {
+    "case_id": "UC04-04",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 51387.751
+  },
+  {
+    "case_id": "UC04-05",
+    "confirmed_rub": "0.296904",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": null
+  },
+  {
+    "case_id": "UC04-06",
+    "confirmed_rub": "0.272696",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 48175.351
+  },
+  {
+    "case_id": "UC04-07",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 54313.577
+  },
+  {
+    "case_id": "UC04-08",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 6898.774
+  },
+  {
+    "case_id": "UC04-09",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 24979.762
+  },
+  {
+    "case_id": "UC04-10",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 36138.498
+  },
+  {
+    "case_id": "EDGE-LONG-01",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 31702.236
+  },
+  {
+    "case_id": "EDGE-STALE-01",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 1491.231
+  },
+  {
+    "case_id": "REG-invoice",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 37376.448
+  },
+  {
+    "case_id": "REG-free-clarify",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 37150.298
+  },
+  {
+    "case_id": "REG-unknown-final",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 19064.834
+  },
+  {
+    "case_id": "REG-e42-1",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "end_to_end_ms": 53039.874
+  },
+  {
+    "case_id": "REG-e42-2",
+    "confirmed_rub": "0.417054",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 36752.636
+  },
+  {
+    "case_id": "REG-e42-3",
+    "confirmed_rub": "0.443754",
+    "unknown_reserve_rub": "0",
+    "end_to_end_ms": 32193.756
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "planned": 44,
+  "observed": 44,
+  "stop": null,
+  "phases": 2,
+  "financial_amendment_only": true,
+  "interrupted_latency_cases": [
+    "UC04-05"
+  ]
+}

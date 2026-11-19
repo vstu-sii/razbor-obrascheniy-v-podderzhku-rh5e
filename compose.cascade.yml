@@ -1,0 +1,23 @@
+x-cascade-env: &cascade
+  BASELINE_MODE: cascade
+  CASCADE_LIVE_ENABLED: ${CASCADE_LIVE_ENABLED:-false}
+  SOL_LIVE_ENABLED: ${SOL_LIVE_ENABLED:-false}
+  MISTRAL_FREE_CONFIRMED: ${MISTRAL_FREE_CONFIRMED:-false}
+  MISTRAL_REQUESTS_PER_MINUTE: ${MISTRAL_REQUESTS_PER_MINUTE:-2}
+  MISTRAL_MAX_RUNNING: ${MISTRAL_MAX_RUNNING:-1}
+  TOKEN_BUDGET: ${TOKEN_BUDGET:-20000000}
+  CASCADE_BUDGET_RUB: ${CASCADE_BUDGET_RUB:-10}
+  TRACE_SYNTHETIC_CONTENT: ${TRACE_SYNTHETIC_CONTENT:-false}
+services:
+  app:
+    environment: *cascade
+  ai:
+    environment:
+      <<: *cascade
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      APIMIRA_API_KEY: ${APIMIRA_API_KEY:-}
+      CASCADE_CA_FILE: ${CASCADE_CA_FILE:-}
+  worker:
+    environment: *cascade
+  ingress:
+    environment: *cascade

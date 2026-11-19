@@ -1,0 +1,11 @@
+{
+  "runtime_hashes": true,
+  "release_tag": "lab5-ai-engineer-categories-2026-11-20",
+  "expected_generations": 23,
+  "observed_generations": 23,
+  "missing": [],
+  "new_model_calls": 0,
+  "budget_verified": true,
+  "verifier_hash": "33c37534ab99bbeded9bcef9c15e2ce3c55980f26d637953f97af6e6c17b24e5",
+  "read_interval_seconds": 6
+}

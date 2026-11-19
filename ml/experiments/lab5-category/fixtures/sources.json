@@ -1,0 +1,29 @@
+{
+  "source_cases_sha256": "239c4279a05929f7ea26b91027cce2d00f7951cbd5008021f16368fc57d0cd75",
+  "case_ids": [
+    "UC03-03",
+    "UC03-05",
+    "UC03-06",
+    "UC03-08",
+    "UC04-09",
+    "UC01-05",
+    "UC01-03",
+    "UC02-09",
+    "UC02-10",
+    "UC02-07",
+    "UC02-08",
+    "UC02-03",
+    "UC04-04",
+    "UC04-07",
+    "UC04-03",
+    "UC04-06",
+    "UC03-01",
+    "UC03-02",
+    "UC03-07",
+    "REG-e42-1"
+  ],
+  "selection": "All 15 prior category mismatches, two category-boundary controls, two ordinary controls and product_error review.",
+  "gold_changed": false,
+  "selected_before_generation": true,
+  "scope": "Known development regression subset, not a full replacement for the 44-case final eval."
+}

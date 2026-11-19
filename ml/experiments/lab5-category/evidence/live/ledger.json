@@ -1,0 +1,170 @@
+[
+  {
+    "request_id": "a9752145-52a1-4718-9248-9d381b3081b7",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "0d933562-cf3b-43db-bbd1-1dcb0ab69294",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "061005d8-85f2-4555-ac2b-91ef30b16b97",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "7b4adba7-c874-4ea3-89f9-5bfc966dab2c",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "02c38471-53a2-4b7a-8ccd-bc3892de07e4",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "8fab6cc4-5e8d-438c-b57f-6571f05552a6",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "19c560e0-1292-4e2b-adf3-656b2fe9559f",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2942
+  },
+  {
+    "request_id": "a7d24fb3-0603-4140-959c-32e31c757015",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "c325e32f-3d6e-46fd-b3a7-c7a9aae7b91c",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2862
+  },
+  {
+    "request_id": "268ab505-ba1e-47ed-b77f-6a3abedb5f3f",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "eb5c60ef-45bb-40a4-87be-345d7694d6f1",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "4885e841-251b-4f60-be56-367a0279b2fe",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "612a9421-821c-447b-8091-07c7f2317803",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "dfca0979-7656-4c01-81d9-44c8c770ee7b",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "91696bb5-bb70-42c1-b786-d7f4fa389288",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 3102
+  },
+  {
+    "request_id": "bdb5f3e9-f5b7-4e7c-98d3-294326dfb8ca",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "beb050c9-4e4b-4c3f-bb80-f93976303529",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2429
+  },
+  {
+    "request_id": "07773db6-9618-41e1-aab3-169488744797",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "2007aa6f-4fb2-4930-b6c1-f2dac816d648",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "267b8a49-fae8-4ef0-b2f7-1b3b5972dcd5",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "91d6972c-e503-45ea-ab96-9170bdc3ceb7",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2713
+  },
+  {
+    "request_id": "2de27552-f801-49f9-a8b3-688da7f8a747",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "ad895f0b-e4f9-40fd-9be4-d98220429daf",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2886
+  },
+  {
+    "request_id": "6b9ffc13-3097-4861-b33c-0bb8e05f7af0",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "1e251356-819d-4a6e-bf5b-2c0db043ca34",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": 2702
+  },
+  {
+    "request_id": "8f314b4c-d7ba-4045-b7cf-1cff39a9585b",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  },
+  {
+    "request_id": "68ac30a5-a4ac-4269-aa5d-572cbcb8a4ed",
+    "provider": "sol",
+    "reserved_micro_usd": 19968,
+    "billed_micro_usd": null
+  },
+  {
+    "request_id": "3f7fe600-eb6a-4871-bfe8-5b143e98a53b",
+    "provider": "mistral",
+    "reserved_micro_usd": 0,
+    "billed_micro_usd": 0
+  }
+]

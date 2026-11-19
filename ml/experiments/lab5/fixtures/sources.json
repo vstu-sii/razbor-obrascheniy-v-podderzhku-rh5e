@@ -1,0 +1,10 @@
+{
+  "quality_commit": "061d0079b8f618e011ed7a6b6752a2667ebc7917",
+  "quality_results_sha256": "3f640bda55dac82e809c26b6ee505b844ff41153707e770a9bb0665147b93e3c",
+  "quality_release": "lab5-release-delivery-2026-11-12",
+  "quality_cases": 38,
+  "policy_regressions": 6,
+  "labels_frozen_before_generation": true,
+  "original_legacy_labels_changed": false,
+  "note": "Legacy policy/taxonomy mismatches are retained and discussed; no labels are passed to the models."
+}

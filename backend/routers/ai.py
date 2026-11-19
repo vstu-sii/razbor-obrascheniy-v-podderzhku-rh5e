@@ -1,34 +1,6 @@
-"""HTTP API разбора обращений."""
+"""AI endpoints only propose cards; they cannot write to storage or helpdesk."""
 import asyncio
-import os
-import secrets
-from pathlib import Path
-from typing import Literal
-
-from fastapi import APIRouter, Depends, FastAPI, HTTPException
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
-from pydantic import BaseModel, ConfigDict, Field
-
-from ml.models.baseline import Baseline
-from ml.contracts.validation import SCHEMA, provenance_gate, read_jsonl
-
-ROOT = Path(__file__).resolve().parents[2]
-
-
-class HistoryMessage(BaseModel):
-    model_config = ConfigDict(extra='forbid')
-    speaker: Literal['customer', 'operator']
-    text: str = Field(min_length=1, max_length=10000)
-
-
-class AnalyzeRequest(BaseModel):
-    model_config = ConfigDict(extra='forbid')
-    request_id: str = Field(min_length=1, max_length=100)
-    ticket_ref: str = Field(min_length=1, max_length=100)
-    ticket_text: str = Field(min_length=1, max_length=10000)
-    history: list[HistoryMessage] = Field(max_length=50)
-    kb_version: str = Field(min_length=1, max_length=50)
-
+from fastapi import APIRouter, Depends
 
 def create_router(request_model, operator_dependency, engine):
     router = APIRouter()
@@ -39,32 +11,3 @@ def create_router(request_model, operator_dependency, engine):
         return result['final_card']
 
     return router
-
-
-def create_app():
-    token = os.environ.get('DEMO_OPERATOR_TOKEN', '')
-    if not token:
-        raise RuntimeError('Set DEMO_OPERATOR_TOKEN')
-    mode = os.environ.get('BASELINE_MODE', 'extractive')
-    if mode not in ('extractive', 'disabled'):
-        raise RuntimeError('Live cascade requires the Delivery queue reservation boundary')
-    engine = Baseline(
-        read_jsonl(ROOT / 'ml/data/cascade/kb.jsonl'), SCHEMA, provenance_gate,
-        mode=mode,
-        trace_path=os.environ.get('TRACE_PATH', str(ROOT / 'runtime/traces.jsonl')),
-    )
-    bearer = HTTPBearer(auto_error=False)
-
-    def operator(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)):
-        if not credentials or not secrets.compare_digest(credentials.credentials, token):
-            raise HTTPException(401, 'Operator authentication required')
-        return 'operator'
-
-    app = FastAPI(title='Support Triage AI', version='0.3.0')
-    app.include_router(create_router(AnalyzeRequest, operator, engine))
-
-    @app.get('/health')
-    def health():
-        return {'status': 'ok', 'baseline_mode': engine.mode}
-
-    return app

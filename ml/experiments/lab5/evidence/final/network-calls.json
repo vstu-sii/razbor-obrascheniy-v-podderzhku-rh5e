@@ -1,0 +1,408 @@
+[
+  {
+    "id": "8101c679-db54-4d21-96d8-85758ee254bd",
+    "case_id": "UC01-02",
+    "provider": "mistral",
+    "technical": 30099,
+    "utc": "2026-11-19T17:50:27.354114+00:00"
+  },
+  {
+    "id": "8f9f9850-5186-4596-bcba-7c2e00cf52f1",
+    "case_id": "UC01-02",
+    "provider": "sol",
+    "technical": 19751,
+    "utc": "2026-11-19T17:50:33.476645+00:00"
+  },
+  {
+    "id": "9a816d7a-e0f1-40cb-84ab-26ad5473ec0c",
+    "case_id": "UC01-03",
+    "provider": "mistral",
+    "technical": 29742,
+    "utc": "2026-11-19T17:50:57.488661+00:00"
+  },
+  {
+    "id": "c0d43d95-af60-4842-9338-4730832ab9cc",
+    "case_id": "UC01-04",
+    "provider": "mistral",
+    "technical": 29746,
+    "utc": "2026-11-19T17:51:28.159806+00:00"
+  },
+  {
+    "id": "bd530614-4b75-4ba7-bc02-b40c6f7fbaa7",
+    "case_id": "UC01-05",
+    "provider": "mistral",
+    "technical": 29824,
+    "utc": "2026-11-19T17:51:58.623253+00:00"
+  },
+  {
+    "id": "1b52f06c-ab10-4241-9844-85b782ba6492",
+    "case_id": "UC01-06",
+    "provider": "mistral",
+    "technical": 29834,
+    "utc": "2026-11-19T17:52:28.785725+00:00"
+  },
+  {
+    "id": "49bde326-39ea-42b5-bd95-3756b5440ef2",
+    "case_id": "UC01-07",
+    "provider": "mistral",
+    "technical": 29509,
+    "utc": "2026-11-19T17:52:59.172583+00:00"
+  },
+  {
+    "id": "8f2f8ce7-bb61-42af-8e9c-02d78b962495",
+    "case_id": "UC01-07",
+    "provider": "sol",
+    "technical": 19724,
+    "utc": "2026-11-19T17:53:06.254047+00:00"
+  },
+  {
+    "id": "9ddb9af1-fbee-4272-be9c-be43764cda00",
+    "case_id": "UC01-08",
+    "provider": "mistral",
+    "technical": 30134,
+    "utc": "2026-11-19T17:53:29.762349+00:00"
+  },
+  {
+    "id": "997ad673-bae2-4050-89c8-33d754584e94",
+    "case_id": "UC01-08",
+    "provider": "sol",
+    "technical": 19998,
+    "utc": "2026-11-19T17:53:34.736287+00:00"
+  },
+  {
+    "id": "edb3c021-a23d-44fb-8c84-d6fd79e39159",
+    "case_id": "UC01-10",
+    "provider": "mistral",
+    "technical": 30309,
+    "utc": "2026-11-19T17:54:00.570267+00:00"
+  },
+  {
+    "id": "f7a6b910-f3d6-49cb-b9cb-633f22edfea5",
+    "case_id": "UC02-01",
+    "provider": "mistral",
+    "technical": 29801,
+    "utc": "2026-11-19T17:54:30.857932+00:00"
+  },
+  {
+    "id": "dd3aad47-70cb-4127-9830-54c30bb68323",
+    "case_id": "UC02-02",
+    "provider": "mistral",
+    "technical": 29783,
+    "utc": "2026-11-19T17:55:01.226000+00:00"
+  },
+  {
+    "id": "2ffcbd46-6b98-4eb2-aae7-647928ebf9cd",
+    "case_id": "UC02-03",
+    "provider": "mistral",
+    "technical": 30026,
+    "utc": "2026-11-19T17:55:31.743430+00:00"
+  },
+  {
+    "id": "f342411b-0451-4258-9e65-76f5271d789d",
+    "case_id": "UC02-03",
+    "provider": "sol",
+    "technical": 19683,
+    "utc": "2026-11-19T17:55:37.437651+00:00"
+  },
+  {
+    "id": "655aa73b-cc14-46d1-83b3-4e8e5b449f74",
+    "case_id": "UC02-05",
+    "provider": "mistral",
+    "technical": 29723,
+    "utc": "2026-11-19T17:56:23.033720+00:00"
+  },
+  {
+    "id": "2d1405a1-204e-41ae-aac7-b5f4ee52030f",
+    "case_id": "UC02-07",
+    "provider": "mistral",
+    "technical": 30821,
+    "utc": "2026-11-19T17:56:59.919792+00:00"
+  },
+  {
+    "id": "f3512d2e-44f6-4089-9d45-590d1c43714f",
+    "case_id": "UC02-07",
+    "provider": "sol",
+    "technical": 19700,
+    "utc": "2026-11-19T17:57:06.620070+00:00"
+  },
+  {
+    "id": "ed653ccf-c1e3-4383-bc75-2df6406127c5",
+    "case_id": "UC02-08",
+    "provider": "mistral",
+    "technical": 29479,
+    "utc": "2026-11-19T17:57:30.270436+00:00"
+  },
+  {
+    "id": "5aa84db7-da36-43e1-a61d-bb042ae48c5e",
+    "case_id": "UC02-08",
+    "provider": "sol",
+    "technical": 19694,
+    "utc": "2026-11-19T17:57:36.638206+00:00"
+  },
+  {
+    "id": "810b2d3e-f65b-4b46-ace1-8d4e100274e7",
+    "case_id": "UC02-09",
+    "provider": "mistral",
+    "technical": 29808,
+    "utc": "2026-11-19T17:58:22.252677+00:00"
+  },
+  {
+    "id": "a39986e7-9ee0-41a0-be47-cdd1fcade331",
+    "case_id": "UC02-09",
+    "provider": "sol",
+    "technical": 19706,
+    "utc": "2026-11-19T17:58:28.416259+00:00"
+  },
+  {
+    "id": "2131e3ad-069f-4710-ab6a-b3e83277bba7",
+    "case_id": "UC02-10",
+    "provider": "mistral",
+    "technical": 29492,
+    "utc": "2026-11-19T17:58:52.750412+00:00"
+  },
+  {
+    "id": "bff7a9c0-e00b-455e-a2da-41ee9afdae55",
+    "case_id": "UC02-10",
+    "provider": "sol",
+    "technical": 19707,
+    "utc": "2026-11-19T17:58:57.406808+00:00"
+  },
+  {
+    "id": "004701a7-9794-4066-aa3c-779806daa66c",
+    "case_id": "UC03-01",
+    "provider": "mistral",
+    "technical": 29872,
+    "utc": "2026-11-19T17:59:43.163762+00:00"
+  },
+  {
+    "id": "a45a82cd-c405-4cab-a7b4-35446f2a82e1",
+    "case_id": "UC03-01",
+    "provider": "sol",
+    "technical": 19781,
+    "utc": "2026-11-19T17:59:48.979787+00:00"
+  },
+  {
+    "id": "fbefc46c-e0dc-4c17-8e08-187272e891b4",
+    "case_id": "UC03-02",
+    "provider": "mistral",
+    "technical": 29524,
+    "utc": "2026-11-19T18:00:30.566396+00:00"
+  },
+  {
+    "id": "2448652e-85fd-48a0-af81-cdd794270c8e",
+    "case_id": "UC03-02",
+    "provider": "sol",
+    "technical": 19739,
+    "utc": "2026-11-19T18:00:35.590080+00:00"
+  },
+  {
+    "id": "5ce99377-28e0-4bf6-b128-91a63fa5fcd7",
+    "case_id": "UC03-04",
+    "provider": "mistral",
+    "technical": 29517,
+    "utc": "2026-11-19T18:01:31.976644+00:00"
+  },
+  {
+    "id": "7ebaa1ac-878c-4d0a-bfae-643ee081752d",
+    "case_id": "UC03-04",
+    "provider": "sol",
+    "technical": 19732,
+    "utc": "2026-11-19T18:01:38.231333+00:00"
+  },
+  {
+    "id": "7e0d2ded-eb58-45d7-9ef3-dd16ff4737c0",
+    "case_id": "UC03-07",
+    "provider": "mistral",
+    "technical": 29522,
+    "utc": "2026-11-19T18:03:02.606530+00:00"
+  },
+  {
+    "id": "2aee81a5-cb92-4d32-b04a-928d392c19e0",
+    "case_id": "UC03-07",
+    "provider": "sol",
+    "technical": 19737,
+    "utc": "2026-11-19T18:03:07.783125+00:00"
+  },
+  {
+    "id": "0caa6c64-acdc-4cab-8f93-a03f187d3368",
+    "case_id": "UC03-10",
+    "provider": "mistral",
+    "technical": 30891,
+    "utc": "2026-11-19T18:04:33.519801+00:00"
+  },
+  {
+    "id": "52d1134d-f509-4b41-aeb0-b114c642c913",
+    "case_id": "UC03-10",
+    "provider": "sol",
+    "technical": 19770,
+    "utc": "2026-11-19T18:04:40.823043+00:00"
+  },
+  {
+    "id": "8e5fcfce-9711-4d6d-8ea6-f964d0659e7a",
+    "case_id": "UC04-01",
+    "provider": "mistral",
+    "technical": 29776,
+    "utc": "2026-11-19T18:05:03.908595+00:00"
+  },
+  {
+    "id": "776077e9-1642-4f6d-8915-1e7828e7c121",
+    "case_id": "UC04-02",
+    "provider": "mistral",
+    "technical": 29806,
+    "utc": "2026-11-19T18:05:34.533977+00:00"
+  },
+  {
+    "id": "232b2ef4-9c6b-453d-af64-3e5d7fec065e",
+    "case_id": "UC04-03",
+    "provider": "mistral",
+    "technical": 29720,
+    "utc": "2026-11-19T18:06:05.243381+00:00"
+  },
+  {
+    "id": "fb0dc23e-51b3-4221-b607-7c97bb31e9d0",
+    "case_id": "UC04-03",
+    "provider": "sol",
+    "technical": 19695,
+    "utc": "2026-11-19T18:06:16.979017+00:00"
+  },
+  {
+    "id": "d60c6e57-1083-4bef-bbce-1f15eeafdfd3",
+    "case_id": "UC04-04",
+    "provider": "mistral",
+    "technical": 29793,
+    "utc": "2026-11-19T18:06:35.623931+00:00"
+  },
+  {
+    "id": "8d1ee339-b5a9-4299-834a-76a2b7fe25fe",
+    "case_id": "UC04-04",
+    "provider": "sol",
+    "technical": 19691,
+    "utc": "2026-11-19T18:06:41.416371+00:00"
+  },
+  {
+    "id": "705dae6e-d751-4077-843a-8149550d1434",
+    "case_id": "UC04-05",
+    "provider": "mistral",
+    "technical": 29768,
+    "utc": "2026-11-19T18:07:27.156878+00:00"
+  },
+  {
+    "id": "ff05b057-6a3c-41a9-a226-4f909368962e",
+    "case_id": "UC04-05",
+    "provider": "sol",
+    "technical": 19727,
+    "utc": "2026-11-19T18:16:21.765733+00:00"
+  },
+  {
+    "id": "26dc8e68-abbe-4b50-8df7-c8c713bb96fb",
+    "case_id": "UC04-06",
+    "provider": "mistral",
+    "technical": 29490,
+    "utc": "2026-11-19T18:17:40.792762+00:00"
+  },
+  {
+    "id": "1ad324a8-a27a-4f53-b897-061f92301220",
+    "case_id": "UC04-06",
+    "provider": "sol",
+    "technical": 19705,
+    "utc": "2026-11-19T18:17:49.176279+00:00"
+  },
+  {
+    "id": "e6e130a3-a6ab-4688-a49a-8461db099991",
+    "case_id": "UC04-07",
+    "provider": "mistral",
+    "technical": 29479,
+    "utc": "2026-11-19T18:18:29.525809+00:00"
+  },
+  {
+    "id": "dff79d2f-df01-42f6-8c5c-0ec0a85817c7",
+    "case_id": "UC04-07",
+    "provider": "sol",
+    "technical": 19694,
+    "utc": "2026-11-19T18:18:38.743005+00:00"
+  },
+  {
+    "id": "9d82ef67-0838-4f97-810d-0eb5764caec8",
+    "case_id": "UC04-08",
+    "provider": "mistral",
+    "technical": 29711,
+    "utc": "2026-11-19T18:19:24.430933+00:00"
+  },
+  {
+    "id": "fa39cf3f-1117-4c25-adaf-cddbdb900d34",
+    "case_id": "UC04-10",
+    "provider": "mistral",
+    "technical": 29822,
+    "utc": "2026-11-19T18:20:27.120574+00:00"
+  },
+  {
+    "id": "c0d79fbd-46b5-42a1-be0d-c8b0d9b8850d",
+    "case_id": "EDGE-LONG-01",
+    "provider": "mistral",
+    "technical": 32284,
+    "utc": "2026-11-19T18:20:59.228971+00:00"
+  },
+  {
+    "id": "e2144fbc-cbe0-4377-954a-71c828f114e0",
+    "case_id": "REG-invoice",
+    "provider": "mistral",
+    "technical": 29755,
+    "utc": "2026-11-19T18:21:59.641604+00:00"
+  },
+  {
+    "id": "c7805ce6-8e46-4f76-a268-b943faf08610",
+    "case_id": "REG-free-clarify",
+    "provider": "mistral",
+    "technical": 35326,
+    "utc": "2026-11-19T18:22:36.132825+00:00"
+  },
+  {
+    "id": "a5ab0462-474e-4d9f-83fb-b6bce49e65a0",
+    "case_id": "REG-unknown-final",
+    "provider": "mistral",
+    "technical": 36683,
+    "utc": "2026-11-19T18:23:06.362118+00:00"
+  },
+  {
+    "id": "bea411f3-38d3-4e41-bd83-365b589e697d",
+    "case_id": "REG-e42-1",
+    "provider": "mistral",
+    "technical": 32181,
+    "utc": "2026-11-19T18:23:37.504748+00:00"
+  },
+  {
+    "id": "8f61ae27-a008-4615-8c8c-ecd5467e0319",
+    "case_id": "REG-e42-1",
+    "provider": "sol",
+    "technical": 21418,
+    "utc": "2026-11-19T18:23:44.972841+00:00"
+  },
+  {
+    "id": "0fea3ab1-cd09-4f5b-8945-84fdb3d30c89",
+    "case_id": "REG-e42-2",
+    "provider": "mistral",
+    "technical": 35816,
+    "utc": "2026-11-19T18:24:30.638412+00:00"
+  },
+  {
+    "id": "6938ce95-f8b3-46a6-a53b-9bfd8abc6981",
+    "case_id": "REG-e42-2",
+    "provider": "sol",
+    "technical": 21464,
+    "utc": "2026-11-19T18:24:37.787188+00:00"
+  },
+  {
+    "id": "f67b1c4c-b7e6-4ee1-ab96-c8781891b1d1",
+    "case_id": "REG-e42-3",
+    "provider": "mistral",
+    "technical": 36751,
+    "utc": "2026-11-19T18:25:07.962365+00:00"
+  },
+  {
+    "id": "a46b989e-d2be-4f24-8596-04d26438cacf",
+    "case_id": "REG-e42-3",
+    "provider": "sol",
+    "technical": 21391,
+    "utc": "2026-11-19T18:25:15.149675+00:00"
+  }
+]

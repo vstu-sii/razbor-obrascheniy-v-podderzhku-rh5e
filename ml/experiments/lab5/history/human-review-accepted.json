@@ -1,0 +1,36 @@
+{
+  "protocol": "lab05-ai030-overview",
+  "reviewed_at": "2026-11-19T17:23:59.196Z",
+  "reviews": [
+    {
+      "case_id": "invoice",
+      "grade": "correct",
+      "comment": ""
+    },
+    {
+      "case_id": "free-clarify",
+      "grade": "correct",
+      "comment": ""
+    },
+    {
+      "case_id": "unknown-final",
+      "grade": "correct",
+      "comment": ""
+    },
+    {
+      "case_id": "e42-1",
+      "grade": "correct",
+      "comment": ""
+    },
+    {
+      "case_id": "e42-2",
+      "grade": "correct",
+      "comment": ""
+    },
+    {
+      "case_id": "e42-3",
+      "grade": "correct",
+      "comment": ""
+    }
+  ]
+}
