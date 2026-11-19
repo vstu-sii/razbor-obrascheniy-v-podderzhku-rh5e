@@ -1,0 +1,1235 @@
+{
+  "sol": {
+    "scope": "Production queue/engine replay of frozen real first-stage outputs; only second-stage availability disabled; acceptance rules not relaxed",
+    "full_replay_matches_live": true,
+    "replay_mismatches": [],
+    "automatic_with_sol": 20,
+    "automatic_without_sol": 16,
+    "details": [
+      {
+        "case_id": "UC01-02",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "access",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-03",
+        "with_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-04",
+        "with_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-05",
+        "with_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-06",
+        "with_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-07",
+        "with_sol": {
+          "mode": "answer",
+          "category": "settings",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-08",
+        "with_sol": {
+          "mode": "answer",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC01-10",
+        "with_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-01",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-02",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "access",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "access",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-03",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-05",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-07",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-08",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-09",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC02-10",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC03-01",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC03-02",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC03-03",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC03-04",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC03-05",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC03-06",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC03-07",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC03-08",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC03-09",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC03-10",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "access",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-01",
+        "with_sol": {
+          "mode": "answer",
+          "category": "access",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "access",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-02",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-03",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-04",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-05",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "access",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-06",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-07",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-08",
+        "with_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "UC04-09",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "UC04-10",
+        "with_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "integrations",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "EDGE-LONG-01",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "EDGE-STALE-01",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [],
+        "without_sol_calls": []
+      },
+      {
+        "case_id": "REG-invoice",
+        "with_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "answer",
+          "category": "payment",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "REG-free-clarify",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "REG-unknown-final",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "with_sol_calls": [
+          "mistral"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "REG-e42-1",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "REG-e42-2",
+        "with_sol": {
+          "mode": "clarify",
+          "category": "product_error",
+          "status": "resolved",
+          "needs_human_review": false
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      },
+      {
+        "case_id": "REG-e42-3",
+        "with_sol": {
+          "mode": "escalate",
+          "category": "product_error",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "without_sol": {
+          "mode": "escalate",
+          "category": "other",
+          "status": "proposed",
+          "needs_human_review": true
+        },
+        "with_sol_calls": [
+          "mistral",
+          "sol"
+        ],
+        "without_sol_calls": [
+          "mistral"
+        ]
+      }
+    ],
+    "new_model_calls": 0,
+    "quality_comparison": {
+      "current-policy-reviewed": {
+        "with_sol": {
+          "mode_accuracy": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          },
+          "category_accuracy": {
+            "numerator": 5,
+            "denominator": 6,
+            "value": 0.8333333333333334
+          },
+          "false_answer": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          }
+        },
+        "without_sol": {
+          "mode_accuracy": {
+            "numerator": 3,
+            "denominator": 6,
+            "value": 0.5
+          },
+          "category_accuracy": {
+            "numerator": 3,
+            "denominator": 6,
+            "value": 0.5
+          },
+          "false_answer": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          }
+        }
+      },
+      "legacy-q015": {
+        "with_sol": {
+          "mode_accuracy": {
+            "numerator": 28,
+            "denominator": 38,
+            "value": 0.7368421052631579
+          },
+          "category_accuracy": {
+            "numerator": 23,
+            "denominator": 38,
+            "value": 0.6052631578947368
+          },
+          "false_answer": {
+            "numerator": 0,
+            "denominator": 28,
+            "value": 0.0
+          }
+        },
+        "without_sol": {
+          "mode_accuracy": {
+            "numerator": 27,
+            "denominator": 38,
+            "value": 0.7105263157894737
+          },
+          "category_accuracy": {
+            "numerator": 18,
+            "denominator": 38,
+            "value": 0.47368421052631576
+          },
+          "false_answer": {
+            "numerator": 0,
+            "denominator": 28,
+            "value": 0.0
+          }
+        }
+      }
+    }
+  },
+  "handoff": {
+    "scope": "Deterministic backend output enrichment; no model quality attribution",
+    "manual_cards": 24,
+    "with_enrichment": {
+      "current_question": 24,
+      "provider_notes": 24,
+      "source_candidates": 22
+    },
+    "without_enrichment": {
+      "current_question": 0,
+      "provider_notes": 0,
+      "source_candidates": 0
+    },
+    "counterfactual": "Original generic fallback has no attributed input/history/provider packet; input_json remains in storage in both variants.",
+    "cases": [
+      {
+        "case_id": "UC01-02",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC02-03",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC02-07",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC02-08",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC02-09",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC02-10",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC03-01",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC03-02",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC03-03",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 1
+      },
+      {
+        "case_id": "UC03-04",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC03-05",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 5
+      },
+      {
+        "case_id": "UC03-06",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 1
+      },
+      {
+        "case_id": "UC03-07",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC03-08",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 0
+      },
+      {
+        "case_id": "UC03-09",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 1
+      },
+      {
+        "case_id": "UC03-10",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC04-03",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC04-04",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC04-06",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC04-07",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 6
+      },
+      {
+        "case_id": "UC04-09",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 1
+      },
+      {
+        "case_id": "EDGE-STALE-01",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 0
+      },
+      {
+        "case_id": "REG-e42-1",
+        "has_current_quote": true,
+        "history_messages_preserved": 0,
+        "input_history_messages": 0,
+        "provider_notes": 2,
+        "sources": 10
+      },
+      {
+        "case_id": "REG-e42-3",
+        "has_current_quote": true,
+        "history_messages_preserved": 4,
+        "input_history_messages": 4,
+        "provider_notes": 2,
+        "sources": 10
+      }
+    ]
+  },
+  "cache": {
+    "available": true,
+    "case_id": "UC01-03",
+    "variants": [
+      {
+        "cache_enabled": false,
+        "recorded_provider_invocations": 2,
+        "cache_hits": 0
+      },
+      {
+        "cache_enabled": true,
+        "recorded_provider_invocations": 1,
+        "cache_hits": 1
+      }
+    ],
+    "new_model_calls": 0,
+    "scope": "Same validated recorded ordinary answer; measures cache path and avoided adapter invocation, not new network latency or paid savings"
+  },
+  "exclusions": [
+    "Prompt replacement is not estimated by fixed-output replay",
+    "New KB causal effect is not attributed without new model inputs"
+  ],
+  "new_model_calls": 0
+}

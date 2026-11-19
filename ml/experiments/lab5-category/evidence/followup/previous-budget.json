@@ -1,0 +1,13 @@
+{
+  "new_allowance_rub": 10,
+  "new_confirmed_rub": "1.747604",
+  "new_unknown_reserve_rub": "1.777152",
+  "new_accounted_rub": "3.524756",
+  "previous_accounted_rub": "23.261663",
+  "cumulative_accounted_rub": "26.786419",
+  "previous_unknown_reserve_rub": "12.440064",
+  "technical_previous": 12667113,
+  "technical_new": 654022,
+  "technical_cap": 20000000,
+  "technical_reserved": 13321135
+}

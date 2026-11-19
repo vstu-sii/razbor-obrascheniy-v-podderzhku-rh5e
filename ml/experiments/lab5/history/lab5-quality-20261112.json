@@ -1,0 +1,1162 @@
+{
+  "new_baseline_run": true,
+  "source_release_tag": "lab5-release-delivery-2026-11-12",
+  "source_release_commit": "d41349ffd86f749506987bcc398b0a5fa3239917",
+  "dataset_records": 49,
+  "dataset_distinct_inputs": 38,
+  "unique_evaluated_cases": 38,
+  "covered_dataset_records": 49,
+  "full_dataset_covered": true,
+  "models": {
+    "mistral": "ministral-14b-2512",
+    "sol": "openai/gpt-5.6-sol"
+  },
+  "metrics": {
+    "mode_accuracy": {
+      "numerator": 27,
+      "denominator": 38,
+      "value": 0.7105263157894737
+    },
+    "category_accuracy": {
+      "numerator": 19,
+      "denominator": 38,
+      "value": 0.5
+    },
+    "category_macro_f1": {
+      "value": 0.5156565656565656,
+      "labels": [
+        "access",
+        "payment",
+        "settings",
+        "integrations",
+        "product_error",
+        "other"
+      ],
+      "per_class": [
+        {
+          "label": "access",
+          "tp": 4,
+          "fp": 1,
+          "fn": 3,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "payment",
+          "tp": 4,
+          "fp": 0,
+          "fn": 7,
+          "f1": 0.5333333333333333
+        },
+        {
+          "label": "settings",
+          "tp": 1,
+          "fp": 2,
+          "fn": 2,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "integrations",
+          "tp": 4,
+          "fp": 0,
+          "fn": 3,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "product_error",
+          "tp": 2,
+          "fp": 1,
+          "fn": 3,
+          "f1": 0.5
+        },
+        {
+          "label": "other",
+          "tp": 4,
+          "fp": 15,
+          "fn": 1,
+          "f1": 0.3333333333333333
+        }
+      ]
+    },
+    "schema_valid": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "final_provenance_passed": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "false_answer_on_nonanswer_cases": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "false_answer_on_all_cases": {
+      "numerator": 0,
+      "denominator": 38,
+      "value": 0.0
+    },
+    "recall_at_3": {
+      "numerator": 10,
+      "denominator": 11,
+      "value": 0.9090909090909091
+    },
+    "http_ok": {
+      "numerator": 47,
+      "denominator": 52,
+      "value": 0.9038461538461539
+    },
+    "timeout_cases": {
+      "numerator": 0,
+      "denominator": 38,
+      "value": 0.0
+    },
+    "automatic_cases": {
+      "numerator": 16,
+      "denominator": 38,
+      "value": 0.42105263157894735
+    },
+    "latency": {
+      "n": 38,
+      "p50_ms": 11732.026700000006,
+      "p95_ms": 22136.661300000014,
+      "requested_100_plus_10_warmups": false,
+      "scope": "cold isolated SQLite jobs, network/proxy included, pacing excluded"
+    },
+    "tokens": {
+      "prompt": 230069,
+      "completion": 20842
+    },
+    "cost": {
+      "confirmed_usd": 0.08696,
+      "conservative_accounted_usd": 0.08696,
+      "unresolved_sol_calls": 0,
+      "upper_mean_rub_per_case": 0.2036694736842105,
+      "free_mistral_confirmed_by_participant": true,
+      "retrieval_embeddings_cost_usd": 0
+    }
+  },
+  "success_criteria": [
+    {
+      "criterion": "P1 Recall@3",
+      "value": 0.9090909090909091,
+      "target": 0.85,
+      "operator": ">=",
+      "n": 11,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": true,
+      "verdict": "observed_target_met"
+    },
+    {
+      "criterion": "P4 category Macro-F1",
+      "value": 0.5156565656565656,
+      "target": 0.85,
+      "operator": ">=",
+      "n": 38,
+      "observed_threshold_met": false,
+      "measurement_protocol_complete": true,
+      "verdict": "below_target"
+    },
+    {
+      "criterion": "P4 mode accuracy",
+      "value": 0.7105263157894737,
+      "target": 0.9,
+      "operator": ">=",
+      "n": 38,
+      "observed_threshold_met": false,
+      "measurement_protocol_complete": true,
+      "verdict": "below_target"
+    },
+    {
+      "criterion": "CI category accuracy",
+      "value": 0.5,
+      "target": 0.9,
+      "operator": ">=",
+      "n": 38,
+      "observed_threshold_met": false,
+      "measurement_protocol_complete": true,
+      "verdict": "below_target"
+    },
+    {
+      "criterion": "Valid JSON",
+      "value": 1.0,
+      "target": 0.99,
+      "operator": ">=",
+      "n": 38,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": true,
+      "verdict": "observed_target_met"
+    },
+    {
+      "criterion": "False answer / all inputs",
+      "value": 0.0,
+      "target": 0.02,
+      "operator": "<=",
+      "n": 38,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": false,
+      "verdict": "sample_below_required_size"
+    },
+    {
+      "criterion": "p95 seconds",
+      "value": 22.136661300000014,
+      "target": 60,
+      "operator": "<=",
+      "n": 38,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": false,
+      "verdict": "sample_below_required_size"
+    },
+    {
+      "criterion": "Timeout cases",
+      "value": 0.0,
+      "target": 0.01,
+      "operator": "<=",
+      "n": 38,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": false,
+      "verdict": "sample_below_required_size"
+    },
+    {
+      "criterion": "Accounted average RUB",
+      "value": 0.2036694736842105,
+      "target": 5,
+      "operator": "<=",
+      "n": 38,
+      "observed_threshold_met": true,
+      "measurement_protocol_complete": true,
+      "verdict": "observed_target_met"
+    }
+  ],
+  "not_measured": [
+    {
+      "metric": "north_star",
+      "target": ">=0.85",
+      "minimum_n": 30,
+      "n": 0,
+      "reason": "requires two human reviewers and operator use"
+    },
+    {
+      "metric": "semantic_fact_recall",
+      "target": ">=0.90",
+      "n": 0,
+      "reason": "required facts exist; semantic response annotation not yet provided"
+    },
+    {
+      "metric": "unsupported_atomic_claim_rate",
+      "target": "<=0.02",
+      "n": 0,
+      "reason": "requires atomic claim segmentation and source judgement"
+    },
+    {
+      "metric": "missing_fields_precision_recall_exact",
+      "target": ">=0.85 / >=0.90 / >=0.75",
+      "n": 0,
+      "reason": "requires agreed semantic equivalence of free-text fields"
+    },
+    {
+      "metric": "urgency_macro_f1",
+      "target": ">=0.80",
+      "n": 0,
+      "reason": "golden expected has no urgency labels"
+    },
+    {
+      "metric": "critical_recall",
+      "target": ">=0.95",
+      "n": 0,
+      "reason": "golden expected has no critical labels"
+    },
+    {
+      "metric": "route_accuracy",
+      "target": ">=0.90",
+      "n": 0,
+      "reason": "no expected route/destination labels"
+    },
+    {
+      "metric": "handoff_semantic_completeness",
+      "target": ">=0.90",
+      "n": 0,
+      "reason": "no reviewed item-level handoff annotation"
+    },
+    {
+      "metric": "handoff_repeat_questions_reduction",
+      "target": ">=50%",
+      "n": 0,
+      "reason": "requires paired human handoff study"
+    },
+    {
+      "metric": "operator_time_reduction",
+      "target": ">=30%",
+      "n": 0,
+      "reason": "requires at least three operators and paired manual baseline"
+    },
+    {
+      "metric": "draft_accuracy_completeness_tone",
+      "target": ">=0.85 pass share",
+      "n": 0,
+      "reason": "two independent human rubric ratings missing"
+    }
+  ],
+  "details": [
+    {
+      "case_id": "UC01-02",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-2FA-v1",
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [
+        "KB-2FA-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 21181.183899999953,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-03",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "settings",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 5579.514200000176,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-04",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 17787.66410000003,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-05",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [
+        "KB-API-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 4975.473799999918,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-06",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [
+        "KB-API-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 5377.970900000037,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-07",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "settings",
+      "actual_category": "settings",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [
+        "KB-NOTIFY-v1"
+      ],
+      "retrieval_any_hit": false,
+      "latency_ms": 19127.090400000045,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-08",
+      "expected_mode": "answer",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1",
+        "KB-2FA-v1"
+      ],
+      "retrieval_gold": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 6039.293499999985,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC01-10",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1",
+        "KB-ROLE-v1",
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 6531.76540000004,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-01",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 10329.155700000001,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-02",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 18585.532300000068,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-03",
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1",
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 7779.147199999898,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-05",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 13341.633999999885,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-07",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 18495.909499999925,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-08",
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 10922.424999999976,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-09",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "settings",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 17839.28270000001,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC02-10",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 12541.628400000036,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-01",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-2FA-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14575.81980000009,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-02",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 18913.55139999996,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-03",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 16.69820000006439,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-04",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14413.633699999991,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-05",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "integrations",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1",
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 18.565200000011828,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-06",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-2FA-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 19.794300000057774,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-07",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "access",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 22136.661300000014,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-08",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 24.235600000110935,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-09",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 15.869500000007974,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC03-10",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "access",
+      "actual_category": "access",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-NOTIFY-v1",
+        "KB-ROLE-v1",
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 25904.943799999957,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-01",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "access",
+      "actual_category": "settings",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-2FA-v1"
+      ],
+      "retrieval_gold": [
+        "KB-2FA-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 4789.252999999917,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-02",
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "product_error",
+      "actual_category": "product_error",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14807.121300000063,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-03",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 13967.746000000261,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-04",
+      "expected_mode": "clarify",
+      "actual_mode": "escalate",
+      "expected_category": "settings",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14364.969100000053,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-05",
+      "expected_mode": "escalate",
+      "actual_mode": "clarify",
+      "expected_category": "access",
+      "actual_category": "access",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": false,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14939.809400000286,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-06",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 13847.76359999978,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-07",
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "integrations",
+      "actual_category": "product_error",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14259.34690000031,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-08",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "payment",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_gold": [
+        "KB-INVOICE-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 5712.527299999692,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-09",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "product_error",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": false,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 14.06730000007883,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    },
+    {
+      "case_id": "UC04-10",
+      "expected_mode": "answer",
+      "actual_mode": "answer",
+      "expected_category": "integrations",
+      "actual_category": "integrations",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [
+        "KB-API-v1"
+      ],
+      "retrieval_any_hit": true,
+      "latency_ms": 5215.249200000017,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "EDGE-LONG-01",
+      "expected_mode": "clarify",
+      "actual_mode": "clarify",
+      "expected_category": "payment",
+      "actual_category": "payment",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [
+        "KB-ERROR-v1",
+        "KB-INVOICE-v1",
+        "KB-API-v1"
+      ],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 5209.232599999723,
+      "state": "ready",
+      "automatic": true,
+      "timeout": false
+    },
+    {
+      "case_id": "EDGE-STALE-01",
+      "expected_mode": "escalate",
+      "actual_mode": "escalate",
+      "expected_category": "other",
+      "actual_category": "other",
+      "schema_valid": true,
+      "final_provenance_passed": true,
+      "final_provenance_reason": "structure_and_provenance_only",
+      "mode_correct": true,
+      "category_correct": true,
+      "false_answer": false,
+      "retrieval_hits": [],
+      "retrieval_gold": [],
+      "retrieval_any_hit": null,
+      "latency_ms": 16.21549999981653,
+      "state": "manual_review",
+      "automatic": false,
+      "timeout": false
+    }
+  ],
+  "limitations": [
+    "known development dataset; no independent holdout",
+    "current API accepts ticket_text/history/kb_version; candidate_proposal and review_action from UC04 are not separately evaluated",
+    "legacy expected labels unchanged; automatic resolution is now permitted by Product architecture",
+    "fresh per-case SQLite with cold cache; not shared production quota/load test",
+    "provenance/schema checks do not establish semantic truth",
+    "live generation occurred locally against frozen release inputs; CI rechecks saved responses without paid requests"
+  ]
+}

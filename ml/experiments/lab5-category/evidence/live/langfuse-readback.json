@@ -1,0 +1,457 @@
+[
+  {
+    "case_id": "UC03-03",
+    "trace_id": "228496c6c0ada4b677af6ac1fcca485d",
+    "expected": 0,
+    "observed": 0,
+    "entries": [],
+    "scope": "No HTTPProvider generation attempted"
+  },
+  {
+    "case_id": "UC03-05",
+    "trace_id": "743474fa9f3dc70b3510276a00267d34",
+    "expected": 0,
+    "observed": 0,
+    "entries": [],
+    "scope": "No HTTPProvider generation attempted"
+  },
+  {
+    "case_id": "UC03-06",
+    "trace_id": "72939eccecfe76734003ddf970bfb918",
+    "expected": 0,
+    "observed": 0,
+    "entries": [],
+    "scope": "No HTTPProvider generation attempted"
+  },
+  {
+    "case_id": "UC03-08",
+    "trace_id": "f73f8b0dcad89b36000377dade354a5f",
+    "expected": 0,
+    "observed": 0,
+    "entries": [],
+    "scope": "No HTTPProvider generation attempted"
+  },
+  {
+    "case_id": "UC04-09",
+    "trace_id": "e991849e4b89d1ce04f374e8b444c07e",
+    "expected": 0,
+    "observed": 0,
+    "entries": [],
+    "scope": "No HTTPProvider generation attempted"
+  },
+  {
+    "case_id": "UC01-05",
+    "trace_id": "9246cadae2f560e5f9de9f2d25cc5eb6",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "a374e0072077f2a6",
+        "traceId": "9246cadae2f560e5f9de9f2d25cc5eb6",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2048,
+          "output": 389,
+          "total": 2437
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "fae9039bbfca4dbf",
+        "traceId": "9246cadae2f560e5f9de9f2d25cc5eb6",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5040,
+          "output": 304,
+          "total": 5344
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC01-03",
+    "trace_id": "edba35fbbdaf625e5b6234d82a58991c",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "abab62f926ff5d02",
+        "traceId": "edba35fbbdaf625e5b6234d82a58991c",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2048,
+          "output": 369,
+          "total": 2417
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "42a4209ef8939486",
+        "traceId": "edba35fbbdaf625e5b6234d82a58991c",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5029,
+          "output": 312,
+          "total": 5341
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC02-09",
+    "trace_id": "252a12503960b28a330b48ea5f68870c",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "720d823643765107",
+        "traceId": "252a12503960b28a330b48ea5f68870c",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5037,
+          "output": 381,
+          "total": 5418
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC02-10",
+    "trace_id": "f57cc95edf6cbe0c279e5213707a1d84",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "4e2abc112bed1b06",
+        "traceId": "f57cc95edf6cbe0c279e5213707a1d84",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4980,
+          "output": 336,
+          "total": 5316
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC02-07",
+    "trace_id": "a100f7556d6f722cbdd1dbf1662b71f5",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "be08a3643c69e1e8",
+        "traceId": "a100f7556d6f722cbdd1dbf1662b71f5",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5241,
+          "output": 519,
+          "total": 5760
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC02-08",
+    "trace_id": "2df4425b880298aa1432e2a3f50c9a54",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "1c930e8f967b9d36",
+        "traceId": "2df4425b880298aa1432e2a3f50c9a54",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4977,
+          "output": 331,
+          "total": 5308
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC02-03",
+    "trace_id": "bc68ed0cdbb395d6958e3e5f6878b5e1",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "3e68cefed3dba200",
+        "traceId": "bc68ed0cdbb395d6958e3e5f6878b5e1",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2043,
+          "output": 430,
+          "total": 2473
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "1859f541c4848f0b",
+        "traceId": "bc68ed0cdbb395d6958e3e5f6878b5e1",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5084,
+          "output": 424,
+          "total": 5508
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC04-04",
+    "trace_id": "33b7675e0a2222fa7992509f545d5dd8",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "8b8e84c95bf691b1",
+        "traceId": "33b7675e0a2222fa7992509f545d5dd8",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2044,
+          "output": 261,
+          "total": 2305
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "59a871a19667e45d",
+        "traceId": "33b7675e0a2222fa7992509f545d5dd8",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5037,
+          "output": 358,
+          "total": 5395
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC04-07",
+    "trace_id": "c4514d14624c611663f7fe51dcda1ffe",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "d119ff220f51f1ec",
+        "traceId": "c4514d14624c611663f7fe51dcda1ffe",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4977,
+          "output": 334,
+          "total": 5311
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC04-03",
+    "trace_id": "150bf764f6a552ed6636e14f473a8655",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "e75e76248c638a9b",
+        "traceId": "150bf764f6a552ed6636e14f473a8655",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5027,
+          "output": 396,
+          "total": 5423
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC04-06",
+    "trace_id": "a600a86872b0a9eefe94cd399291951c",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "b7d8c52787e64c1d",
+        "traceId": "a600a86872b0a9eefe94cd399291951c",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2045,
+          "output": 332,
+          "total": 2377
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "d44967f3660bab8a",
+        "traceId": "a600a86872b0a9eefe94cd399291951c",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4981,
+          "output": 510,
+          "total": 5491
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC03-01",
+    "trace_id": "92f8aac3ef25c403b70d579d93035045",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "e93cef8e8c9f05a5",
+        "traceId": "92f8aac3ef25c403b70d579d93035045",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2053,
+          "output": 374,
+          "total": 2427
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "3a44741119726db4",
+        "traceId": "92f8aac3ef25c403b70d579d93035045",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5045,
+          "output": 386,
+          "total": 5431
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC03-02",
+    "trace_id": "890fcbe6899258223b5e9df518c22c05",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "6781fffa84e22da1",
+        "traceId": "890fcbe6899258223b5e9df518c22c05",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {
+          "input": 2047,
+          "output": 329,
+          "total": 2376
+        },
+        "level": "DEFAULT"
+      },
+      {
+        "id": "072ebc4061b64e36",
+        "traceId": "890fcbe6899258223b5e9df518c22c05",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4981,
+          "output": 285,
+          "total": 5266
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "UC03-07",
+    "trace_id": "df7fc58652b6126fe1cf03d36e98ce1a",
+    "expected": 2,
+    "observed": 2,
+    "entries": [
+      {
+        "id": "de6e897f4cb09670",
+        "traceId": "df7fc58652b6126fe1cf03d36e98ce1a",
+        "type": "GENERATION",
+        "name": "cascade-sol",
+        "model": null,
+        "usageDetails": {},
+        "level": "ERROR"
+      },
+      {
+        "id": "5c0b804de9ba1edc",
+        "traceId": "df7fc58652b6126fe1cf03d36e98ce1a",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 4984,
+          "output": 259,
+          "total": 5243
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  },
+  {
+    "case_id": "REG-e42-1",
+    "trace_id": "0c5157e63c9d66f5695e9791ba954999",
+    "expected": 1,
+    "observed": 1,
+    "entries": [
+      {
+        "id": "ca0d015b754d48b6",
+        "traceId": "0c5157e63c9d66f5695e9791ba954999",
+        "type": "GENERATION",
+        "name": "cascade-mistral",
+        "model": null,
+        "usageDetails": {
+          "input": 5517,
+          "output": 877,
+          "total": 6394
+        },
+        "level": "DEFAULT"
+      }
+    ]
+  }
+]

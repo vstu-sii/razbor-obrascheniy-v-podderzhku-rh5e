@@ -1,0 +1,1036 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LAB05: финальный полный прогон</title><style>body{font:17px system-ui;background:#edf2f8;color:#172b42;margin:24px}main{max-width:1500px;margin:auto}section{background:white;padding:24px;margin:24px 0;border-radius:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e5ecf5;padding:16px}table{border-collapse:collapse;background:white;width:100%}th,td{padding:14px;border:1px solid #bfcddb;vertical-align:top;text-align:left;overflow-wrap:anywhere}.scroll{overflow:auto}textarea{display:block;width:95%;min-height:90px;margin-top:12px}button{padding:14px}p{line-height:1.6}</style><main><h1>Финальный прогон LAB05:44 входа</h1><p>Все показанные обращения обработаны согласованной версией. Исходные эталоны38 случаев сохранены,6 новых регрессий считаются отдельно. Совпадение с gold не заменяет человеческую проверку текста. После увеличения денежного допуска один остановленный первый этап использован из записи; его новое уточнение/решение Sol реально получено. История и исходные фазы сохранены.</p><p>Это локальный тест: внешним клиентам сообщения не отправлялись. Технический текст escalate видит специалист. Прежние6 положительных оценок не перенесены на эти новые ответы.</p><button onclick="download()">Скачать оценки JSON</button><pre>{
+  &quot;new_allowance_rub&quot;: 6.475244,
+  &quot;new_confirmed_rub&quot;: &quot;0.438236&quot;,
+  &quot;new_unknown_reserve_rub&quot;: &quot;0&quot;,
+  &quot;new_accounted_rub&quot;: &quot;0.438236&quot;,
+  &quot;previous_accounted_rub&quot;: &quot;26.786419&quot;,
+  &quot;cumulative_accounted_rub&quot;: &quot;27.224655&quot;,
+  &quot;previous_unknown_reserve_rub&quot;: &quot;14.217216&quot;,
+  &quot;technical_previous&quot;: 13321135,
+  &quot;technical_new&quot;: 91976,
+  &quot;technical_cap&quot;: 20000000,
+  &quot;technical_reserved&quot;: 13413111
+}</pre><div class="scroll"><table><thead><tr><th>Случай</th><th>Запрос</th><th>Gold</th><th>Факт</th><th>Ответ / специалисту</th></tr></thead><tbody><tr><td><a href="#REG-e42-1">REG-e42-1</a></td><td>Импорт CSV показывает E42, что делать?</td><td>answer/product_error</td><td>answer/product_error</td><td>Проверьте, что CSV сохранён в формате UTF-8, и повторите импорт. Эта проверка не означает, что формат файла является причиной E42.
+
+Если E42 останется после повторной попытки, сообщите время последней попытки и полный текст сообщения об ошибке. Повторять проверку формата ещё раз не потребуется.</td></tr><tr><td><a href="#UC02-08">UC02-08</a></td><td>API возвращает ошибку</td><td>clarify/integrations</td><td>clarify/integrations</td><td>Опишите, пожалуйста, какую именно ошибку возвращает API (например, код ошибки, текст сообщения) и при каких условиях она возникает?</td></tr></tbody></table></div><section id="REG-e42-1"><h2>REG-e42-1 · answer</h2><p>Группа: current-policy-reviewed. Gold: answer/product_error. Факт: answer/product_error.</p><h3>Запрос</h3><pre>Импорт CSV показывает E42, что делать?</pre><h3>История</h3><pre>Нет предыдущей переписки.</pre><p>mistral: selected_second_opinion → sol: complete_coverage</p><h3>Текст для клиента</h3><pre>Проверьте, что CSV сохранён в формате UTF-8, и повторите импорт. Эта проверка не означает, что формат файла является причиной E42.
+
+Если E42 останется после повторной попытки, сообщите время последней попытки и полный текст сообщения об ошибке. Повторять проверку формата ещё раз не потребуется.</pre><details><summary>Источники, исходные этапы и карточка</summary><pre>{
+  &quot;case_id&quot;: &quot;REG-e42-1&quot;,
+  &quot;suite&quot;: &quot;current-policy-reviewed&quot;,
+  &quot;input&quot;: {
+    &quot;history&quot;: [],
+    &quot;kb_version&quot;: &quot;support-20261119&quot;,
+    &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;,
+    &quot;ticket_ref&quot;: &quot;lab5-ai033-REG-e42-1&quot;,
+    &quot;ticket_text&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;
+  },
+  &quot;stages&quot;: [
+    {
+      &quot;provider&quot;: &quot;mistral&quot;,
+      &quot;model&quot;: &quot;ministral-14b-2512&quot;,
+      &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;,
+      &quot;attempt_id&quot;: &quot;d66b80ca-95ce-4cc7-90a7-7ccfe892693f&quot;,
+      &quot;job_id&quot;: &quot;0ddc2802-43b9-476a-b009-857f27dcdf29&quot;,
+      &quot;raw_card&quot;: {
+        &quot;status&quot;: &quot;proposed&quot;,
+        &quot;mode&quot;: &quot;answer&quot;,
+        &quot;category&quot;: &quot;product_error&quot;,
+        &quot;urgency&quot;: &quot;medium&quot;,
+        &quot;urgency_reason&quot;: &quot;Ошибка E42 при импорте CSV требует выполнения проверки формата файла и повторного импорта, что может потребовать дополнительных действий.&quot;,
+        &quot;summary&quot;: &quot;Клиент сообщает об ошибке E42 при импорте CSV. Требуется выполнить проверку формата файла UTF-8 и повторить импорт.&quot;,
+        &quot;known_facts&quot;: [
+          &quot;Клиент сообщает об ошибке E42 при импорте CSV.&quot;,
+          &quot;Код ошибки E42 известен.&quot;,
+          &quot;История диалога пустая, дополнительных деталей о тексте ошибки или времени сбоя нет.&quot;
+        ],
+        &quot;missing_data&quot;: [],
+        &quot;next_step&quot;: &quot;Выполнить проверку формата CSV на соответствие UTF-8 и повторить импорт. Если ошибка сохраняется, передать специалисту сведения о выполненных шагах и тексте ошибки.&quot;,
+        &quot;evidence&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          }
+        ],
+        &quot;draft_reply&quot;: &quot;Проверьте формат CSV на соответствие UTF-8 и повторите импорт. Если ошибка E42 сохраняется, уточните текст сообщения об ошибке и время последней попытки, затем передайте эти сведения специалисту.&quot;,
+        &quot;needs_human_review&quot;: true,
+        &quot;warnings&quot;: [],
+        &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;
+      },
+      &quot;final_card&quot;: {
+        &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;,
+        &quot;status&quot;: &quot;not_analyzed&quot;,
+        &quot;mode&quot;: &quot;escalate&quot;,
+        &quot;category&quot;: &quot;other&quot;,
+        &quot;urgency&quot;: &quot;unassessed&quot;,
+        &quot;urgency_reason&quot;: &quot;Нужна оценка оператора&quot;,
+        &quot;summary&quot;: &quot;Автоматический разбор недоступен или не прошёл проверку&quot;,
+        &quot;known_facts&quot;: [],
+        &quot;missing_data&quot;: [],
+        &quot;next_step&quot;: &quot;Оператор проверяет исходное обращение&quot;,
+        &quot;evidence&quot;: [],
+        &quot;draft_reply&quot;: null,
+        &quot;needs_human_review&quot;: true,
+        &quot;warnings&quot;: [
+          &quot;selected_second_opinion&quot;
+        ]
+      },
+      &quot;automatic_resolution&quot;: false,
+      &quot;retrieved_ids&quot;: [
+        &quot;KB-E42-REPEAT-support-20261119&quot;,
+        &quot;KB-ERROR-support-20261119&quot;,
+        &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+        &quot;KB-2FA-RECOVERY-support-20261119&quot;
+      ],
+      &quot;usage&quot;: {
+        &quot;prompt_tokens&quot;: 5634,
+        &quot;total_tokens&quot;: 6520,
+        &quot;completion_tokens&quot;: 886,
+        &quot;prompt_tokens_details&quot;: {
+          &quot;cached_tokens&quot;: 2688
+        },
+        &quot;completion_tokens_details&quot;: {
+          &quot;reasoning_tokens&quot;: 0
+        },
+        &quot;service_tier&quot;: &quot;standard&quot;
+      },
+      &quot;latency_ms&quot;: 7853.995,
+      &quot;schema_valid&quot;: true,
+      &quot;gate_passed&quot;: false,
+      &quot;gate_reason&quot;: &quot;selected_second_opinion&quot;,
+      &quot;cascade_next&quot;: true,
+      &quot;route_reason&quot;: &quot;selected_second_opinion&quot;,
+      &quot;assessment&quot;: {
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Требуется ли выполнение проверки формата CSV UTF-8 и повторного импорта при ошибке E42?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-ERROR-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт.&quot;,
+            &quot;search_query&quot;: &quot;&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;
+          },
+          {
+            &quot;id&quot;: &quot;q2&quot;,
+            &quot;question&quot;: &quot;Что делать, если ошибка E42 сохраняется после проверки формата и повторного импорта?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-E42-REPEAT-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Уточните время последней попытки и текст сообщения об ошибке, затем передайте специалисту выполненные шаги и полученные сведения.&quot;,
+            &quot;search_query&quot;: &quot;&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;
+          }
+        ],
+        &quot;requires_human&quot;: false,
+        &quot;reasoning_issue&quot;: false
+      },
+      &quot;stage_context&quot;: {
+        &quot;context_version&quot;: &quot;semantic-v1&quot;,
+        &quot;input_hash&quot;: &quot;b56be355dc14fee90e91543e7f417deb62222c968b85d5b0732dcdc2982b5ad3&quot;,
+        &quot;kb_version&quot;: &quot;support-20261119&quot;,
+        &quot;kb_hash&quot;: &quot;b6705dec4500f8597a8409251fc71bf7ea24c4a3c3f0e1c97b0d3b4cc0b03e37&quot;,
+        &quot;kb_snapshot&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;2FA: резервный код и восстановление доступа&quot;,
+            &quot;excerpt&quot;: &quot;Одноразовые и резервные коды 2FA являются секретами: не запрашивайте их в переписке. Если клиент спрашивает о получении или повторной выдаче кода после настройки либо восстановлении доступа без резервного кода, передайте вопрос специалисту. Не утверждайте, что код потерян, пока клиент этого не сообщил.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Настройка 2FA через приложение&quot;,
+            &quot;excerpt&quot;: &quot;1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-API-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Токен интеграции&quot;,
+            &quot;excerpt&quot;: &quot;Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-BILLING-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка списания: сведения для проверки&quot;,
+            &quot;excerpt&quot;: &quot;При вопросе о неверном списании уточните период и суть расхождения: повторное списание, другая сумма или неизвестный платёж. Не требуйте код ошибки, если его нет. Когда период и расхождение известны, передайте специалисту по оплате для проверки начислений. Не обещайте возврат или изменение суммы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: код ошибки неизвестен&quot;,
+            &quot;excerpt&quot;: &quot;При сбое импорта CSV уточните текст или код ошибки. Если клиент не видит или не знает код, не требуйте его повторно: уточните, что происходит при загрузке файла и когда начался сбой. После получения этих сведений, если подходящей инструкции нет, передайте обращение специалисту.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Счёт и акт&quot;,
+            &quot;excerpt&quot;: &quot;Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-NOTIFY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Уведомления&quot;,
+            &quot;excerpt&quot;: &quot;Пользователь меняет email-уведомления в личных настройках раздела Уведомления.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ROLE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Роли&quot;,
+            &quot;excerpt&quot;: &quot;Администратор аккаунта может выдать роль наблюдателя в разделе Команда.&quot;
+          }
+        ],
+        &quot;sources&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: код ошибки неизвестен&quot;,
+            &quot;excerpt&quot;: &quot;При сбое импорта CSV уточните текст или код ошибки. Если клиент не видит или не знает код, не требуйте его повторно: уточните, что происходит при загрузке файла и когда начался сбой. После получения этих сведений, если подходящей инструкции нет, передайте обращение специалисту.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;2FA: резервный код и восстановление доступа&quot;,
+            &quot;excerpt&quot;: &quot;Одноразовые и резервные коды 2FA являются секретами: не запрашивайте их в переписке. Если клиент спрашивает о получении или повторной выдаче кода после настройки либо восстановлении доступа без резервного кода, передайте вопрос специалисту. Не утверждайте, что код потерян, пока клиент этого не сообщил.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Настройка 2FA через приложение&quot;,
+            &quot;excerpt&quot;: &quot;1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-API-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Токен интеграции&quot;,
+            &quot;excerpt&quot;: &quot;Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-BILLING-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка списания: сведения для проверки&quot;,
+            &quot;excerpt&quot;: &quot;При вопросе о неверном списании уточните период и суть расхождения: повторное списание, другая сумма или неизвестный платёж. Не требуйте код ошибки, если его нет. Когда период и расхождение известны, передайте специалисту по оплате для проверки начислений. Не обещайте возврат или изменение суммы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Счёт и акт&quot;,
+            &quot;excerpt&quot;: &quot;Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-NOTIFY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Уведомления&quot;,
+            &quot;excerpt&quot;: &quot;Пользователь меняет email-уведомления в личных настройках раздела Уведомления.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ROLE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Роли&quot;,
+            &quot;excerpt&quot;: &quot;Администратор аккаунта может выдать роль наблюдателя в разделе Команда.&quot;
+          }
+        ],
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Требуется ли выполнение проверки формата CSV UTF-8 и повторного импорта при ошибке E42?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-ERROR-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт.&quot;,
+            &quot;search_query&quot;: &quot;&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;
+          },
+          {
+            &quot;id&quot;: &quot;q2&quot;,
+            &quot;question&quot;: &quot;Что делать, если ошибка E42 сохраняется после проверки формата и повторного импорта?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-E42-REPEAT-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Уточните время последней попытки и текст сообщения об ошибке, затем передайте специалисту выполненные шаги и полученные сведения.&quot;,
+            &quot;search_query&quot;: &quot;&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;
+          }
+        ],
+        &quot;retrieval&quot;: {
+          &quot;queries&quot;: [],
+          &quot;new_source_ids&quot;: [],
+          &quot;query_outcomes&quot;: [],
+          &quot;sol_snapshot_supplement_ids&quot;: [
+            &quot;KB-2FA-support-20261119&quot;,
+            &quot;KB-API-support-20261119&quot;,
+            &quot;KB-BILLING-DIAG-support-20261119&quot;,
+            &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;KB-NOTIFY-support-20261119&quot;,
+            &quot;KB-ROLE-support-20261119&quot;
+          ]
+        }
+      },
+      &quot;context_packing&quot;: {
+        &quot;provider&quot;: &quot;mistral&quot;,
+        &quot;candidate_ids&quot;: [
+          &quot;KB-E42-REPEAT-support-20261119&quot;,
+          &quot;KB-ERROR-support-20261119&quot;,
+          &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+          &quot;KB-2FA-RECOVERY-support-20261119&quot;
+        ],
+        &quot;included_ids&quot;: [
+          &quot;KB-E42-REPEAT-support-20261119&quot;,
+          &quot;KB-ERROR-support-20261119&quot;,
+          &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+          &quot;KB-2FA-RECOVERY-support-20261119&quot;
+        ],
+        &quot;omitted_ids&quot;: [],
+        &quot;payload_bytes&quot;: 30856,
+        &quot;payload_limit_bytes&quot;: 250304
+      },
+      &quot;retrieval&quot;: {
+        &quot;queries&quot;: [],
+        &quot;new_source_ids&quot;: [],
+        &quot;query_outcomes&quot;: [],
+        &quot;sol_snapshot_supplement_ids&quot;: [
+          &quot;KB-2FA-support-20261119&quot;,
+          &quot;KB-API-support-20261119&quot;,
+          &quot;KB-BILLING-DIAG-support-20261119&quot;,
+          &quot;KB-INVOICE-support-20261119&quot;,
+          &quot;KB-NOTIFY-support-20261119&quot;,
+          &quot;KB-ROLE-support-20261119&quot;
+        ]
+      },
+      &quot;attempts&quot;: 1,
+      &quot;http_status&quot;: 200,
+      &quot;returned_model&quot;: &quot;ministral-14b-2512&quot;,
+      &quot;completion_id&quot;: &quot;0081da0ffd5a47b9bb59c083b1706022&quot;,
+      &quot;finish_reason&quot;: &quot;tool_calls&quot;,
+      &quot;provider_request_id&quot;: null,
+      &quot;provider_limits&quot;: {
+        &quot;x-ratelimit-limit-tokens-minute&quot;: &quot;40000&quot;,
+        &quot;x-ratelimit-remaining-tokens-minute&quot;: &quot;36168&quot;,
+        &quot;x-ratelimit-tokens-query-cost&quot;: &quot;3832&quot;,
+        &quot;x-ratelimit-limit-req-minute&quot;: &quot;2&quot;,
+        &quot;x-ratelimit-remaining-req-minute&quot;: &quot;1&quot;
+      },
+      &quot;retry_after_seconds&quot;: null,
+      &quot;not_sent&quot;: false,
+      &quot;transport_error&quot;: null,
+      &quot;attempt_timeout_seconds&quot;: 30,
+      &quot;billed_micro_usd&quot;: null,
+      &quot;inference_skipped&quot;: false,
+      &quot;category_result&quot;: {
+        &quot;value&quot;: &quot;product_error&quot;,
+        &quot;source&quot;: &quot;mistral&quot;,
+        &quot;validation&quot;: &quot;card_schema_and_request_binding&quot;
+      },
+      &quot;cache_hit&quot;: false,
+      &quot;reserved_micro_usd&quot;: 0,
+      &quot;billing_status&quot;: &quot;settled&quot;
+    },
+    {
+      &quot;provider&quot;: &quot;sol&quot;,
+      &quot;model&quot;: &quot;openai/gpt-5.6-sol&quot;,
+      &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;,
+      &quot;attempt_id&quot;: &quot;1980c574-c88a-4a5c-a950-db976bdd7655&quot;,
+      &quot;job_id&quot;: &quot;0ddc2802-43b9-476a-b009-857f27dcdf29&quot;,
+      &quot;raw_card&quot;: {
+        &quot;category&quot;: &quot;product_error&quot;,
+        &quot;draft_reply&quot;: &quot;Проверьте, что CSV сохранён в формате UTF-8, и повторите импорт. Эта проверка не означает, что формат файла является причиной E42.\n\nЕсли E42 останется после повторной попытки, сообщите время последней попытки и полный текст сообщения об ошибке. Повторять проверку формата ещё раз не потребуется.&quot;,
+        &quot;evidence&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          }
+        ],
+        &quot;known_facts&quot;: [
+          &quot;При импорте CSV отображается код E42.&quot;,
+          &quot;Для E42 approved-инструкция рекомендует проверить формат CSV UTF-8 и повторить импорт.&quot;,
+          &quot;Проверка UTF-8 не устанавливает причину ошибки E42.&quot;,
+          &quot;Если после этих действий E42 сохранится, потребуются время последней попытки и текст сообщения об ошибке.&quot;
+        ],
+        &quot;missing_data&quot;: [],
+        &quot;mode&quot;: &quot;answer&quot;,
+        &quot;needs_human_review&quot;: true,
+        &quot;next_step&quot;: &quot;Предложить клиенту проверить формат CSV UTF-8 и повторить импорт; если E42 сохранится, следующим этапом собрать время последней попытки и полный текст ошибки для передачи специалисту.&quot;,
+        &quot;status&quot;: &quot;proposed&quot;,
+        &quot;summary&quot;: &quot;Клиент сообщает об E42 при импорте CSV. На текущем этапе применима проверка формата UTF-8 и повторный импорт; при сохранении ошибки предусмотрен сбор времени попытки и текста сообщения с последующей передачей специалисту.&quot;,
+        &quot;urgency&quot;: &quot;medium&quot;,
+        &quot;urgency_reason&quot;: &quot;Импорт CSV не выполняется из-за явной ошибки продукта, но сведений о критическом влиянии или массовом инциденте нет.&quot;,
+        &quot;warnings&quot;: [
+          &quot;Не утверждать, что причиной E42 является кодировка файла.&quot;,
+          &quot;Не запрашивать CSV-файл или секреты.&quot;,
+          &quot;Не требовать повторной проверки UTF-8, если клиент позднее подтвердит, что она уже выполнена.&quot;
+        ],
+        &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;
+      },
+      &quot;final_card&quot;: {
+        &quot;category&quot;: &quot;product_error&quot;,
+        &quot;draft_reply&quot;: &quot;Проверьте, что CSV сохранён в формате UTF-8, и повторите импорт. Эта проверка не означает, что формат файла является причиной E42.\n\nЕсли E42 останется после повторной попытки, сообщите время последней попытки и полный текст сообщения об ошибке. Повторять проверку формата ещё раз не потребуется.&quot;,
+        &quot;evidence&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          }
+        ],
+        &quot;known_facts&quot;: [
+          &quot;При импорте CSV отображается код E42.&quot;,
+          &quot;Для E42 approved-инструкция рекомендует проверить формат CSV UTF-8 и повторить импорт.&quot;,
+          &quot;Проверка UTF-8 не устанавливает причину ошибки E42.&quot;,
+          &quot;Если после этих действий E42 сохранится, потребуются время последней попытки и текст сообщения об ошибке.&quot;
+        ],
+        &quot;missing_data&quot;: [],
+        &quot;mode&quot;: &quot;answer&quot;,
+        &quot;needs_human_review&quot;: false,
+        &quot;next_step&quot;: &quot;Предложить клиенту проверить формат CSV UTF-8 и повторить импорт; если E42 сохранится, следующим этапом собрать время последней попытки и полный текст ошибки для передачи специалисту.&quot;,
+        &quot;status&quot;: &quot;resolved&quot;,
+        &quot;summary&quot;: &quot;Клиент сообщает об E42 при импорте CSV. На текущем этапе применима проверка формата UTF-8 и повторный импорт; при сохранении ошибки предусмотрен сбор времени попытки и текста сообщения с последующей передачей специалисту.&quot;,
+        &quot;urgency&quot;: &quot;medium&quot;,
+        &quot;urgency_reason&quot;: &quot;Импорт CSV не выполняется из-за явной ошибки продукта, но сведений о критическом влиянии или массовом инциденте нет.&quot;,
+        &quot;warnings&quot;: [
+          &quot;Не утверждать, что причиной E42 является кодировка файла.&quot;,
+          &quot;Не запрашивать CSV-файл или секреты.&quot;,
+          &quot;Не требовать повторной проверки UTF-8, если клиент позднее подтвердит, что она уже выполнена.&quot;
+        ],
+        &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;
+      },
+      &quot;automatic_resolution&quot;: true,
+      &quot;retrieved_ids&quot;: [
+        &quot;KB-E42-REPEAT-support-20261119&quot;,
+        &quot;KB-ERROR-support-20261119&quot;,
+        &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+        &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+        &quot;KB-API-support-20261119&quot;,
+        &quot;KB-INVOICE-support-20261119&quot;
+      ],
+      &quot;usage&quot;: {
+        &quot;prompt_tokens&quot;: 2488,
+        &quot;completion_tokens&quot;: 812,
+        &quot;total_tokens&quot;: 3300,
+        &quot;prompt_tokens_details&quot;: {
+          &quot;cached_tokens&quot;: 0
+        }
+      },
+      &quot;latency_ms&quot;: 18014.006,
+      &quot;schema_valid&quot;: true,
+      &quot;gate_passed&quot;: true,
+      &quot;gate_reason&quot;: &quot;complete_coverage&quot;,
+      &quot;cascade_next&quot;: false,
+      &quot;route_reason&quot;: &quot;complete_coverage&quot;,
+      &quot;assessment&quot;: {
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Требуется ли выполнение проверки формата CSV UTF-8 и повторного импорта при ошибке E42?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-ERROR-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Проверьте формат CSV UTF-8 и повторите импорт; это проверка, а не установленная причина E42.&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;,
+            &quot;search_query&quot;: &quot;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;q2&quot;,
+            &quot;question&quot;: &quot;Что делать, если ошибка E42 сохраняется после проверки формата и повторного импорта?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-E42-REPEAT-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Если после проверки UTF-8 и повторного импорта E42 сохранится, нужно уточнить время последней попытки и текст сообщения, затем передать сведения специалисту без повторения проверок.&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;,
+            &quot;search_query&quot;: &quot;&quot;
+          }
+        ],
+        &quot;reasoning_issue&quot;: false,
+        &quot;requires_human&quot;: false
+      },
+      &quot;stage_context&quot;: {
+        &quot;context_version&quot;: &quot;semantic-v1&quot;,
+        &quot;input_hash&quot;: &quot;b56be355dc14fee90e91543e7f417deb62222c968b85d5b0732dcdc2982b5ad3&quot;,
+        &quot;kb_version&quot;: &quot;support-20261119&quot;,
+        &quot;kb_hash&quot;: &quot;b6705dec4500f8597a8409251fc71bf7ea24c4a3c3f0e1c97b0d3b4cc0b03e37&quot;,
+        &quot;kb_snapshot&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;2FA: резервный код и восстановление доступа&quot;,
+            &quot;excerpt&quot;: &quot;Одноразовые и резервные коды 2FA являются секретами: не запрашивайте их в переписке. Если клиент спрашивает о получении или повторной выдаче кода после настройки либо восстановлении доступа без резервного кода, передайте вопрос специалисту. Не утверждайте, что код потерян, пока клиент этого не сообщил.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Настройка 2FA через приложение&quot;,
+            &quot;excerpt&quot;: &quot;1. Войдите в свой аккаунт и откройте настройки безопасности. 2. Найдите настройку двухфакторной аутентификации (2FA) и выберите приложение-аутентификатор, если этот способ поддерживается. 3. Установите совместимое приложение-аутентификатор на телефон. 4. Добавьте аккаунт в приложении и отсканируйте QR-код, показанный самим сервисом. 5. Введите текущий одноразовый код из приложения только на странице настройки самого сервиса и завершите подтверждение по подсказкам. 6. Если сервис предлагает резервные коды, сохраните их в защищённом месте для восстановления доступа. Не присылайте в поддержку QR-код, секрет настройки, одноразовые и резервные коды. При потере телефона и отсутствии резервных кодов восстановление требует обращения к специалисту; процедура восстановления доступа здесь не описана.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-API-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Токен интеграции&quot;,
+            &quot;excerpt&quot;: &quot;Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-BILLING-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка списания: сведения для проверки&quot;,
+            &quot;excerpt&quot;: &quot;При вопросе о неверном списании уточните период и суть расхождения: повторное списание, другая сумма или неизвестный платёж. Не требуйте код ошибки, если его нет. Когда период и расхождение известны, передайте специалисту по оплате для проверки начислений. Не обещайте возврат или изменение суммы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: код ошибки неизвестен&quot;,
+            &quot;excerpt&quot;: &quot;При сбое импорта CSV уточните текст или код ошибки. Если клиент не видит или не знает код, не требуйте его повторно: уточните, что происходит при загрузке файла и когда начался сбой. После получения этих сведений, если подходящей инструкции нет, передайте обращение специалисту.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Счёт и акт&quot;,
+            &quot;excerpt&quot;: &quot;Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-NOTIFY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Уведомления&quot;,
+            &quot;excerpt&quot;: &quot;Пользователь меняет email-уведомления в личных настройках раздела Уведомления.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ROLE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Роли&quot;,
+            &quot;excerpt&quot;: &quot;Администратор аккаунта может выдать роль наблюдателя в разделе Команда.&quot;
+          }
+        ],
+        &quot;sources&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+            &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Импорт CSV: код ошибки неизвестен&quot;,
+            &quot;excerpt&quot;: &quot;При сбое импорта CSV уточните текст или код ошибки. Если клиент не видит или не знает код, не требуйте его повторно: уточните, что происходит при загрузке файла и когда начался сбой. После получения этих сведений, если подходящей инструкции нет, передайте обращение специалисту.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;2FA: резервный код и восстановление доступа&quot;,
+            &quot;excerpt&quot;: &quot;Одноразовые и резервные коды 2FA являются секретами: не запрашивайте их в переписке. Если клиент спрашивает о получении или повторной выдаче кода после настройки либо восстановлении доступа без резервного кода, передайте вопрос специалисту. Не утверждайте, что код потерян, пока клиент этого не сообщил.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-API-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Токен интеграции&quot;,
+            &quot;excerpt&quot;: &quot;Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;version&quot;: &quot;support-20261119&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Счёт и акт&quot;,
+            &quot;excerpt&quot;: &quot;Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.&quot;
+          }
+        ],
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Требуется ли выполнение проверки формата CSV UTF-8 и повторного импорта при ошибке E42?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-ERROR-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Проверьте формат CSV UTF-8 и повторите импорт; это проверка, а не установленная причина E42.&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;,
+            &quot;search_query&quot;: &quot;&quot;
+          },
+          {
+            &quot;id&quot;: &quot;q2&quot;,
+            &quot;question&quot;: &quot;Что делать, если ошибка E42 сохраняется после проверки формата и повторного импорта?&quot;,
+            &quot;input_quote&quot;: &quot;Импорт CSV показывает E42, что делать?&quot;,
+            &quot;coverage&quot;: &quot;complete&quot;,
+            &quot;source_ids&quot;: [
+              &quot;KB-E42-REPEAT-support-20261119&quot;
+            ],
+            &quot;missing_customer_fields&quot;: [],
+            &quot;answer_excerpt&quot;: &quot;Если после проверки UTF-8 и повторного импорта E42 сохранится, нужно уточнить время последней попытки и текст сообщения, затем передать сведения специалисту без повторения проверок.&quot;,
+            &quot;requested_fact&quot;: &quot;none&quot;,
+            &quot;search_query&quot;: &quot;&quot;
+          }
+        ],
+        &quot;retrieval&quot;: {
+          &quot;queries&quot;: [],
+          &quot;new_source_ids&quot;: [],
+          &quot;query_outcomes&quot;: [],
+          &quot;sol_snapshot_supplement_ids&quot;: [
+            &quot;KB-2FA-support-20261119&quot;,
+            &quot;KB-API-support-20261119&quot;,
+            &quot;KB-BILLING-DIAG-support-20261119&quot;,
+            &quot;KB-INVOICE-support-20261119&quot;,
+            &quot;KB-NOTIFY-support-20261119&quot;,
+            &quot;KB-ROLE-support-20261119&quot;
+          ]
+        }
+      },
+      &quot;context_packing&quot;: {
+        &quot;provider&quot;: &quot;sol&quot;,
+        &quot;candidate_ids&quot;: [
+          &quot;KB-E42-REPEAT-support-20261119&quot;,
+          &quot;KB-ERROR-support-20261119&quot;,
+          &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+          &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+          &quot;KB-2FA-support-20261119&quot;,
+          &quot;KB-API-support-20261119&quot;,
+          &quot;KB-BILLING-DIAG-support-20261119&quot;,
+          &quot;KB-INVOICE-support-20261119&quot;,
+          &quot;KB-NOTIFY-support-20261119&quot;,
+          &quot;KB-ROLE-support-20261119&quot;
+        ],
+        &quot;included_ids&quot;: [
+          &quot;KB-E42-REPEAT-support-20261119&quot;,
+          &quot;KB-ERROR-support-20261119&quot;,
+          &quot;KB-IMPORT-DIAG-support-20261119&quot;,
+          &quot;KB-2FA-RECOVERY-support-20261119&quot;,
+          &quot;KB-API-support-20261119&quot;,
+          &quot;KB-INVOICE-support-20261119&quot;
+        ],
+        &quot;omitted_ids&quot;: [
+          &quot;KB-2FA-support-20261119&quot;,
+          &quot;KB-BILLING-DIAG-support-20261119&quot;,
+          &quot;KB-NOTIFY-support-20261119&quot;,
+          &quot;KB-ROLE-support-20261119&quot;
+        ],
+        &quot;payload_bytes&quot;: 15878,
+        &quot;payload_limit_bytes&quot;: 15904
+      },
+      &quot;retrieval&quot;: {
+        &quot;queries&quot;: [],
+        &quot;new_source_ids&quot;: [],
+        &quot;query_outcomes&quot;: [],
+        &quot;sol_snapshot_supplement_ids&quot;: [
+          &quot;KB-2FA-support-20261119&quot;,
+          &quot;KB-API-support-20261119&quot;,
+          &quot;KB-BILLING-DIAG-support-20261119&quot;,
+          &quot;KB-INVOICE-support-20261119&quot;,
+          &quot;KB-NOTIFY-support-20261119&quot;,
+          &quot;KB-ROLE-support-20261119&quot;
+        ]
+      },
+      &quot;attempts&quot;: 1,
+      &quot;http_status&quot;: 200,
+      &quot;returned_model&quot;: &quot;openai/gpt-5.6-sol&quot;,
+      &quot;completion_id&quot;: &quot;chatcmpl-d26dba66-5039-423b-8eaa-6f47ef31df91&quot;,
+      &quot;finish_reason&quot;: &quot;tool_calls&quot;,
+      &quot;provider_request_id&quot;: &quot;a0cd27bc-6168-4dc6-88cd-9fca73209a7e&quot;,
+      &quot;provider_limits&quot;: null,
+      &quot;retry_after_seconds&quot;: null,
+      &quot;not_sent&quot;: false,
+      &quot;transport_error&quot;: null,
+      &quot;attempt_timeout_seconds&quot;: 45,
+      &quot;billed_micro_usd&quot;: 4924,
+      &quot;inference_skipped&quot;: false,
+      &quot;category_result&quot;: {
+        &quot;value&quot;: &quot;product_error&quot;,
+        &quot;source&quot;: &quot;sol&quot;,
+        &quot;validation&quot;: &quot;card_schema_and_request_binding&quot;
+      },
+      &quot;cache_hit&quot;: false,
+      &quot;reserved_micro_usd&quot;: 19968,
+      &quot;billing_status&quot;: &quot;settled&quot;,
+      &quot;billing_receipt_id&quot;: &quot;d26dba66-5039-423b-8eaa-6f47ef31df91&quot;,
+      &quot;billing_receipt_status&quot;: &quot;success&quot;
+    }
+  ],
+  &quot;final_card&quot;: {
+    &quot;category&quot;: &quot;product_error&quot;,
+    &quot;draft_reply&quot;: &quot;Проверьте, что CSV сохранён в формате UTF-8, и повторите импорт. Эта проверка не означает, что формат файла является причиной E42.\n\nЕсли E42 останется после повторной попытки, сообщите время последней попытки и полный текст сообщения об ошибке. Повторять проверку формата ещё раз не потребуется.&quot;,
+    &quot;evidence&quot;: [
+      {
+        &quot;source_id&quot;: &quot;KB-ERROR-support-20261119&quot;,
+        &quot;title&quot;: &quot;Ошибка импорта&quot;,
+        &quot;version&quot;: &quot;support-20261119&quot;,
+        &quot;excerpt&quot;: &quot;При ошибке E42 импорта CSV проверьте формат CSV UTF-8 и повторите импорт. Это рекомендация проверки, а не установленная причина ошибки. Если формат уже проверен, повторная проверка не нужна.&quot;
+      },
+      {
+        &quot;source_id&quot;: &quot;KB-E42-REPEAT-support-20261119&quot;,
+        &quot;title&quot;: &quot;Импорт CSV: E42 после повторной попытки&quot;,
+        &quot;version&quot;: &quot;support-20261119&quot;,
+        &quot;excerpt&quot;: &quot;Если формат CSV UTF-8 проверен, повторный импорт выполнен, но E42 осталась, уточните время последней попытки и текст сообщения об ошибке. Затем передайте специалисту уже выполненные шаги и полученные сведения. Повторять те же проверки не требуется; не запрашивайте сам файл или секреты.&quot;
+      }
+    ],
+    &quot;known_facts&quot;: [
+      &quot;При импорте CSV отображается код E42.&quot;,
+      &quot;Для E42 approved-инструкция рекомендует проверить формат CSV UTF-8 и повторить импорт.&quot;,
+      &quot;Проверка UTF-8 не устанавливает причину ошибки E42.&quot;,
+      &quot;Если после этих действий E42 сохранится, потребуются время последней попытки и текст сообщения об ошибке.&quot;
+    ],
+    &quot;missing_data&quot;: [],
+    &quot;mode&quot;: &quot;answer&quot;,
+    &quot;needs_human_review&quot;: false,
+    &quot;next_step&quot;: &quot;Предложить клиенту проверить формат CSV UTF-8 и повторить импорт; если E42 сохранится, следующим этапом собрать время последней попытки и полный текст ошибки для передачи специалисту.&quot;,
+    &quot;status&quot;: &quot;resolved&quot;,
+    &quot;summary&quot;: &quot;Клиент сообщает об E42 при импорте CSV. На текущем этапе применима проверка формата UTF-8 и повторный импорт; при сохранении ошибки предусмотрен сбор времени попытки и текста сообщения с последующей передачей специалисту.&quot;,
+    &quot;urgency&quot;: &quot;medium&quot;,
+    &quot;urgency_reason&quot;: &quot;Импорт CSV не выполняется из-за явной ошибки продукта, но сведений о критическом влиянии или массовом инциденте нет.&quot;,
+    &quot;warnings&quot;: [
+      &quot;Не утверждать, что причиной E42 является кодировка файла.&quot;,
+      &quot;Не запрашивать CSV-файл или секреты.&quot;,
+      &quot;Не требовать повторной проверки UTF-8, если клиент позднее подтвердит, что она уже выполнена.&quot;
+    ],
+    &quot;request_id&quot;: &quot;ai033-REG-e42-1&quot;
+  },
+  &quot;handoff&quot;: null,
+  &quot;state&quot;: &quot;ready&quot;,
+  &quot;reason&quot;: &quot;complete_coverage&quot;,
+  &quot;end_to_end_ms&quot;: 25925.426,
+  &quot;complete&quot;: true,
+  &quot;trace_id&quot;: &quot;5240198cd1bd03025a34c2387fb6bf0b&quot;
+}</pre></details><p><a href="https://cloud.langfuse.com/project/cmwamj1yl0198ad0j974csoi9/traces/5240198cd1bd03025a34c2387fb6bf0b">Trace Langfuse</a></p><label>Твоя оценка: <select data-id="REG-e42-1"><option value="pending">Не оценено</option><option value="correct">Верно</option><option value="partial">Частично</option><option value="incorrect">Неверно</option></select></label><textarea data-id="REG-e42-1" placeholder="Комментарий"></textarea></section><section id="UC02-08"><h2>UC02-08 · clarify</h2><p>Группа: legacy-q015. Gold: clarify/integrations. Факт: clarify/integrations.</p><h3>Запрос</h3><pre>API возвращает ошибку</pre><h3>История</h3><pre>Нет предыдущей переписки.</pre><p>mistral: needs_customer_data</p><h3>Текст для клиента</h3><pre>Опишите, пожалуйста, какую именно ошибку возвращает API (например, код ошибки, текст сообщения) и при каких условиях она возникает?</pre><details><summary>Источники, исходные этапы и карточка</summary><pre>{
+  &quot;case_id&quot;: &quot;UC02-08&quot;,
+  &quot;suite&quot;: &quot;legacy-q015&quot;,
+  &quot;input&quot;: {
+    &quot;history&quot;: [],
+    &quot;kb_version&quot;: &quot;v1&quot;,
+    &quot;request_id&quot;: &quot;ai033-UC02-08&quot;,
+    &quot;ticket_ref&quot;: &quot;lab5-ai033-UC02-08&quot;,
+    &quot;ticket_text&quot;: &quot;API возвращает ошибку&quot;
+  },
+  &quot;stages&quot;: [
+    {
+      &quot;provider&quot;: &quot;mistral&quot;,
+      &quot;model&quot;: &quot;ministral-14b-2512&quot;,
+      &quot;request_id&quot;: &quot;ai033-UC02-08&quot;,
+      &quot;attempt_id&quot;: &quot;f19bedf7-b0d8-467e-b2a2-5fcc785d7a12&quot;,
+      &quot;job_id&quot;: &quot;dcd04b9d-c199-4b6c-951d-a35eb287cc78&quot;,
+      &quot;raw_card&quot;: {
+        &quot;status&quot;: &quot;proposed&quot;,
+        &quot;mode&quot;: &quot;clarify&quot;,
+        &quot;category&quot;: &quot;integrations&quot;,
+        &quot;urgency&quot;: &quot;unassessed&quot;,
+        &quot;urgency_reason&quot;: &quot;No urgency indicators provided in the request.&quot;,
+        &quot;summary&quot;: &quot;Клиент сообщает об ошибке в API без указания кода или деталей. Требуется уточнение наблюдаемого поведения и деталей ошибки для дальнейшей диагностики.&quot;,
+        &quot;known_facts&quot;: [
+          &quot;Клиент сообщает об ошибке в API.&quot;
+        ],
+        &quot;missing_data&quot;: [
+          &quot;Детали ошибки (например, код ошибки, текст сообщения об ошибке, условия возникновения).&quot;
+        ],
+        &quot;next_step&quot;: &quot;Уточнить у клиента детали ошибки, чтобы выбрать подходящую процедуру решения.&quot;,
+        &quot;evidence&quot;: [],
+        &quot;draft_reply&quot;: &quot;Опишите, пожалуйста, какую именно ошибку возвращает API (например, код ошибки, текст сообщения) и при каких условиях она возникает?&quot;,
+        &quot;needs_human_review&quot;: true,
+        &quot;warnings&quot;: [],
+        &quot;request_id&quot;: &quot;ai033-UC02-08&quot;
+      },
+      &quot;final_card&quot;: {
+        &quot;status&quot;: &quot;resolved&quot;,
+        &quot;mode&quot;: &quot;clarify&quot;,
+        &quot;category&quot;: &quot;integrations&quot;,
+        &quot;urgency&quot;: &quot;unassessed&quot;,
+        &quot;urgency_reason&quot;: &quot;No urgency indicators provided in the request.&quot;,
+        &quot;summary&quot;: &quot;Клиент сообщает об ошибке в API без указания кода или деталей. Требуется уточнение наблюдаемого поведения и деталей ошибки для дальнейшей диагностики.&quot;,
+        &quot;known_facts&quot;: [
+          &quot;Клиент сообщает об ошибке в API.&quot;
+        ],
+        &quot;missing_data&quot;: [
+          &quot;Детали ошибки (например, код ошибки, текст сообщения об ошибке, условия возникновения).&quot;
+        ],
+        &quot;next_step&quot;: &quot;Уточнить у клиента детали ошибки, чтобы выбрать подходящую процедуру решения.&quot;,
+        &quot;evidence&quot;: [],
+        &quot;draft_reply&quot;: &quot;Опишите, пожалуйста, какую именно ошибку возвращает API (например, код ошибки, текст сообщения) и при каких условиях она возникает?&quot;,
+        &quot;needs_human_review&quot;: false,
+        &quot;warnings&quot;: [],
+        &quot;request_id&quot;: &quot;ai033-UC02-08&quot;
+      },
+      &quot;automatic_resolution&quot;: true,
+      &quot;retrieved_ids&quot;: [],
+      &quot;usage&quot;: {
+        &quot;prompt_tokens&quot;: 5094,
+        &quot;total_tokens&quot;: 5463,
+        &quot;completion_tokens&quot;: 369,
+        &quot;prompt_tokens_details&quot;: {
+          &quot;cached_tokens&quot;: 0
+        },
+        &quot;completion_tokens_details&quot;: {
+          &quot;reasoning_tokens&quot;: 0
+        },
+        &quot;service_tier&quot;: &quot;standard&quot;
+      },
+      &quot;latency_ms&quot;: 4006.978,
+      &quot;schema_valid&quot;: true,
+      &quot;gate_passed&quot;: true,
+      &quot;gate_reason&quot;: &quot;needs_customer_data&quot;,
+      &quot;cascade_next&quot;: false,
+      &quot;route_reason&quot;: &quot;needs_customer_data&quot;,
+      &quot;assessment&quot;: {
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Уточнение деталей ошибки в API для выбора процедуры решения.&quot;,
+            &quot;input_quote&quot;: &quot;API возвращает ошибку&quot;,
+            &quot;coverage&quot;: &quot;missing&quot;,
+            &quot;source_ids&quot;: [],
+            &quot;missing_customer_fields&quot;: [
+              &quot;error_code&quot;,
+              &quot;error_message&quot;,
+              &quot;observed_behavior&quot;
+            ],
+            &quot;answer_excerpt&quot;: &quot;&quot;,
+            &quot;search_query&quot;: &quot;API ошибка код сообщение условия&quot;,
+            &quot;requested_fact&quot;: &quot;error_code&quot;
+          }
+        ],
+        &quot;requires_human&quot;: false,
+        &quot;reasoning_issue&quot;: false
+      },
+      &quot;stage_context&quot;: {
+        &quot;context_version&quot;: &quot;semantic-v1&quot;,
+        &quot;input_hash&quot;: &quot;8d028c178ac82c3665ae5df83bb14a1426d56bf7bed48d01cb76f92e9ec2ae2c&quot;,
+        &quot;kb_version&quot;: &quot;v1&quot;,
+        &quot;kb_hash&quot;: &quot;c8009045259854c26611a6a91d7fb17187a47c67a3de5aa17ce6925f6f2136c1&quot;,
+        &quot;kb_snapshot&quot;: [
+          {
+            &quot;source_id&quot;: &quot;KB-2FA-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Настройка 2FA&quot;,
+            &quot;excerpt&quot;: &quot;В настройках безопасности оператор показывает путь к включению 2FA; код восстановления хранит сам пользователь.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-API-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Токен интеграции&quot;,
+            &quot;excerpt&quot;: &quot;Администратор создаёт новый токен в разделе Интеграции. Существующее значение токена повторно не показывается.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ERROR-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Ошибка импорта&quot;,
+            &quot;excerpt&quot;: &quot;Если импорт завершился с кодом E42, повторите импорт после проверки формата CSV UTF-8.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-INVOICE-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Счёт и акт&quot;,
+            &quot;excerpt&quot;: &quot;Счёт и акт доступны администратору аккаунта в разделе Биллинг → Документы.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-NOTIFY-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Уведомления&quot;,
+            &quot;excerpt&quot;: &quot;Пользователь меняет email-уведомления в личных настройках раздела Уведомления.&quot;
+          },
+          {
+            &quot;source_id&quot;: &quot;KB-ROLE-v1&quot;,
+            &quot;version&quot;: &quot;v1&quot;,
+            &quot;status&quot;: &quot;approved&quot;,
+            &quot;title&quot;: &quot;Роли&quot;,
+            &quot;excerpt&quot;: &quot;Администратор аккаунта может выдать роль наблюдателя в разделе Команда.&quot;
+          }
+        ],
+        &quot;sources&quot;: [],
+        &quot;questions&quot;: [
+          {
+            &quot;id&quot;: &quot;q1&quot;,
+            &quot;question&quot;: &quot;Уточнение деталей ошибки в API для выбора процедуры решения.&quot;,
+            &quot;input_quote&quot;: &quot;API возвращает ошибку&quot;,
+            &quot;coverage&quot;: &quot;missing&quot;,
+            &quot;source_ids&quot;: [],
+            &quot;missing_customer_fields&quot;: [
+              &quot;error_code&quot;,
+              &quot;error_message&quot;,
+              &quot;observed_behavior&quot;
+            ],
+            &quot;answer_excerpt&quot;: &quot;&quot;,
+            &quot;search_query&quot;: &quot;API ошибка код сообщение условия&quot;,
+            &quot;requested_fact&quot;: &quot;error_code&quot;
+          }
+        ],
+        &quot;retrieval&quot;: {}
+      },
+      &quot;context_packing&quot;: {
+        &quot;provider&quot;: &quot;mistral&quot;,
+        &quot;candidate_ids&quot;: [],
+        &quot;included_ids&quot;: [],
+        &quot;omitted_ids&quot;: [],
+        &quot;payload_bytes&quot;: 28154,
+        &quot;payload_limit_bytes&quot;: 250304
+      },
+      &quot;retrieval&quot;: {},
+      &quot;attempts&quot;: 1,
+      &quot;http_status&quot;: 200,
+      &quot;returned_model&quot;: &quot;ministral-14b-2512&quot;,
+      &quot;completion_id&quot;: &quot;0edaa742ff9645818650a1b16cefd764&quot;,
+      &quot;finish_reason&quot;: &quot;tool_calls&quot;,
+      &quot;provider_request_id&quot;: null,
+      &quot;provider_limits&quot;: {
+        &quot;x-ratelimit-limit-tokens-minute&quot;: &quot;40000&quot;,
+        &quot;x-ratelimit-remaining-tokens-minute&quot;: &quot;30705&quot;,
+        &quot;x-ratelimit-tokens-query-cost&quot;: &quot;5463&quot;,
+        &quot;x-ratelimit-limit-req-minute&quot;: &quot;2&quot;,
+        &quot;x-ratelimit-remaining-req-minute&quot;: &quot;0&quot;
+      },
+      &quot;retry_after_seconds&quot;: null,
+      &quot;not_sent&quot;: false,
+      &quot;transport_error&quot;: null,
+      &quot;attempt_timeout_seconds&quot;: 30,
+      &quot;billed_micro_usd&quot;: null,
+      &quot;inference_skipped&quot;: false,
+      &quot;category_result&quot;: {
+        &quot;value&quot;: &quot;integrations&quot;,
+        &quot;source&quot;: &quot;mistral&quot;,
+        &quot;validation&quot;: &quot;card_schema_and_request_binding&quot;
+      },
+      &quot;cache_hit&quot;: false,
+      &quot;reserved_micro_usd&quot;: 0,
+      &quot;billing_status&quot;: &quot;settled&quot;
+    }
+  ],
+  &quot;final_card&quot;: {
+    &quot;status&quot;: &quot;resolved&quot;,
+    &quot;mode&quot;: &quot;clarify&quot;,
+    &quot;category&quot;: &quot;integrations&quot;,
+    &quot;urgency&quot;: &quot;unassessed&quot;,
+    &quot;urgency_reason&quot;: &quot;No urgency indicators provided in the request.&quot;,
+    &quot;summary&quot;: &quot;Клиент сообщает об ошибке в API без указания кода или деталей. Требуется уточнение наблюдаемого поведения и деталей ошибки для дальнейшей диагностики.&quot;,
+    &quot;known_facts&quot;: [
+      &quot;Клиент сообщает об ошибке в API.&quot;
+    ],
+    &quot;missing_data&quot;: [
+      &quot;Детали ошибки (например, код ошибки, текст сообщения об ошибке, условия возникновения).&quot;
+    ],
+    &quot;next_step&quot;: &quot;Уточнить у клиента детали ошибки, чтобы выбрать подходящую процедуру решения.&quot;,
+    &quot;evidence&quot;: [],
+    &quot;draft_reply&quot;: &quot;Опишите, пожалуйста, какую именно ошибку возвращает API (например, код ошибки, текст сообщения) и при каких условиях она возникает?&quot;,
+    &quot;needs_human_review&quot;: false,
+    &quot;warnings&quot;: [],
+    &quot;request_id&quot;: &quot;ai033-UC02-08&quot;
+  },
+  &quot;handoff&quot;: null,
+  &quot;state&quot;: &quot;ready&quot;,
+  &quot;reason&quot;: &quot;needs_customer_data&quot;,
+  &quot;end_to_end_ms&quot;: 8079.953,
+  &quot;complete&quot;: true,
+  &quot;trace_id&quot;: &quot;52a6bad0c9d580f9c115f53a3c207c69&quot;
+}</pre></details><p><a href="https://cloud.langfuse.com/project/cmwamj1yl0198ad0j974csoi9/traces/52a6bad0c9d580f9c115f53a3c207c69">Trace Langfuse</a></p><label>Твоя оценка: <select data-id="UC02-08"><option value="pending">Не оценено</option><option value="correct">Верно</option><option value="partial">Частично</option><option value="incorrect">Неверно</option></select></label><textarea data-id="UC02-08" placeholder="Комментарий"></textarea></section><script>const sourceHash="db99f4c2ee7d2864883c30e6c328afda1ebdba5dc0827f88c835db8914a732e0";const key='lab5-final-review-'+sourceHash;function values(){return [...document.querySelectorAll('select[data-id]')].map(e=>({case_id:e.dataset.id,grade:e.value,comment:document.querySelector(`textarea[data-id="${e.dataset.id}"]`).value}));}try{for(const r of JSON.parse(localStorage.getItem(key)||'[]')){const s=document.querySelector(`select[data-id="${r.case_id}"]`),t=document.querySelector(`textarea[data-id="${r.case_id}"]`);if(s&&t){s.value=r.grade;t.value=r.comment;}}}catch{}document.addEventListener('input',()=>{try{localStorage.setItem(key,JSON.stringify(values()));}catch{}});function download(){const u=URL.createObjectURL(new Blob([JSON.stringify({protocol:'lab5-ai-engineer-final',reviewed_source_sha256:sourceHash,reviewed_at:new Date().toISOString(),reviews:values()},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download='lab5-final-human-review.json';a.click();URL.revokeObjectURL(u);}</script></main></html>

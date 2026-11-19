@@ -1,0 +1,1152 @@
+[
+  {
+    "case_id": "UC01-02",
+    "provider": "mistral",
+    "attempt_id": "8101c679-db54-4d21-96d8-85758ee254bd",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4475,
+      "total_tokens": 5030,
+      "completion_tokens": 555,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6112.518,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC01-02",
+    "provider": "sol",
+    "attempt_id": "8f9f9850-5186-4596-bcba-7c2e00cf52f1",
+    "confirmed_rub": "0.271094",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2172,
+      "completion_tokens": 394,
+      "total_tokens": 2566,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 18728.896,
+    "http_status": 200,
+    "gate": "semantic_requires_human"
+  },
+  {
+    "case_id": "UC01-03",
+    "provider": "mistral",
+    "attempt_id": "9a816d7a-e0f1-40cb-84ab-26ad5473ec0c",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4407,
+      "total_tokens": 4850,
+      "completion_tokens": 443,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4945.075,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-04",
+    "provider": "mistral",
+    "attempt_id": "c0d43d95-af60-4842-9338-4730832ab9cc",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4413,
+      "total_tokens": 4853,
+      "completion_tokens": 440,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5710.799,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-05",
+    "provider": "mistral",
+    "attempt_id": "bd530614-4b75-4ba7-bc02-b40c6f7fbaa7",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4418,
+      "total_tokens": 4819,
+      "completion_tokens": 401,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5436.918,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-06",
+    "provider": "mistral",
+    "attempt_id": "1b52f06c-ab10-4241-9844-85b782ba6492",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4421,
+      "total_tokens": 4895,
+      "completion_tokens": 474,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5602.552,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-07",
+    "provider": "mistral",
+    "attempt_id": "49bde326-39ea-42b5-bd95-3756b5440ef2",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4362,
+      "total_tokens": 4854,
+      "completion_tokens": 492,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7054.262,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC01-07",
+    "provider": "sol",
+    "attempt_id": "8f2f8ce7-bb61-42af-8e9c-02d78b962495",
+    "confirmed_rub": "0.262194",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2172,
+      "completion_tokens": 369,
+      "total_tokens": 2541,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 19521.115,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-08",
+    "provider": "mistral",
+    "attempt_id": "9ddb9af1-fbee-4272-be9c-be43764cda00",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4492,
+      "total_tokens": 4935,
+      "completion_tokens": 443,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4963.766,
+    "http_status": 200,
+    "gate": "selected_second_opinion"
+  },
+  {
+    "case_id": "UC01-08",
+    "provider": "sol",
+    "attempt_id": "997ad673-bae2-4050-89c8-33d754584e94",
+    "confirmed_rub": "0.270827",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2226,
+      "completion_tokens": 384,
+      "total_tokens": 2610,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 13759.048,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC01-10",
+    "provider": "mistral",
+    "attempt_id": "edb3c021-a23d-44fb-8c84-d6fd79e39159",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4516,
+      "total_tokens": 4972,
+      "completion_tokens": 456,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7531.771,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC02-01",
+    "provider": "mistral",
+    "attempt_id": "f7a6b910-f3d6-49cb-b9cb-633f22edfea5",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4414,
+      "total_tokens": 4820,
+      "completion_tokens": 406,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4551.202,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "UC02-02",
+    "provider": "mistral",
+    "attempt_id": "dd3aad47-70cb-4127-9830-54c30bb68323",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4412,
+      "total_tokens": 4795,
+      "completion_tokens": 383,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4806.915,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "UC02-03",
+    "provider": "mistral",
+    "attempt_id": "2ffcbd46-6b98-4eb2-aae7-647928ebf9cd",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4462,
+      "total_tokens": 4951,
+      "completion_tokens": 489,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5672.0,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-03",
+    "provider": "sol",
+    "attempt_id": "f342411b-0451-4258-9e65-76f5271d789d",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45049.955,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "UC02-05",
+    "provider": "mistral",
+    "attempt_id": "655aa73b-cc14-46d1-83b3-4e8e5b449f74",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4412,
+      "total_tokens": 4849,
+      "completion_tokens": 437,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7321.018,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "UC02-07",
+    "provider": "mistral",
+    "attempt_id": "2d1405a1-204e-41ae-aac7-b5f4ee52030f",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4619,
+      "total_tokens": 5080,
+      "completion_tokens": 461,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6689.521,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-07",
+    "provider": "sol",
+    "attempt_id": "f3512d2e-44f6-4089-9d45-590d1c43714f",
+    "confirmed_rub": "0.195355",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2168,
+      "completion_tokens": 414,
+      "total_tokens": 2582,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 19005.142,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC02-08",
+    "provider": "mistral",
+    "attempt_id": "ed653ccf-c1e3-4383-bc75-2df6406127c5",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4355,
+      "total_tokens": 4737,
+      "completion_tokens": 382,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6336.393,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-08",
+    "provider": "sol",
+    "attempt_id": "5aa84db7-da36-43e1-a61d-bb042ae48c5e",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45058.734,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "UC02-09",
+    "provider": "mistral",
+    "attempt_id": "810b2d3e-f65b-4b46-ace1-8d4e100274e7",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4415,
+      "total_tokens": 4976,
+      "completion_tokens": 561,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6148.714,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-09",
+    "provider": "sol",
+    "attempt_id": "a39986e7-9ee0-41a0-be47-cdd1fcade331",
+    "confirmed_rub": "0.235672",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2166,
+      "completion_tokens": 295,
+      "total_tokens": 2461,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 8739.63,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-10",
+    "provider": "mistral",
+    "attempt_id": "2131e3ad-069f-4710-ab6a-b3e83277bba7",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4358,
+      "total_tokens": 4780,
+      "completion_tokens": 422,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4641.38,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC02-10",
+    "provider": "sol",
+    "attempt_id": "bff7a9c0-e00b-455e-a2da-41ee9afdae55",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45043.226,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "UC03-01",
+    "provider": "mistral",
+    "attempt_id": "004701a7-9794-4066-aa3c-779806daa66c",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4423,
+      "total_tokens": 4787,
+      "completion_tokens": 364,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5789.168,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-01",
+    "provider": "sol",
+    "attempt_id": "a45a82cd-c405-4cab-a7b4-35446f2a82e1",
+    "confirmed_rub": "0.32307",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2176,
+      "completion_tokens": 540,
+      "total_tokens": 2716,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 40914.578,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-02",
+    "provider": "mistral",
+    "attempt_id": "fbefc46c-e0dc-4c17-8e08-187272e891b4",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4359,
+      "total_tokens": 4699,
+      "completion_tokens": 340,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 4989.234,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-02",
+    "provider": "sol",
+    "attempt_id": "2448652e-85fd-48a0-af81-cdd794270c8e",
+    "confirmed_rub": "0.194109",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2170,
+      "completion_tokens": 410,
+      "total_tokens": 2580,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 12464.213,
+    "http_status": 200,
+    "gate": "unsafe_secret_request"
+  },
+  {
+    "case_id": "UC03-04",
+    "provider": "mistral",
+    "attempt_id": "5ce99377-28e0-4bf6-b128-91a63fa5fcd7",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4358,
+      "total_tokens": 4736,
+      "completion_tokens": 378,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6228.437,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-04",
+    "provider": "sol",
+    "attempt_id": "7ebaa1ac-878c-4d0a-bfae-643ee081752d",
+    "confirmed_rub": "0.144714",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2168,
+      "completion_tokens": 271,
+      "total_tokens": 2439,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 22622.784,
+    "http_status": 200,
+    "gate": "semantic_requires_human"
+  },
+  {
+    "case_id": "UC03-07",
+    "provider": "mistral",
+    "attempt_id": "7e0d2ded-eb58-45d7-9ef3-dd16ff4737c0",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4362,
+      "total_tokens": 4629,
+      "completion_tokens": 267,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5149.174,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-07",
+    "provider": "sol",
+    "attempt_id": "2aee81a5-cb92-4d32-b04a-928d392c19e0",
+    "confirmed_rub": "0.2225",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2171,
+      "completion_tokens": 490,
+      "total_tokens": 2661,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 21072.306,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC03-10",
+    "provider": "mistral",
+    "attempt_id": "0caa6c64-acdc-4cab-8f93-a03f187d3368",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4625,
+      "total_tokens": 5207,
+      "completion_tokens": 582,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7287.043,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "UC03-10",
+    "provider": "sol",
+    "attempt_id": "52d1134d-f509-4b41-aeb0-b114c642c913",
+    "confirmed_rub": "0.160022",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2175,
+      "completion_tokens": 313,
+      "total_tokens": 2488,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 12287.816,
+    "http_status": 200,
+    "gate": "semantic_requires_human"
+  },
+  {
+    "case_id": "UC04-01",
+    "provider": "mistral",
+    "attempt_id": "8e5fcfce-9711-4d6d-8ea6-f964d0659e7a",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4413,
+      "total_tokens": 4819,
+      "completion_tokens": 406,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6935.754,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC04-02",
+    "provider": "mistral",
+    "attempt_id": "776077e9-1642-4f6d-8915-1e7828e7c121",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4428,
+      "total_tokens": 4931,
+      "completion_tokens": 503,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 10097.97,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "UC04-03",
+    "provider": "mistral",
+    "attempt_id": "232b2ef4-9c6b-453d-af64-3e5d7fec065e",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4405,
+      "total_tokens": 4926,
+      "completion_tokens": 521,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 11719.992,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-03",
+    "provider": "sol",
+    "attempt_id": "fb0dc23e-51b3-4221-b607-7c97bb31e9d0",
+    "confirmed_rub": "0.182272",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2168,
+      "completion_tokens": 377,
+      "total_tokens": 2545,
+      "prompt_tokens_details": {
+        "cached_tokens": 1536
+      }
+    },
+    "latency_ms": 9407.188,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-04",
+    "provider": "mistral",
+    "attempt_id": "d60c6e57-1083-4bef-bbce-1f15eeafdfd3",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4415,
+      "total_tokens": 4927,
+      "completion_tokens": 512,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5773.716,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-04",
+    "provider": "sol",
+    "attempt_id": "8d1ee339-b5a9-4299-834a-76a2b7fe25fe",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45042.035,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "UC04-05",
+    "provider": "mistral",
+    "attempt_id": "705dae6e-d751-4077-843a-8149550d1434",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4420,
+      "total_tokens": 4881,
+      "completion_tokens": 461,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6862.915,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-05",
+    "provider": "sol",
+    "attempt_id": "ff05b057-6a3c-41a9-a226-4f909368962e",
+    "confirmed_rub": "0.296904",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2171,
+      "completion_tokens": 467,
+      "total_tokens": 2638,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 17928.53,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "UC04-06",
+    "provider": "mistral",
+    "attempt_id": "26dc8e68-abbe-4b50-8df7-c8c713bb96fb",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4359,
+      "total_tokens": 4828,
+      "completion_tokens": 469,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 8359.738,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-06",
+    "provider": "sol",
+    "attempt_id": "1ad324a8-a27a-4f53-b897-061f92301220",
+    "confirmed_rub": "0.272696",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2168,
+      "completion_tokens": 399,
+      "total_tokens": 2567,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 39759.215,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-07",
+    "provider": "mistral",
+    "attempt_id": "e6e130a3-a6ab-4688-a49a-8461db099991",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4355,
+      "total_tokens": 4745,
+      "completion_tokens": 390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 9192.88,
+    "http_status": 200,
+    "gate": "assessment_customer_fields_without_sources"
+  },
+  {
+    "case_id": "UC04-07",
+    "provider": "sol",
+    "attempt_id": "dff79d2f-df01-42f6-8c5c-0ec0a85817c7",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45044.173,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "UC04-08",
+    "provider": "mistral",
+    "attempt_id": "9d82ef67-0838-4f97-810d-0eb5764caec8",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4405,
+      "total_tokens": 4829,
+      "completion_tokens": 424,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 6853.136,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "UC04-10",
+    "provider": "mistral",
+    "attempt_id": "fa39cf3f-1117-4c25-adaf-cddbdb900d34",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4419,
+      "total_tokens": 4894,
+      "completion_tokens": 475,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5729.845,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "EDGE-LONG-01",
+    "provider": "mistral",
+    "attempt_id": "c0d79fbd-46b5-42a1-be0d-c8b0d9b8850d",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4897,
+      "total_tokens": 5392,
+      "completion_tokens": 495,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 5937.777,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "REG-invoice",
+    "provider": "mistral",
+    "attempt_id": "e2144fbc-cbe0-4377-954a-71c828f114e0",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4429,
+      "total_tokens": 4887,
+      "completion_tokens": 458,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7136.798,
+    "http_status": 200,
+    "gate": "complete_coverage"
+  },
+  {
+    "case_id": "REG-free-clarify",
+    "provider": "mistral",
+    "attempt_id": "c7805ce6-8e46-4f76-a268-b943faf08610",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 5464,
+      "total_tokens": 6089,
+      "completion_tokens": 625,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7926.546,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "REG-unknown-final",
+    "provider": "mistral",
+    "attempt_id": "a5ab0462-474e-4d9f-83fb-b6bce49e65a0",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 5753,
+      "total_tokens": 6429,
+      "completion_tokens": 676,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 12940.311,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "REG-e42-1",
+    "provider": "mistral",
+    "attempt_id": "bea411f3-38d3-4e41-bd83-365b589e697d",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 4895,
+      "total_tokens": 5629,
+      "completion_tokens": 734,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7458.233,
+    "http_status": 200,
+    "gate": "assessment_answer_evidence"
+  },
+  {
+    "case_id": "REG-e42-1",
+    "provider": "sol",
+    "attempt_id": "8f61ae27-a008-4615-8c8c-ecd5467e0319",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "1.777152",
+    "usage": null,
+    "latency_ms": 45044.575,
+    "http_status": null,
+    "gate": "attempt_deadline_exceeded"
+  },
+  {
+    "case_id": "REG-e42-2",
+    "provider": "mistral",
+    "attempt_id": "0fea3ab1-cd09-4f5b-8945-84fdb3d30c89",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 5578,
+      "total_tokens": 6191,
+      "completion_tokens": 613,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7116.348,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "REG-e42-2",
+    "provider": "sol",
+    "attempt_id": "6938ce95-f8b3-46a6-a53b-9bfd8abc6981",
+    "confirmed_rub": "0.417054",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2413,
+      "completion_tokens": 765,
+      "total_tokens": 3178,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 29567.251,
+    "http_status": 200,
+    "gate": "needs_customer_data"
+  },
+  {
+    "case_id": "REG-e42-3",
+    "provider": "mistral",
+    "attempt_id": "f67b1c4c-b7e6-4ee1-ab96-c8781891b1d1",
+    "confirmed_rub": "0",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 5784,
+      "total_tokens": 6437,
+      "completion_tokens": 653,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "service_tier": "standard"
+    },
+    "latency_ms": 7159.867,
+    "http_status": 200,
+    "gate": "assessment_schema"
+  },
+  {
+    "case_id": "REG-e42-3",
+    "provider": "sol",
+    "attempt_id": "a46b989e-d2be-4f24-8596-04d26438cacf",
+    "confirmed_rub": "0.443754",
+    "unknown_reserve_rub": "0",
+    "usage": {
+      "prompt_tokens": 2414,
+      "completion_tokens": 840,
+      "total_tokens": 3254,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "latency_ms": 24959.877,
+    "http_status": 200,
+    "gate": "semantic_requires_human"
+  }
+]

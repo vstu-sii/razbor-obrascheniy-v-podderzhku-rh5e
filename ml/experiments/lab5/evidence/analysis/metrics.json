@@ -1,0 +1,249 @@
+{
+  "release_tag": "lab5-ai-engineer-testing-2026-11-19",
+  "runtime_commit": "cd523e07edbeea7daf25d99902fcf97576f605a0",
+  "new_model_calls": 0,
+  "suites": {
+    "current-policy-reviewed": {
+      "planned": 6,
+      "observed": 6,
+      "completed": 6,
+      "mode_accuracy": {
+        "numerator": 4,
+        "denominator": 6,
+        "value": 0.6666666666666666
+      },
+      "category_accuracy": {
+        "numerator": 5,
+        "denominator": 6,
+        "value": 0.8333333333333334
+      },
+      "category_macro_f1": {
+        "value": 0.6296296296296297,
+        "per_class": [
+          {
+            "label": "other",
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0
+          },
+          {
+            "label": "payment",
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "f1": 1.0
+          },
+          {
+            "label": "product_error",
+            "tp": 4,
+            "fp": 0,
+            "fn": 1,
+            "f1": 0.8888888888888888
+          }
+        ]
+      },
+      "valid_final_schema": {
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1.0
+      },
+      "exact_final_citations": {
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1.0
+      },
+      "false_answer_on_nonanswer": {
+        "numerator": 0,
+        "denominator": 4,
+        "value": 0.0
+      },
+      "automatic": {
+        "numerator": 4,
+        "denominator": 6,
+        "value": 0.6666666666666666
+      },
+      "raw_mistral_schema": {
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1.0
+      },
+      "recall_at_3": {
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1.0
+      },
+      "recall_all_lexical_hits": {
+        "numerator": 6,
+        "denominator": 6,
+        "value": 1.0
+      },
+      "latency": {
+        "n": 6,
+        "p50_ms": 36951.467000000004,
+        "p95_ms": 49124.0175,
+        "scope": "Actual local queue/worker/API wall time; pacing before enqueue excluded"
+      },
+      "tokens": {
+        "input": 36730,
+        "output": 5364,
+        "reasoning": 0
+      },
+      "gates": {
+        "complete_coverage": 1,
+        "needs_customer_data": 3,
+        "assessment_answer_evidence": 1,
+        "attempt_deadline_exceeded": 1,
+        "assessment_schema": 2,
+        "semantic_requires_human": 1
+      },
+      "not_proven": [
+        "independent generalization",
+        "semantic atomic-fact accuracy",
+        "human North Star",
+        "production 2-percent bound",
+        "production uptime"
+      ]
+    },
+    "legacy-q015": {
+      "planned": 38,
+      "observed": 38,
+      "completed": 38,
+      "mode_accuracy": {
+        "numerator": 28,
+        "denominator": 38,
+        "value": 0.7368421052631579
+      },
+      "category_accuracy": {
+        "numerator": 23,
+        "denominator": 38,
+        "value": 0.6052631578947368
+      },
+      "category_macro_f1": {
+        "value": 0.6392676767676768,
+        "per_class": [
+          {
+            "label": "access",
+            "tp": 5,
+            "fp": 0,
+            "fn": 2,
+            "f1": 0.8333333333333334
+          },
+          {
+            "label": "integrations",
+            "tp": 4,
+            "fp": 0,
+            "fn": 3,
+            "f1": 0.7272727272727273
+          },
+          {
+            "label": "other",
+            "tp": 5,
+            "fp": 15,
+            "fn": 0,
+            "f1": 0.4
+          },
+          {
+            "label": "payment",
+            "tp": 5,
+            "fp": 0,
+            "fn": 6,
+            "f1": 0.625
+          },
+          {
+            "label": "product_error",
+            "tp": 3,
+            "fp": 0,
+            "fn": 2,
+            "f1": 0.75
+          },
+          {
+            "label": "settings",
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "f1": 0.5
+          }
+        ]
+      },
+      "valid_final_schema": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "exact_final_citations": {
+        "numerator": 38,
+        "denominator": 38,
+        "value": 1.0
+      },
+      "false_answer_on_nonanswer": {
+        "numerator": 0,
+        "denominator": 28,
+        "value": 0.0
+      },
+      "automatic": {
+        "numerator": 16,
+        "denominator": 38,
+        "value": 0.42105263157894735
+      },
+      "raw_mistral_schema": {
+        "numerator": 31,
+        "denominator": 31,
+        "value": 1.0
+      },
+      "recall_at_3": {
+        "numerator": 10,
+        "denominator": 11,
+        "value": 0.9090909090909091
+      },
+      "recall_all_lexical_hits": {
+        "numerator": 10,
+        "denominator": 11,
+        "value": 0.9090909090909091
+      },
+      "latency": {
+        "n": 37,
+        "p50_ms": 21591.62,
+        "p95_ms": 57206.97479999999,
+        "scope": "Actual local queue/worker/API wall time; pacing before enqueue excluded"
+      },
+      "tokens": {
+        "input": 165865,
+        "output": 18955,
+        "reasoning": 0
+      },
+      "gates": {
+        "assessment_customer_fields_without_sources": 16,
+        "semantic_requires_human": 3,
+        "complete_coverage": 10,
+        "selected_second_opinion": 1,
+        "needs_customer_data": 6,
+        "attempt_deadline_exceeded": 5,
+        "assessment_schema": 7,
+        "unsafe_secret_request": 1,
+        "risk_requires_human": 6,
+        "no_current_knowledge_version": 1
+      },
+      "not_proven": [
+        "independent generalization",
+        "semantic atomic-fact accuracy",
+        "human North Star",
+        "production 2-percent bound",
+        "production uptime"
+      ]
+    }
+  },
+  "budget": {
+    "new_allowance_rub": 20,
+    "new_confirmed_rub": "3.892237",
+    "new_unknown_reserve_rub": "10.662912",
+    "new_accounted_rub": "14.555149",
+    "previous_accounted_rub": "8.706514",
+    "cumulative_accounted_rub": "23.261663",
+    "previous_unknown_reserve_rub": "1.777152",
+    "technical_previous": 11113989,
+    "technical_new": 1553124,
+    "technical_cap": 20000000,
+    "technical_reserved": 12667113
+  }
+}

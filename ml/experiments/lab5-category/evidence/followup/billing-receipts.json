@@ -1,0 +1,10 @@
+[
+  {
+    "provider": "sol",
+    "receipt_id": "d26dba66-5039-423b-8eaa-6f47ef31df91",
+    "attempt_id": "1980c574-c88a-4a5c-a950-db976bdd7655",
+    "billed_micro_usd": 4924,
+    "receipt_status": "success",
+    "settled_at": 1795124138.9898343
+  }
+]

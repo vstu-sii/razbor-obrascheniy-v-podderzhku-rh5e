@@ -1,0 +1,58 @@
+[
+  {
+    "provider": "sol",
+    "receipt_id": "221958ed-471d-400a-88a0-f370f94d6cfa",
+    "attempt_id": "19c560e0-1292-4e2b-adf3-656b2fe9559f",
+    "billed_micro_usd": 2942,
+    "receipt_status": "success",
+    "settled_at": 1795123428.8317227
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "917e99ad-dd42-4654-9e1b-f821e04ba264",
+    "attempt_id": "c325e32f-3d6e-46fd-b3a7-c7a9aae7b91c",
+    "billed_micro_usd": 2862,
+    "receipt_status": "success",
+    "settled_at": 1795123474.58157
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "d6383490-bf78-46dd-b1c0-9a009e098920",
+    "attempt_id": "91696bb5-bb70-42c1-b786-d7f4fa389288",
+    "billed_micro_usd": 3102,
+    "receipt_status": "success",
+    "settled_at": 1795123621.791959
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "0aaedc37-1c0c-4e50-9ce1-1706b5ac1cfb",
+    "attempt_id": "beb050c9-4e4b-4c3f-bb80-f93976303529",
+    "billed_micro_usd": 2429,
+    "receipt_status": "success",
+    "settled_at": 1795123657.5740561
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "c56e6d8f-e805-4b8a-ba64-e54000d2a9bb",
+    "attempt_id": "91d6972c-e503-45ea-ab96-9170bdc3ceb7",
+    "billed_micro_usd": 2713,
+    "receipt_status": "success",
+    "settled_at": 1795123732.749226
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "d08c6d5d-1939-432c-92fe-e33fa7d2440c",
+    "attempt_id": "ad895f0b-e4f9-40fd-9be4-d98220429daf",
+    "billed_micro_usd": 2886,
+    "receipt_status": "success",
+    "settled_at": 1795123763.6507258
+  },
+  {
+    "provider": "sol",
+    "receipt_id": "ebb9c774-2124-452f-81fb-1e0f8a83164b",
+    "attempt_id": "1e251356-819d-4a6e-bf5b-2c0db043ca34",
+    "billed_micro_usd": 2702,
+    "receipt_status": "success",
+    "settled_at": 1795123794.479303
+  }
+]

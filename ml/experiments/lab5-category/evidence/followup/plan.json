@@ -1,0 +1,47 @@
+[
+  {
+    "case_id": "REG-e42-1",
+    "suite": "current-policy-reviewed",
+    "request": {
+      "ticket_text": "Импорт CSV показывает E42, что делать?",
+      "history": [],
+      "kb_version": "support-20261119"
+    },
+    "expected": {
+      "mode": "answer",
+      "category": "product_error",
+      "evidence_ids": [
+        "KB-E42-REPEAT-support-20261119",
+        "KB-ERROR-support-20261119"
+      ]
+    },
+    "label_origin": "Participant approved the shown prior outcome, 2026-11-19; known development regression, not held-out"
+  },
+  {
+    "case_id": "UC02-08",
+    "suite": "legacy-q015",
+    "request": {
+      "ticket_text": "API возвращает ошибку",
+      "history": [],
+      "kb_version": "v1"
+    },
+    "expected": {
+      "mode": "clarify",
+      "category": "integrations",
+      "required_facts": [
+        "Не хватает: код ответа API"
+      ],
+      "forbidden_claims": [
+        "Проблема уже решена",
+        "Запросить пароль или токен"
+      ],
+      "evidence_ids": [],
+      "missing_data": [
+        "код ответа API"
+      ],
+      "next_step": "Какой код ответа API вы получили? Не присылайте токен",
+      "review_action": null,
+      "needs_human_review": true
+    }
+  }
+]

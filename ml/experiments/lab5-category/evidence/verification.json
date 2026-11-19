@@ -1,0 +1,7 @@
+{
+  "expected_generations": 26,
+  "observed_generations": 26,
+  "missing": [],
+  "phases": 2,
+  "new_model_calls": 0
+}
