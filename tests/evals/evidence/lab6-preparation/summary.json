@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-26T07:15:48.809466+00:00",
+  "runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "demo_tag": "lab6-quality-demo-2026-11-26-r1",
+  "tag_verified": true,
+  "publication_commit": "c0d8e441bffdfc184f162d0fce6cb1ae0a3fe72e",
+  "technical_preparation_passed": true,
+  "demo_security_checks_passed": true,
+  "demo_case_checks": 18,
+  "redteam_checks": 16,
+  "degradation_checks": 5,
+  "external_model_calls": 0,
+  "grounding_regressions": 4,
+  "full_quality_targets_passed": false,
+  "target_violations": [
+    {
+      "metric": "mode_accuracy",
+      "actual": 0.8421052631578947,
+      "minimum": 0.9
+    }
+  ],
+  "final_demo_ready": false,
+  "pending": [
+    "demo date unknown",
+    "production freeze for 24 hours before the still unknown Demo Day date",
+    "two timed team rehearsals",
+    "production video 2-5 minutes",
+    "human North Star",
+    "full new live model evaluation after last AI changes; observed mode target remains unmet"
+  ],
+  "note": "Preparation is repeatable; this is not a final timed rehearsal or a claim that semantic targets passed"
+}

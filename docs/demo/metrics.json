@@ -1,0 +1,72 @@
+{
+  "scope": "historical project measurements; protocols differ",
+  "history": [
+    {
+      "label": "LAB03 raw",
+      "n": 42,
+      "mode": 0.6904761904761905,
+      "category": 0.6904761904761905,
+      "protocol": "new raw Mistral, 15.10",
+      "source": "../../ml/experiments/lab5/history/lab3-first-mistral.json",
+      "mode_numerator": 29,
+      "category_numerator": 29
+    },
+    {
+      "label": "LAB04 replay",
+      "n": 38,
+      "mode": 0.9210526315789473,
+      "category": 0.9473684210526315,
+      "protocol": "saved single-model system replay",
+      "source": "../../tests/evidence/model-v2.1/current-runtime-replay-taxonomy.json",
+      "mode_numerator": 35,
+      "category_numerator": 36
+    },
+    {
+      "label": "12.11 live",
+      "n": 38,
+      "mode": 0.7105263157894737,
+      "category": 0.5,
+      "protocol": "new Q015 live cascade",
+      "source": "../quality/final-quality-report.md",
+      "mode_numerator": 27,
+      "category_numerator": 19
+    },
+    {
+      "label": "19.11 live",
+      "n": 38,
+      "mode": 0.7368421052631579,
+      "category": 0.6052631578947368,
+      "protocol": "new AI full live cascade",
+      "source": "../experiments/lab5-final-20261119.md",
+      "mode_numerator": 28,
+      "category_numerator": 23
+    },
+    {
+      "label": "26.11 replay",
+      "n": 38,
+      "mode": 0.8421052631578947,
+      "category": 0.9473684210526315,
+      "protocol": "same saved outputs, changed handling",
+      "source": "../experiments/lab5-category.md",
+      "mode_numerator": 32,
+      "category_numerator": 36
+    }
+  ],
+  "selected_live": {
+    "n": 19,
+    "mode": 1.0,
+    "category": 1.0,
+    "scope": "targeted development follow-up, not full 38"
+  },
+  "north_star": {
+    "n": 0,
+    "value": null,
+    "target": 0.85
+  },
+  "observed_mode_target": 0.9,
+  "sources": [
+    "../experiments/lab5-final-20261119.md",
+    "../experiments/lab5-category.md"
+  ],
+  "current_recheck": "https://github.com/vstu-sii/razbor-obrascheniy-v-podderzhku-rh5e/blob/8f6d9bc0b9ec13ddf6ce6f147ab177258564a51c/tests/evals/evidence/lab5-current-20261126/report.json"
+}

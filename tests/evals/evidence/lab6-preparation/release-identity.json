@@ -1,0 +1,19 @@
+{
+  "demo_tag": "lab6-quality-demo-2026-11-26-r1",
+  "publication_commit": "c0d8e441bffdfc184f162d0fce6cb1ae0a3fe72e",
+  "tag_verified": true,
+  "run_from_clean_detached_checkout": true,
+  "verified_test_inputs": {
+    "tests/evals/lab6.py": "db8b869576ac834153847a97d6b85fa68a14a05672e9332954e76e27df469964",
+    "tests/evals/demo_support.py": "9e7dad21d150bc9726c0d3c6a93e386a0ad0cc3e96f976d65c07f723b65f95c0",
+    "tests/evals/fixtures/demo-cases.json": "6f6578aaa35e2399f4dc6184928d33291a70718b4f95efd4674be27803ee24c1",
+    "tests/evals/requirements.lock": "edb91c42b1aab2b0461acc0037cc4d728ba75b693ccd78e4b30bbceed714430f",
+    ".github/workflows/quality-lab6.yml": "48c7b13e7d515ad1903b0b554cc4aa9834e307c6054fb86101c0aa3da3b968db",
+    "docs/demo/presentation.pdf": "4923dcf162b999a4af570fd201889b9c0c81812a5f431d50115f18e48d7a0961"
+  },
+  "application_runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "dependency_hashes_verified": 53,
+  "production_freeze_confirmed": false,
+  "full_quality_targets_passed": false,
+  "scope": "Exact tag of the selected prepared demo. Final team rehearsal, production freeze and full numeric quality are not claimed."
+}
