@@ -311,7 +311,7 @@
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     "docs/quality/final-quality-report.md": {
-      "sha256": "f872904957d67f06d6027d0eb51121618769094c23b10bfa75ad6bb9db767cff",
+      "sha256": "6ceddeff965b88f4f95a1e6847b326bfc73113ba38b9c7fdc2adbfba3de1da42",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
@@ -336,7 +336,7 @@
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     "docs/quality/trust-facts.md": {
-      "sha256": "6ebf09234b6a7d8ed1baa701ba4eb9771a5d38d11e2039f3b9a74a044c288b7e",
+      "sha256": "4547ccf0cf2682a68e6aff36122b1039bba9968c3f2f82fbdabc8bbe66a57d05",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
@@ -381,7 +381,7 @@
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     "tests/evals/evidence/lab5-current-20261126/report.json": {
-      "sha256": "1ecd4da8b4fc752ebf440e7ac7ae6b2fa5ea6cf669b2ae74bb2a7d9005fff3a5",
+      "sha256": "3f3d6f0ebb8ad793e97379d8a12dcbdfe7dc75742c30061dedef05fae4d06dd5",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
@@ -401,7 +401,7 @@
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     "tests/evals/evidence/lab5-current-20261126/technical-summary.json": {
-      "sha256": "8c1d2f13d0d1b5ac71d79120eb7dd8710383ceedeccae871adfb90ec2fd829d7",
+      "sha256": "90a466d8fd2712973d1556be4b03f4901d2c9f8b182ab6b66c574b250d45cf78",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
@@ -574,6 +574,21 @@
       "sha256": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/technical-summary-development.json": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "8c1d2f13d0d1b5ac71d79120eb7dd8710383ceedeccae871adfb90ec2fd829d7"
+    },
+    "tests/evals/evidence/lab5-current-20261126/release-identity.json": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "e6c1ad2e59c16c41bd56fc26632be3d5c4d94769532a0b7e1a3efd89c7f311e6"
+    },
+    "docs/quality/mode-errors.md": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "2ccacac0600e71b7aa488d77d3bcb84adfd250afc824fa1a3fc01fa3cc28a339"
     }
   },
   "external_model_calls": 0,

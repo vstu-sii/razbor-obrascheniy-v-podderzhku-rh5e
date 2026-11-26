@@ -14,6 +14,31 @@
 после генераций не исправлялись. Последние 19 входов отобраны для проверки
 известных проблем и не заменяют новый полный живой прогон 38.
 
+## Фактический запуск на теге, 26.11.2026
+
+Актуальный полный replay выполнен из чистого detached checkout тега
+`lab5-quality-release-2026-11-26-r2`, коммит `49ae0184383571713ce5e6a0a15579ff77d1c8b0`.
+Команда: `python tests/evals/run_lab5.py --require-tag lab5-quality-release-2026-11-26-r2 --output <новая папка>`.
+В [актуальном report.json](../../tests/evals/evidence/lab5-current-20261126/report.json)
+и [итоге запуска](../../tests/evals/evidence/lab5-current-20261126/technical-summary.json)
+записаны настоящий тег, SHA и `tag_verified=true`. Это новый запуск evals
+на теге, а не ссылка на исторический тег 12.11. Результат режима остаётся 32/38.
+
+Тег закрепляет учебный выпуск с неизменённым тестовым snapshot приложения
+1a44f71. Production не развёртывался заново. После запуска в ветку добавлены
+доказательства и пояснения; код приложения и входы совпадают с тегом:
+[проверка тождества](../../tests/evals/evidence/lab5-current-20261126/release-identity.json).
+
+Прежний технический suite из шести групп и 182 тестов сохранён отдельно:
+[development-прогон](../../tests/evals/evidence/lab5-current-20261126/technical-summary-development.json).
+Он не переименован в запуск на теге. На теге выполнена автономная перепроверка
+полного replay, исторической регрессии и четырёх контролей дефекта.
+
+**Вердикт:** привязка актуального eval к тегу подтверждена. Все quality-gates
+не прошли: режим 84,2% ниже 90%. [Шесть несовпадений](mode-errors.md) требуют
+исправления поведения или нового измерения модели; эталоны и порог не менялись.
+Новый полный live-прогон моделей не заявлен.
+
 ## Что изменено и как это проверено
 
 После ошибки assessment/таймаута backend сохраняет отдельно проверенную
@@ -50,7 +75,7 @@ North Star остаётся n=0. Нет независимого holdout, смы
 [Пересчитанные метрики](../../tests/evals/evidence/lab5-current-20261126/report.json),
 [неизменённые живые ответы](../../tests/evals/evidence/lab5-current-20261126/full-live-20261119.jsonl),
 [выбранная живая серия](../../tests/evals/evidence/lab5-current-20261126/selected-live-20261120.jsonl),
-[технический suite](../../tests/evals/evidence/lab5-current-20261126/technical-summary.json).
+[development suite](../../tests/evals/evidence/lab5-current-20261126/technical-summary-development.json).
 
 
 ## История предыдущих проверок

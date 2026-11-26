@@ -1,7 +1,14 @@
 {
-  "checked_at": "2026-11-26T06:10:05.025250+00:00",
+  "checked_at": "2026-11-26T06:59:15.564490+00:00",
   "external_model_calls": 0,
   "new_baseline_run": false,
+  "provenance": {
+    "publication_commit": "49ae0184383571713ce5e6a0a15579ff77d1c8b0",
+    "publication_tag": "lab5-quality-release-2026-11-26-r2",
+    "runtime_release_tag": "lab5-quality-release-2026-11-26-r2",
+    "tag_verified": true,
+    "scope": "Exact public release containing the frozen application test snapshot; not a production deployment or new live model run"
+  },
   "scope": "Current API/queue/SQLite replay of immutable real 19 Nov generations; selected live 20 Nov scored separately",
   "source": {
     "repository": "SIISKI/siiski_volchkova_shared_repository",
