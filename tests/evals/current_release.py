@@ -1,5 +1,7 @@
 """Recompute recorded LAB05 results and replay current code. Never calls model APIs."""
 
+# Offline flags and the pinned runtime path must be configured before application imports.
+# ruff: noqa: E402
 import argparse
 import copy
 import json
