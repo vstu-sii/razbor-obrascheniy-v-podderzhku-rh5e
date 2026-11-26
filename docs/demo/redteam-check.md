@@ -53,3 +53,19 @@ CI получает только тестовый snapshot приложения 
 Слайд2 объясняет AI-пайплайн и ручной исход; слайды3–4 содержат блок доверия.
 Оба блока находятся в одной [презентации PDF](presentation.pdf).
 [Порядок показа и текст](presentation.md).
+
+## Фактическая проверка выбранного демо-тега
+
+Прогон выполнен из чистого detached checkout `lab6-quality-demo-2026-11-26-r1`.
+[Итог](../../tests/evals/evidence/lab6-preparation/summary.json) содержит
+`demo_tag`, SHA и `tag_verified=true`. [Проверка тождества](../../tests/evals/evidence/lab6-preparation/release-identity.json)
+подтверждает неизменность кода тестов, входов и презентации после приложения отчётов.
+На этой версии: 18/18 повторов, 16/16 управляемых атак, 5/5 отказов и 4/4 регрессии.
+
+`final_demo_ready=false` сохраняется из-за неизвестной даты, непроведённых
+репетиций, production-фриза и недостигнутого режима, а не из-за отсутствия тега.
+Полный replay38 также выполнен: режим32/38. Поэтому **все quality-gates зелёными
+не являются**. [Отчёт полного набора](../../tests/evals/evidence/lab6-preparation/full-quality/report.json).
+Проверки не объявляют исправленной проблему чужого доступа UC04-05 из LAB05:
+[реестр несовпадений](https://github.com/vstu-sii/razbor-obrascheniy-v-podderzhku-rh5e/blob/lab5-quality-testing/docs/quality/mode-errors.md).
+Это отдельный оставшийся риск, а не успешная атака из управляемого набора16.

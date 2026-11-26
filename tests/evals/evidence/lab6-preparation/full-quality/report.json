@@ -1,0 +1,304 @@
+{
+  "checked_at": "2026-11-26T07:15:48.746008+00:00",
+  "external_model_calls": 0,
+  "new_baseline_run": false,
+  "provenance": {
+    "publication_commit": "562491fb77ea6d0a9d1743465554f51bbd8f27aa",
+    "publication_tag": null,
+    "runtime_release_tag": null,
+    "tag_verified": false,
+    "scope": "Exact public release containing the frozen application test snapshot; not a production deployment or new live model run"
+  },
+  "scope": "Current API/queue/SQLite replay of immutable real 19 Nov generations; selected live 20 Nov scored separately",
+  "source": {
+    "repository": "SIISKI/siiski_volchkova_shared_repository",
+    "source_commit": "856e7d892d4eb49630a0def25b8b837694531e4d",
+    "runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+    "historical_full_live_tag": "lab5-ai-engineer-testing-2026-11-19",
+    "selected_live_tag": "lab5-ai-engineer-categories-2026-11-20",
+    "followup_tag": "lab5-ai-engineer-categories-2026-11-20-r2",
+    "new_model_calls": 0,
+    "files": {
+      "cases.jsonl": {
+        "source": "ml/experiments/lab5/fixtures/cases.jsonl",
+        "sha256": "239c4279a05929f7ea26b91027cce2d00f7951cbd5008021f16368fc57d0cd75"
+      },
+      "full-live-20261119.jsonl": {
+        "source": "ml/experiments/lab5/evidence/final/results.jsonl",
+        "sha256": "0cc1cdfe1154d93e9b717b02d5605259d5e8254621bd26ee7dfccf34a33ea5d1"
+      },
+      "selected-live-20261120.jsonl": {
+        "source": "ml/experiments/lab5-category/evidence/live/results.jsonl",
+        "sha256": "a9968855cd43e832934fa11f383b38d915f053f5fb34bcc9e6a299c3e33de1ba"
+      },
+      "followup-live-20261120.jsonl": {
+        "source": "ml/experiments/lab5-category/evidence/followup/results.jsonl",
+        "sha256": "db99f4c2ee7d2864883c30e6c328afda1ebdba5dc0827f88c835db8914a732e0"
+      }
+    }
+  },
+  "full_historical_live": {
+    "n": 38,
+    "mode_accuracy": {
+      "numerator": 28,
+      "denominator": 38,
+      "value": 0.7368421052631579
+    },
+    "category_accuracy": {
+      "numerator": 23,
+      "denominator": 38,
+      "value": 0.6052631578947368
+    },
+    "category_macro_f1": {
+      "value": 0.6392676767676768,
+      "per_class": [
+        {
+          "label": "access",
+          "tp": 5,
+          "fp": 0,
+          "fn": 2,
+          "f1": 0.8333333333333334
+        },
+        {
+          "label": "integrations",
+          "tp": 4,
+          "fp": 0,
+          "fn": 3,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "other",
+          "tp": 5,
+          "fp": 15,
+          "fn": 0,
+          "f1": 0.4
+        },
+        {
+          "label": "payment",
+          "tp": 5,
+          "fp": 0,
+          "fn": 6,
+          "f1": 0.625
+        },
+        {
+          "label": "product_error",
+          "tp": 3,
+          "fp": 0,
+          "fn": 2,
+          "f1": 0.75
+        },
+        {
+          "label": "settings",
+          "tp": 1,
+          "fp": 0,
+          "fn": 2,
+          "f1": 0.5
+        }
+      ]
+    },
+    "schema_valid": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "exact_citations": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "false_answer_on_nonanswer": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "automatic": {
+      "numerator": 16,
+      "denominator": 38,
+      "value": 0.42105263157894735
+    }
+  },
+  "current_full_replay": {
+    "n": 38,
+    "mode_accuracy": {
+      "numerator": 32,
+      "denominator": 38,
+      "value": 0.8421052631578947
+    },
+    "category_accuracy": {
+      "numerator": 36,
+      "denominator": 38,
+      "value": 0.9473684210526315
+    },
+    "category_macro_f1": {
+      "value": 0.932070707070707,
+      "per_class": [
+        {
+          "label": "access",
+          "tp": 7,
+          "fp": 1,
+          "fn": 0,
+          "f1": 0.9333333333333333
+        },
+        {
+          "label": "integrations",
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "other",
+          "tp": 3,
+          "fp": 0,
+          "fn": 2,
+          "f1": 0.75
+        },
+        {
+          "label": "payment",
+          "tp": 11,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "product_error",
+          "tp": 5,
+          "fp": 1,
+          "fn": 0,
+          "f1": 0.9090909090909091
+        },
+        {
+          "label": "settings",
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        }
+      ]
+    },
+    "schema_valid": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "exact_citations": {
+      "numerator": 38,
+      "denominator": 38,
+      "value": 1.0
+    },
+    "false_answer_on_nonanswer": {
+      "numerator": 0,
+      "denominator": 28,
+      "value": 0.0
+    },
+    "automatic": {
+      "numerator": 20,
+      "denominator": 38,
+      "value": 0.5263157894736842
+    }
+  },
+  "selected_historical_live": {
+    "n": 19,
+    "mode_accuracy": {
+      "numerator": 19,
+      "denominator": 19,
+      "value": 1.0
+    },
+    "category_accuracy": {
+      "numerator": 19,
+      "denominator": 19,
+      "value": 1.0
+    },
+    "category_macro_f1": {
+      "value": 1.0,
+      "per_class": [
+        {
+          "label": "access",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "integrations",
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "other",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "payment",
+          "tp": 7,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "product_error",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        {
+          "label": "settings",
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        }
+      ]
+    },
+    "schema_valid": {
+      "numerator": 19,
+      "denominator": 19,
+      "value": 1.0
+    },
+    "exact_citations": {
+      "numerator": 19,
+      "denominator": 19,
+      "value": 1.0
+    },
+    "false_answer_on_nonanswer": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0
+    },
+    "automatic": {
+      "numerator": 10,
+      "denominator": 19,
+      "value": 0.5263157894736842
+    }
+  },
+  "not_measured": [
+    "new full live generation after latest fix",
+    "human North Star",
+    "independent holdout",
+    "semantic fact accuracy",
+    "urgency and destination accuracy",
+    "production uptime",
+    "new model latency or billing"
+  ],
+  "target_violations": [
+    {
+      "metric": "mode_accuracy",
+      "actual": 0.8421052631578947,
+      "minimum": 0.9
+    }
+  ],
+  "measured_targets_passed": false,
+  "technical_replay_completed": true,
+  "demo_release": {
+    "demo_tag": "lab6-quality-demo-2026-11-26-r1",
+    "tag_verified": true,
+    "publication_commit": "c0d8e441bffdfc184f162d0fce6cb1ae0a3fe72e",
+    "scope": "Selected prepared demo snapshot; production freeze and human rehearsal are separate"
+  }
+}
