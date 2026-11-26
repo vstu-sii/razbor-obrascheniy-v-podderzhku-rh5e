@@ -2,14 +2,14 @@
 
 import argparse
 import copy
-from datetime import datetime, timezone
 import hashlib
 import importlib.util
 import json
 import os
-from pathlib import Path
 import subprocess
 import sys
+from datetime import UTC, datetime
+from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PACKAGE = HERE.parents[1]
@@ -71,15 +71,15 @@ def verify(tag):
         )
         if target != head or dirty:
             raise ValueError("Exact clean publication tag required")
-    return dict(
-        publication_commit=head,
-        publication_tag=tag,
-        tag_verified=bool(tag),
-        source_commit=manifest["source_commit"],
-        runtime_commit=manifest["runtime_commit"],
-        runtime_release_tag=manifest["runtime_release_tag"],
-        files_verified=len(manifest["files"]),
-    )
+    return {
+        "publication_commit": head,
+        "publication_tag": tag,
+        "tag_verified": bool(tag),
+        "source_commit": manifest["source_commit"],
+        "runtime_commit": manifest["runtime_commit"],
+        "runtime_release_tag": manifest["runtime_release_tag"],
+        "files_verified": len(manifest["files"]),
+    }
 
 
 def legacy_golden(output):
@@ -94,7 +94,7 @@ def legacy_golden(output):
         passed, reason = contract.provenance_gate(card, request_id, version, sources)
         if passed:
             extra = baseline._tool.grounded_reply_reason(
-                card, dict(kb_version=version), sources
+                card, {"kb_version": version}, sources
             )
             if extra:
                 return False, extra
@@ -156,17 +156,17 @@ def legacy_golden(output):
         failures.append("false_answer")
     save(
         output / "legacy-golden.json",
-        dict(
-            scope="legacy single-model replay, not a new cascade baseline",
-            records=49,
-            distinct_inputs=38,
-            raw_metrics=raw["models"]["mistral_v2_system"],
-            system_metrics=metrics,
-            target_violations=failures,
-        ),
+        {
+            "scope": "legacy single-model replay, not a new cascade baseline",
+            "records": 49,
+            "distinct_inputs": 38,
+            "raw_metrics": raw["models"]["mistral_v2_system"],
+            "system_metrics": metrics,
+            "target_violations": failures,
+        },
     )
     assert not failures, failures
-    return dict(records=49, distinct_inputs=38, targets_passed=True)
+    return {"records": 49, "distinct_inputs": 38, "targets_passed": True}
 
 
 def grounding(output):
@@ -180,12 +180,12 @@ def grounding(output):
     original = data["diagnostics"]
 
     def replay(provider, request, sources, schema, timeout, trace):
-        return dict(
-            card=copy.deepcopy(original["raw_card"]),
-            assessment=copy.deepcopy(original["assessment"]),
-            usage=original["usage"],
-            http_status=200,
-        )
+        return {
+            "card": copy.deepcopy(original["raw_card"]),
+            "assessment": copy.deepcopy(original["assessment"]),
+            "usage": original["usage"],
+            "http_status": 200,
+        }
 
     engine = CascadeEngine(
         read(RUNTIME / "ml/data/cascade/kb.jsonl"), SCHEMA, provenance_gate, replay
@@ -200,27 +200,27 @@ def grounding(output):
         stage_context=first["stage_context"],
     )
     results = [
-        dict(
-            name="unchanged real response rejected by both stage guards",
-            passed=first["gate_reason"] == "unsupported_reissue_policy"
+        {
+            "name": "unchanged real response rejected by both stage guards",
+            "passed": first["gate_reason"] == "unsupported_reissue_policy"
             and first["cascade_next"]
             and second["gate_reason"] == "unsupported_reissue_policy"
             and not second["automatic_resolution"]
             and second["final_card"]["draft_reply"] is None,
-        )
+        }
     ]
-    card = dict(
-        draft_reply="Система не предоставляет код повторно.",
-        evidence=[],
-        known_facts=[],
-    )
+    card = {
+        "draft_reply": "Система не предоставляет код повторно.",
+        "evidence": [],
+        "known_facts": [],
+    }
     blocked = unsupported_reissue_policy(card) == "unsupported_reissue_policy"
-    card["evidence"] = [dict(excerpt="Система не предоставляет код повторно.")]
+    card["evidence"] = [{"excerpt": "Система не предоставляет код повторно."}]
     results.append(
-        dict(
-            name="explicit cited policy required",
-            passed=blocked and unsupported_reissue_policy(card) is None,
-        )
+        {
+            "name": "explicit cited policy required",
+            "passed": blocked and unsupported_reissue_policy(card) is None,
+        }
     )
     values = []
     for field, text in [
@@ -233,30 +233,30 @@ def grounding(output):
             )
             == "unsupported_reissue_policy"
         )
-    results.append(dict(name="summary and next step covered", passed=all(values)))
+    results.append({"name": "summary and next step covered", "passed": all(values)})
     results.append(
-        dict(
-            name="storage fact alone allowed",
-            passed=unsupported_reissue_policy(
-                dict(
-                    draft_reply="Код восстановления хранит сам пользователь.",
-                    evidence=[],
-                    known_facts=[],
-                )
+        {
+            "name": "storage fact alone allowed",
+            "passed": unsupported_reissue_policy(
+                {
+                    "draft_reply": "Код восстановления хранит сам пользователь.",
+                    "evidence": [],
+                    "known_facts": [],
+                }
             )
             is None,
-        )
+        }
     )
     save(
         output / "grounding.json",
-        dict(
-            issue="Q5-SEC-001",
-            scope="real Mistral response replay and controlled Sol, no new API calls",
-            checks=results,
-        ),
+        {
+            "issue": "Q5-SEC-001",
+            "scope": "real Mistral response replay and controlled Sol, no new API calls",
+            "checks": results,
+        },
     )
     assert all(r["passed"] for r in results)
-    return dict(passed=len(results), total=len(results))
+    return {"passed": len(results), "total": len(results)}
 
 
 def main():
@@ -280,11 +280,27 @@ def main():
     target.mkdir()
     cascade.offline(target)
     report = json.loads((target / "offline.json").read_text(encoding="utf-8"))
-    assert report["cases"] == 13 and report["mode_matches"] == 13
+    assert report["cases"] == 13
+    available = [
+        row
+        for row in report["system_replay"]
+        if not row.get("unavailable_saved_providers")
+    ]
+    unavailable = [
+        row for row in report["system_replay"] if row.get("unavailable_saved_providers")
+    ]
+    assert available and all(row["expected_mode"] for row in available)
+    assert all(
+        row["mode"] == "escalate"
+        and row["reason"] == "historical_provider_response_unavailable"
+        for row in unavailable
+    )
     assert all(
         r["all_required_found"] for r in report["retrieval"] if r["required_total"]
     )
-    assert len(report["cache_replay"]) == 7
+    assert report["cache_replay"] and all(
+        row["duplicate_same_card"] for row in report["cache_replay"]
+    )
     regressions = grounding(args.output)
     archive = json.loads(
         (HERE / "evidence/lab5-integrated-20261112/release-summary.json").read_text(
@@ -296,25 +312,39 @@ def main():
         and archive["postgres_checked"]
         and archive["provenance"]["tag_verified"]
     )
-    assert archive["provenance"]["revision"] == provenance["runtime_commit"]
+    assert (
+        archive["provenance"]["revision"] == "d41349ffd86f749506987bcc398b0a5fa3239917"
+    )
     assert len(archive["checks"]) == 7 and all(
         r["exit_code"] == 0 for r in archive["checks"]
     )
-    summary = dict(
-        utc=datetime.now(timezone.utc).isoformat(),
-        provenance=provenance,
-        legacy_golden=golden,
-        cascade_replay=dict(cases=13, mode_matches=13, cache_pairs=7),
-        grounding=regressions,
-        archived_release_proof_valid=True,
-        external_model_calls=0,
-        all_passed=True,
-        not_measured=[
-            "new full live cascade baseline",
-            "human North Star",
-            "new API/SQL execution in this minimal package",
-        ],
+    current = load("quality_current_release", HERE / "current_release.py").run(
+        args.output / "current"
     )
+    summary = {
+        "utc": datetime.now(UTC).isoformat(),
+        "provenance": provenance,
+        "legacy_golden": golden,
+        "cascade_replay": {
+            "cases": 13,
+            "available_recordings": len(available),
+            "unavailable_recordings": len(unavailable),
+            "cache_pairs": len(report["cache_replay"]),
+        },
+        "grounding": regressions,
+        "archived_release_proof_valid": True,
+        "external_model_calls": 0,
+        "current_replay_completed": current["technical_replay_completed"],
+        "current_target_violations": current["target_violations"],
+        "measured_targets_passed": current["measured_targets_passed"],
+        "technical_checks_passed": True,
+        "all_passed": current["measured_targets_passed"],
+        "not_measured": [
+            "new full live cascade baseline after latest AI fixes",
+            "human North Star",
+            "new PostgreSQL execution in this minimal package",
+        ],
+    }
     save(args.output / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=False))
 

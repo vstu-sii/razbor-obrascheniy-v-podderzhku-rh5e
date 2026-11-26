@@ -12,6 +12,16 @@ from jsonschema import Draft202012Validator
 
 from ml.models.baseline import tokenize
 from ml.cascade.retrieval import retrieve
+from ml.cascade.dialogue import repeated_fact
+
+FACT_TYPES = ['none','error_code','error_message','observed_behavior','last_action','onset_time',
+              'billing_period','billing_document','billing_amount','setting_name','notification_type',
+              'other_customer_fact']
+
+_CUSTOMER_FACT_CATEGORIES = {
+    'billing_period': 'payment', 'billing_document': 'payment', 'billing_amount': 'payment',
+    'setting_name': 'settings', 'notification_type': 'settings',
+}
 
 
 QUESTION_SCHEMA = {
@@ -34,6 +44,7 @@ QUESTION_SCHEMA = {
         },
         'answer_excerpt': {'type': 'string', 'maxLength': 1000},
         'search_query': {'type': 'string', 'maxLength': 250},
+        'requested_fact': {'type':'string','enum':FACT_TYPES},
     },
 }
 ASSESSMENT_SCHEMA = {
@@ -63,22 +74,85 @@ def input_reference_present(quote, texts):
                                for i in range(len(haystack)-len(needle)+1))
 
 
-def safe_error_code_question(card, request, question):
-    """Narrow exception: ask for an unknown error code, without inventing a fix.
+_EXPLICIT_FAILURE = re.compile(
+    r'\b(?:ошиб\w*|сбо[йя])\b|\bвчера работал\w*,? (?:а )?сегодня нет\b')
+_TECHNICAL_FEATURE = re.compile(
+    r'\b(?:импорт\w*|экспорт\w*|приложени\w*|api|интеграци\w*|загрузк\w*|'
+    r'сервис\w*|страниц\w*|настройк\w*|уведомлени\w*|письм\w*)\b')
+_IMPLICIT_FAILURE = re.compile(
+    r'\b(?:пада(?:ет|ют)|зависа(?:ет|ют)|не (?:работа\w*|запуска\w*|загружа\w*|'
+    r'открыва\w*|заверша\w*|приход\w*|могу|получается|уда[её]тся))\b')
+_SIGN_IN_FAILURE = re.compile(
+    r'\bне (?:могу|получается|уда[её]тся) (?:войти|авторизоваться)\b')
 
-    This does not authorize arbitrary source-free clarification or requests for
-    account credentials. The existing independent secret/authority guard runs first.
-    """
-    context=' '.join([request.get('ticket_text','')]+[m.get('text','') for m in request.get('history',[])]).casefold()
-    draft=(card.get('draft_reply') or '').casefold()
-    fields=question['missing_customer_fields']
-    def asks_code(text):
-        return bool(re.search(r'\bкод\w*.{0,65}\bошиб\w*',text.casefold()))
-    code=r'\b[a-zа-я]{1,5}[-_]?\d{2,}\b|\bкод\w*\s*[:№]?\s*\d+\b'
-    return (card.get('mode')=='clarify' and bool(fields)
-            and bool(re.search(r'ошиб\w*|сбо[йя]',context))
-            and not re.search(code,context) and not re.search(code,draft)
-            and all(asks_code(field) for field in fields) and asks_code(draft))
+# Each diagnostic field has a marker showing it was already supplied.
+_SOURCE_FREE_DIAGNOSTICS = (
+    (r'(?:код|код или сообщение) ошибки(?: импорта| api| при входе)?',
+     r'\b[a-zа-я]{1,5}[-_]?\d{2,}\b|\bкод(?: ошибки)?\s*[:№]?\s*\d+\b'),
+    (r'(?:текст|сообщение об ошибке)(?: при входе)?|текст ошибки',
+     r'(?:\b(?:сообщение|текст)\s+(?:об ошибке|ошибки)\s*[:—]|'
+     r'\b(?:выводит|показывает|появляется|вижу)\s+(?:сообщение|текст)\s*[:—]|'
+     r'\b(?:пишет|сообщени[ея]|ошибка)\s*[«\"])\s*\S'),
+    (r'наблюдаемое поведение(?: при [\w\s-]{1,100})?|описание проблемы(?: при входе)?',
+     r'\b(?:пустой|белый|ч[её]рный) экран\b|\b(?:крутится индикатор|зависает|закрывается|перенаправляет)\b'),
+    (r'последний выполненный шаг|выполненный шаг',
+     r'\b(?:нажал[аи]?|выбрал[аи]?|скачал[аи]?|вв[её]л[аи]?|запустил[аи]?|открыл[аи]?|попытался|попыталась)\b'),
+    (r'время возникновения сбоя|время начала сбоя',
+     r'\b(?:сегодня|вчера|позавчера|\d{1,2}[:.]\d{2}(?:[./-]\d{2,4})?)\b'),
+)
+
+
+def safe_source_free_diagnostic(card, request, question):
+    """Permit a bounded clarification about observations or ordinary customer facts."""
+    fields = question['missing_customer_fields']
+    missing = card.get('missing_data')
+    if (card.get('mode') != 'clarify' or question['coverage'] != 'missing'
+            or not 1 <= len(fields) <= 3 or not isinstance(missing, list) or not 1 <= len(missing) <= 3
+            or any(not isinstance(item, str) or not item.strip() for item in missing)
+            or not isinstance(card.get('draft_reply'), str)):
+        return False
+
+    def normalize(value):
+        return ' '.join(unicodedata.normalize('NFKC', value).casefold().split())
+
+    draft = normalize(card['draft_reply'])
+    # Source-free clarification collects facts; it does not prescribe a fix,
+    # assert a cause, ask for account powers, or collect payment/access secrets.
+    if re.search(r'https?://|переустанов|отключи|включи|смените|измените|удалите|выполните|перейдите|причина|потому что|проверьте|попробуйте|запустите|нажмите|отправьте|скопируйте|парол|значение токена|полный токен|сам токен|cvv|cvc|одноразов|резервн.{0,12}код|номер.{0,15}карт|код.{0,12}(?:2fa|двухфактор)|администратор|владелец аккаунта', draft):
+        return False
+    kind = question.get('requested_fact')
+    if kind in _CUSTOMER_FACT_CATEGORIES:
+        return (card.get('category') == _CUSTOMER_FACT_CATEGORIES[kind]
+                and bool(draft) and not repeated_fact(request, kind))
+
+    # Technical observations still need a failure symptom in the input.
+    symptom = normalize(request['ticket_text'] + ' ' + question['input_quote'])
+    if not (_EXPLICIT_FAILURE.search(symptom) or _SIGN_IN_FAILURE.search(symptom)
+            or (_TECHNICAL_FEATURE.search(symptom) and _IMPLICIT_FAILURE.search(symptom))):
+        return False
+    context = normalize(' '.join([request['ticket_text']] + [m['text'] for m in request['history'] if m['speaker']=='customer']))
+    if kind is not None:
+        # Current tools declare intent as an enum. Field labels and question
+        # wording remain free text rather than a routing vocabulary.
+        kinds = ['error_code','error_message','observed_behavior','last_action','onset_time']
+        if kind not in kinds or repeated_fact(request, kind):
+            return False
+        marker = _SOURCE_FREE_DIAGNOSTICS[kinds.index(kind)][1]
+        return bool(draft.strip()) and not re.search(marker,context)
+    # Read-only compatibility for archived assessments without typed intent.
+    draft_intents = (
+        r'(?:код.{0,25}ошиб|ошиб.{0,25}код)',
+        r'(?:сообщени|текст).{0,35}ошиб|ошиб.{0,35}(?:сообщени|текст)',
+        r'что.{0,35}происход|как.{0,35}(?:проявл|ведет)|что.{0,35}(?:видите|наблюдаете)',
+        r'(?:какой|какие|что).{0,60}(?:шаг|действ|выполн|делал|делали)',
+        r'когда|с какого времени',
+    )
+    return len(fields) == len(missing) == 1 and any(re.fullmatch(field_pattern, normalize(fields[0]))
+               and re.fullmatch(field_pattern, normalize(missing[0]))
+               and re.search(draft_intents[index], draft)
+               and ('?' in draft or re.search(r'уточните|подскажите|опишите|сообщите', draft))
+               and not re.search(known_pattern, context)
+               for index, (field_pattern, known_pattern) in enumerate(_SOURCE_FREE_DIAGNOSTICS))
 
 
 def tool_schema(card_schema):
@@ -89,15 +163,19 @@ def tool_schema(card_schema):
     """
     card_contract = copy.deepcopy(card_schema)
     card_contract.pop('allOf', None)
+    card_contract['required'].remove('request_id')
+    card_contract['properties'].pop('request_id')
     # Only the backend can resolve a candidate without operator approval.
     card_contract['properties']['status'] = {'const': 'proposed'}
     card_contract['properties']['needs_human_review'] = {'const': True}
+    assessment_contract = copy.deepcopy(ASSESSMENT_SCHEMA)
+    assessment_contract['properties']['questions']['items']['required'].append('requested_fact')
     return {
         'type': 'object',
         'additionalProperties': False,
         'required': ['card', 'assessment'],
         'properties': {'card': card_contract,
-                       'assessment': copy.deepcopy(ASSESSMENT_SCHEMA)},
+                       'assessment': assessment_contract},
     }
 
 
@@ -155,11 +233,13 @@ def validate_assessment(assessment, card, request, sources, expected_questions=N
         if any(source_id not in allowed for source_id in question['source_ids']):
             return False, 'assessment_source_provenance'
         customer_fields = question['missing_customer_fields']
+        if card.get('mode')=='clarify' and question.get('requested_fact') in FACT_TYPES[1:-1] and repeated_fact(request,question['requested_fact']):
+            return False, 'assessment_repeated_diagnostic'
         if any(not field.strip() for field in customer_fields):
             return False, 'assessment_customer_fields'
         if question['coverage'] == 'complete' and not question['source_ids']:
             return False, 'assessment_complete_without_sources'
-        if customer_fields and not question['source_ids'] and not safe_error_code_question(card,request,question):
+        if customer_fields and not question['source_ids'] and not safe_source_free_diagnostic(card, request, question):
             return False, 'assessment_customer_fields_without_sources'
         if card.get('mode') == 'answer' and question['coverage'] == 'complete':
             draft = card.get('draft_reply')

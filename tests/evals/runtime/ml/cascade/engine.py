@@ -16,12 +16,13 @@ from ml.cascade.context import make_context, checked_context
 from ml.cascade.cache import AnswerCache
 from ml.tools.propose_card import execute_proposal
 from ml.cascade.providers import build_payload
+from ml.cascade.category import input_risk, validated_model_category
 
 
 TOKEN_EXPOSURE_GUIDANCE = (
     'Передать инцидент уполномоченному специалисту. Памятка для ответа клиенту: '
     'удалите сообщение с токеном из публичного чата и доступные вам копии; '
-    'попросите уполномоченного администратора немедленно отозвать раскрытый токен '
+    'попросите владельца аккаунта или уполномоченного сотрудника немедленно отозвать раскрытый токен '
     'и создать замену, затем обновить интеграции. Удаление сообщения не отменяет '
     'компрометацию и не заменяет отзыв. Проверьте доступные журналы использования '
     'вместе со специалистом. Не присылайте значение токена в поддержку. '
@@ -37,13 +38,8 @@ def token_exposure(request):
 
 
 def input_policy(request):
-    text = unicodedata.normalize('NFKC', '\n'.join([request['ticket_text']] + [m['text'] for m in request['history']])).casefold()
-    patterns = (r'игнорир\w*.{0,80}(инструкц|правил)', r'ignore.{0,80}(instructions|rules)',
-                r'(токен|парол|секрет).{0,80}(публич|утек|раскры|опубликов)',
-                r'публич\w*.{0,80}(токен|парол|секрет)',
-                r'у всех.{0,80}(недоступ|ошиб|пропал)',
-                r'чуж\w*.{0,50}(аккаунт|парол|данн)', r'верни.{0,20}деньги')
-    return 'risk_requires_human' if any(re.search(p, text) for p in patterns) else None
+    risk = input_risk(request)
+    return risk['reason'] if risk else None
 
 
 def missing_billing_procedure(request, sources):
@@ -51,6 +47,32 @@ def missing_billing_procedure(request, sources):
     money_issue = re.search(r'(сумм|начисл|списан).{0,50}(неправ|невер|ошиб|лишн)|неправ\w*.{0,30}сумм', text)
     relevant = ' '.join(s['excerpt'] for s in sources).casefold()
     return bool(money_issue and not re.search(r'расч[её]т|сумм|начисл|списан', relevant))
+
+
+def needs_second_opinion(request, card):
+    """Ask Sol to review selected answer types even after Mistral passes its gates."""
+    if card.get('mode') != 'answer':
+        return False
+    if card.get('category') == 'product_error':
+        return True
+    text = unicodedata.normalize('NFKC', request['ticket_text']).casefold().replace('ё', 'е')
+    recovery = re.search(r'\b(?:восстанов\w*|сброс\w*|потер\w*|утер\w*|утрат\w*|резервн\w*)\b', text)
+    access = re.search(r'\b(?:доступ\w*|аккаунт\w*|парол\w*|2fa|двухфактор\w*|аутентификатор\w*|код\w*)\b', text)
+    billing_subject = r'\b(?:счет(?:а|у|ом|е|ов|ам|ами|ах|ы)?|акт[аеу]?|платеж\w*|оплат\w*|списан\w*|начислен\w*)\b'
+    billing = re.search(billing_subject, text)
+    billing_detail = re.search(r'\b(?:период\w*|сумм\w*|двойн\w*|дважды|возврат\w*|лишн\w*|неверн\w*|не приш\w*)\b', text)
+    if billing_detail and not billing and text.startswith(('а ', 'и ')):
+        # A short follow-up can rely on the subject named in the previous turn.
+        recent = ' '.join(item['text'] for item in request['history'][-2:]).casefold().replace('ё', 'е')
+        billing = re.search(billing_subject, recent)
+    draft = (card['draft_reply'] or '').casefold().replace('ё', 'е')
+    irreversible_claim = re.search(
+        r'\b(?:необратим\w*|безвозврат\w*|окончательно)\b.{0,55}\b(?:удал\w*|потер\w*)\b'
+        r'|\b(?:удал\w*|потер\w*)\b.{0,55}\b(?:необратим\w*|безвозврат\w*|окончательно)\b'
+        r'|\b(?:невозможно|нельзя|запрещен\w*)\b.{0,45}\b(?:восстанов\w*|вернуть|отмен\w*)\b',
+        draft,
+    )
+    return bool((recovery and access) or (billing and billing_detail) or irreversible_claim)
 
 
 def semantic_rule(card, request, sources, assessment=None, check_coverage=True):
@@ -112,6 +134,7 @@ class CascadeEngine:
 
     def analyze_attempt(self, request, provider, timeout, job_id, attempt_id, stage_context=None, cache_scope=None):
         started = time.perf_counter()
+        deadline = started + timeout
         context = checked_context(stage_context, request) if stage_context is not None else make_context(self.kb, request)
         kb = context['kb_snapshot']
         sources = (context['sources'] if provider == 'sol' and context['sources'] else
@@ -138,7 +161,7 @@ class CascadeEngine:
         cache_key = None
         if not skip and self.answer_cache is not None and cache_scope is not None:
             policy_sources = [Path(__file__), *[Path(__file__).with_name(name) for name in
-                ('assessment.py','providers.py','retrieval.py','cache.py','security.py')],
+                ('assessment.py','providers.py','retrieval.py','cache.py','security.py','dialogue.py','category.py')],
                 Path(__file__).parents[1]/'tools/propose_card.py',
                 Path(__file__).parents[1]/'models/baseline.py']
             policy = hashlib.sha256(b''.join(p.read_bytes() for p in policy_sources) +
@@ -168,11 +191,14 @@ class CascadeEngine:
                     provider_request['_coverage_questions'] = expected
                 sources, packing = pack_sources(provider, provider_request, sources, self.schema)
                 context['sources'] = sources
-                reply = self.provider(provider, provider_request, sources, self.schema, timeout, trace_id)
+                remaining = deadline - time.perf_counter()
+                if remaining <= 0:
+                    raise ProviderFailure('attempt_deadline_exceeded', not_sent=True)
+                reply = self.provider(provider, provider_request, sources, self.schema, remaining, trace_id)
                 raw, usage = reply['card'], reply['usage']
                 assessment = reply.get('assessment')
                 passed, reason = execute_proposal(raw, request, sources, self.schema, self.gate,
-                    permissions=frozenset({'propose_card'}), deadline=started+timeout)
+                    permissions=frozenset({'propose_card'}), deadline=deadline, clock=time.perf_counter)
                 if passed and (raw['status'] != 'proposed' or raw['needs_human_review'] is not True):
                     passed, reason = False, 'model_cannot_resolve_candidate'
                 if passed:
@@ -202,6 +228,8 @@ class CascadeEngine:
                         problem = semantic_rule(raw, request, sources, assessment)
                         if problem:
                             passed, reason = False, problem
+                        elif provider == 'mistral' and needs_second_opinion(request, raw):
+                            passed, reason = False, 'selected_second_opinion'
                         else:
                             reason = 'complete_coverage' if raw['mode'] == 'answer' else 'proposed_human_review'
                     elif customer_missing:
@@ -263,9 +291,18 @@ class CascadeEngine:
                   'context_packing': packing,
                   'retrieval': context['retrieval'], 'attempts': 1, 'http_status': reply.get('http_status'),
                   'returned_model': reply.get('returned_model'), 'completion_id': reply.get('completion_id'),
-                  'finish_reason': reply.get('finish_reason'), 'not_sent': blocked or reply.get('not_sent', False),
+                  'finish_reason': reply.get('finish_reason'),
+                  'provider_request_id': reply.get('provider_request_id'),
+                  'provider_limits': reply.get('provider_limits'),
+                  'retry_after_seconds': reply.get('retry_after_seconds'), 'not_sent': blocked or reply.get('not_sent', False),
                   'transport_error': reply.get('transport_error'), 'attempt_timeout_seconds': timeout,
                   'billed_micro_usd': None, 'inference_skipped': blocked}
+        category = validated_model_category(raw, request, self.schema)
+        risk = input_risk(request) if blocked and reason == 'risk_requires_human' else None
+        result['category_result'] = (
+            dict(value=risk['category'], source='input_policy', rule=risk['rule']) if risk else
+            dict(value=category, source=provider, validation='card_schema_and_request_binding')
+            if category is not None else None)
         result['cache_hit'] = False
         if cache_key is not None:
             self.answer_cache.put(cache_key, result)
