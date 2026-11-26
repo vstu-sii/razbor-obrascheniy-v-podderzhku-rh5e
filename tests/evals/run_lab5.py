@@ -77,7 +77,8 @@ def verify(tag):
         "tag_verified": bool(tag),
         "source_commit": manifest["source_commit"],
         "runtime_commit": manifest["runtime_commit"],
-        "runtime_release_tag": manifest["runtime_release_tag"],
+        "runtime_release_tag": tag or manifest["runtime_release_tag"],
+        "upstream_application_tag": manifest["runtime_release_tag"],
         "files_verified": len(manifest["files"]),
     }
 
