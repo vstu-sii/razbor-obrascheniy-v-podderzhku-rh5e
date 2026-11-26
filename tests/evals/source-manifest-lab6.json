@@ -57,21 +57,25 @@
     "backend/routers/ai.py": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c"
   },
   "package_files": {
-    "tests/evals/demo_support.py": "3a7d6649267e56472d1e94d268eeaf7c9c69d8e86a289c6ceddd5a36f56e19ba",
-    "tests/evals/lab6.py": "f72203b9819091b7ce7bc48b908ae519c1d83b693113418f6b9fd38ebc329c00",
+    "tests/evals/demo_support.py": "9e7dad21d150bc9726c0d3c6a93e386a0ad0cc3e96f976d65c07f723b65f95c0",
+    "tests/evals/lab6.py": "db8b869576ac834153847a97d6b85fa68a14a05672e9332954e76e27df469964",
     "tests/evals/requirements.lock": "edb91c42b1aab2b0461acc0037cc4d728ba75b693ccd78e4b30bbceed714430f",
     "tests/evals/fixtures/demo-cases.json": "6f6578aaa35e2399f4dc6184928d33291a70718b4f95efd4674be27803ee24c1",
     "docs/demo/metrics.json": "8859c47152d3008d7c8f4db08b3c44ceb95ecb41b7f1eacc9ccb093118fadb36",
     "docs/demo/quality-history.png": "81b88763d12707b3118f0a733430ae6438c5f6bd64a3cc5d7f9af7babf8b5671",
-    "docs/demo/redteam-check.md": "c83d189dd105d3d63d15db86ca1950bed8b737f3a63037dea98ae5788cb0adfd",
-    "docs/demo/trust-block.md": "5f249a93ffa9012b4dbf035f360640acf1becd33da32f01784fdc161cb2ab183",
-    ".github/workflows/quality-lab6.yml": "edd7caaeda25ff5d25758ce25d9be27e72dcf8827e8f3b9f4febe8124eb9d015",
+    "docs/demo/redteam-check.md": "8597d87a7baacb125593e428310213bfe9d2414cdca9eed226709eb5da3c2cbc",
+    "docs/demo/trust-block.md": "dbdadabe45f3c4129dd7a931a41c5f2c7ef54caaa91b7e8c790f33e3bb8ba1fd",
+    ".github/workflows/quality-lab6.yml": "48c7b13e7d515ad1903b0b554cc4aa9834e307c6054fb86101c0aa3da3b968db",
     "tests/evals/evidence/lab6-preparation/degradation.json": "26605ec8c51fcea0b782fd73f3fe57873ca79372c5384f6f0202c2b25b4f919a",
     "tests/evals/evidence/lab6-preparation/demo-cases.json": "af5dca522b4eb7e65f4ad5844786e62c58f58831a73fef4899d62ba02b902ffb",
     "tests/evals/evidence/lab6-preparation/grounding.json": "b2646cfc12557cfa51e171ab1f5597fb3792abd8c6566dba04efdf26c704921e",
     "tests/evals/evidence/lab6-preparation/redteam.json": "21864f4326895d287f41cfa21e5c3b78d1638e215a453ef08455f3e74ecd211d",
     "tests/evals/evidence/lab6-preparation/runtime.json": "a8ad3c5398dc9c5aad155e68c6deed578659d308d807e85eec33ddeee9097fd1",
-    "tests/evals/evidence/lab6-preparation/summary.json": "cf5557cefe3b3ebdd1c87c541d36af9e456f33972623486081b60528b3b00735"
+    "tests/evals/evidence/lab6-preparation/summary.json": "cf5557cefe3b3ebdd1c87c541d36af9e456f33972623486081b60528b3b00735",
+    "docs/demo/presentation.pdf": "4923dcf162b999a4af570fd201889b9c0c81812a5f431d50115f18e48d7a0961",
+    "docs/demo/presentation.md": "336669c4191ff2071c73ff174c2d05b425c671cf8901bd738596add3d4df25d7",
+    "docs/demo/.gitattributes": "547f59603028195ff9f8a87d04c4651551e8bd0d68f075257dfd549cd846b25b"
   },
-  "scope": "Quality-only LAB06; application dependency is the public pinned LAB05 test snapshot, not private SIISKI checkout"
+  "scope": "Quality-only LAB06; application dependency is the public pinned LAB05 test snapshot, not private SIISKI checkout",
+  "selected_demo_tag": "lab6-quality-demo-2026-11-26-r1"
 }

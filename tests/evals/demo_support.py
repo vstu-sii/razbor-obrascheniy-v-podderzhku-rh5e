@@ -1,5 +1,7 @@
 """Offline Demo Day adapter: real API/queue, saved responses, never a model API."""
 
+# Runtime path and offline flags must be set before importing the application.
+# ruff: noqa: E402
 import copy
 import importlib.util
 import json

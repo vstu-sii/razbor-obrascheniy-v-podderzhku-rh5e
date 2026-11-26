@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import logging
+import subprocess
 import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
@@ -236,11 +237,50 @@ def public_read_only():
     }
 
 
-def run(output, probe=False):
+def demo_release(tag):
+    repo = Path(__file__).resolve().parents[2]
+    head = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=repo, text=True
+    ).strip()
+    if tag:
+        target = subprocess.check_output(
+            ["git", "rev-parse", tag + "^{commit}"], cwd=repo, text=True
+        ).strip()
+        dirty = subprocess.check_output(
+            ["git", "status", "--porcelain", "--untracked-files=no"],
+            cwd=repo,
+            text=True,
+        ).strip()
+        if head != target or dirty:
+            raise ValueError("Use the exact clean demo tag checkout")
+    return {
+        "demo_tag": tag,
+        "tag_verified": bool(tag),
+        "publication_commit": head,
+        "scope": "Selected prepared demo snapshot; production freeze and human rehearsal are separate",
+    }
+
+
+def full_quality(output, release):
+    import importlib.util
+
+    source = PROJECT.parent / "current_release.py"
+    spec = importlib.util.spec_from_file_location("full_quality_for_demo", source)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    result = module.run(output)
+    result["demo_release"] = release
+    save(output / "report.json", result)
+    return result
+
+
+def run(output, probe=False, tag=None):
     if output.exists():
         raise ValueError("Use a fresh output directory")
+    release = demo_release(tag)
     output.mkdir(parents=True)
     runtime = verify_runtime()
+    runtime.update(release)
     save(output / "runtime.json", runtime)
     replays = replay_cases()
     save(
@@ -270,21 +310,30 @@ def run(output, probe=False):
         },
     )
     grounding = repeat_grounding(output)
+    quality = full_quality(output / "full-quality", release)
     if probe:
         save(output / "public.json", public_read_only())
     result = {
         "checked_at": datetime.now(UTC).isoformat(),
         "runtime_commit": RUNTIME,
+        "demo_tag": tag,
+        "tag_verified": release["tag_verified"],
+        "publication_commit": release["publication_commit"],
         "technical_preparation_passed": True,
+        "demo_security_checks_passed": release["tag_verified"]
+        and len(attacks) == 16
+        and grounding["passed"] == 4,
         "demo_case_checks": len(replays),
         "redteam_checks": len(attacks),
         "degradation_checks": len(failures),
         "external_model_calls": 0,
         "grounding_regressions": grounding["passed"],
+        "full_quality_targets_passed": quality["measured_targets_passed"],
+        "target_violations": quality["target_violations"],
         "final_demo_ready": False,
         "pending": [
             "demo date unknown",
-            "same production demo tag and 24-hour freeze",
+            "production freeze for 24 hours before the still unknown Demo Day date",
             "two timed team rehearsals",
             "production video 2-5 minutes",
             "human North Star",
@@ -302,8 +351,12 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--public-read-only", action="store_true")
     parser.add_argument("--require-demo-ready", action="store_true")
+    parser.add_argument("--require-tag")
+    parser.add_argument("--require-targets", action="store_true")
     args = parser.parse_args()
-    result = run(args.output, args.public_read_only)
+    result = run(args.output, args.public_read_only, args.require_tag)
     print(json.dumps(result, ensure_ascii=False))
+    if args.require_targets and not result["full_quality_targets_passed"]:
+        raise SystemExit(1)
     if args.require_demo_ready and not result["final_demo_ready"]:
         raise SystemExit(2)
