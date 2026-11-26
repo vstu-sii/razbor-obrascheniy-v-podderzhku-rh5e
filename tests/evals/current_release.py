@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import statistics
+import subprocess
 import sys
 import tempfile
 from datetime import UTC, datetime
@@ -269,9 +270,41 @@ def violations(metrics):
     return failed
 
 
-def run(output):
+def release_provenance(tag):
+    repo = Path(
+        subprocess.check_output(
+            ["git", "-C", str(HERE), "rev-parse", "--show-toplevel"], text=True
+        ).strip()
+    )
+    head = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=repo, text=True
+    ).strip()
+    verified = False
+    if tag:
+        target = subprocess.check_output(
+            ["git", "rev-parse", tag + "^{commit}"], cwd=repo, text=True
+        ).strip()
+        dirty = subprocess.check_output(
+            ["git", "status", "--porcelain", "--untracked-files=no"],
+            cwd=repo,
+            text=True,
+        ).strip()
+        if target != head or dirty:
+            raise ValueError("Evaluation requires the exact clean release tag checkout")
+        verified = True
+    return {
+        "publication_commit": head,
+        "publication_tag": tag,
+        "runtime_release_tag": tag,
+        "tag_verified": verified,
+        "scope": "Exact public release containing the frozen application test snapshot; not a production deployment or new live model run",
+    }
+
+
+def run(output, tag=None):
     if output.exists():
         raise ValueError("Use a fresh output directory")
+    provenance = release_provenance(tag)
     output.mkdir(parents=True)
     cases = [c for c in read("cases.jsonl") if c["suite"] == "legacy-q015"]
     before = [
@@ -298,6 +331,7 @@ def run(output):
         "checked_at": datetime.now(UTC).isoformat(),
         "external_model_calls": 0,
         "new_baseline_run": False,
+        "provenance": provenance,
         "scope": "Current API/queue/SQLite replay of immutable real 19 Nov generations; selected live 20 Nov scored separately",
         "source": json.loads((EVIDENCE / "source.json").read_text(encoding="utf-8")),
         "full_historical_live": score(before, cases),
@@ -324,8 +358,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--require-targets", action="store_true")
+    parser.add_argument("--require-tag")
     args = parser.parse_args()
-    result = run(args.output)
+    result = run(args.output, tag=args.require_tag)
     print(
         json.dumps(
             {

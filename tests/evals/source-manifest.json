@@ -341,12 +341,12 @@
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     ".github/workflows/quality-lab5.yml": {
-      "sha256": "66b8b1ee99a792dd1e71c273e55e06f752d908c07882be3fdbd1a4c91002c3e5",
+      "sha256": "0f950bac5be350574b192fa266703cfa7a2061a6eda8cfff587cebc5a4c2d2c3",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
     "tests/evals/current_release.py": {
-      "sha256": "6b8398712c44eca57627dddc4bce4eaa893ee5cd7213832e52af7b9ec004fa05",
+      "sha256": "7a376f06f1b0b7dd7babd00d5986481cfab687bf14d05f496ee3bc47181c768b",
       "binary": false,
       "source": "Quality publication after AI034, immutable evidence where dated"
     },
