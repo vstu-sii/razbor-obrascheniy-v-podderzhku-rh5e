@@ -1,0 +1,22 @@
+{
+  "issue": "Q5-SEC-001",
+  "scope": "real Mistral response replay and controlled Sol, no new API calls",
+  "checks": [
+    {
+      "name": "unchanged real response rejected by both stage guards",
+      "passed": true
+    },
+    {
+      "name": "explicit cited policy required",
+      "passed": true
+    },
+    {
+      "name": "summary and next step covered",
+      "passed": true
+    },
+    {
+      "name": "storage fact alone allowed",
+      "passed": true
+    }
+  ]
+}

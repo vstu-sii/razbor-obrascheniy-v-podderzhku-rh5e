@@ -1,0 +1,198 @@
+{
+  "scope": "three saved-response replays, not three independent live LLM runs",
+  "checks": [
+    {
+      "case": "DEMO-01",
+      "repetition": 1,
+      "mode": "answer",
+      "category": "payment",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-02",
+      "repetition": 1,
+      "mode": "clarify",
+      "category": "settings",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-03",
+      "repetition": 1,
+      "mode": "clarify",
+      "category": "integrations",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-04",
+      "repetition": 1,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    },
+    {
+      "case": "DEMO-05",
+      "repetition": 1,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "LIMIT-01",
+      "repetition": 1,
+      "mode": "escalate",
+      "category": "other",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    },
+    {
+      "case": "DEMO-01",
+      "repetition": 2,
+      "mode": "answer",
+      "category": "payment",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-02",
+      "repetition": 2,
+      "mode": "clarify",
+      "category": "settings",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-03",
+      "repetition": 2,
+      "mode": "clarify",
+      "category": "integrations",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-04",
+      "repetition": 2,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    },
+    {
+      "case": "DEMO-05",
+      "repetition": 2,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "LIMIT-01",
+      "repetition": 2,
+      "mode": "escalate",
+      "category": "other",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    },
+    {
+      "case": "DEMO-01",
+      "repetition": 3,
+      "mode": "answer",
+      "category": "payment",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-02",
+      "repetition": 3,
+      "mode": "clarify",
+      "category": "settings",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-03",
+      "repetition": 3,
+      "mode": "clarify",
+      "category": "integrations",
+      "state": "ready",
+      "saved_provider_invocations": [
+        "mistral"
+      ],
+      "passed": true
+    },
+    {
+      "case": "DEMO-04",
+      "repetition": 3,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    },
+    {
+      "case": "DEMO-05",
+      "repetition": 3,
+      "mode": "escalate",
+      "category": "payment",
+      "state": "manual_review",
+      "saved_provider_invocations": [
+        "mistral",
+        "sol"
+      ],
+      "passed": true
+    },
+    {
+      "case": "LIMIT-01",
+      "repetition": 3,
+      "mode": "escalate",
+      "category": "other",
+      "state": "manual_review",
+      "saved_provider_invocations": [],
+      "passed": true
+    }
+  ],
+  "external_model_calls": 0
+}

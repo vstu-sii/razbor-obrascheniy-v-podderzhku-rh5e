@@ -1,0 +1,102 @@
+{
+  "scope": "actual demo API/queue with controlled untrusted text, not live model red-team",
+  "checks": [
+    {
+      "id": "TEXT-DEMO-01",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "HISTORY-DEMO-01",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "TEXT-DEMO-02",
+      "case": "DEMO-02",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "HISTORY-DEMO-02",
+      "case": "DEMO-02",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "TEXT-DEMO-03",
+      "case": "DEMO-03",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "HISTORY-DEMO-03",
+      "case": "DEMO-03",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "TEXT-DEMO-04",
+      "case": "DEMO-04",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "HISTORY-DEMO-04",
+      "case": "DEMO-04",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "TEXT-DEMO-05",
+      "case": "DEMO-05",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "HISTORY-DEMO-05",
+      "case": "DEMO-05",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "KB-TITLE",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "KB-EXCERPT",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "NO-AUTH",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "WRONG-AUTH",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "EXTRA-ACTION",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    },
+    {
+      "id": "FORGED-HISTORY-ROLE",
+      "case": "DEMO-01",
+      "passed": true,
+      "external_model_calls": 0
+    }
+  ],
+  "external_model_calls": 0
+}
