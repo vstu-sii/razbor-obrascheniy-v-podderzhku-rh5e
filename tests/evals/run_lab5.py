@@ -319,7 +319,7 @@ def main():
         r["exit_code"] == 0 for r in archive["checks"]
     )
     current = load("quality_current_release", HERE / "current_release.py").run(
-        args.output / "current"
+        args.output / "current", tag=args.require_tag
     )
     summary = {
         "utc": datetime.now(UTC).isoformat(),
