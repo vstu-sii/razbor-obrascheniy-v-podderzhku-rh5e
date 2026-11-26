@@ -1,0 +1,58 @@
+{
+  "scope": "bounded_public_health_observation_not_weekly_uptime",
+  "samples": [
+    {
+      "utc": "2026-11-12T06:45:23.617501+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 23972.619499982102,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    },
+    {
+      "utc": "2026-11-12T06:45:57.590772+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 727.4225000001024,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    },
+    {
+      "utc": "2026-11-12T06:46:08.318750+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 562.1469999896362,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    },
+    {
+      "utc": "2026-11-12T06:46:18.881223+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 947.518900007708,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    },
+    {
+      "utc": "2026-11-12T06:46:29.828856+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 666.1333999945782,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    },
+    {
+      "utc": "2026-11-12T06:46:40.495276+00:00",
+      "ok": true,
+      "status": 200,
+      "latency_ms": 810.6966000050306,
+      "revision": "597a8f623afb80e18be686ca6784d5ce1c2b0107",
+      "baseline_mode": "extractive"
+    }
+  ],
+  "successful": 6,
+  "total": 6,
+  "start": "2026-11-12T06:45:23.617501+00:00",
+  "end": "2026-11-12T06:46:41.305987+00:00",
+  "no_authenticated_writes": true
+}

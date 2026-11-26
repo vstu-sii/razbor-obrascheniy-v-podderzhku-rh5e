@@ -1,0 +1,25 @@
+{
+  "issue": "Q5-SEC-001",
+  "scope": "unchanged real Mistral response replay and controlled Sol",
+  "tests": [
+    {
+      "id": "test_lab5_grounding.ReissuePolicy.test_prohibition_requires_explicit_cited_policy",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_grounding.ReissuePolicy.test_saved_real_response_is_blocked_by_both_stage_guards",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_grounding.ReissuePolicy.test_storage_fact_does_not_imply_reissue_prohibition",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_grounding.ReissuePolicy.test_summary_and_next_step_cannot_hide_unsupported_policy",
+      "passed": true
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "external_model_calls": 0
+}

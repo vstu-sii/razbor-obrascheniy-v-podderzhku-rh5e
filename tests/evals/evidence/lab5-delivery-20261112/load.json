@@ -1,0 +1,2666 @@
+{
+  "utc": "2026-11-12T12:25:46.927517+00:00",
+  "scope": "isolated real HTTP/PostgreSQL/cascade with controlled providers",
+  "runtime_sha256": {
+    "backend/ai_service.py": "f4e8f16674a1917fc16928238fc69e27f9eabe90186a6c6b8f84e354de49101d",
+    "backend/bootstrap.py": "bf4ece08f531108067de6f6b3062033d415ee9065224ef588ff58caf0729d684",
+    "backend/cascade_queue.py": "e57f3038bd478ba590d85bc2e7babd524304d2033eb624c727b9263b8ad9a128",
+    "backend/contracts/cascade.py": "f9d290d1a98b9986477668694822223ae5ca390f23b3bc162e6e89a300ad71bf",
+    "backend/contracts/cascade.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+    "backend/contracts/evaluate.py": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+    "backend/contracts/response.schema.json": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+    "backend/events.py": "f3e2a33cdfe4f6501fce3ece5bc139c2a1f2fb0db33b1e5edc8be0de2491a8b9",
+    "backend/guards/auth.py": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85",
+    "backend/guards/identity.py": "7a784446abd1ec9013144b166d872d385152c703c35f4f7ce2c7eea914d7bab2",
+    "backend/guards/inference.py": "ea68ec5f19f14b490d78ae946732c1e32eb3905aa2ed9fa9702ef8780a44c975",
+    "backend/ingress.py": "add9e1d285f35dec1c6c462f642ad6740e272a320b99ab850d75efb2826a365d",
+    "backend/limits/daily.py": "cbe204198e45afea47468786aaeccadad537cefb0fd817ca367ca1e51dfc2ce3",
+    "backend/limits/degradation.py": "5261b41881fb033283a525a7d38a8c39ef12f7a6388bb5b4ccff505b9b00bca2",
+    "backend/limits/settings.py": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63",
+    "backend/main.py": "39caa843b02b7c2eac40b90972c32319ec377adbf7b1f845580198c542570703",
+    "backend/models/store.py": "321dca7a93ce96a45a5cb8c4f8ca096b6b769fe581b0055dc72431803bfea696",
+    "backend/observability.py": "fe66bc921fba8431f96db76b273f81515454f4952882f002719f841d574427a8",
+    "backend/provision.py": "c1af3b5c6dda4213ee175d52bce3df7e3b6770b16faf07a5340abfe83010a7e9",
+    "backend/routers/ai.py": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c",
+    "backend/worker.py": "818f86593e3bd3cc0bac5bbb2f01ecbfac793c58116bda9fa3a185c8f4563e34",
+    "ml/cascade/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/cascade/assessment.py": "26f17bc5ce11df990e91538f4b423f9d928fa7d977d390b5d0918d9ad483edcb",
+    "ml/cascade/cache.py": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+    "ml/cascade/context.py": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+    "ml/cascade/engine.py": "d20b5b11805606328b59a62331e121d9fee1d1bcff86b54b0b2f6bed0237c821",
+    "ml/cascade/mistral-system.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+    "ml/cascade/providers.py": "db94a0b0796a7d6c01b995fd1fa155783b9757d1d1ee527ea0f2488276ed23d7",
+    "ml/cascade/retrieval.py": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+    "ml/cascade/security.py": "8843419baad19742a22bad01118241ab0f7e83028017a50e61c88a3908f7c7da",
+    "ml/cascade/service_cache.py": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+    "ml/contracts/response.schema.json": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+    "ml/contracts/validation.py": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+    "ml/data/cascade/kb.jsonl": "1a708c12adb0d3760b0bc98b21be1877ea041b8c77cd800a1bd2d862fc3dcbd6",
+    "ml/experiments/lab4/build_artifacts.py": "ba445206e3248195594010ce2c1eb54df5a634d7700354c75613b9a77a83a6b4",
+    "ml/experiments/lab4/checks.py": "9e0054b7d30e735941bba5af60f3479e056bf3f2556fd48a697c2dfcae212615",
+    "ml/experiments/lab4/historical-ab/expected.json": "a6f64468d610e2912f7ae851742036dee805a3c4ff541ed6b7b9760a5f1ca6eb",
+    "ml/experiments/lab4/historical-ab/plan.json": "cd0bc8c79e5aa5ddcea58b5efe82ce7f0df8064a40cf30cb6b80fa76b809447a",
+    "ml/experiments/lab4/historical-ab/report.json": "51c4b8cf0ef115da8c038e85516734f0065ecb05df4679537b5e484eaddb1b67",
+    "ml/experiments/lab4/historical-ab/responses.jsonl": "ae4d10eb8711a9253df31add299a04f75ca8ec668eb50128e077cd9064ede05b",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-known_error.json": "a834058bfe1e059b027a9b6cccd2ab3aba2a8d7911eed16b3d1bfcbe23fca60d",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-two_questions.json": "68ee57b5646e3532c090669d7123ea58c24e23ae5607e747ef080fe9691ef013",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/billing-unknown_procedure.json": "019e52e84711eb4aaee04ff841b6504ae5e619d7db22b6c3578688e95b4aaf63",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/budget-after.json": "8c5dd9e505443cbc6c32ec544b76ed687a251d25fb5913966b597ff6b9053b54",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/config.json": "3e11524a0e30b0cd1f4ef2210201dfef1147707c4e85240f32a9a829f715e067",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-history.json": "87f18c018fbb42febc2a890d7e21d405bb8d9130ae475cc66644cb1bc7b58367",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-invoice.json": "f026e2107e3bb34769c46323eee64356e2182acc9a7c78a7e9b84b991e680ca4",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-known_error.json": "3da1823fe02b4a15f4362c993ec7b589fc4ea2f2f2d675cff7f44b7315058df3",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-missing_code.json": "78b6ee1a8d76381352ea2694a3d2477726adb57cb5e25c65045bff6a53d058b6",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-notifications.json": "966dc8baf31870d43e3679807f10da85dd15e7fc15fff4fa84bf8ee25608a9e8",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-observer_role.json": "c1b3cd7b122b8154c08acb91a6801b4cf5b42f01e030091da5f247bd1da577e3",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_factor.json": "b434d3102719a9f88fa0276787a27141eaf44cf805406b4ae992062751db18e4",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-two_questions.json": "705311dbfb968ca1ce6fc13a50338af7b75b83580b8925a3f82b81d28f294885",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/langfuse-unknown_procedure.json": "069fdb311b44ca7ebe50f2ceaa23df4461f8563a9cf11a462e81f0e8ee3232cb",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/results.jsonl": "b4137b527135e4ed8ba875714bee0f12722b1d6c2e22bef89ca6eb4974f8d8f2",
+    "ml/experiments/lab4/historical-cascade/ordinary-v2-live-20261110/summary.json": "4ffc8fa9aca21cad027d3b319a6e060ff1428ee345564fad150d825a3c9e6fb9",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/budget-after.json": "d9dc28e6dbf0a27c48c6b9f691bc558c7d997812b6041a69087ce460ad446619",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/config.json": "ca3d1bf2a4c02284ef58976e96b1a57c1334422a9a88687806386e3f61ed0712",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-history.json": "c7959aed4a494596c67c4882601c963a01c83f2413ed2a79a7fc1d821b373476",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/langfuse-two_questions.json": "a7983418ffde2a51c5a9fe60a93ae9dd12ff094d7498c0bbe9eab795219686ab",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl": "255b167e99bb69ba3fad7b54390f956d27c4c96a126c032dc7198b043763b49b",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/billing-unknown_procedure.json": "4d486ad7d39ec6e2912125ff6de3810ba3e1a7555a0821a07ffcf2bedfc23184",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/budget-after.json": "972d1ede129bb165fcf87258203c143bec11db43dc31533bdc160f220fce6e56",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/config.json": "e89da5bf5a793b32e048058014f9f6b7ec65f59ca62276bdfacf650b12f53337",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-invoice.json": "029318574df05758c5cf0e82c3f53ecc79fc3239ae721eb607ab7a98a46f929e",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-known_error.json": "d07bbd5c8e0b38fa887c017569139d6c1efaa9df2cfa77ac3f69058dee01c2ec",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-missing_code.json": "a25d88d416939db02262836cbaf0cc4e3603232479adf4c31d503aeead2a6f63",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-notifications.json": "c083e1af35ef22e9590b790c1e7e36a3f235c82c2b6721dde16e59f0a0170c88",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-observer_role.json": "49ab771d08c0720f2678ac3b9d1020bb385cb64fb9b69a33d4bb8267394e953f",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-two_factor.json": "73d7c81f3b4bae8fce736d0f1c5e28fe63672cb592b10332ce3da6ae6ddcd50f",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/langfuse-unknown_procedure.json": "36b1e65f0ea1e0f33e3f5e1e7073dbb7c24e077585d39272905d58089994fb48",
+    "ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl": "0b958a478970eb42a65cd7dbd547a6b4b6ec551d8353b1523c514ecc6cb38180",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_and_invoice.json": "9327ad0567f3391927d1dadde85bd0c93c59ba0d58a1062091530ab7335ead0a",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_lost_phone.json": "af8ec98caaacbf99d623b73a50abf804f4405423beb679d37743b6eb1d57046a",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/billing-two_factor_steps.json": "aaf00db2b35d22fc3419ed84f636a2656ef31ee858c914f1c0172147e1608aed",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/budget-after.json": "0be3a95c96486d2dd4483713ee4c93ad11db7c3f99d186646583fbcae132aee1",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/config.json": "f2ce9973526555e958ff7e7a6528609d4e1896173211c2d9fea93fd68f8178e3",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_and_invoice.json": "d62f2608149df0008130cea9a1fa93355ff14cee1d4c696c54a35fe9c8c225d7",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_lost_phone.json": "6dc88d0992b46ef860e066d850196a33a16de294074c97c383833907992e7545",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/langfuse-two_factor_steps.json": "42101809574397a91e6892af7072549f78e54c5203e774b7c0f9d18bc14dc5d6",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl": "db7171f200050e3a3288effa5c79bc778b0d63ae1ed52b5897932e318e905d43",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/stopped.json": "bbe3c9b7b8509dfc32dc150c619d4fb01195e6085aef2976e4a5350067aea624",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/summary.json": "4525a534b1e768bea4a20a8bd2c9760e5a9f01e7a75c314f60098935b46f5d3a",
+    "ml/experiments/lab4/historical-cascade/support-policy-live-20261112/verification.json": "125e4182e88466a0b2fe24c347d6af561caccf842d7fb1bee32549ffa23cd041",
+    "ml/experiments/lab4/live-context-20261112/budget.json": "53cdba182f96243c7b98306b51e7a7c4439015e37257e939a0b800623a4ad4f8",
+    "ml/experiments/lab4/live-context-20261112/config.json": "d2d35bcfa32337ac00a3712cddf48dcb16537a92f4eaaa6a55222b56fdc903b2",
+    "ml/experiments/lab4/live-context-20261112/langfuse-compact.json": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+    "ml/experiments/lab4/live-context-20261112/langfuse-spaced.json": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+    "ml/experiments/lab4/live-context-20261112/preflight-accounting-correction.json": "8ca9460458d4801b0bb6b512f817b9332def81c9812484ccfee02f18742bc282",
+    "ml/experiments/lab4/live-context-20261112/results.json": "47da76e5d54f531ff1bc0fedf82eebfc5a756ed468cb4eee7010ab49b632c83f",
+    "ml/experiments/lab4/live-context-verified-20261112/budget.json": "d7b5c68f381258b2b59b0ea24402246c420f7460dfcd105e55e75ca487ed9230",
+    "ml/experiments/lab4/live-context-verified-20261112/cards.html": "e470f4af40f0843ef5d88d039c39e8809993c8fcadfb37dc8da289538c2e1378",
+    "ml/experiments/lab4/live-context-verified-20261112/config.json": "d2d35bcfa32337ac00a3712cddf48dcb16537a92f4eaaa6a55222b56fdc903b2",
+    "ml/experiments/lab4/live-context-verified-20261112/langfuse-compact-verified.json": "3168dcdf0ef2fd3d9f7f6d793c2a257f4a62bd400f6ae090244eadee0527cf83",
+    "ml/experiments/lab4/live-context-verified-20261112/langfuse-compact.json": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+    "ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced-verified.json": "7ed53375d5938b850addd32f15a6312b8d02f4c24151db742d9b21b6df271b5e",
+    "ml/experiments/lab4/live-context-verified-20261112/langfuse-spaced.json": "118ca3805d8e5e1913a649a6efa44b1063f756573afadbcf3f02cc0370a45dde",
+    "ml/experiments/lab4/live-context-verified-20261112/results.json": "a05180c480ebc56963a85369e415686074b203a7dc11cd0c21f787561e22b659",
+    "ml/experiments/lab4/offline-20261112/offline.json": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+    "ml/experiments/lab4/offline-final-20261112/offline.json": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+    "ml/experiments/lab4/plans/ordinary-plan-v2.json": "2f458c2b7913fba7cdfb7b05cbd1ee89581f96f96b8436eaf872a3d4ad5ffb10",
+    "ml/experiments/lab4/plans/ordinary-plan-v3-followup.json": "547161ed5b315c6c34514b495c81e482b1612dbf9f7f08354776164b9a068e1a",
+    "ml/experiments/lab4/plans/ordinary-plan-v3-remaining.json": "9dd8791fdf0f0d5d71fe53e611764247b35a9eb89175b1ed200ade022f3021fe",
+    "ml/experiments/lab4/plans/support-policy-plan-20261112.json": "18904d6475124d4a6a3a45956b6bc037dcfe205d71be03df25165d16b877c898",
+    "ml/experiments/lab4/run.py": "7cd5cee63f4626075e5d23e27595617f7ca6af6c7089b73a1ae14ecf1423d651",
+    "ml/experiments/lab4/validation.json": "61a595b6c25f16f85f033ee90c8b1b581c4e0bf0b65932286bf4c4df9cbb62a9",
+    "ml/integration/ai_service.py": "0823b3e5c6af84b8b6c17911a82ffcf3a5cef2520851ac145a99e7f63c3d8ce7",
+    "ml/models/baseline.py": "1415cd750e8721c416524093566f4c4084191d12b02734c45ad034c247ebc703",
+    "ml/prompts_v2/cascade-mistral.txt": "52010a263c78af08a9e5832d0b5dcd86169192ba10d220c551ac4cc0e230800e",
+    "ml/prompts_v2/cascade-sol.txt": "1aa235a67467691a43d3f2b438566d823691f3e667fcc4fe6b04fa308869f521",
+    "ml/prompts_v2/system-2.1.txt": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+    "ml/prompts_v2/system.txt": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+    "ml/requirements-lab4.txt": "0dc685ee990e5528f7a245d895a2b3f254c7d0036c048439a0177b3fcf9adcab",
+    "ml/tools/propose_card.py": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+    "migrations/001_init.sql": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41",
+    "migrations/002_review_context.sql": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b",
+    "migrations/003_event_queue.sql": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50",
+    "migrations/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+    "migrations/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+    "migrations/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+    "migrations/007_cascade_claim.sql": "038060fabfce10456a867ec38050c88af2074ce47a41835dc9d4c2cc279f0b6b",
+    "migrations/postgresql/001_init.sql": "5e82da3db733ab1ea0b00b2e6a914081b6429ec22a87af408a7f3d33823385ad",
+    "migrations/postgresql/002_review_context.sql": "1dd7930da1a3854717bca1de26071a1ff10974735fd47f0166ca637111485131",
+    "migrations/postgresql/003_event_queue.sql": "2f8a299f33a0303c0c454332652b0e9488f082d24c946770b6c8de05faafd8fc",
+    "migrations/postgresql/004_daily_limits.sql": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+    "migrations/postgresql/005_daily_calls.sql": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+    "migrations/postgresql/006_cascade.sql": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+    "migrations/postgresql/007_cascade_claim.sql": "1bb178f0656161100732df6e036f31cc8cdcd25db34e2cfedbd24336da7e1544",
+    "frontend/index.html": "4581fba88db38b270f179b9472707471576f4a79fe824c1d536d025ed033d3c4",
+    "frontend/prototype/index.html": "306bcfe996abc1797baf94af68d84432216f231e1f04e05738ffb57aefb75f81"
+  },
+  "provider_delay_ms": 40,
+  "external_model_calls": 0,
+  "not_measured": [
+    "real provider throughput/latency",
+    "semantic model quality",
+    "production load capacity"
+  ],
+  "health": {
+    "status": "ok",
+    "baseline_mode": "cascade",
+    "architecture": "event-queue-v1",
+    "infrastructure": "lab04",
+    "revision": "d019-validation"
+  },
+  "requests_per_profile": 40,
+  "warmup_per_profile": 5,
+  "profiles": [
+    {
+      "clients": 1,
+      "requests": 40,
+      "successes": 40,
+      "errors": 0,
+      "http_statuses": {
+        "202": 40
+      },
+      "elapsed_seconds": 21.217964700001176,
+      "completed_per_second": 1.8851949546319013,
+      "p50_ms": 637.2780000001512,
+      "p95_ms": 741.9449999997596,
+      "max_ms": 765.0555000000168,
+      "cases": {
+        "uc01": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc02": {
+          "count": 8,
+          "successes": 8
+        },
+        "sol": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc03": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc04": {
+          "count": 8,
+          "successes": 8
+        }
+      },
+      "observations": [
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 324.0758000010828
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 278.2943999991403
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 671.5260999990278
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 765.0555000000168
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 686.0603999994055
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 309.22259999897506
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 320.57890000032785
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 685.8312999993359
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 641.7961000006471
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 674.5673000004899
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 266.5307000006578
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 331.18629999989935
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 602.8138000001491
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 691.4004999998724
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 703.1030000016472
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 267.5705999990896
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 343.79839999928663
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 706.0374000011507
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 640.8210999998118
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 682.9623000012361
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 271.44460000090476
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 325.3361999995832
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 741.9449999997596
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 597.3298000008072
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 762.8165999994962
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 283.39710000000196
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 341.48540000023786
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 712.9998000000342
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 656.1003999995592
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 666.4406000018062
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 271.5572000015527
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 365.37330000101065
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 637.2780000001512
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 658.2674000001134
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 672.9464000000007
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 276.5758999994432
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 411.02020000107586
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 606.805199999144
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 681.0786000005464
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 682.2113999987778
+        }
+      ]
+    },
+    {
+      "clients": 2,
+      "requests": 40,
+      "successes": 40,
+      "errors": 0,
+      "http_statuses": {
+        "202": 40
+      },
+      "elapsed_seconds": 20.8610477000002,
+      "completed_per_second": 1.9174492372211784,
+      "p50_ms": 1004.7534000004816,
+      "p95_ms": 1376.7400000015186,
+      "max_ms": 1439.2106999985117,
+      "cases": {
+        "uc01": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc02": {
+          "count": 8,
+          "successes": 8
+        },
+        "sol": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc03": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc04": {
+          "count": 8,
+          "successes": 8
+        }
+      },
+      "observations": [
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 287.98230000029434
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 636.911899999177
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1019.0460000012536
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1336.4600999993854
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1340.8425000015995
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1037.8797999983362
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 659.1685999992478
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 913.5174000002735
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1269.8631999992358
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1354.1850000001432
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 982.8405999996903
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 558.8114000001951
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 922.7398999992147
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1318.0811000001995
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1348.1890999992174
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 952.2309999993013
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 554.5227000002342
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 927.0161000004009
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1376.7400000015186
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1368.8928999999916
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 916.642199999842
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 608.7793999995483
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1004.7534000004816
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1284.1437999995833
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1266.4614999994228
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 907.1413000001485
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 603.9212000014231
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 991.7664999993576
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1264.151800000036
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1320.196999999098
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 983.7728000002244
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 649.4978999999148
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1027.0805999989534
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1277.394099999583
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1307.7056999991328
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 949.3622999998479
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 608.7546000017028
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1069.1170000009151
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1439.2106999985117
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1397.8019000005588
+        }
+      ]
+    },
+    {
+      "clients": 4,
+      "requests": 40,
+      "successes": 40,
+      "errors": 0,
+      "http_statuses": {
+        "202": 40
+      },
+      "elapsed_seconds": 20.725624299999254,
+      "completed_per_second": 1.9299780513729297,
+      "p50_ms": 1946.339899999657,
+      "p95_ms": 2331.18420000028,
+      "max_ms": 2387.226599999849,
+      "cases": {
+        "uc01": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc02": {
+          "count": 8,
+          "successes": 8
+        },
+        "sol": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc03": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc04": {
+          "count": 8,
+          "successes": 8
+        }
+      },
+      "observations": [
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1003.9145999999164
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1906.5033000006224
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1598.7618999988626
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 641.1551000001054
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1947.3973000003753
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1883.6795000006532
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1579.3052000008174
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1943.924600000173
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1933.8024999997288
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2297.685300000012
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2284.737599999062
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2096.4026999990892
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1943.6248000001797
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2002.978800001074
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2387.226599999849
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2134.4075000015437
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1959.3048999995517
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1876.913300000524
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1884.914199999912
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2278.307299999142
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2220.361599998796
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1886.2195999990945
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1879.5117000008759
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1908.981100001256
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2279.7838999995292
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2338.252800000191
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1981.0867000014696
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1916.3960000005318
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1920.7913000009285
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2230.166100000133
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2259.2478999995365
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1946.339899999657
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1904.7817999999097
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1951.3937000010628
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2281.866999999693
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2331.18420000028
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1981.9501000001765
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1913.4228000002622
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1926.8445999987307
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2261.899600000106
+        }
+      ]
+    },
+    {
+      "clients": 8,
+      "requests": 40,
+      "successes": 40,
+      "errors": 0,
+      "http_statuses": {
+        "202": 40
+      },
+      "elapsed_seconds": 22.136209099999178,
+      "completed_per_second": 1.80699413432996,
+      "p50_ms": 4338.398800000505,
+      "p95_ms": 4881.639600000199,
+      "max_ms": 5017.744700000549,
+      "cases": {
+        "uc01": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc02": {
+          "count": 8,
+          "successes": 8
+        },
+        "sol": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc03": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc04": {
+          "count": 8,
+          "successes": 8
+        }
+      },
+      "observations": [
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1440.404999999373
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 2433.899999999994
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 1028.3880999995745
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 3295.819599999959
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4489.974999998594
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 350.6753999990906
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 3762.721600000077
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2090.6890999995085
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4740.885299999718
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4881.639600000199
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4731.0890999997355
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4385.040500001196
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4708.002799998212
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4531.982500000595
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4811.213099999804
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4496.9239000001835
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4253.087799999776
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4119.7498999990785
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4545.31870000028
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 5017.744700000549
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4542.545000000246
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4282.040500000221
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4338.398800000505
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4533.171700000821
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4968.507500001579
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4545.762099998683
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4166.965700000219
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4076.7260000011447
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4603.71479999958
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4848.92420000142
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4372.502999998687
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4048.9424000006693
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 3924.8944999999367
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4304.929099998844
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4686.883999998827
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 4298.039100000096
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 3868.783000001713
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 3868.0727999999363
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4187.78999999995
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4564.291900000171
+        }
+      ]
+    },
+    {
+      "clients": 16,
+      "requests": 40,
+      "successes": 40,
+      "errors": 0,
+      "http_statuses": {
+        "202": 40
+      },
+      "elapsed_seconds": 25.193487399999867,
+      "completed_per_second": 1.5877119100232313,
+      "p50_ms": 9687.441000000035,
+      "p95_ms": 11058.023300000059,
+      "max_ms": 11270.871599999737,
+      "cases": {
+        "uc01": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc02": {
+          "count": 8,
+          "successes": 8
+        },
+        "sol": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc03": {
+          "count": 8,
+          "successes": 8
+        },
+        "uc04": {
+          "count": 8,
+          "successes": 8
+        }
+      },
+      "observations": [
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 726.766800000405
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 1230.3506999996898
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2797.580200000084
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4774.734200000239
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 4280.244400000811
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 3232.8591000004963
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 10962.659700000586
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 8419.863000000987
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 5760.029600000053
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 2331.8146000001434
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 7275.637200000347
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 6922.880199999781
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 6697.828100001061
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10594.04060000088
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9725.70960000121
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 9747.908199999074
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 10666.042700000617
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 11058.023300000059
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10725.175900000977
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 11270.871599999737
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 11105.602600000566
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 10456.167700000151
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10841.866400000072
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10484.757100000934
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10493.17770000016
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 10528.796700000385
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 10413.369199999579
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10146.896400001424
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 10255.144600001586
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9564.624500000718
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 9699.685999999929
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 9736.262899999929
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9891.780100000688
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9687.441000000035
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9578.020999999353
+        },
+        {
+          "case": "uc01",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 8832.160599999042
+        },
+        {
+          "case": "uc02",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 1,
+          "providers": [
+            "mistral"
+          ],
+          "latency_ms": 8895.849599999565
+        },
+        {
+          "case": "sol",
+          "ok": true,
+          "http_status": 202,
+          "state": "ready",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 9112.244500000088
+        },
+        {
+          "case": "uc03",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 8918.380700000853
+        },
+        {
+          "case": "uc04",
+          "ok": true,
+          "http_status": 202,
+          "state": "manual_review",
+          "attempts": 2,
+          "providers": [
+            "mistral",
+            "sol"
+          ],
+          "latency_ms": 8943.416699999943
+        }
+      ]
+    }
+  ],
+  "max_tested_clients_without_error": 16,
+  "absolute_hardware_limit_proven": false
+}

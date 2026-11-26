@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-12T17:32:32.437388+00:00",
+  "target_repository": "SIISKI/siiski_volchkova_shared_repository",
+  "target_branch": "lab05/quality-safety/q-012-team-testing",
+  "target_pr": 37,
+  "included_ancestors": {
+    "quality_target_before": "0e5e1522fd76aaeec3307f22f19355b8f6956660",
+    "delivery_pr43": "9f321491ea0abd32a58c1b99b67676d660e72e6d",
+    "ai_pr38": "fb48f0c510f2bf8d82384314ac579a57e219ff23",
+    "ai_pr40": "d2a684b40632645a09fbef7439008ab5a0186014",
+    "delivery_pr39": "0cdf39bd5387a293a21c93a46aaba449ae951879",
+    "product_p012": "94c9d7931d725c479644b706dc9873b1ebe249e4"
+  },
+  "runtime_release_tag": "lab5-release-delivery-2026-11-12",
+  "runtime_release_commit": "d41349ffd86f749506987bcc398b0a5fa3239917",
+  "unchanged_frozen_inputs": 156,
+  "application_tests": {
+    "total": 144,
+    "passed": true
+  },
+  "cascade_postgres_tests": {
+    "total": 65,
+    "passed": true,
+    "overlaps_application_suite": true
+  },
+  "integration_suite_passed": true,
+  "exact_tag_suite_passed": true,
+  "new_external_model_calls": 0,
+  "main_merged": false,
+  "lab_published": false,
+  "limitations": [
+    "No new complete held-out two-provider evaluation",
+    "Original human North Star n=0",
+    "No week-long uptime"
+  ],
+  "course_source": {
+    "name": "participant-provided lab5.md",
+    "sha256": "d4e48a06f3661a3f54fd928b2f2eca655b2b93bcedae84e5663ee0b40169b9a6"
+  }
+}

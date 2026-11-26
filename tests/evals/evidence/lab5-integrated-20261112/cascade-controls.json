@@ -1,0 +1,68 @@
+{
+  "scope": "actual queue/API and controlled providers, not live LLM attacks",
+  "tests": [
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C01_ticket_override_never_calls_provider",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C02_history_override_never_calls_provider",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C03_article_title_is_untrusted",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C04_article_excerpt_is_untrusted",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C05_model_cannot_approve_its_own_card",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C06_fabricated_authority_does_not_become_automatic",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C07_request_for_secret_is_rejected_at_both_stages",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C08_foreign_request_id_is_rejected",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C09_fabricated_quote_is_rejected",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C10_paid_stage_respects_budget_before_provider_call",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C11_metrics_need_auth_and_exclude_ticket_text",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C12_cache_cannot_cross_authenticated_scopes",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C13_cache_invalidates_changed_approved_snapshot",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C14_ordinary_automatic_card_has_no_fabricated_human_review",
+      "passed": true
+    },
+    {
+      "id": "test_lab5_cascade_security.CascadeSafety.test_C15_persistent_bad_output_never_gets_third_attempt",
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "external_model_calls": 0
+}

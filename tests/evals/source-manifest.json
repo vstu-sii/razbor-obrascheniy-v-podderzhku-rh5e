@@ -1,0 +1,596 @@
+{
+  "source_repository": "SIISKI/siiski_volchkova_shared_repository",
+  "source_commit": "856e7d892d4eb49630a0def25b8b837694531e4d",
+  "runtime_release_tag": null,
+  "runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "scope": "Quality current-code replay, selected historical live results, regression and preserved historical release evidence",
+  "files": {
+    "tests/evals/requirements.lock": {
+      "sha256": "edb91c42b1aab2b0461acc0037cc4d728ba75b693ccd78e4b30bbceed714430f",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/response.schema.json": {
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/ruff.toml": {
+      "sha256": "8e342698391a77b6266ea1153beaf49fe248a5c817eb87024252530e9ec6d5a1",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/run_lab5.py": {
+      "sha256": "342579943f5f6c02a8b6e71cde2ef03fe471450dd12bbc956399a258531600c0",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/score_saved.py": {
+      "sha256": "d15d26ecaeb3f9bfab0d5be0b8e25e8676493f3a0b999f9cef14c1e398aed338",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/deployment-cascade-providers.json": {
+      "sha256": "fa2b7b41d4116b925b10c8f80345333ba0f482fa55e14cea5fe573caf009167c",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/data/kb.jsonl": {
+      "sha256": "0c159baae08abf3ec3b7861fa8db2ac2696574f7fb67f409dad73bfc77d0d3d1",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/assessment.py": {
+      "sha256": "fe6f262baadb026f25eee63a9caa90f6326650e900cab0e314398bec91fa6207",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/cache.py": {
+      "sha256": "48bccb01c82f0fa683a9e428cea0eab8ca8c1ce9fa3cb163811271ffa500c265",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/context.py": {
+      "sha256": "52d76debbba69cd6874a286096d98a73f54e1f1ed86e845a31cfb75e6cb8be3e",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/engine.py": {
+      "sha256": "2a2f88a4562ee15bd560381b110d60d206cb7b5e026a9fa2b0f076bf8fcda3b4",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/mistral-system.txt": {
+      "sha256": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/providers.py": {
+      "sha256": "6bcd5b26f2240f31cd7038cfc2aa8c5169e6ce96ed0efe6823f003894eba29f2",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/retrieval.py": {
+      "sha256": "1a5f7ca39909a92ad9fbf03e0c32802c963d526e0cdd56419aa1f9e4ed798e46",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/security.py": {
+      "sha256": "8843419baad19742a22bad01118241ab0f7e83028017a50e61c88a3908f7c7da",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/contracts/response.schema.json": {
+      "sha256": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/contracts/validation.py": {
+      "sha256": "ab68e6aeaeab3f6d0a96b03334e0f24dbf7bc46673b10864755b70b36d753a53",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/models/baseline.py": {
+      "sha256": "1415cd750e8721c416524093566f4c4084191d12b02734c45ad034c247ebc703",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/prompts_v2/cascade-mistral.txt": {
+      "sha256": "8ca59e95824a8033dc8249d8b64d0b124cd826c11553c7246fdb92ad55c58e11",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/prompts_v2/cascade-sol.txt": {
+      "sha256": "c3a199449b0445d0b824c042484918bab7bf045ac7862af63ec40fb5a8536754",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/tools/propose_card.py": {
+      "sha256": "30f5bbf309b148ee94a8c1eb9d49144a8f6560de4cc63b876f719fff8c77da19",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/run.py": {
+      "sha256": "37e988838b1a35475ace1611e389a22361747e78602b3624de2195b3eda9ded3",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/expected.json": {
+      "sha256": "a6f64468d610e2912f7ae851742036dee805a3c4ff541ed6b7b9760a5f1ca6eb",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/report.json": {
+      "sha256": "51c4b8cf0ef115da8c038e85516734f0065ecb05df4679537b5e484eaddb1b67",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-ab/responses.jsonl": {
+      "sha256": "ae4d10eb8711a9253df31add299a04f75ca8ec668eb50128e077cd9064ede05b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/ordinary-v3-followup-20261110/results.jsonl": {
+      "sha256": "255b167e99bb69ba3fad7b54390f956d27c4c96a126c032dc7198b043763b49b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/ordinary-v3-remaining-20261110/results.jsonl": {
+      "sha256": "0b958a478970eb42a65cd7dbd547a6b4b6ec551d8353b1523c514ecc6cb38180",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/experiments/lab4/historical-cascade/support-policy-live-20261112/results.jsonl": {
+      "sha256": "db7171f200050e3a3288effa5c79bc778b0d63ae1ed52b5897932e318e905d43",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/data/cascade/kb.jsonl": {
+      "sha256": "8658947fe19fd48292168d43f468fdd9399b61a3ba139123e4b8ed8b9597cbcb",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/contracts/evaluate.py": {
+      "sha256": "19e5550fd6a71ca4721bf0686f7547563b421564cb07e420d928526e669682fc",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/contracts/response.schema.json": {
+      "sha256": "8e94a02565e86512555d1a37f3b52a53222091915f62fcdcd3888c75f3a3be3c",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/fixtures/cascade/unsupported-reissue.json": {
+      "sha256": "757673e68edb10869f95e60d3b98c799c459baf0ded6f2afdcbf27aa2178f852",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/fixtures/golden-dataset/cases.jsonl": {
+      "sha256": "e74c891778ebe37441815d8135acbcb96ffae7e60c12f43311838b68c81f01bd",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/fixtures/golden-dataset/live-regressions.jsonl": {
+      "sha256": "4d967bc481fedc6d39cc26df098ead136b1210a52a0787df08799050aa29be31",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/cascade-controls.json": {
+      "sha256": "ab8ef808fddf86d61f87b7b8ffd3a1d5574d44788b9f2c994a31be3d41b7f5dd",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/cascade-summary.json": {
+      "sha256": "7f1c8891b2bf97c4edcd06e55ca2be0e7d0bade0283d3e7c7a4d5d5653259b1d",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/grounding-regressions.json": {
+      "sha256": "02e3c829ea20a974fe378b54f8cf640a3cccfa7cfe6e73e0b8cb1837023d5070",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/human-review-audit.json": {
+      "sha256": "05dc3704959a47c9442e4a05e6b8592ac4719243bb7e6ab1cb59fa7cf246e740",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/ordinary-v3-human-review-20261111.json": {
+      "sha256": "36df91f3f49d23813fd6b585d428c65caf21d91d33158172da227a0dc49de9c8",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/prompt-followup-human-review-20261112.json": {
+      "sha256": "c82a01051b6df933d70e1defc9c65f0309cf96dfbd6cdc1b718c761dc0eb2553",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/public-health.json": {
+      "sha256": "bbcf6cf99de2cf8972df9ceddb3be9d37690ac14885b9fff17f29275587dc75b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/saved-cascade.json": {
+      "sha256": "f8d359cd2f762a6683e80bb93eca2d5f660efef4e41e1aaee7dc8192ecda2cbc",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/support-policy-human-review-20261112.json": {
+      "sha256": "94e6db72be9dac1b54eac4148a772888f19cd170938e24201137416d6b36436e",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-delivery-20261112/load.json": {
+      "sha256": "6d611da9a6096ffd17b2e8a617191d81d7cbb9715fbb08819153aa87140cfbf1",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/cascade-controls.json": {
+      "sha256": "ab8ef808fddf86d61f87b7b8ffd3a1d5574d44788b9f2c994a31be3d41b7f5dd",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/grounding-regressions.json": {
+      "sha256": "02e3c829ea20a974fe378b54f8cf640a3cccfa7cfe6e73e0b8cb1837023d5070",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/integration.json": {
+      "sha256": "0ef6ebad4fe5b37223ff68f1b29c630c07448c21c154c6200dfc8d8210bbd6dd",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/release-summary.json": {
+      "sha256": "1c73df04438bd2446a88d568d3e70b48358cfff7adf14f0b6125b772d43ca25a",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/review-summary.json": {
+      "sha256": "7cbb285b771752041754f36349c4d7da861cf7e7c8c4e3d11601ea424acda42c",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-integrated-20261112/security.json": {
+      "sha256": "0d572c8f38b494d65cc046af00770268d9ac9471026e0207d1c6bfc34e3c30c4",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/model-v2.1/all-record-responses.jsonl": {
+      "sha256": "aef895416d2cdab49736c6bb2c8493635038b77a45b93e357919a3ec9cab10e7",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/model-v2.1/independent-responses.jsonl": {
+      "sha256": "661af094235f917a61c9eb8fef978e3d754ef7fe9e0e80bbd2b0ee5d5d07dea9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-before-fix/report.json": {
+      "sha256": "0f14cb940de818fe390f9c8b90fe1ccb2749bb782092f4cd6685fd61adc51124",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-before-fix/results.jsonl": {
+      "sha256": "27bbd4cec249c347a3c7e889ddc2747363cc142fd21056a845c79869217f88c2",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-paced/report.json": {
+      "sha256": "7cc41bc9fd91a20d5c39fc64d50ae7e1e9961eb91a468aead621de144dc9173d",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-paced/results.jsonl": {
+      "sha256": "155f38b5107a42eec22af2acfe6b610b310ea0a71af5178f70415f70825a5d3f",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-preflight/report.json": {
+      "sha256": "3f7c19db2c4140e49351c304d8db4a1d979f13b96061a5ce3b5584dc3c52f640",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-cascade/live-free-preflight/results.jsonl": {
+      "sha256": "c615d545a9d731694d11184dd8f6244b5964b7b8cdda2e25af56a96a036bb705",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/cascade-metrics.png": {
+      "sha256": "3e6140a06677d7b0a8dcf581c3e6858b5001996a666877613c34881f3d98faa7",
+      "binary": true,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/delivery-monitoring.png": {
+      "sha256": "02fab76eb827dc0d02391d7323665eb3107f991808e9fce30d52cdf8739344cb",
+      "binary": true,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/final-quality-report.md": {
+      "sha256": "6ceddeff965b88f4f95a1e6847b326bfc73113ba38b9c7fdc2adbfba3de1da42",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/final-security-report.md": {
+      "sha256": "7ad8303aa291fac002fba146b46e32a1c8f10a1e1bd03307c92bc2eae7308998",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/metrics-history.png": {
+      "sha256": "19084708f02fbc1d320d11efc5793be37fdd703e386ca58c914ccf85cb14f3dc",
+      "binary": true,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/quality-demo.pptx": {
+      "sha256": "f85738f0b799792e8f3590aa753d57d737d380b747c0d969c378f1dad5eed06a",
+      "binary": true,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/release-ci.png": {
+      "sha256": "96c780999c8710e1b1bd027ab8952b8883b540c140a491d69659a003174f1111",
+      "binary": true,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "docs/quality/trust-facts.md": {
+      "sha256": "4547ccf0cf2682a68e6aff36122b1039bba9968c3f2f82fbdabc8bbe66a57d05",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    ".github/workflows/quality-lab5.yml": {
+      "sha256": "0f950bac5be350574b192fa266703cfa7a2061a6eda8cfff587cebc5a4c2d2c3",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/current_release.py": {
+      "sha256": "7a376f06f1b0b7dd7babd00d5986481cfab687bf14d05f496ee3bc47181c768b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/cascade-controls.json": {
+      "sha256": "ab8ef808fddf86d61f87b7b8ffd3a1d5574d44788b9f2c994a31be3d41b7f5dd",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/cases.jsonl": {
+      "sha256": "846c56f338e481a13db98e071665e6ef8512d9145cdfdca031816b5b70d20950",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/followup-live-20261120.jsonl": {
+      "sha256": "919a4d956e035d0a43711fb143de4fa6902b35bc388f15cb991f8e0daebe95be",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/full-live-20261119.jsonl": {
+      "sha256": "752dbc283f541afad6a02934dd4fe3767981f829070b08f63761fb875c698169",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/grounding-regressions.json": {
+      "sha256": "02e3c829ea20a974fe378b54f8cf640a3cccfa7cfe6e73e0b8cb1837023d5070",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/replayed-results.jsonl": {
+      "sha256": "21e7201c98d5af00b48c7e7c533ea7b23e8fedbdbe99794e38f1002b79c52d15",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/report.json": {
+      "sha256": "3f3d6f0ebb8ad793e97379d8a12dcbdfe7dc75742c30061dedef05fae4d06dd5",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/security.json": {
+      "sha256": "0d572c8f38b494d65cc046af00770268d9ac9471026e0207d1c6bfc34e3c30c4",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/selected-live-20261120.jsonl": {
+      "sha256": "61bd81aa75b975019f681b8464ed8d0b20d8c5a87490b112dd3c03bdf5c4f411",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/source.json": {
+      "sha256": "f3b777fd48f687324c1ca671e5da9fb7aa17061843e8305e849dea3c97ac9d20",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/technical-summary.json": {
+      "sha256": "90a466d8fd2712973d1556be4b03f4901d2c9f8b182ab6b66c574b250d45cf78",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/ai_service.py": {
+      "sha256": "2f912fc74ff7a42c4d4a06b63ce0ea5b05f2d28da14025b12b313f741991ba15",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/bootstrap.py": {
+      "sha256": "bf4ece08f531108067de6f6b3062033d415ee9065224ef588ff58caf0729d684",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/cascade_queue.py": {
+      "sha256": "260d9eb5e3a2f85b2e122bf15ffd8cbbd9a5aee0ea676d390892ce2a84ef7223",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/contracts/cascade.py": {
+      "sha256": "f9d290d1a98b9986477668694822223ae5ca390f23b3bc162e6e89a300ad71bf",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/contracts/cascade.schema.json": {
+      "sha256": "c37939548ef8c9eabfc4b1b59fbdf934d46eed0136c0a68d84d0c8c24986aab8",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/events.py": {
+      "sha256": "f3e2a33cdfe4f6501fce3ece5bc139c2a1f2fb0db33b1e5edc8be0de2491a8b9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/guards/auth.py": {
+      "sha256": "f326b9420e14a8e84cd4da9d7652eaa423c17af5a316db2ea748763a2883cc85",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/guards/identity.py": {
+      "sha256": "7a784446abd1ec9013144b166d872d385152c703c35f4f7ce2c7eea914d7bab2",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/guards/inference.py": {
+      "sha256": "ea68ec5f19f14b490d78ae946732c1e32eb3905aa2ed9fa9702ef8780a44c975",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/handoff.py": {
+      "sha256": "f2369d9fd6283c7f3a8abba13927b21c14d95d3ecc42812af6e9785399952fe1",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/ingress.py": {
+      "sha256": "add9e1d285f35dec1c6c462f642ad6740e272a320b99ab850d75efb2826a365d",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/limits/daily.py": {
+      "sha256": "4441e1bc127f1c809da062b02c092072b15604ad956e07d81219196be60470e9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/limits/degradation.py": {
+      "sha256": "5261b41881fb033283a525a7d38a8c39ef12f7a6388bb5b4ccff505b9b00bca2",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/limits/settings.py": {
+      "sha256": "7c55bfa0bebe3b97d284fe8599ff6901ebfb72e81ced85b6642471a0b434ba63",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/main.py": {
+      "sha256": "89721c7f922e8aa2e2b13d86bd87879aac7e982935bb224bf57e08271bd969c4",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/models/store.py": {
+      "sha256": "321dca7a93ce96a45a5cb8c4f8ca096b6b769fe581b0055dc72431803bfea696",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/observability.py": {
+      "sha256": "fe66bc921fba8431f96db76b273f81515454f4952882f002719f841d574427a8",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/provision.py": {
+      "sha256": "c1af3b5c6dda4213ee175d52bce3df7e3b6770b16faf07a5340abfe83010a7e9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/routers/ai.py": {
+      "sha256": "ef54e00e1fd69986f5afcd922e0675b038a3446fedfa298d62f446b17366f68c",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/backend/worker.py": {
+      "sha256": "56c3b55077d60fb39211d0f24dc5e97b49fbe028abf44223d223ffe18072ad98",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/001_init.sql": {
+      "sha256": "b020ddf5efbcae9fb992ed94fbf354709efa2ade0433478e802d1d5cc8a54a41",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/002_review_context.sql": {
+      "sha256": "c8cb6830a6e93135d70683d456e5c836b33ce17faa60403c081f2dad41b5233b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/003_event_queue.sql": {
+      "sha256": "3e400ac71b35d96959b3fcb185d7f17432fe754a9034e60a7338ab7fdf606d50",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/004_daily_limits.sql": {
+      "sha256": "cd7e73ebad85893452c22d864323d863b511c2d95562500772415a120280c9f0",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/005_daily_calls.sql": {
+      "sha256": "1297540ae2850e6ef5a4ccc11a9ec17c133d39aa3d751f654da88de30a7155c8",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/006_cascade.sql": {
+      "sha256": "c81265236e1612eda4007aa343d5180047e88aeecfaa1530e36259b6d20607a9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/007_cascade_claim.sql": {
+      "sha256": "038060fabfce10456a867ec38050c88af2074ce47a41835dc9d4c2cc279f0b6b",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/migrations/008_provider_state.sql": {
+      "sha256": "09b18162c0d2c2a8656b1d1a98e9b83e50b3ebf6cd764887030b5dcee948ca47",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/billing.py": {
+      "sha256": "f5be8cc7955d317f686cb8087a4cb05c4bc564114f2aeca40903e61b77394ec0",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/category.py": {
+      "sha256": "658a9029baf612cbac84d73667c3a23a393b2aa09884760524372630dc0f7f82",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/dialogue.py": {
+      "sha256": "4aea10b6b6258215f8a1bc44061d5e5fc00a009e583d25ed9c42366276645f53",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/cascade/service_cache.py": {
+      "sha256": "3e41c267a3e4eddb7bf18cec185276b188f81b7d7def919716a6542cbeb9986a",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/prompts_v2/system-2.1.txt": {
+      "sha256": "c08ad0133a37d7a108ff212796f0ec29c00a3fb02a36473d09cc2a228cae00ea",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/runtime/ml/prompts_v2/system.txt": {
+      "sha256": "5bdad2468ea2020fab9bd02d00f9f0088bb6bbcd8600b0a98052c354db9c32b9",
+      "binary": false,
+      "source": "Quality publication after AI034, immutable evidence where dated"
+    },
+    "tests/evals/evidence/lab5-current-20261126/technical-summary-development.json": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "8c1d2f13d0d1b5ac71d79120eb7dd8710383ceedeccae871adfb90ec2fd829d7"
+    },
+    "tests/evals/evidence/lab5-current-20261126/release-identity.json": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "e6c1ad2e59c16c41bd56fc26632be3d5c4d94769532a0b7e1a3efd89c7f311e6"
+    },
+    "docs/quality/mode-errors.md": {
+      "binary": false,
+      "source": "Quality tagged evaluation and explicit remaining defects",
+      "sha256": "2ccacac0600e71b7aa488d77d3bcb84adfd250afc824fa1a3fc01fa3cc28a339"
+    }
+  },
+  "external_model_calls": 0,
+  "historical_runtime_release_tag": "lab5-release-delivery-2026-11-12"
+}

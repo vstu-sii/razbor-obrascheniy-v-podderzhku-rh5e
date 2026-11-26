@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-26T06:59:15.623835+00:00",
+  "provenance": {
+    "publication_commit": "49ae0184383571713ce5e6a0a15579ff77d1c8b0",
+    "publication_tag": "lab5-quality-release-2026-11-26-r2",
+    "tag_verified": true,
+    "source_commit": "856e7d892d4eb49630a0def25b8b837694531e4d",
+    "runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+    "runtime_release_tag": "lab5-quality-release-2026-11-26-r2",
+    "upstream_application_tag": null,
+    "files_verified": 114
+  },
+  "legacy_golden": {
+    "records": 49,
+    "distinct_inputs": 38,
+    "targets_passed": true
+  },
+  "cascade_replay": {
+    "cases": 13,
+    "available_recordings": 10,
+    "unavailable_recordings": 3,
+    "cache_pairs": 5
+  },
+  "grounding": {
+    "passed": 4,
+    "total": 4
+  },
+  "archived_release_proof_valid": true,
+  "external_model_calls": 0,
+  "current_replay_completed": true,
+  "current_target_violations": [
+    {
+      "metric": "mode_accuracy",
+      "actual": 0.8421052631578947,
+      "minimum": 0.9
+    }
+  ],
+  "measured_targets_passed": false,
+  "technical_checks_passed": true,
+  "all_passed": false,
+  "not_measured": [
+    "new full live cascade baseline after latest AI fixes",
+    "human North Star",
+    "new PostgreSQL execution in this minimal package"
+  ]
+}

@@ -1,0 +1,2 @@
+# Keep archived release dependencies byte-identical; run_lab5 verifies their hashes.
+extend-exclude = ["runtime"]
