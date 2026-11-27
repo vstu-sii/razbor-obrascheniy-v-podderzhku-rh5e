@@ -14,6 +14,13 @@ jobs:
       - run: ruff check app tests
       - run: ruff format --check app tests
       - run: python -m compileall app
-      - run: python -m pytest -q
+      - run: python -m pytest -q --ignore=scripts/demo-seed
+      - name: Verify the standalone LAB06 demo package
+        if: ${{ hashFiles('scripts/demo-seed/requirements.lock') != '' }}
+        run: |
+          python -m venv "$RUNNER_TEMP/lab06-demo"
+          demo_python="$RUNNER_TEMP/lab06-demo/bin/python"
+          "$demo_python" -m pip install -r scripts/demo-seed/requirements.lock
+          "$demo_python" -m unittest discover -s scripts/demo-seed -v
       - run: python -m pip check
       - run: docker build -t ai-support-triage:ci .
