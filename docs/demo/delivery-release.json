@@ -1,0 +1,11 @@
+{
+  "production_url": "https://siiski-volchkova-shared-repository-ic7x.onrender.com",
+  "demo_date": "2026-11-27",
+  "demo_window_msk": "09:00–09:30",
+  "demo_tag": "lab6-release-delivery-2026-11-26",
+  "candidate_runtime": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "freeze_announced_at": "2026-11-26T13:21:22.852979+03:00",
+  "freeze_24h_met": false,
+  "render_auto_deploy": false,
+  "delivery_backup": "assets/demo-backup.webm"
+}

@@ -1,3 +1,22 @@
+## LAB06 Delivery · Demo Day
+
+Публичная версия приложения работает [на Render](https://siiski-volchkova-shared-repository-ic7x.onrender.com/).
+Тег `lab6-release-delivery-2026-11-26` в рабочем репозитории фиксирует коммит
+`1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e`. Публичный [health](https://siiski-volchkova-shared-repository-ic7x.onrender.com/health) отдаёт этот SHA.
+
+[Окружение демо](docs/demo/environment.md) · [План Б и видео](docs/demo/plan-b.md) · [Сведения о выпуске](docs/demo/delivery-release.json).
+
+Локальную репетицию можно запустить без Docker из корня ветки через Python 3.12:
+
+```powershell
+python -m pip install -r scripts/demo-seed/requirements.lock
+python scripts/demo-seed/reset.py --reset
+python scripts/demo-seed/serve.py
+```
+
+Открыть `http://127.0.0.1:18096/`. Локальный учебный код `lab6-local-operator`.
+Для прогона отказа остановить сервер и добавить `--simulate-outage` к команде запуска.
+
 # LAB02 / Delivery — событийная архитектура
 
 Обновлено 25.10.2026 под Product: создание обращения и новое сообщение клиента
