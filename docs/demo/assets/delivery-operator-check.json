@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-11-26T10:20:59.811297+00:00",
+  "revision": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "cases": [
+    {
+      "proposal_id": "920fd254-2d0c-4134-90cc-9ae45671fb22",
+      "mode": "answer",
+      "sources": 1,
+      "reviews": 0
+    },
+    {
+      "proposal_id": "dce4c9c0-5fc7-432f-b5ab-796274bdd20e",
+      "mode": "escalate",
+      "sources": 0,
+      "reviews": 1
+    }
+  ],
+  "production_writes": 0,
+  "external_model_calls": 0
+}

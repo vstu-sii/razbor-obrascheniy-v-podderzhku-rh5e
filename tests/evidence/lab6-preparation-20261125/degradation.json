@@ -1,0 +1,53 @@
+{
+  "scope": "provider unavailability is controlled; real fallback path",
+  "checks": [
+    {
+      "case": "DEMO-01",
+      "passed": true,
+      "state": "manual_review",
+      "attempted_saved_stages": [
+        "mistral",
+        "sol"
+      ],
+      "external_model_calls": 0
+    },
+    {
+      "case": "DEMO-02",
+      "passed": true,
+      "state": "manual_review",
+      "attempted_saved_stages": [
+        "mistral",
+        "sol"
+      ],
+      "external_model_calls": 0
+    },
+    {
+      "case": "DEMO-03",
+      "passed": true,
+      "state": "manual_review",
+      "attempted_saved_stages": [
+        "mistral",
+        "sol"
+      ],
+      "external_model_calls": 0
+    },
+    {
+      "case": "DEMO-04",
+      "passed": true,
+      "state": "manual_review",
+      "attempted_saved_stages": [],
+      "external_model_calls": 0
+    },
+    {
+      "case": "DEMO-05",
+      "passed": true,
+      "state": "manual_review",
+      "attempted_saved_stages": [
+        "mistral",
+        "sol"
+      ],
+      "external_model_calls": 0
+    }
+  ],
+  "external_model_calls": 0
+}

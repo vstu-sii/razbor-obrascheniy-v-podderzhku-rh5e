@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-25T11:53:29.603240+00:00",
+  "runtime_commit": "1a44f7186ef6cb97ed2e5888e9a94bc1a5cae13e",
+  "technical_preparation_passed": true,
+  "demo_case_checks": 18,
+  "redteam_checks": 16,
+  "degradation_checks": 5,
+  "external_model_calls": 0,
+  "final_demo_ready": false,
+  "pending": [
+    "demo date unknown",
+    "same production demo tag and 24-hour freeze",
+    "two timed team rehearsals",
+    "production video 2-5 minutes",
+    "human North Star",
+    "full new live model evaluation after last AI changes; observed mode target remains unmet"
+  ],
+  "note": "Preparation is repeatable; this is not a final timed rehearsal or a claim that semantic targets passed"
+}
